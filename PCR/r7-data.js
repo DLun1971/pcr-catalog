@@ -827,13 +827,20 @@ const RADIOS_DATA = {'r7': {
         label: 'Chargers',
         icon: '',
         sections: [
-          {
-            title: 'Ion Single-Unit Charger',
-            items: [
-              { pn: 'PMPN4526', desc: 'IMPRES Single-Unit Charger for Ion, US/NA Plug', note: 'IMPRES, Li-Ion, 120VAC — Ion specific', checks: {impres: 1, pockets: "1", recondn: 0} },
-              { pn: 'PMPN4540', desc: 'IMPRES Multi-Unit Charger for Ion, US/NA Plug', note: 'IMPRES, 6-pocket, 100-240VAC — Ion specific', checks: {impres: 1, pockets: "6", recondn: 0} },
-            ]
-          },
+        {
+  title: 'IMPRES 2 Single-Unit Chargers — Ion',
+  items: [
+    { pn: 'PMPN4524', desc: 'IMPRES 2 Single-Unit Charger, US Plug', note: 'IMPRES 2, Li-Ion, 120VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4512', desc: 'IMPRES 2 Single-Unit Charger, ARG Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4515', desc: 'IMPRES 2 Single-Unit Charger, BRZ Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4510', desc: 'IMPRES 2 Single-Unit Charger, UK Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4525', desc: 'IMPRES 2 Single-Unit Charger, EURO Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4511', desc: 'IMPRES 2 Single-Unit Charger, AU/NZ Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4609', desc: 'IMPRES 2 Single-Unit Charger, JAP Plug', note: 'IMPRES 2, Li-Ion, 100-240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4514', desc: 'IMPRES 2 Single-Unit Charger, KOR Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4641', desc: 'IMPRES 2 Single-Unit Charger, INDIA Plug', note: 'IMPRES 2, Li-Ion, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
+  ]
+},
           {
             title: 'Vehicular Charger',
             items: [
