@@ -897,11 +897,7 @@ cables: {
       ]
     }
   ]
-},      
-  cables: {
-  label: 'Cables & Programming',
-  icon: '',
-  sections: [
+
     {
       title: 'Programming Cables',
       items: [
