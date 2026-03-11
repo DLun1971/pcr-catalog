@@ -895,7 +895,7 @@ carry: {
         { pn: 'PMLN5407', desc: 'Replacement 2.5in Hard Leather Swivel Belt Loop', note: 'Leather, 2.5in swivel' },
        { pn: 'PMLN5409', desc: 'Replacement 3in Hard Leather Swivel Belt Loop', note: 'Leather, 3in swivel' },
       ]
-    }
+    },
   ]
 },
       cables: {
