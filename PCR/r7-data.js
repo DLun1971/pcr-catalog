@@ -300,18 +300,21 @@ carry: {
           }
         ]
       },
-      cables: {
-        label: 'Cables & Programming',
-        icon: '',
-        sections: [
-          {
-            title: 'Programming Cables',
-            items: [
-              { pn: 'PMKN4115', desc: 'Portable Programming Cable (USB)', note: 'R7 / Ion / R5' },
-              { pn: 'PMKN4117', desc: 'Programming, Test, and Alignment Cable', note: 'R7 / Ion / R5' },
-            ]
-          },
-          {
+cables: {
+  label: 'Cables & Programming',
+  icon: '',
+  sections: [
+    {
+      title: 'Programming Cables',
+      items: [
+        { pn: 'PMKN4265', desc: 'Mini GCAI Interface Cable (USB)', note: 'R7 / Ion — full rate data transfer' },
+        { pn: 'PMKN4230', desc: 'UL Certified Programming/Data Cable', note: 'Ion only' },
+        { pn: 'PMKN4115', desc: 'Portable Programming Cable (USB)', note: 'R5 only' },
+        { pn: 'PMKN4117', desc: 'Programming, Test, and Alignment Cable', note: 'R5 only' },
+      ]
+    },
+    {
+      title: 'Miscellaneous',
             title: 'Miscellaneous',
             items: [
               { pn: '0104058J40', desc: 'Dust Cover', note: 'Accessory port protection' },
