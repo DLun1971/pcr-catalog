@@ -857,7 +857,8 @@ const RADIOS_DATA = {'r7': {
   ]
   
 }, 
-            title: 'Vehicular Charger',
+{ 
+           title: 'Vehicular Charger',
             items: [
               { pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", recondn: 0} },
             ]
