@@ -262,44 +262,56 @@ carry: {
     }
   ]
 },
-      antennas: {
-        label: 'Antennas',
-        icon: '',
-        sections: [
-          {
-            title: 'UHF Antennas',
-            items: [
-              { pn: 'PMAE4079', desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '400–527 MHz, 15cm' },
-              { pn: 'PMAE4069', desc: 'UHF/GPS Stubby Antenna', note: '403–450 MHz, 9cm' },
-              { pn: 'PMAE4070', desc: 'UHF/GPS Stubby Antenna', note: '440–490 MHz, 9cm' },
-              { pn: 'PMAE4071', desc: 'UHF/GPS Stubby Antenna', note: '470–527 MHz, 9cm' },
-              { pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400–527 MHz, 9cm' },
-            ]
-          },
-          {
-            title: 'VHF Antennas',
-            items: [
-              { pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136–155 MHz, 15cm' },
-              { pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144–165 MHz, 15cm' },
-              { pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152–174 MHz, 15cm' },
-              { pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136–174 MHz, 20cm' },
-              { pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136–148 MHz, 9cm' },
-              { pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146–160 MHz, 9cm' },
-              { pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160–174 MHz, 9cm' },
-            ]
-          },
-          {
-            title: 'Antenna Accessories',
-            items: [
-              { pn: '32012144001', desc: 'Antenna ID Bands — Gray (10/pack)', note: '' },
-              { pn: '32012144002', desc: 'Antenna ID Bands — Yellow (10/pack)', note: '' },
-              { pn: '32012144003', desc: 'Antenna ID Bands — Green (10/pack)', note: '' },
-              { pn: '32012144004', desc: 'Antenna ID Bands — Blue (10/pack)', note: '' },
-              { pn: '32012144005', desc: 'Antenna ID Bands — Purple (10/pack)', note: '' },
-            ]
-          }
-        ]
-      },
+antennas: {
+  label: 'Antennas',
+  icon: '',
+  sections: [
+    {
+      title: 'UHF Antennas',
+      items: [
+        { pn: 'PMAE4079', desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '400–527 MHz, 15cm' },
+        { pn: 'PMAE4069', desc: 'UHF/GPS Stubby Antenna', note: '403–450 MHz, 9cm' },
+        { pn: 'PMAE4070', desc: 'UHF/GPS Stubby Antenna', note: '440–490 MHz, 9cm' },
+        { pn: 'PMAE4071', desc: 'UHF/GPS Stubby Antenna', note: '470–527 MHz, 9cm' },
+        { pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400–527 MHz, 9cm, R7/Ion' },
+        { pn: 'AN000350A01', desc: 'UHF Short Stubby Antenna', note: '400–450 MHz, 6cm, R7/Ion' },
+        { pn: 'AN000351A01', desc: 'UHF Short Stubby Antenna', note: '440–490 MHz, 6cm, R7/Ion' },
+      ]
+    },
+    {
+      title: 'VHF Antennas',
+      items: [
+        { pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136–155 MHz, 15cm' },
+        { pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144–165 MHz, 15cm' },
+        { pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152–174 MHz, 15cm' },
+        { pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136–174 MHz, 20cm' },
+        { pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136–148 MHz, 9cm' },
+        { pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146–160 MHz, 9cm' },
+        { pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160–174 MHz, 9cm' },
+      ]
+    },
+    {
+      title: '800/900 MHz Antennas',
+      items: [
+        { pn: 'PMAF4011', desc: '800 MHz Flexible Whip Antenna', note: '806–870 MHz, 16.4cm, R7' },
+        { pn: 'PMAF4012', desc: '900 MHz Flexible Whip Antenna', note: '896–941 MHz, 14cm, R7' },
+        { pn: 'PMAF4009', desc: '800/900 Stubby Antenna', note: '806–870 MHz, 12cm, R7' },
+        { pn: 'PMAF4010', desc: '800/900 Stubby Antenna', note: '896–941 MHz, 11.2cm, R7' },
+        { pn: 'AN000415A01', desc: '800/900 Whip Antenna', note: '806–941 MHz, 14cm, Ion' },
+      ]
+    },
+    {
+      title: 'Antenna Accessories',
+      items: [
+        { pn: '32012144001', desc: 'Antenna ID Bands — Gray (10/pack)', note: '' },
+        { pn: '32012144002', desc: 'Antenna ID Bands — Yellow (10/pack)', note: '' },
+        { pn: '32012144003', desc: 'Antenna ID Bands — Green (10/pack)', note: '' },
+        { pn: '32012144004', desc: 'Antenna ID Bands — Blue (10/pack)', note: '' },
+        { pn: '32012144005', desc: 'Antenna ID Bands — Purple (10/pack)', note: '' },
+      ]
+    }
+  ]
+},
 cables: {
         label: 'Cables & Programming',
         icon: '',
