@@ -853,10 +853,10 @@ const RADIOS_DATA = {'r7': {
     { pn: 'PMPN4295', desc: 'IMPRES 2 Multi-Unit Fast Charger, JAP Plug', note: 'IMPRES 2, Li-Ion/NiMH, 100-240VAC, 6 pockets', checks: {impres: 1, pockets: "6", recondn: 0} },
     { pn: 'PMPN4520', desc: 'IMPRES 2 Multi-Unit Fast Charger, KOR Plug', note: 'IMPRES 2, Li-Ion/NiMH, 100-240VAC, 6 pockets', checks: {impres: 1, pockets: "6", recondn: 0} },
     { pn: 'PMPN4642', desc: 'IMPRES 2 Multi-Unit Fast Charger, INDIA Plug', note: 'IMPRES 2, Li-Ion/NiMH, 100-240VAC, 6 pockets', checks: {impres: 1, pockets: "6", recondn: 0} },
+    { pn: 'AS000180A01', desc: 'Interchangeable Charging Pocket for Ion', note: 'For IMPRES 2 Multi-Unit Fast Charger', checks: {impres: 0, pockets: "", recondn: 0} },
   ]
+  
 }, 
-{ pn: 'AS000180A01', desc: 'Interchangeable Charging Pocket for Ion', note: 'For IMPRES 2 Multi-Unit Fast Charger', checks: {impres: 0, pockets: "", recondn: 0} },
-      {
             title: 'Vehicular Charger',
             items: [
               { pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", recondn: 0} },
