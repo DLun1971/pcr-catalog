@@ -101,6 +101,7 @@ function renderContent() {
     + '</div>';
 
   cat.sections.forEach(sec => {
+const items = filterItems(sec.items);
     if (!items.length) return;
     html += '<div class="acc-subsection">';
     html += '<div class="acc-subsection-title">' + sec.title + '</div>';
