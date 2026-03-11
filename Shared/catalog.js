@@ -17,12 +17,14 @@ function getBadges(item) {
 }
 
 const COL_KEY = {
-  'IMPRES':'impres','IP68':'ip68','UL HazLoc':'ul','Intel Audio':'intel',
+  'IMPRES':'impres','IP68':'ip68','UL HazLoc':'ul','InAud':'intel',
   'Ion FW Req':'ion_fw','BT/Wireless':'bt','Full Duplex':'fulldx',
   'IP Rated':'ip','NRR':'nrr','Noise Cancel':'nc',
   'Wires':'wires','FW Required':'fw_req','NFC':'nfc','Emg Btn':'emg',
   'BT':'bt','Capacity':'mah','IP Rating':'ip','Temp Range':'temp',
   'Pockets':'pockets','Recond.':'recondn',
+  'AINS':'ains','WWet':'wwet','SmartSW':'smart_sw',
+  'Ambient':'ambient','IMPRES 2':'impres2',
 };
 
 function renderSidebar() {
