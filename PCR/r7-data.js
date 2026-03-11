@@ -857,12 +857,15 @@ const RADIOS_DATA = {'r7': {
   ]
   
 }, 
-{ 
-           title: 'Vehicular Charger',
-            items: [
-              { pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", recondn: 0} },
-            ]
-          }
+{
+  title: 'Vehicular Charger',
+  items: [
+    { pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PMPN4607', desc: 'IMPRES 2 Charging Cradle with Mounting Kit', note: 'Ion only, Li-Ion, 12VDC cigarette lighter adapter', checks: {impres: 1, pockets: "1", recondn: 0} },
+    { pn: 'PS000514A01', desc: 'Replacement Cigarette Lighter Adapter', note: 'For PMPN4607', checks: {impres: 0, pockets: "", recondn: 0} },
+    { pn: 'HW003289A01', desc: 'Replacement Strap', note: 'For PMPN4607', checks: {impres: 0, pockets: "", recondn: 0} },
+  ]
+}
         ]
       },
       carry: {
