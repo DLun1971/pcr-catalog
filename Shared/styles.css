@@ -334,6 +334,17 @@ body {
 .table-wrap tbody tr:hover { background: var(--bg); cursor: pointer; }
 .table-wrap td { padding: 10px 12px; vertical-align: middle; }
 .table-wrap td:nth-child(2) { min-width: 300px; max-width: 420px; }
+.table-wrap td:nth-child(1),
+.table-wrap thead th:nth-child(1) {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 2;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.06);
+}
+.table-wrap thead th:nth-child(1) {
+  background: var(--bg2);
+}
 .table-wrap td:nth-child(n+3) { width: 80px; text-align: center; }
 .table-wrap td.tc { text-align: center; }
 .td-main { font-weight: 500; color: var(--text); line-height: 1.35; white-space: normal; max-width: 400px; }
