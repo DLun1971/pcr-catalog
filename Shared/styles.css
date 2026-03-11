@@ -175,7 +175,7 @@ body {
   overflow-y: auto; height: 100%;
   background: var(--bg);
 }
-.content-inner { padding: 24px; max-width: 1100px; }
+.content-inner { padding: 24px; max-width: 1400px; }
 
 /* ── RADIO HEADER ── */
 .radio-header {
@@ -332,7 +332,8 @@ body {
 .table-wrap tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
 .table-wrap tbody tr:last-child { border-bottom: none; }
 .table-wrap tbody tr:hover { background: var(--bg); cursor: pointer; }
-.table-wrap td { padding: 10px 12px; vertical-align: middle; min-width: 200px; }
+.table-wrap td { padding: 10px 12px; vertical-align: middle; }
+.table-wrap td:nth-child(2) { min-width: 300px; max-width: 420px; }
 .table-wrap td.tc { text-align: center; }
 .td-main { font-weight: 500; color: var(--text); line-height: 1.35; white-space: normal; max-width: 400px; }
 .td-note { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
