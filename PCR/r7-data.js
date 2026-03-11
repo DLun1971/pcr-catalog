@@ -883,18 +883,6 @@ carry: {
         ]
       },
       carry: {
-        label: 'Carry Solutions',
-        icon: '',
-        sections: [
-          {
-            title: 'Holsters & Belt Clips',
-            items: [
-              { pn: 'PMLN4651', desc: 'Spring Action 2-inch Belt Clip', note: 'Plastic, display/non-display' },
-              { pn: 'PMLN7008', desc: 'Spring Action 2.5-inch Belt Clip', note: 'Plastic, display/non-display' },
-            ]
-          },
-          {
-       carry: {
   label: 'Carry Solutions',
   icon: '',
   sections: [
@@ -910,8 +898,7 @@ carry: {
       ]
     }
   ]
-},
-      cables: {
+},      cables: {
         label: 'Cables & Programming',
         icon: '',
         sections: [
