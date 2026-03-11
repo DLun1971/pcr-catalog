@@ -223,31 +223,45 @@ const RADIOS_DATA = {'r7': {
           }
         ]
       },
-      carry: {
-        label: 'Carry Solutions',
-        icon: '',
-        sections: [
-          {
-            title: 'Holsters & Belt Clips',
-            items: [
-              { pn: 'PMLN7989', desc: 'Nylon Swivel Holster with 3-inch Belt Loop', note: 'Display model' },
-              { pn: 'PMLN7990', desc: 'Nylon Fixed Holster with 3-inch Belt Loop', note: 'Display model' },
-              { pn: 'PMLN4651', desc: 'Spring Action 2-inch Belt Clip', note: 'Plastic, display/non-display' },
-              { pn: 'PMLN7008', desc: 'Spring Action 2.5-inch Belt Clip', note: 'Plastic, display/non-display' },
-            ]
-          },
-          {
-            title: 'Carry Straps & Cases',
-            items: [
-              { pn: 'HLN9985',  desc: 'Waterproof Bag with Large Strap', note: 'Securely carries MOTOTRBO two-way radios' },
-              { pn: 'NTN5243',  desc: 'Adjustable Nylon Carrying Strap', note: 'Nylon' },
-              { pn: 'RLN6486',  desc: 'Leather Radio Strap', note: 'Leather' },
-              { pn: 'RLN6487',  desc: 'Leather Radio Strap — XL', note: 'Leather' },
-              { pn: 'RLN6488',  desc: 'Anti-Sway Strap for Leather Radio Straps', note: 'Leather' },
-            ]
-          }
-        ]
-      },
+carry: {
+  label: 'Carry Solutions',
+  icon: '',
+  sections: [
+    {
+      title: 'Leather Cases',
+      items: [
+        { pn: 'PMLN8300', desc: 'Hard Leather Case with 2.5in Swivel Belt Loop', note: 'Display model' },
+        { pn: 'PMLN8299', desc: 'Hard Leather Case with 3in Swivel Belt Loop', note: 'Display model' },
+        { pn: 'PMLN8301', desc: 'Hard Leather Case with 3in Fixed Belt Loop', note: 'Display model' },
+        { pn: 'PMLN8303', desc: 'Hard Leather Case with 2.5in Swivel Belt Loop', note: 'Non-display model' },
+        { pn: 'PMLN8302', desc: 'Hard Leather Case with 3in Swivel Belt Loop', note: 'Non-display model' },
+        { pn: 'PMLN8304', desc: 'Hard Leather Case with 3in Fixed Belt Loop', note: 'Non-display model' },
+      ]
+    },
+    {
+      title: 'Holsters & Belt Clips',
+      items: [
+        { pn: 'PMLN5610', desc: 'Replacement 2.5in Swivel Belt Loop', note: 'Hard leather, display/non-display' },
+        { pn: 'PMLN5611', desc: 'Replacement 3in Swivel Belt Loop', note: 'Hard leather, display/non-display' },
+        { pn: 'PMLN4651', desc: 'Spring Action 2in Belt Clip', note: 'Plastic, display/non-display' },
+        { pn: 'PMLN7008', desc: 'Spring Action 2.5in Belt Clip', note: 'Plastic, display/non-display' },
+      ]
+    },
+    {
+      title: 'Carry Straps & Cases',
+      items: [
+        { pn: 'HLN9985',  desc: 'Waterproof Bag with Large Strap', note: 'Securely carries MOTOTRBO two-way radios' },
+        { pn: 'HLN6602',  desc: 'Universal Chest Pack', note: 'Radio holder, pen holder and velcro secured pouch' },
+        { pn: 'NTN5243',  desc: 'Adjustable Nylon Carrying Strap', note: 'Nylon' },
+        { pn: 'RLN6486',  desc: 'Leather Radio Strap', note: 'Leather' },
+        { pn: 'RLN6487',  desc: 'Leather Radio Strap — XL', note: 'Leather' },
+        { pn: 'RLN6488',  desc: 'Anti-Sway Strap for Leather Radio Straps', note: 'Leather' },
+        { pn: 'PMLN6074', desc: 'Nylon Wrist Strap', note: 'Nylon' },
+        { pn: 'PMHN4429', desc: 'Mini GCAI Dust Cover', note: 'Install when accessory not in use' },
+      ]
+    }
+  ]
+},
       antennas: {
         label: 'Antennas',
         icon: '',
