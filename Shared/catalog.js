@@ -2,6 +2,7 @@
 
 let activeRadio = null;
 let activeCat   = null;
+let searchTerm  = '';
 
 function getBadges(item) {
   const txt = (item.desc + ' ' + (item.note||'')).toLowerCase();
@@ -112,7 +113,7 @@ function renderContent() {
         + '<thead><tr><th>Part Number</th><th>Description</th>' + thCols + '</tr></thead>'
         + '<tbody>';
 
-      sec.items.forEach(item => {
+      items.forEach(item => {
         const specCells = specCols.map(col => {
           const k = COL_KEY[col];
           const val = (item.checks && k !== undefined) ? item.checks[k] : undefined;
@@ -123,7 +124,7 @@ function renderContent() {
 
         const noteHtml = item.note ? '<div class="td-note">' + item.note + '</div>' : '';
         html += '<tr>'
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+item.pn+'</span></td>'
+          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+ highlightPN(item.pn) +'</span></td>'
           + '<td><div class="td-main">' + item.desc + '</div>' + noteHtml + '</td>'
           + specCells + '</tr>';
       });
@@ -136,10 +137,10 @@ function renderContent() {
         + '<th style="width:260px">Notes</th>'
         + '<th style="width:110px">Badges</th>'
         + '</tr></thead><tbody>';
-      sec.items.forEach(item => {
+      items.forEach(item => {
         const badges = getBadges(item);
         html += '<tr>'
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+item.pn+'</span></td>'
+          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+ highlightPN(item.pn) +'</span></td>'
           + '<td class="desc">' + item.desc + '</td>'
           + '<td class="note">' + (item.note || '') + '</td>'
           + '<td class="badge-cell">' + badges + '</td>'
@@ -163,7 +164,56 @@ function copyPN(pn) {
   setTimeout(() => t.classList.remove('show'), 1800);
 }
 
+function renderSubbar() {
+  const existing = document.getElementById('subbar');
+  if (existing) return;
+  const bar = document.createElement('div');
+  bar.className = 'subbar';
+  bar.id = 'subbar';
+  bar.innerHTML = `
+    <a class="subbar-home" href="../index.html">← Home</a>
+    <div class="subbar-sep"></div>
+    <div class="subbar-spacer"></div>
+    <div class="subbar-search-wrap">
+      <span class="subbar-search-icon">🔍</span>
+      <input class="subbar-search" id="subbarSearch" type="text" placeholder="Search part numbers..." autocomplete="off">
+      <span class="subbar-clear" id="subbarClear">✕</span>
+    </div>
+  `;
+  document.body.insertBefore(bar, document.querySelector('.page-body'));
+
+  const input = document.getElementById('subbarSearch');
+  const clear = document.getElementById('subbarClear');
+
+  input.addEventListener('input', () => {
+    searchTerm = input.value.trim().toLowerCase();
+    clear.classList.toggle('show', searchTerm.length > 0);
+    renderContent();
+  });
+
+  clear.addEventListener('click', () => {
+    input.value = '';
+    searchTerm = '';
+    clear.classList.remove('show');
+    renderContent();
+  });
+}
+
+function highlightPN(pn) {
+  if (!searchTerm || !pn.toLowerCase().includes(searchTerm)) return pn;
+  const idx = pn.toLowerCase().indexOf(searchTerm);
+  return pn.slice(0, idx) 
+    + '<span class="pn-match">' + pn.slice(idx, idx + searchTerm.length) + '</span>' 
+    + pn.slice(idx + searchTerm.length);
+}
+
+function filterItems(items) {
+  if (!searchTerm) return items;
+  return items.filter(item => item.pn.toLowerCase().includes(searchTerm));
+}
+
 function renderAll() {
+  renderSubbar();
   renderSidebar();
   renderCatSidebar();
   renderContent();
