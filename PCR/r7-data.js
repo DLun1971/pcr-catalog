@@ -7,7 +7,7 @@ const RADIOS_DATA = {'r7': {
     tagStyles: ['', 'green', 'orange', '', ''],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "IP68", "UL HazLoc", "Intel Audio", "Ion FW Req", "BT/Wireless", "Full Duplex"],
+        cols: ["Part Number","Description","IMPRES","IP68","UL HazLoc","InAud","AINS","WWet","SmartSW","Full Duplex","BT/Wireless","Ion FW Req"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -71,7 +71,7 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "IP Rated", "BT", "Full Duplex", "NFC", "Emg Btn", "FW Required"],
+        cols: ["Part Number","Description","IP Rated","BT","Full Duplex","NFC","Emg Btn","FW Required"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
@@ -111,7 +111,7 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       surveillance: {
-        cols: ["Part Number", "Description", "IMPRES", "UL HazLoc", "Intel Audio", "Full Duplex", "Ion FW Req", "Wires"],
+        cols: ["Part Number","Description","Wires","IMPRES","UL HazLoc","InAud","AINS","Full Duplex","Ion FW Req"],
         label: 'Surveillance & Earpieces',
         icon: '',
         sections: [
@@ -171,7 +171,7 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "UL HazLoc", "Temp Range"],
+        cols: ["Part Number","Description","Capacity","IP Rating","IMPRES","UL HazLoc"],
         label: 'Batteries',
         icon: '',
         sections: [
@@ -187,7 +187,7 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       chargers: {
-        cols: ["Part Number", "Description", "IMPRES", "Pockets", "Recond."],
+        cols: ["Part Number","Description","Pockets","IMPRES 2","Recond."],
         label: 'Chargers',
         icon: '',
         sections: [
@@ -366,7 +366,7 @@ cables: {
     tagStyles: ['', 'green', 'orange', '', 'purple'],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "IP68", "UL HazLoc", "Intel Audio", "Ion FW Req", "BT/Wireless", "Full Duplex"],
+        cols: ["Part Number","Description","IMPRES","IP68","UL HazLoc","InAud","AINS","WWet","SmartSW","Full Duplex","BT/Wireless","Ion FW Req"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -405,7 +405,7 @@ cables: {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "IP Rated", "BT", "Full Duplex", "NFC", "Emg Btn", "FW Required"],
+        cols: ["Part Number","Description","IP Rated","BT","Full Duplex","NFC","Emg Btn","FW Required"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
@@ -444,7 +444,7 @@ cables: {
         ]
       },
       surveillance: {
-        cols: ["Part Number", "Description", "IMPRES", "UL HazLoc", "Intel Audio", "Full Duplex", "Ion FW Req", "Wires"],
+        cols: ["Part Number","Description","Wires","IMPRES","UL HazLoc","InAud","AINS","Full Duplex","Ion FW Req"],
         label: 'Surveillance & Earpieces',
         icon: '',
         sections: [
@@ -541,7 +541,7 @@ cables: {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "UL HazLoc", "Temp Range"],
+        cols: ["Part Number","Description","Capacity","IP Rating","IMPRES","UL HazLoc"],
         label: 'Batteries',
         icon: '',
         sections: [
@@ -557,7 +557,7 @@ cables: {
         ]
       },
       chargers: {
-        cols: ["Part Number", "Description", "IMPRES", "Pockets", "Recond."],
+        cols: ["Part Number","Description","Pockets","IMPRES 2","Recond."],
         label: 'Chargers',
         icon: '',
         sections: [
@@ -729,7 +729,7 @@ cables: {
     tagStyles: ['orange', 'orange', 'green', '', 'green'],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "IP68", "UL HazLoc", "Intel Audio", "Ion FW Req", "BT/Wireless", "Full Duplex"],
+        cols: ["Part Number","Description","IMPRES","IP68","UL HazLoc","InAud","AINS","WWet","SmartSW","Full Duplex","BT/Wireless","Ion FW Req"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -766,7 +766,7 @@ cables: {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "IP Rated", "BT", "Full Duplex", "NFC", "Emg Btn", "FW Required"],
+        cols: ["Part Number","Description","IP Rated","BT","Full Duplex","NFC","Emg Btn","FW Required"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
@@ -806,7 +806,7 @@ cables: {
         ]
       },
       surveillance: {
-        cols: ["Part Number", "Description", "IMPRES", "UL HazLoc", "Intel Audio", "Full Duplex", "Ion FW Req", "Wires"],
+        cols: ["Part Number","Description","Wires","IMPRES","UL HazLoc","InAud","AINS","Full Duplex","Ion FW Req"],
         label: 'Surveillance & Earpieces',
         icon: '',
         sections: [
@@ -858,7 +858,7 @@ cables: {
         ]
       },
  batteries: {
-  cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "UL HazLoc", "Temp Range"],
+  cols: ["Part Number","Description","Capacity","IP Rating","IMPRES","UL HazLoc"],
   label: 'Batteries',
   icon: '',
   sections: [
@@ -873,7 +873,7 @@ cables: {
   ]
 },
       chargers: {
-        cols: ["Part Number", "Description", "IMPRES", "Pockets", "Recond."],
+        cols: ["Part Number","Description","Pockets","IMPRES 2","Recond."],
         label: 'Chargers',
         icon: '',
         sections: [
@@ -965,7 +965,7 @@ cables: {
     discontinued: false,
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "IP68", "UL HazLoc", "Intel Audio", "Ion FW Req", "BT/Wireless", "Full Duplex"],
+        cols: ["Part Number","Description","IMPRES","IP68","UL HazLoc","InAud","AINS","WWet","SmartSW","Full Duplex","BT/Wireless","Ion FW Req"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -1057,7 +1057,7 @@ cables: {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "UL HazLoc", "Temp Range"],
+        cols: ["Part Number","Description","Capacity","IP Rating","IMPRES","UL HazLoc"],
         label: 'Batteries',
         icon: '',
         sections: [
@@ -1070,7 +1070,7 @@ cables: {
         ]
       },
       chargers: {
-        cols: ["Part Number", "Description", "IMPRES", "Pockets", "Recond."],
+        cols: ["Part Number","Description","Pockets","IMPRES 2","Recond."],
         label: 'Chargers',
         icon: '',
         sections: [
