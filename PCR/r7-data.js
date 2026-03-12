@@ -207,7 +207,7 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", voltage: "12VDC", chem: "Li-Ion/NiMH"} },
           ] }
         ]
-      }
+      },
       carry: {
         label: 'Carry Solutions',
         icon: '',
@@ -540,7 +540,7 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'PS000576A04', desc: 'Power Supply Adaptor Fixed Blade 14.5V/1.15A, AUS/NZ Plug', note: '100-240VAC', checks: {impres: 0, pockets: "1", voltage: "100-240VAC", chem: "—"} },
           ] }
         ]
-      }
+      },
       carry: {
         label: 'Carry Solutions',
         icon: '',
@@ -808,7 +808,7 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery', checks: {impres: 1, pockets: "1", voltage: "12VDC", chem: "Li-Ion/NiMH"} },
           ] }
         ]
-      }
+      },
       carry: {
         label: 'Carry Solutions',
         icon: '',
@@ -998,7 +998,7 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'PMPN4610', desc: 'IMPRES Multi-Unit Charger, BIS Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", voltage: "100-240VAC", chem: "Li-Ion/NiMH"} },
           ] }
         ]
-      }
+      },
       carry: {
         label: 'Carry Solutions',
         icon: '',
