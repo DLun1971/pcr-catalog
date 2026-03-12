@@ -171,17 +171,17 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
+        cols: ["Part Number", "Description", "IMPRES", "Chemistry", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
         label: 'Batteries',
         icon: '',
         sections: [
           {
             title: 'IMPRES Li-Ion Batteries — R7',
             items: [
-              { img: null, pn: 'PMNN4807', desc: 'IMPRES Li-Ion 2200mAh IP68 Slim Battery', note: 'IP66/IP68, -20°C to +60°C, 116×55×17mm, 118g', checks: {impres: 1, mah: "2200", ip: "IP68", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4809', desc: 'IMPRES Li-Ion 2850mAh IP68 Slim Battery', note: 'IP66/IP68, -20°C to +60°C, 116×55×17mm, 135g', checks: {impres: 1, mah: "2850", ip: "IP68", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4810', desc: 'IMPRES Li-Ion 3200mAh IP68 TIA4950 Battery', note: 'IP66/IP68, UL HazLoc, -20°C to +60°C, 116×55×23mm, 168g', checks: {impres: 1, mah: "3200", ip: "IP68", hazloc: 'UL', temp: "\u2014"} },
-              { img: null, pn: 'PMNN4603', desc: 'IMPRES Li-Ion 3200mAh IP68 Battery', note: 'IP66/IP68, -20°C to +60°C, 116×55×23mm, 168g', checks: {impres: 1, mah: "3200", ip: "IP68", hazloc: 0, temp: "\u2014"} },
+              { img: null, pn: 'PMNN4807', desc: 'IMPRES Li-Ion 2200mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 118g', checks: {impres: 1, chem: 'Li-Ion', mah: "2200", ip: "IP68", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4809', desc: 'IMPRES Li-Ion 2850mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 135g', checks: {impres: 1, chem: 'Li-Ion', mah: "2850", ip: "IP68", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4810', desc: 'IMPRES Li-Ion 3200mAh IP68 TIA4950 Battery', note: 'IP66/IP68, UL HazLoc, 116x55x23mm, 168g', checks: {impres: 1, chem: 'Li-Ion', mah: "3200", ip: "IP68", hazloc: 'UL', temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4603', desc: 'IMPRES Li-Ion 3200mAh IP68 Battery', note: 'IP66/IP68, 116x55x23mm, 168g', checks: {impres: 1, chem: 'Li-Ion', mah: "3200", ip: "IP68", hazloc: 0, temp: "-20 to +60°C"} },
             ]
           }
         ]
@@ -203,7 +203,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Multi-Unit Chargers',
             items: [
-              { img: null, pn: 'PMPN4560', desc: 'IMPRES Multi-Unit Charger, US/NA Plug', note: 'IMPRES, 6-pocket, 100-240VAC, 117×445×170mm', checks: {impres: 1, pockets: "6", recondn: 0} },
+              { img: null, pn: 'PMPN4560', desc: 'IMPRES Multi-Unit Charger, US/NA Plug', note: 'IMPRES, 6-pocket, 100-240VAC, 117x445x170mm', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4561', desc: 'IMPRES Multi-Unit Charger, EU Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4562', desc: 'IMPRES Multi-Unit Charger, UK/HK Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4563', desc: 'IMPRES Multi-Unit Charger, AUS/NZ Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
@@ -212,7 +212,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'Vehicular Charger',
             items: [
-              { img: null, pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery, 133×88×88mm', checks: {impres: 1, pockets: "1", recondn: 0} },
+              { img: null, pn: 'NNTN7616', desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery, 133x88x88mm', checks: {impres: 1, pockets: "1", recondn: 0} },
             ]
           }
         ]
@@ -249,23 +249,23 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'UHF Antennas',
             items: [
-              { img: null, pn: 'PMAE4079', desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '400–527 MHz, 15cm' },
-              { img: null, pn: 'PMAE4069', desc: 'UHF/GPS Stubby Antenna', note: '403–450 MHz, 9cm' },
-              { img: null, pn: 'PMAE4070', desc: 'UHF/GPS Stubby Antenna', note: '440–490 MHz, 9cm' },
-              { img: null, pn: 'PMAE4071', desc: 'UHF/GPS Stubby Antenna', note: '470–527 MHz, 9cm' },
-              { img: null, pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400–527 MHz, 9cm' },
+              { img: null, pn: 'PMAE4079', desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '400-527 MHz, 15cm' },
+              { img: null, pn: 'PMAE4069', desc: 'UHF/GPS Stubby Antenna', note: '403-450 MHz, 9cm' },
+              { img: null, pn: 'PMAE4070', desc: 'UHF/GPS Stubby Antenna', note: '440-490 MHz, 9cm' },
+              { img: null, pn: 'PMAE4071', desc: 'UHF/GPS Stubby Antenna', note: '470-527 MHz, 9cm' },
+              { img: null, pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400-527 MHz, 9cm' },
             ]
           },
           {
             title: 'VHF Antennas',
             items: [
-              { img: null, pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136–155 MHz, 15cm' },
-              { img: null, pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144–165 MHz, 15cm' },
-              { img: null, pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152–174 MHz, 15cm' },
-              { img: null, pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136–174 MHz, 20cm' },
-              { img: null, pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136–148 MHz, 9cm' },
-              { img: null, pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146–160 MHz, 9cm' },
-              { img: null, pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160–174 MHz, 9cm' },
+              { img: null, pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136-155 MHz, 15cm' },
+              { img: null, pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144-165 MHz, 15cm' },
+              { img: null, pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152-174 MHz, 15cm' },
+              { img: null, pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136-174 MHz, 20cm' },
+              { img: null, pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136-148 MHz, 9cm' },
+              { img: null, pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146-160 MHz, 9cm' },
+              { img: null, pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160-174 MHz, 9cm' },
             ]
           },
           {
@@ -487,17 +487,17 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
+        cols: ["Part Number", "Description", "IMPRES", "Chemistry", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
         label: 'Batteries',
         icon: '',
         sections: [
           {
             title: 'IMPRES Li-Ion Batteries — R5',
             items: [
-              { img: null, pn: 'PMNN4878', desc: 'Li-Ion IP67 2400mAh Battery', note: 'IP67, -20°C to +60°C, 122×55×24mm, 144g — EMEA and APAC only', checks: {impres: 0, mah: "2400", ip: "IP67", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4888', desc: 'IMPRES Slim Li-Ion IP67 2200mAh Battery', note: 'IMPRES, IP67, -20°C to +60°C, 122×55×18mm, 120g', checks: {impres: 1, mah: "2200", ip: "IP67", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4889', desc: 'IMPRES High Capacity Li-Ion IP67 3200mAh Battery', note: 'IMPRES, IP67, -20°C to +60°C, 122×55×24mm, 148g', checks: {impres: 1, mah: "3200", ip: "IP67", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4890', desc: 'IMPRES UL High Capacity Li-Ion IP67 3200mAh Battery', note: 'IMPRES, IP67, UL HazLoc, -20°C to +60°C, 122×55×24mm, 162g', checks: {impres: 1, mah: "3200", ip: "IP67", hazloc: 'UL', temp: "\u2014"} },
+              { img: null, pn: 'PMNN4878', desc: 'Li-Ion IP67 2400mAh Battery', note: 'IP67, 122x55x24mm, 144g — EMEA and APAC only', checks: {impres: 0, chem: 'Li-Ion', mah: "2400", ip: "IP67", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4888', desc: 'IMPRES Slim Li-Ion IP67 2200mAh Battery', note: 'IP67, 122x55x18mm, 120g', checks: {impres: 1, chem: 'Li-Ion', mah: "2200", ip: "IP67", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4889', desc: 'IMPRES High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, 122x55x24mm, 148g', checks: {impres: 1, chem: 'Li-Ion', mah: "3200", ip: "IP67", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4890', desc: 'IMPRES UL High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, UL HazLoc, 122x55x24mm, 162g', checks: {impres: 1, chem: 'Li-Ion', mah: "3200", ip: "IP67", hazloc: 'UL', temp: "-20 to +60°C"} },
             ]
           }
         ]
@@ -510,7 +510,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Single-Unit Chargers',
             items: [
-              { img: null, pn: 'PMPN4527', desc: 'IMPRES Single-Unit Charger Base Only', note: 'IMPRES, Li-Ion/NiMH, 51×88×94mm', checks: {impres: 1, pockets: "1", recondn: 0} },
+              { img: null, pn: 'PMPN4527', desc: 'IMPRES Single-Unit Charger Base Only', note: 'IMPRES, Li-Ion/NiMH, 51x88x94mm', checks: {impres: 1, pockets: "1", recondn: 0} },
               { img: null, pn: 'PMPN4576', desc: 'IMPRES Single-Unit Charger, US/NA/TW Plug', note: 'IMPRES, Li-Ion/NiMH, 120VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
               { img: null, pn: 'PMPN4577', desc: 'IMPRES Single-Unit Charger, EU Plug', note: 'IMPRES, Li-Ion/NiMH, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
               { img: null, pn: 'PMPN4572', desc: 'IMPRES Single-Unit Charger, UK/HK Plug', note: 'IMPRES, Li-Ion/NiMH, 240VAC', checks: {impres: 1, pockets: "1", recondn: 0} },
@@ -524,7 +524,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'Standard Single-Unit Chargers',
             items: [
-              { img: null, pn: 'NNTN8117', desc: 'Single-Unit Charger Base Only', note: 'Li-Ion/NiMH, 26×115×114mm', checks: {impres: 0, pockets: "1", recondn: 0} },
+              { img: null, pn: 'NNTN8117', desc: 'Single-Unit Charger Base Only', note: 'Li-Ion/NiMH, 26x115x114mm', checks: {impres: 0, pockets: "1", recondn: 0} },
               { img: null, pn: 'NNTN8226', desc: 'Single-Unit Charger 1.25A, US/NA Plug', note: 'Li-Ion/NiMH, 115VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
               { img: null, pn: 'NNTN8224', desc: 'Single-Unit Charger 1.25A, China Plug', note: 'Li-Ion/NiMH, 230VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
               { img: null, pn: 'NNTN8273', desc: 'Single-Unit Charger with Switch-Mode 21W PSU, EU Plug', note: 'Li-Ion/NiMH, 240VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
@@ -535,7 +535,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Multi-Unit Chargers',
             items: [
-              { img: null, pn: 'PMPN4283', desc: 'IMPRES Multi-Unit Charger (Universal)', note: 'IMPRES, 6-pocket, 100-240VAC, 117×445×170mm', checks: {impres: 1, pockets: "6", recondn: 0} },
+              { img: null, pn: 'PMPN4283', desc: 'IMPRES Multi-Unit Charger (Universal)', note: 'IMPRES, 6-pocket, 100-240VAC, 117x445x170mm', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4284', desc: 'IMPRES Multi-Unit Charger, US/NA Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4289', desc: 'IMPRES Multi-Unit Charger, EU Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
               { img: null, pn: 'PMPN4290', desc: 'IMPRES Multi-Unit Charger, UK/HK Plug', note: 'IMPRES, 6-pocket, 100-240VAC', checks: {impres: 1, pockets: "6", recondn: 0} },
@@ -552,7 +552,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'Vehicular & Power Supply',
             items: [
-              { img: null, pn: 'NNTN7616',   desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery, 133×88×88mm' },
+              { img: null, pn: 'NNTN7616',   desc: 'IMPRES Vehicular Charger Kit', note: 'IMPRES, Li-Ion/NiMH, hard-wired to vehicle battery, 133x88x88mm' },
               { img: null, pn: 'PS000577A01', desc: 'Power Supply Adaptor AC/DC 14.5V/1.15A, US/NA/TW/JP Plug', note: '120VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
               { img: null, pn: 'PS000576A21', desc: 'Power Supply Adaptor AC/DC Fixed Blade 14.5V/1.15A, US/NA Plug', note: '120VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
               { img: null, pn: 'PS000576A02', desc: 'Power Supply Adaptor AC/DC Fixed Blade 14.5V/1.15A, EU Plug', note: '100-240VAC', checks: {impres: 0, pockets: "1", recondn: 0} },
@@ -610,23 +610,23 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'UHF Antennas',
             items: [
-              { img: null, pn: 'PMAE4079',   desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '403–527 MHz, 15cm, whip' },
-              { img: null, pn: 'PMAE4069',   desc: 'UHF/GPS Stubby Antenna', note: '403–450 MHz, 9cm, stubby' },
-              { img: null, pn: 'PMAE4070',   desc: 'UHF/GPS Stubby Antenna', note: '440–490 MHz, 9cm, stubby' },
-              { img: null, pn: 'PMAE4071',   desc: 'UHF/GPS Stubby Antenna', note: '470–527 MHz, 9cm, stubby' },
-              { img: null, pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400–527 MHz, 9cm, stubby' },
+              { img: null, pn: 'PMAE4079',   desc: 'UHF/GPS Wideband Slim Whip Antenna', note: '403-527 MHz, 15cm, whip' },
+              { img: null, pn: 'PMAE4069',   desc: 'UHF/GPS Stubby Antenna', note: '403-450 MHz, 9cm, stubby' },
+              { img: null, pn: 'PMAE4070',   desc: 'UHF/GPS Stubby Antenna', note: '440-490 MHz, 9cm, stubby' },
+              { img: null, pn: 'PMAE4071',   desc: 'UHF/GPS Stubby Antenna', note: '470-527 MHz, 9cm, stubby' },
+              { img: null, pn: 'AN000348A01', desc: 'UHF Stubby Wideband Antenna', note: '400-527 MHz, 9cm, stubby' },
             ]
           },
           {
             title: 'VHF Antennas',
             items: [
-              { img: null, pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136–155 MHz, 15cm' },
-              { img: null, pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144–165 MHz, 15cm' },
-              { img: null, pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152–174 MHz, 15cm' },
-              { img: null, pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136–174 MHz, 20cm' },
-              { img: null, pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136–148 MHz, 9cm' },
-              { img: null, pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146–160 MHz, 9cm' },
-              { img: null, pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160–174 MHz, 9cm' },
+              { img: null, pn: 'PMAD4117', desc: 'VHF/GPS Helical Antenna', note: '136-155 MHz, 15cm' },
+              { img: null, pn: 'PMAD4116', desc: 'VHF/GPS Helical Antenna', note: '144-165 MHz, 15cm' },
+              { img: null, pn: 'PMAD4118', desc: 'VHF/GPS Helical Antenna', note: '152-174 MHz, 15cm' },
+              { img: null, pn: 'PMAD4147', desc: 'VHF/GPS Wideband Slim Whip Antenna', note: '136-174 MHz, 20cm' },
+              { img: null, pn: 'PMAD4119', desc: 'VHF/GPS Stubby Antenna', note: '136-148 MHz, 9cm' },
+              { img: null, pn: 'PMAD4120', desc: 'VHF/GPS Stubby Antenna', note: '146-160 MHz, 9cm' },
+              { img: null, pn: 'PMAD4121', desc: 'VHF Stubby Antenna', note: '160-174 MHz, 9cm' },
             ]
           },
           {
@@ -802,16 +802,16 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
+        cols: ["Part Number", "Description", "IMPRES", "Chemistry", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
         label: 'Batteries',
         icon: '',
         sections: [
           {
             title: 'IMPRES 2 Li-Ion Batteries — Ion',
             items: [
-              { img: null, pn: 'PMNN4803', desc: 'IMPRES 2 Li-Ion 2820mAh IP68 Slim Battery', note: 'IP68, -20°C to +60°C, 114×69×16mm, 145g', checks: {impres: 1, mah: "2820", ip: "IP68", hazloc: 0, temp: "\u2014"} },
-              { img: null, pn: 'PMNN4804', desc: 'IMPRES 2 Li-Ion 2900mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, -20°C to +60°C, 114×69×24mm, 171g', checks: {impres: 1, mah: "2900", ip: "IP68", hazloc: 'UL', temp: "\u2014"} },
-              { img: null, pn: 'PMNN4805', desc: 'IMPRES 2 Li-Ion 4400mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, -20°C to +60°C, 114×69×27mm, 211g', checks: {impres: 1, mah: "4400", ip: "IP68", hazloc: 'UL', temp: "\u2014"} },
+              { img: null, pn: 'PMNN4803', desc: 'IMPRES 2 Li-Ion 2820mAh IP68 Slim Battery', note: 'IP68, 114x69x16mm, 145g', checks: {impres: 1, chem: 'Li-Ion', mah: "2820", ip: "IP68", hazloc: 0, temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4804', desc: 'IMPRES 2 Li-Ion 2900mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x24mm, 171g', checks: {impres: 1, chem: 'Li-Ion', mah: "2900", ip: "IP68", hazloc: 'UL', temp: "-20 to +60°C"} },
+              { img: null, pn: 'PMNN4805', desc: 'IMPRES 2 Li-Ion 4400mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x27mm, 211g', checks: {impres: 1, chem: 'Li-Ion', mah: "4400", ip: "IP68", hazloc: 'UL', temp: "-20 to +60°C"} },
             ]
           }
         ]
@@ -980,14 +980,14 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       batteries: {
-        cols: ["Part Number", "Description", "IMPRES", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
+        cols: ["Part Number", "Description", "IMPRES", "Chemistry", "Capacity", "IP Rating", "HazLoc", "Temp Range"],
         label: 'Batteries',
         icon: '',
         sections: [
           {
             title: 'ATEX/IECEx Battery',
             items: [
-              { img: null, pn: 'PMNN4848', desc: 'IMPRES Li-Ion 2150mAh IP66/IP68 ATEX Battery', note: 'ATEX/IECEx certified; R7Ex IIA: -25°C to +60°C; R7Ex IIC: -30°C to +60°C', checks: {impres: 1, mah: "2150", ip: "IP66", hazloc: 'ATEX', temp: "\u2014"} },
+              { img: null, pn: 'PMNN4848', desc: 'IMPRES Li-Ion 2150mAh IP66/IP68 ATEX Battery', note: 'ATEX/IECEx certified', checks: {impres: 1, chem: 'Li-Ion', mah: "2150", ip: "IP66", hazloc: 'ATEX', temp: "-25 to +60°C"} },
             ]
           },
         ]
