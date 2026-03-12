@@ -708,8 +708,8 @@ cables: {
               { pn: 'PMKN4117', desc: 'Programming, Test, and Alignment Cable', note: '' },
             ]
           },
-          {     
-            title: 'Miscellaneous',            title: 'Screen Protectors & Misc',
+          {
+            title: 'Screen Protectors & Misc',
             items: [
               { pn: '0104058J40', desc: 'Dust Cover', note: 'Accessory port protection' },
               { pn: 'PMLN8671',   desc: 'NFC Kit', note: '' },
