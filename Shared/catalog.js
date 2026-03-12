@@ -106,15 +106,20 @@ function renderContent() {
     const items = filterItems(sec.items);
     if (!items.length) return;
 
+    // Determine current section title for report tray itemData
+    const currentSectionTitle = sec.title;
+
     html += '<div class="acc-subsection">';
     html += '<div class="acc-subsection-title">' + sec.title + '</div>';
 
-    // Detect replacement parts sections — render as simple list, no columns
     const isReplacementSection = sec.title.toLowerCase().includes('replacement');
 
     if (!isReplacementSection && specCols.length > 0) {
 
-      // Filter out columns where no item in this section has a truthy value
+      // Determine whether any item in this section has an img value
+      const hasAnyImg = items.some(item => item.img);
+
+      // Filter out spec columns where no item in this section has a truthy value
       const activeCols = specCols.filter(col => {
         const k = COL_KEY[col];
         return items.some(item => {
@@ -124,12 +129,16 @@ function renderContent() {
         });
       });
 
-      const thCols = activeCols.map(c =>
+      // Build header: checkbox | [img] | Part Number | Description | ...specCols
+      let headerHtml = '<th class="report-cb-cell"></th>';
+      if (hasAnyImg) headerHtml += '<th class="product-img-cell"></th>';
+      headerHtml += '<th>Part Number</th><th>Description</th>';
+      headerHtml += activeCols.map(c =>
         '<th class="' + (textCols.has(c) ? '' : 'tc') + '">' + c + '</th>'
       ).join('');
 
       html += '<div class="table-wrap"><table>'
-        + '<thead><tr><th>Part Number</th><th>Description</th>' + thCols + '</tr></thead>'
+        + '<thead><tr>' + headerHtml + '</tr></thead>'
         + '<tbody>';
 
       items.forEach(item => {
@@ -138,7 +147,6 @@ function renderContent() {
           const val = (item.checks && k !== undefined) ? item.checks[k] : undefined;
           const isText = textCols.has(col);
 
-          // Special handling for UL HazLoc — show text value instead of checkmark
           if (col === 'UL HazLoc') {
             if (!val || val === 0) return '<td class="tc"><span class="dash">—</span></td>';
             const label = typeof val === 'string' ? val : 'UL';
@@ -150,7 +158,41 @@ function renderContent() {
         }).join('');
 
         const noteHtml = item.note ? '<div class="td-note">' + item.note + '</div>' : '';
+
+        // Build itemData for report tray
+        const itemData = {
+          partNum:   item.pn,
+          desc:      item.desc,
+          note:      item.note  || null,
+          category:  cat.label,
+          section:   currentSectionTitle,
+          catalog:   (typeof CATALOG_NAME !== 'undefined') ? CATALOG_NAME : (CATALOG_TITLE || ''),
+          radio:     radio.name,
+          checks:    item.checks || {},
+          img:       item.img    || null,
+        };
+
+        // Checkbox cell
+        const cbChecked = (typeof isSelected === 'function' && isSelected(item.pn)) ? 'checked' : '';
+        const cbCell = '<td class="report-cb-cell">'
+          + '<input type="checkbox" class="report-cb" value="' + item.pn + '" ' + cbChecked
+          + ' onchange="handleReportCheckbox(this,' + escapeItemData(itemData) + ')">'
+          + '</td>';
+
+        // Image cell (only rendered if section has any img)
+        let imgCell = '';
+        if (hasAnyImg) {
+          if (item.img) {
+            imgCell = '<td class="product-img-cell"><img src="' + item.img
+              + '" alt="' + item.desc.replace(/"/g, '&quot;') + '" class="product-thumb"></td>';
+          } else {
+            imgCell = '<td class="product-img-cell"><span class="no-img">—</span></td>';
+          }
+        }
+
         html += '<tr>'
+          + cbCell
+          + imgCell
           + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
           + '<td><div class="td-main">' + item.desc + '</div>' + noteHtml + '</td>'
           + specCells + '</tr>';
@@ -159,28 +201,55 @@ function renderContent() {
       html += '</tbody></table></div>';
 
     } else {
-      // Simple list — no columns
+      // Simple list — no spec columns (replacement sections or cats with no cols)
       html += '<table class="acc-table"><thead><tr>'
+        + '<th class="report-cb-cell"></th>'
         + '<th style="width:130px">Part Number</th>'
         + '<th>Description</th>'
         + '<th style="width:260px">Notes</th>'
         + '</tr></thead><tbody>';
+
       items.forEach(item => {
+        const itemData = {
+          partNum:   item.pn,
+          desc:      item.desc,
+          note:      item.note  || null,
+          category:  cat.label,
+          section:   currentSectionTitle,
+          catalog:   (typeof CATALOG_NAME !== 'undefined') ? CATALOG_NAME : (CATALOG_TITLE || ''),
+          radio:     radio.name,
+          checks:    item.checks || {},
+          img:       item.img    || null,
+        };
+
+        const cbChecked = (typeof isSelected === 'function' && isSelected(item.pn)) ? 'checked' : '';
+        const cbCell = '<td class="report-cb-cell">'
+          + '<input type="checkbox" class="report-cb" value="' + item.pn + '" ' + cbChecked
+          + ' onchange="handleReportCheckbox(this,' + escapeItemData(itemData) + ')">'
+          + '</td>';
+
         html += '<tr>'
+          + cbCell
           + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
           + '<td class="desc">' + item.desc + '</td>'
           + '<td class="note">' + (item.note || '') + '</td>'
           + '</tr>';
       });
+
       html += '</tbody></table>';
     }
 
-    html += '</div>';
+    html += '</div>'; // .acc-subsection
   });
 
-  html += '</div>';
+  html += '</div>'; // .cat-section
   panel.innerHTML = html;
   panel.parentElement.scrollTop = 0;
+}
+
+// Safely serialize itemData for inline onchange attribute
+function escapeItemData(obj) {
+  return "'" + JSON.stringify(obj).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
 }
 
 function copyPN(pn) {
@@ -229,8 +298,8 @@ function renderSubbar() {
 function highlightPN(pn) {
   if (!searchTerm || !pn.toLowerCase().includes(searchTerm)) return pn;
   const idx = pn.toLowerCase().indexOf(searchTerm);
-  return pn.slice(0, idx) 
-    + '<span class="pn-match">' + pn.slice(idx, idx + searchTerm.length) + '</span>' 
+  return pn.slice(0, idx)
+    + '<span class="pn-match">' + pn.slice(idx, idx + searchTerm.length) + '</span>'
     + pn.slice(idx + searchTerm.length);
 }
 
