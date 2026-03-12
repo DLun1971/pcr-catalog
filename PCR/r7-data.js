@@ -722,6 +722,7 @@ cables: {
     }
   },
 
+  'ion': {
   ion': {
     name: 'MOTOTRBO Ion',
     sub: 'Android Smart Radio',
