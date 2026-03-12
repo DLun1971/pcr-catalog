@@ -103,54 +103,78 @@ function renderContent() {
     + '</div>';
 
   cat.sections.forEach(sec => {
-const items = filterItems(sec.items);
+    const items = filterItems(sec.items);
     if (!items.length) return;
+
     html += '<div class="acc-subsection">';
     html += '<div class="acc-subsection-title">' + sec.title + '</div>';
 
-    if (specCols.length > 0) {
-      const thCols = specCols.map(c =>
+    // Detect replacement parts sections — render as simple list, no columns
+    const isReplacementSection = sec.title.toLowerCase().includes('replacement');
+
+    if (!isReplacementSection && specCols.length > 0) {
+
+      // Filter out columns where no item in this section has a truthy value
+      const activeCols = specCols.filter(col => {
+        const k = COL_KEY[col];
+        return items.some(item => {
+          if (!item.checks || k === undefined) return false;
+          const v = item.checks[k];
+          return v !== undefined && v !== 0 && v !== false && v !== '—' && v !== null;
+        });
+      });
+
+      const thCols = activeCols.map(c =>
         '<th class="' + (textCols.has(c) ? '' : 'tc') + '">' + c + '</th>'
       ).join('');
+
       html += '<div class="table-wrap"><table>'
         + '<thead><tr><th>Part Number</th><th>Description</th>' + thCols + '</tr></thead>'
         + '<tbody>';
 
       items.forEach(item => {
-        const specCells = specCols.map(col => {
+        const specCells = activeCols.map(col => {
           const k = COL_KEY[col];
           const val = (item.checks && k !== undefined) ? item.checks[k] : undefined;
           const isText = textCols.has(col);
+
+          // Special handling for UL HazLoc — show text value instead of checkmark
+          if (col === 'UL HazLoc') {
+            if (!val || val === 0) return '<td class="tc"><span class="dash">—</span></td>';
+            const label = typeof val === 'string' ? val : 'UL';
+            return '<td class="tc"><span style="font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted)">' + label + '</span></td>';
+          }
+
           if (isText) return '<td style="font-size:12px;color:var(--text2)">' + ck(val) + '</td>';
           return '<td class="tc">' + ck(val !== undefined ? val : 0) + '</td>';
         }).join('');
 
         const noteHtml = item.note ? '<div class="td-note">' + item.note + '</div>' : '';
         html += '<tr>'
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+ highlightPN(item.pn) +'</span></td>'
+          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
           + '<td><div class="td-main">' + item.desc + '</div>' + noteHtml + '</td>'
           + specCells + '</tr>';
       });
+
       html += '</tbody></table></div>';
 
     } else {
+      // Simple list — no columns
       html += '<table class="acc-table"><thead><tr>'
         + '<th style="width:130px">Part Number</th>'
         + '<th>Description</th>'
         + '<th style="width:260px">Notes</th>'
-        + '<th style="width:110px">Badges</th>'
         + '</tr></thead><tbody>';
       items.forEach(item => {
-        const badges = getBadges(item);
         html += '<tr>'
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+ highlightPN(item.pn) +'</span></td>'
+          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
           + '<td class="desc">' + item.desc + '</td>'
           + '<td class="note">' + (item.note || '') + '</td>'
-          + '<td class="badge-cell">' + badges + '</td>'
           + '</tr>';
       });
       html += '</tbody></table>';
     }
+
     html += '</div>';
   });
 
