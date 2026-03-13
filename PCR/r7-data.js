@@ -7,7 +7,7 @@ var RADIOS_DATA = {'r7': {
     tagStyles: ['', 'green', 'orange', '', ''],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "InAud", "Wndprt", "SmartSW", "ProgBtn", "Jck", "IP", "HazLoc", "Dims"],
+        cols: ["Part Number", "Description", "IMPRES", "InAud", "Wndprt", "SmartSW", "ProgBtn", "Jack", "IP", "HazLoc", "Dims"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -368,7 +368,7 @@ var RADIOS_DATA = {'r7': {
     tagStyles: ['', 'green', 'orange', '', 'purple'],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "InAud", "Wndprt", "FulDpx", "Vol Steps", "ProgBtn", "Jck", "IP", "HazLoc", "Dims"],
+        cols: ["Part Number", "Description", "IMPRES", "InAud", "Wndprt", "FulDpx", "Vol Steps", "ProgBtn", "Jack", "IP", "HazLoc", "Dims"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -725,7 +725,7 @@ var RADIOS_DATA = {'r7': {
     tagStyles: ['orange', 'orange', 'green', '', 'green'],
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "InAud", "AINS", "Wndprt", "WWet", "Vol Steps", "ProgBtn", "Jck", "IP", "HazLoc"],
+        cols: ["Part Number", "Description", "IMPRES", "InAud", "AINS", "Wndprt", "WWet", "Vol Steps", "ProgBtn", "Jack", "IP", "HazLoc"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
@@ -965,7 +965,7 @@ var RADIOS_DATA = {'r7': {
     discontinued: false,
     categories: {
       rsm: {
-        cols: ["Part Number", "Description", "IMPRES", "ANC", "Front PTT", "Side PTT", "Jck", "IP", "HazLoc"],
+        cols: ["Part Number", "Description", "IMPRES", "ANC", "Front PTT", "Side PTT", "Jack", "IP", "HazLoc"],
         label: 'Remote Speaker Mics',
         icon: '',
         sections: [
