@@ -272,23 +272,23 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'R7 Hard Cases',
             items: [
-              { img: null, pn: 'PMLN8299', desc: 'Hard Carry Case, Small', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'PMLN8300', desc: 'Hard Carry Case, Medium', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'PMLN8301', desc: 'Hard Carry Case, Large', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'PMLN8302', desc: 'Hard Carry Case with Display, Small', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'PMLN8303', desc: 'Hard Carry Case with Display, Medium', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'PMLN8304', desc: 'Hard Carry Case with Display, Large', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'—', swivel:0 } },
+              { img: null, pn: 'PMLN8299', desc: 'Hard Carry Case, Small', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'PMLN8300', desc: 'Hard Carry Case, Medium', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'PMLN8301', desc: 'Hard Carry Case, Large', note: 'R7 hard case', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'PMLN8302', desc: 'Hard Carry Case with Display, Small', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'PMLN8303', desc: 'Hard Carry Case with Display, Medium', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'PMLN8304', desc: 'Hard Carry Case with Display, Large', note: 'R7 hard case, display model', checks: { style:'Case', material:'Hard', belt_sz:'-', swivel:0 } },
             ]
           },
           {
             title: 'Screen Protectors & Misc Carry',
             items: [
-              { img: null, pn: 'AY000808A01', desc: 'Screen Protector (3/pack)', note: 'R7 screen protector', checks: { style:'Accessory', material:'—', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'AY000808A02', desc: 'Screen Protector with Wipes (3/pack)', note: 'R7 screen protector with cleaning wipes', checks: { style:'Accessory', material:'—', belt_sz:'—', swivel:0 } },
-              { img: null, pn: 'AY000808A03', desc: 'Privacy Screen Protector (3/pack)', note: 'R7 privacy screen protector', checks: { style:'Accessory', material:'—', belt_sz:'—', swivel:0 } },
+              { img: null, pn: 'AY000808A01', desc: 'Screen Protector (3/pack)', note: 'R7 screen protector', checks: { style:'Accessory', material:'-', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'AY000808A02', desc: 'Screen Protector with Wipes (3/pack)', note: 'R7 screen protector with cleaning wipes', checks: { style:'Accessory', material:'-', belt_sz:'-', swivel:0 } },
+              { img: null, pn: 'AY000808A03', desc: 'Privacy Screen Protector (3/pack)', note: 'R7 privacy screen protector', checks: { style:'Accessory', material:'-', belt_sz:'-', swivel:0 } },
               { img: null, pn: 'HLN6602', desc: 'Replacement Belt Loop, 2-inch', note: 'Replacement belt loop for carry solutions', checks: { style:'Accessory', material:'Nylon', belt_sz:'2"', swivel:0 } },
               { img: null, pn: 'PMLN6074', desc: 'Replacement Belt Loop, 2.5-inch', note: 'Replacement belt loop for carry solutions', checks: { style:'Accessory', material:'Nylon', belt_sz:'2.5"', swivel:0 } },
-              { img: null, pn: 'PMHN4429', desc: 'Replacement Swivel, Spring Action', note: 'Replacement spring-action swivel for holsters', checks: { style:'Accessory', material:'Metal', belt_sz:'—', swivel:1 } },
+              { img: null, pn: 'PMHN4429', desc: 'Replacement Swivel, Spring Action', note: 'Replacement spring-action swivel for holsters', checks: { style:'Accessory', material:'Metal', belt_sz:'-', swivel:1 } },
             ]
           },
         ]
@@ -1190,7 +1190,6 @@ const RADIOS_DATA = {'r7': {
   }
 };
 const RADIOS = RADIOS_DATA;
-
 
 
 
