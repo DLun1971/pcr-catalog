@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCR Professional Tier — Accessory Catalog</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #003087;
+    --accent-light: #e8f0fb;
+    --accent-mid: #1a4fa0;
+    --white: #ffffff;
+    --gray-50: #f8f9fa;
+    --gray-100: #f0f2f5;
+    --gray-200: #e1e4e8;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
+    --red: #dc2626;
+    --green: #16a34a;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.12);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,.18);
+    --radius: 6px;
+    --nav-h: 56px;
+    --footer-h: 48px;
+    --sidebar-w: 220px;
+    --drawer-w: 380px;
+  }
+  html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; color: var(--gray-800); background: var(--gray-100); }
+  #topnav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: var(--accent); color: var(--white); display: flex; align-items: center; padding: 0 16px; gap: 12px; z-index: 200; box-shadow: var(--shadow-md); }
+  #topnav .logo { height: 28px; }
+  #topnav .title { font-size: 15px; font-weight: 600; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #topnav .nav-actions { display: flex; align-items: center; gap: 8px; }
+  .view-toggle { display: flex; background: rgba(255,255,255,.15); border-radius: var(--radius); overflow: hidden; }
+  .view-toggle button { border: none; background: transparent; color: rgba(255,255,255,.75); padding: 6px 14px; cursor: pointer; font-size: 13px; font-weight: 500; transition: background .15s, color .15s; }
+  .view-toggle button.active { background: rgba(255,255,255,.25); color: var(--white); }
+  #btn-report { position: relative; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3); color: var(--white); padding: 6px 14px; border-radius: var(--radius); cursor: pointer; font-size: 13px; font-weight: 500; transition: background .15s; }
+  #btn-report:hover { background: rgba(255,255,255,.28); }
+  #report-badge { display: none; position: absolute; top: -6px; right: -6px; background: var(--red); color: var(--white); font-size: 10px; font-weight: 700; min-width: 18px; height: 18px; border-radius: 9px; align-items: center; justify-content: center; padding: 0 4px; }
+  #report-badge.visible { display: flex; }
+  #shell { display: flex; padding-top: var(--nav-h); height: 100%; transition: padding-right .25s; }
+  #shell.drawer-open { padding-right: var(--drawer-w); }
+  #sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--white); border-right: 1px solid var(--gray-200); display: flex; flex-direction: column; position: fixed; top: var(--nav-h); bottom: var(--footer-h); left: 0; overflow-y: auto; z-index: 100; }
+  #radio-strip { border-bottom: 1px solid var(--gray-200); padding: 10px 8px; }
+  .strip-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-400); margin-bottom: 6px; padding: 0 4px; }
+  .radio-btn { display: block; width: 100%; text-align: left; padding: 7px 10px; border: none; background: transparent; border-radius: var(--radius); cursor: pointer; font-size: 13px; color: var(--gray-600); font-weight: 500; transition: background .12s, color .12s; }
+  .radio-btn:hover { background: var(--gray-100); color: var(--gray-800); }
+  .radio-btn.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
+  #cat-nav { flex: 1; padding: 10px 8px; }
+  .cat-btn { display: block; width: 100%; text-align: left; padding: 6px 10px; border: none; background: transparent; border-radius: var(--radius); cursor: pointer; font-size: 13px; color: var(--gray-600); transition: background .12s, color .12s; }
+  .cat-btn:hover { background: var(--gray-100); color: var(--gray-800); }
+  .cat-btn.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
+  #main { margin-left: var(--sidebar-w); flex: 1; padding: 20px; overflow-y: auto; padding-bottom: calc(var(--footer-h) + 20px); }
+  #search-bar { display: flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 8px 12px; margin-bottom: 16px; box-shadow: var(--shadow-sm); }
+  #search-bar input { border: none; outline: none; flex: 1; font-size: 14px; color: var(--gray-800); background: transparent; }
+  #search-clear { border: none; background: none; cursor: pointer; color: var(--gray-400); font-size: 16px; display: none; }
+  #search-clear.visible { display: block; }
+  .section-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .section-header h2 { font-size: 16px; font-weight: 700; color: var(--gray-800); }
+  .section-header .count { font-size: 12px; color: var(--gray-400); }
+  .acc-table-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow-x: auto; margin-bottom: 24px; }
+  table.acc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.acc-table thead tr { background: var(--gray-50); border-bottom: 2px solid var(--gray-200); }
+  table.acc-table th { padding: 9px 10px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--gray-600); white-space: nowrap; }
+  table.acc-table th.check-col { width: 36px; text-align: center; }
+  table.acc-table td { padding: 8px 10px; border-bottom: 1px solid var(--gray-200); vertical-align: middle; }
+  table.acc-table tr:last-child td { border-bottom: none; }
+  table.acc-table tbody tr:hover { background: var(--gray-50); }
+  table.acc-table tbody tr.selected { background: var(--accent-light); }
+  .part-no { font-family: 'SF Mono','Consolas',monospace; font-size: 12px; color: var(--accent); cursor: pointer; white-space: nowrap; }
+  .part-no:hover { text-decoration: underline; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-right: 2px; white-space: nowrap; }
+  .badge-impres { background: #dbeafe; color: #1d4ed8; }
+  .badge-ip68 { background: #d1fae5; color: #065f46; }
+  .badge-ip67 { background: #d1fae5; color: #065f46; }
+  .badge-ip54 { background: #fef9c3; color: #854d0e; }
+  .badge-ul { background: #fce7f3; color: #9d174d; }
+  .badge-bt { background: #ede9fe; color: #5b21b6; }
+  .badge-atex { background: #ffedd5; color: #9a3412; }
+  .badge-note { background: var(--gray-100); color: var(--gray-600); font-weight: 400; font-size: 11px; max-width: 260px; white-space: normal; }
+  td.check-col { text-align: center; }
+  input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent); }
+  .chk { color: var(--green); font-size: 14px; }
+  .dash { color: var(--gray-400); font-size: 14px; }
+  #view-matrix { display: none; }
+  #view-matrix.active { display: block; }
+  #view-radio { display: none; }
+  #view-radio.active { display: block; }
+  table.matrix-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table.matrix-table th { padding: 8px 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--gray-600); background: var(--gray-50); border-bottom: 2px solid var(--gray-200); white-space: nowrap; text-align: center; }
+  table.matrix-table th.left { text-align: left; min-width: 180px; }
+  table.matrix-table td { padding: 7px 6px; border-bottom: 1px solid var(--gray-200); text-align: center; vertical-align: middle; }
+  table.matrix-table td.left { text-align: left; }
+  table.matrix-table tbody tr:hover { background: var(--gray-50); }
+  #drawer { position: fixed; top: var(--nav-h); right: 0; bottom: var(--footer-h); width: var(--drawer-w); background: var(--white); border-left: 1px solid var(--gray-200); box-shadow: var(--shadow-lg); transform: translateX(100%); transition: transform .25s ease; display: flex; flex-direction: column; z-index: 150; }
+  #drawer.open { transform: translateX(0); }
+  #drawer-header { padding: 14px 16px; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; }
+  #drawer-header h3 { font-size: 15px; font-weight: 700; }
+  #btn-drawer-close { border: none; background: none; cursor: pointer; font-size: 20px; color: var(--gray-400); line-height: 1; }
+  #drawer-body { flex: 1; overflow-y: auto; padding: 12px; }
+  .drawer-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 8px; background: var(--gray-50); }
+  .drawer-item-img-placeholder { width: 48px; height: 48px; background: var(--gray-200); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 18px; }
+  .drawer-item-info { flex: 1; min-width: 0; }
+  .drawer-item-pn { font-family: 'SF Mono','Consolas',monospace; font-size: 12px; color: var(--accent); font-weight: 600; }
+  .drawer-item-desc { font-size: 13px; color: var(--gray-800); margin-top: 2px; }
+  .drawer-item-remove { border: none; background: none; cursor: pointer; color: var(--gray-400); font-size: 16px; padding: 0 4px; }
+  .drawer-item-remove:hover { color: var(--red); }
+  #drawer-footer { padding: 12px 16px; border-top: 1px solid var(--gray-200); display: flex; gap: 8px; }
+  #btn-export-pdf { flex: 1; background: var(--accent); color: var(--white); border: none; padding: 10px; border-radius: var(--radius); cursor: pointer; font-size: 14px; font-weight: 600; }
+  #btn-export-pdf:hover { background: var(--accent-mid); }
+  #btn-clear-report { background: var(--gray-100); color: var(--gray-600); border: none; padding: 10px 14px; border-radius: var(--radius); cursor: pointer; font-size: 14px; }
+  #drawer-empty { text-align: center; color: var(--gray-400); padding: 40px 20px; font-size: 14px; }
+  #footer-bar { position: fixed; bottom: 0; left: 0; right: 0; height: var(--footer-h); background: var(--white); border-top: 1px solid var(--gray-200); display: flex; align-items: center; padding: 0 16px; gap: 12px; z-index: 200; box-shadow: 0 -2px 8px rgba(0,0,0,.06); transform: translateY(100%); transition: transform .2s; }
+  #footer-bar.visible { transform: translateY(0); }
+  #footer-count { font-size: 13px; color: var(--gray-600); }
+  #footer-count strong { color: var(--accent); }
+  #btn-footer-report { background: var(--accent); color: var(--white); border: none; padding: 7px 16px; border-radius: var(--radius); cursor: pointer; font-size: 13px; font-weight: 600; margin-left: auto; }
+  #btn-footer-clear { background: none; border: none; cursor: pointer; color: var(--gray-400); font-size: 13px; padding: 4px 8px; }
+  #toast { position: fixed; bottom: calc(var(--footer-h) + 12px); left: 50%; transform: translateX(-50%) translateY(20px); background: var(--gray-800); color: var(--white); padding: 8px 16px; border-radius: 20px; font-size: 13px; opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none; z-index: 300; white-space: nowrap; }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .no-results { text-align: center; color: var(--gray-400); padding: 40px; font-size: 14px; }
+</style>
+</head>
+<body>
+<nav id="topnav">
+  <img class="logo" src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" alt="Motorola Solutions">
+  <span class="title">PCR Professional Tier — Accessory Catalog</span>
+  <div class="nav-actions">
+    <div class="view-toggle">
+      <button id="btn-view-radio" class="active" onclick="setView('radio')">By Radio</button>
+      <button id="btn-view-matrix" onclick="setView('matrix')">Full Matrix</button>
+    </div>
+    <button id="btn-report" onclick="toggleDrawer()">
+      Report
+      <span id="report-badge">0</span>
+    </button>
+  </div>
+</nav>
+<div id="shell">
+  <aside id="sidebar">
+    <div id="radio-strip">
+      <div class="strip-label">Radio Model</div>
+      <div id="radio-buttons"></div>
+    </div>
+    <div id="cat-nav">
+      <div class="strip-label">Category</div>
+      <div id="cat-buttons"></div>
+    </div>
+  </aside>
+  <main id="main">
+    <div id="search-bar">
+      <span style="color:var(--gray-400)">&#128269;</span>
+      <input id="search-input" type="text" placeholder="Search part number or description..." oninput="onSearch(this.value)">
+      <button id="search-clear" onclick="clearSearch()">&#10005;</button>
+    </div>
+    <div id="view-radio" class="active">
+      <div class="section-header">
+        <h2 id="section-title">Select a radio</h2>
+        <span id="section-count" class="count"></span>
+      </div>
+      <div id="acc-table-container"></div>
+    </div>
+    <div id="view-matrix">
+      <div class="section-header">
+        <h2>Full Compatibility Matrix</h2>
+        <span id="matrix-count" class="count"></span>
+      </div>
+      <div id="matrix-cat-filter" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;"></div>
+      <div class="acc-table-wrap"><div id="matrix-container"></div></div>
+    </div>
+  </main>
+</div>
+<div id="drawer">
+  <div id="drawer-header">
+    <h3>Report List</h3>
+    <button id="btn-drawer-close" onclick="toggleDrawer()">&#10005;</button>
+  </div>
+  <div id="drawer-body">
+    <div id="drawer-empty">No items selected.<br>Check boxes next to accessories to add them.</div>
+    <div id="drawer-items"></div>
+  </div>
+  <div id="drawer-footer">
+    <button id="btn-clear-report" onclick="clearReport()">Clear</button>
+    <button id="btn-export-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+</div>
+<div id="footer-bar">
+  <span id="footer-count"><strong id="footer-num">0</strong> items selected</span>
+  <button id="btn-footer-clear" onclick="clearReport()">Clear</button>
+  <button id="btn-footer-report" onclick="toggleDrawer()">View Report &#8594;</button>
+</div>
+<div id="toast"></div>
+<script src="data/r7-data.js?v=1"></script>
+<script>
+const state = { view:'radio', radio:null, cat:null, search:'', report:new Map(), matrixCat:null };
+const RADIOS = [
+  {key:'R7',      label:'R7',       dataVar:'R7_DATA'},
+  {key:'Ion',     label:'Ion',      dataVar:'ION_DATA'},
+  {key:'R5',      label:'R5',       dataVar:'R5_DATA'},
+  {key:'R7Ex',    label:'R7Ex',     dataVar:'R7EX_DATA'},
+  {key:'XPR7550e',label:'XPR 7550e',dataVar:'XPR7550E_DATA'},
+  {key:'XPR6550', label:'XPR 6550', dataVar:'XPR6550_DATA'},
+  {key:'XPR3500e',label:'XPR 3500e',dataVar:'XPR3500E_DATA'},
+  {key:'XPR3300e',label:'XPR 3300e',dataVar:'XPR3300E_DATA'},
+];
+const COL_LABELS = {pn:'Part No.',desc:'Description',iprating:'IP',ul:'UL',impres:'IMPRES',impres2:'IMPRES 2',bt:'BT',atex:'ATEX',nrr:'NRR',wires:'Wires',pockets:'Pockets',capacity:'Capacity',dims:'Dims',jack:'Jack',ains:'AINS',wwet:'WWet',smartsw:'SmartSW',ambient:'Ambient',progbtn:'ProgBtn',volsteps:'VolSteps',inaud:'InAud',notes:'Notes'};
+const TEXT_VALUE_COLS = new Set(['pn','desc','iprating','nrr','wires','pockets','capacity','dims','jack','notes']);
+document.addEventListener('DOMContentLoaded',()=>{
+  buildRadioStrip();
+  const first = RADIOS.find(r=>window[r.dataVar]);
+  if(first) selectRadio(first.key);
+});
+function buildRadioStrip(){
+  const el=document.getElementById('radio-buttons'); el.innerHTML='';
+  RADIOS.forEach(r=>{
+    const avail=!!window[r.dataVar];
+    const btn=document.createElement('button');
+    btn.className='radio-btn'; btn.textContent=r.label;
+    btn.disabled=!avail; btn.style.opacity=avail?'1':'0.4';
+    btn.onclick=()=>selectRadio(r.key); btn.dataset.radio=r.key;
+    el.appendChild(btn);
+  });
+}
+function selectRadio(key){
+  state.radio=key; state.cat=null;
+  document.querySelectorAll('.radio-btn').forEach(b=>b.classList.toggle('active',b.dataset.radio===key));
+  buildCatNav(key);
+  const data=getRadioData(key);
+  if(data&&data.length>0) selectCat(data[0].cat);
+}
+function buildCatNav(k){
+  const data=getRadioData(k); const el=document.getElementById('cat-buttons'); el.innerHTML='';
+  if(!data) return;
+  data.forEach(s=>{
+    const btn=document.createElement('button'); btn.className='cat-btn';
+    btn.textContent=s.cat; btn.dataset.cat=s.cat;
+    btn.onclick=()=>selectCat(s.cat); el.appendChild(btn);
+  });
+}
+function selectCat(cat){
+  state.cat=cat;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+  renderTable();
+}
+function getRadioData(key){ const r=RADIOS.find(r=>r.key===key); return r?window[r.dataVar]:null; }
+function getCurrentSection(){ const data=getRadioData(state.radio); if(!data) return null; return data.find(s=>s.cat===state.cat)||null; }
+function filterItems(items){ if(!state.search) return items; const q=state.search.toLowerCase(); return items.filter(i=>(i.pn&&i.pn.toLowerCase().includes(q))||(i.desc&&i.desc.toLowerCase().includes(q))); }
+function renderTable(){
+  const section=getCurrentSection();
+  const container=document.getElementById('acc-table-container');
+  const title=document.getElementById('section-title');
+  const countEl=document.getElementById('section-count');
+  if(!section){ container.innerHTML='<div class="no-results">No data available.</div>'; title.textContent=state.cat||'Select a category'; countEl.textContent=''; return; }
+  title.textContent=section.cat;
+  const cols=section.cols||[];
+  const items=filterItems(section.items||[]);
+  countEl.textContent=items.length+' item'+(items.length!==1?'s':'');
+  if(items.length===0){ container.innerHTML='<div class="no-results">No items match your search.</div>'; return; }
+  let h='<div class="acc-table-wrap"><table class="acc-table"><thead><tr><th class="check-col"><input type="checkbox" id="chk-all" onchange="toggleAll(this)"></th>';
+  cols.forEach(c=>{ h+='<th>'+(COL_LABELS[c]||c)+'</th>'; });
+  h+='<th></th></tr></thead><tbody>';
+  items.forEach(item=>{
+    const chkd=state.report.has(item.pn)?' checked':'';
+    const sel=state.report.has(item.pn)?' selected':'';
+    const itemJson=JSON.stringify(item).replace(/\/g,'\\').replace(/"/g,'&quot;');
+    h+='<tr class="acc-row'+sel+'" data-pn="'+esc(item.pn)+'"><td class="check-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent(''+encodeURIComponent(JSON.stringify(item))+'')))"'+chkd+'></td>';
+    cols.forEach(c=>{
+      const val=item[c];
+      if(c==='pn'){ h+='<td><span class="part-no" onclick="copyPN(''+esc(item.pn)+'')">'+esc(item.pn)+'</span></td>'; }
+      else if(c==='desc'){ h+='<td>'+esc(val||'')+'</td>'; }
+      else if(c==='iprating'&&val){ const cls=String(val).toLowerCase().replace(/[^a-z0-9]/g,''); h+='<td><span class="badge badge-'+cls+'">'+esc(val)+'</span></td>'; }
+      else if(c==='notes'&&val){ h+='<td><span class="badge badge-note">'+esc(val)+'</span></td>'; }
+      else if(TEXT_VALUE_COLS.has(c)){ h+='<td>'+esc(val!=null?String(val):'')+'</td>'; }
+      else{ if(val&&val!==0&&val!=='0'&&val!==false){ const d=(val===1||val===true||val==='1')?'&#10003;':esc(String(val)); h+='<td class="chk">'+d+'</td>'; }else{ h+='<td class="dash">&#8211;</td>'; } }
+    });
+    h+='<td></td></tr>';
+  });
+  h+='</tbody></table></div>';
+  container.innerHTML=h;
+  const allChk=document.getElementById('chk-all');
+  if(allChk){ const ac=items.every(i=>state.report.has(i.pn)); allChk.checked=ac&&items.length>0; allChk.indeterminate=!ac&&items.some(i=>state.report.has(i.pn)); }
+}
+function toggleItem(chk,item){
+  if(chk.checked) state.report.set(item.pn,item); else state.report.delete(item.pn);
+  const row=chk.closest('tr'); if(row) row.classList.toggle('selected',chk.checked);
+  updateReportUI();
+}
+function toggleAll(chk){
+  const section=getCurrentSection(); if(!section) return;
+  const items=filterItems(section.items||[]);
+  items.forEach(item=>{ if(chk.checked) state.report.set(item.pn,item); else state.report.delete(item.pn); });
+  renderTable(); updateReportUI();
+}
+function updateReportUI(){
+  const count=state.report.size;
+  const badge=document.getElementById('report-badge'); badge.textContent=count; badge.classList.toggle('visible',count>0);
+  const footer=document.getElementById('footer-bar'); footer.classList.toggle('visible',count>0);
+  document.getElementById('footer-num').textContent=count;
+  renderDrawerItems();
+}
+function renderDrawerItems(){
+  const container=document.getElementById('drawer-items'); const empty=document.getElementById('drawer-empty');
+  const items=Array.from(state.report.values());
+  if(items.length===0){ container.innerHTML=''; empty.style.display=''; return; }
+  empty.style.display='none';
+  container.innerHTML=items.map(item=>'<div class="drawer-item"><div class="drawer-item-img-placeholder">&#128230;</div><div class="drawer-item-info"><div class="drawer-item-pn">'+esc(item.pn)+'</div><div class="drawer-item-desc">'+esc(item.desc||'')+'</div></div><button class="drawer-item-remove" onclick="removeFromReport(''+esc(item.pn)+'')">&#10005;</button></div>').join('');
+}
+function removeFromReport(pn){
+  state.report.delete(pn);
+  const row=document.querySelector('.acc-row[data-pn="'+pn+'"]');
+  if(row){ row.classList.remove('selected'); const chk=row.querySelector('input[type=checkbox]'); if(chk) chk.checked=false; }
+  updateReportUI();
+}
+function clearReport(){
+  state.report.clear();
+  document.querySelectorAll('.acc-row').forEach(r=>{ r.classList.remove('selected'); const chk=r.querySelector('input[type=checkbox]'); if(chk) chk.checked=false; });
+  updateReportUI();
+}
+function toggleDrawer(){
+  const drawer=document.getElementById('drawer'); const shell=document.getElementById('shell');
+  const open=drawer.classList.toggle('open'); shell.classList.toggle('drawer-open',open);
+}
+function setView(v){
+  state.view=v;
+  document.getElementById('view-radio').classList.toggle('active',v==='radio');
+  document.getElementById('view-matrix').classList.toggle('active',v==='matrix');
+  document.getElementById('btn-view-radio').classList.toggle('active',v==='radio');
+  document.getElementById('btn-view-matrix').classList.toggle('active',v==='matrix');
+  if(v==='matrix') renderMatrix();
+}
+function renderMatrix(){
+  const container=document.getElementById('matrix-container');
+  const avail=RADIOS.filter(r=>window[r.dataVar]);
+  const allItems=new Map();
+  avail.forEach(r=>{
+    const data=window[r.dataVar]||[];
+    data.forEach(section=>{
+      if(state.matrixCat&&section.cat!==state.matrixCat) return;
+      (section.items||[]).forEach(item=>{
+        if(!allItems.has(item.pn)) allItems.set(item.pn,{...item,_radios:new Set()});
+        allItems.get(item.pn)._radios.add(r.key);
+      });
+    });
+  });
+  const items=Array.from(allItems.values());
+  document.getElementById('matrix-count').textContent=items.length+' accessories';
+  const allCats=new Set(); avail.forEach(r=>(window[r.dataVar]||[]).forEach(s=>allCats.add(s.cat)));
+  document.getElementById('matrix-cat-filter').innerHTML=['All',...allCats].map(cat=>'<button class="cat-btn'+((!state.matrixCat&&cat==='All')||state.matrixCat===cat?' active':'')+'" onclick="setMatrixCat(''+(cat==='All'?'':cat)+'')">'+cat+'</button>').join('');
+  let h='<table class="matrix-table"><thead><tr><th class="check-col left" style="width:36px"></th><th class="left">Part No.</th><th class="left" style="min-width:200px">Description</th>';
+  avail.forEach(r=>{ h+='<th>'+r.label+'</th>'; });
+  h+='</tr></thead><tbody>';
+  if(items.length===0){ h+='<tr><td colspan="'+(3+avail.length)+'" class="no-results">No accessories found.</td></tr>'; }
+  else { items.forEach(item=>{
+    const chkd=state.report.has(item.pn)?' checked':''; const sel=state.report.has(item.pn)?' selected':'';
+    h+='<tr class="acc-row'+sel+'" data-pn="'+esc(item.pn)+'"><td class="check-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent(''+encodeURIComponent(JSON.stringify(item))+'')))"'+chkd+'></td><td class="left"><span class="part-no" onclick="copyPN(''+esc(item.pn)+'')">'+esc(item.pn)+'</span></td><td class="left">'+esc(item.desc||'')+'</td>';
+    avail.forEach(r=>{ h+=item._radios.has(r.key)?'<td class="chk">&#10003;</td>':'<td class="dash">&#8211;</td>'; });
+    h+='</tr>';
+  }); }
+  h+='</tbody></table>'; container.innerHTML=h;
+}
+function setMatrixCat(cat){ state.matrixCat=cat||null; renderMatrix(); }
+function onSearch(val){ state.search=val.trim(); document.getElementById('search-clear').classList.toggle('visible',!!state.search); if(state.view==='radio') renderTable(); else renderMatrix(); }
+function clearSearch(){ state.search=''; document.getElementById('search-input').value=''; document.getElementById('search-clear').classList.remove('visible'); if(state.view==='radio') renderTable(); else renderMatrix(); }
+function copyPN(pn){ navigator.clipboard.writeText(pn).then(()=>showToast('Copied: '+pn)); }
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
+function exportPDF(){
+  if(state.report.size===0){ showToast('No items to export'); return; }
+  const items=Array.from(state.report.values());
+  let h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Accessory Report</title><style>body{font-family:sans-serif;font-size:13px;padding:32px;color:#1f2937}h1{font-size:18px;margin-bottom:4px}.sub{color:#6b7280;margin-bottom:24px;font-size:12px}.item{display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #e5e7eb}.img{width:56px;height:56px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:4px;flex-shrink:0}.pn{font-family:monospace;font-size:13px;color:#003087;font-weight:600}.desc{font-size:13px;margin-top:3px}</style></head><body><h1>Motorola Solutions Accessory Report</h1><div class="sub">Generated '+new Date().toLocaleDateString()+' &middot; '+items.length+' item'+(items.length!==1?'s':'')+'</div>';
+  items.forEach(item=>{ h+='<div class="item"><div class="img"></div><div><div class="pn">'+esc(item.pn)+'</div><div class="desc">'+esc(item.desc||'')+'</div></div></div>'; });
+  h+='</body></html>';
+  const w=window.open('','_blank'); w.document.write(h); w.document.close(); setTimeout(()=>w.print(),300);
+}
+function esc(str){ return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+</script>
+</body>
+</html>
