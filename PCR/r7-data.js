@@ -261,10 +261,14 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'RLN6486',  desc: 'Leather Radio Strap', note: 'Standard length', checks: { style:'Strap', material:'Leather', belt_sz:'-', swivel:0 } },
               { img: null, pn: 'RLN6487',  desc: 'Leather Radio Strap - XL', note: 'Extended length', checks: { style:'Strap', material:'Leather', belt_sz:'-', swivel:0 } },
               { img: null, pn: 'RLN6488',  desc: 'Anti-Sway Strap for Leather Radio Straps', note: 'Accessory for RLN6486/RLN6487', checks: { style:'Strap', material:'Leather', belt_sz:'-', swivel:0 } },
-            ]
-          },
         ]
       },
+        ]
+      },
+      hardcases: {
+        label: 'Hard Cases',
+        cols: ["Part Number","Description","Style","Material"],
+        groups: [
           {
             title: 'R7 Hard Cases',
             items: [
@@ -1185,5 +1189,6 @@ const RADIOS_DATA = {'r7': {
   }
 };
 const RADIOS = RADIOS_DATA;
+
 
 
