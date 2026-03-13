@@ -875,8 +875,7 @@ const RADIOS_DATA = {'r7': {
         ]
       },
       chargers: {
-        cols: ["Part Number", "Description", "IMPRES", "Pockets", "Voltage", "Chemistry"],
-        label: 'Chargers',
+      label: 'Chargers',
         icon: '',
         cols: ['Part Number','Description','IMPRES','Pockets','Voltage','Chemistry'],
         sections: [
@@ -1190,6 +1189,7 @@ const RADIOS_DATA = {'r7': {
   }
 };
 const RADIOS = RADIOS_DATA;
+
 
 
 
