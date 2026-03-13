@@ -291,7 +291,8 @@ const RADIOS_DATA = {'r7': {
               { img: null, pn: 'PMHN4429', desc: 'Replacement Swivel, Spring Action', note: 'Replacement spring-action swivel for holsters', checks: { style:'Accessory', material:'Metal', belt_sz:'—', swivel:1 } },
             ]
           },
-
+        ]
+      },
       antennas: {
         cols: ["Part Number", "Description", "Band", "Freq", "Ant Type", "Length"],
         label: 'Antennas',
@@ -1189,6 +1190,7 @@ const RADIOS_DATA = {'r7': {
   }
 };
 const RADIOS = RADIOS_DATA;
+
 
 
 
