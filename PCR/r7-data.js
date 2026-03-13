@@ -71,7 +71,7 @@ var RADIOS_DATA = {'r7': {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrgTime", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
+        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrTm", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
@@ -407,7 +407,7 @@ var RADIOS_DATA = {'r7': {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrgTime", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
+        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrTm", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
@@ -762,7 +762,7 @@ var RADIOS_DATA = {'r7': {
         ]
       },
       wireless: {
-        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrgTime", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
+        cols: ["Part Number", "Description", "EpTyp", "Mic", "FulDpx", "PTT", "TlkTm", "ChrTm", "Weight", "Dims", "OpsCrit", "Pair", "Range", "IP", "HazLoc"],
         label: 'Wireless / Bluetooth',
         icon: '',
         sections: [
