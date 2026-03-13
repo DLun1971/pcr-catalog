@@ -304,11 +304,11 @@ function renderTable() {
       const chkd = state.report.has(item.pn) ? ' checked' : '';
       const sel = state.report.has(item.pn) ? ' selected' : '';
       const itemEnc = encodeURIComponent(JSON.stringify({ pn: item.pn, desc: item.desc, note: item.note }));
-      h += '<tr class="acc-row' + sel + '" data-pn="' + esc(item.pn) + '">';
-      h += '<td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent("" + itemEnc + "")))"' + chkd + '></td>';
+      h += `<tr class="acc-row${sel}" data-pn="${esc(item.pn)}">`;
+      h += `<td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent('${itemEnc}')))"${chkd}></td>`;
       cols.forEach(c => {
         if (c === 'Part Number') {
-          h += '<td><span class="part-no" onclick="copyPN("" + esc(item.pn) + "")">' + esc(item.pn) + '</span></td>';
+      h += `<td><span class="part-no" onclick="copyPN('${esc(item.pn)}')">${esc(item.pn)}</span></td>`;
         } else if (c === 'Description') {
           h += '<td>' + esc(item.desc || '') + '</td>';
         } else if (c === 'IP' || c === 'HazLoc') {
@@ -377,7 +377,7 @@ function renderDrawerItems() {
   const container = document.getElementById('drawer-items');
   if (items.length === 0) { container.innerHTML = ''; empty.style.display = ''; return; }
   empty.style.display = 'none';
-  container.innerHTML = items.map(i => '<div class="drawer-item"><div class="drawer-item-ph">&#128230;</div><div class="drawer-item-info"><div class="drawer-item-pn">' + esc(i.pn) + '</div><div class="drawer-item-desc">' + esc(i.desc || '') + '</div></div><button class="drawer-item-rm" onclick="removeReport("" + esc(i.pn) + "")">&#10005;</button></div>').join('');
+  container.innerHTML = items.map(i => `<div class="drawer-item"><div class="drawer-item-ph">📦</div><div class="drawer-item-info"><div class="drawer-item-pn">${esc(i.pn)}</div><div class="drawer-item-desc">${esc(i.desc||'')}</div></div><button class="drawer-item-rm" onclick="removeReport('${esc(i.pn)}')">✕</button></div>`).join('');
 }
 
 function removeReport(pn) {
@@ -417,7 +417,7 @@ function renderMatrix() {
 
   // Category filter
   document.getElementById('matrix-cat-filter').innerHTML = ['All', ...allCats].map(c =>
-    '<button class="cat-btn' + ((!state.matrixCat && c === 'All') || state.matrixCat === c ? ' active' : '') + '" onclick="setMatrixCat("" + (c === 'All' ? '' : c) + "")">' + esc(catLabels[c] || c) + '</button>'
+   `<button class="cat-btn${(!state.matrixCat&&c==='All')||state.matrixCat===c?' active':''}" onclick="setMatrixCat('${c==='All'?'':c}')">${esc(catLabels[c]||c)}</button>`
   ).join('');
 
   // Collect all unique items
@@ -447,8 +447,8 @@ function renderMatrix() {
     const chkd = state.report.has(item.pn) ? ' checked' : '';
     const sel = state.report.has(item.pn) ? ' selected' : '';
     const enc = encodeURIComponent(JSON.stringify({ pn: item.pn, desc: item.desc }));
-    h += '<tr class="acc-row' + sel + '" data-pn="' + esc(item.pn) + '"><td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent("" + enc + "")))"' + chkd + '></td>';
-    h += '<td class="left"><span class="part-no" onclick="copyPN("" + esc(item.pn) + "")">' + esc(item.pn) + '</span></td>';
+    h += `<tr class="acc-row${sel}" data-pn="${esc(item.pn)}"><td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent('${enc}')))"${chkd}></td>`;
+    h += `<td class="left"><span class="part-no" onclick="copyPN('${esc(item.pn)}')">${esc(item.pn)}</span></td>`;
     h += '<td class="left">' + esc(item.desc || '') + '</td>';
     avail.forEach(r => { h += item._radios.has(r.key) ? '<td class="chk">&#10003;</td>' : '<td class="dash">&#8211;</td>'; });
     h += '</tr>';
