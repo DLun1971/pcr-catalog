@@ -741,7 +741,7 @@ const RADIOS_DATA = {'r7': {
           {
             title: 'Wireless RSM',
             items: [
-              { img: null, pn: 'PMMN4127', desc: 'WM500 Wireless Remote Speaker Microphone', note: 'Operations Critical BT, 18hr, IP67, omni windporting mic, full duplex with Ion ÃÂ¢ÃÂÃÂ requires Ion fw M-Ion.2022.03+', checks: {impres: 0, ip: 'IP67', hazloc: 0, intel: 0, ion_fw: 1, bt: 1, fulldx: 1} },
+              { img: null, pn: 'PMMN4127', desc: 'WM500 Wireless Remote Speaker Microphone', note: 'Operations Critical BT, 18hr, IP67, omni windporting mic, full duplex with Ion - requires Ion fw M-Ion.2022.03+', checks: {impres: 0, ip: 'IP67', hazloc: 0, intel: 0, ion_fw: 1, bt: 1, fulldx: 1} },
             ]
           },
           {
@@ -1185,3 +1185,4 @@ const RADIOS_DATA = {'r7': {
   }
 };
 const RADIOS = RADIOS_DATA;
+
