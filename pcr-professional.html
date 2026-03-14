@@ -5,495 +5,545 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PCR Professional Tier Accessory Catalog</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --accent: #003087; --accent-light: #e8f0fb; --accent-mid: #1a4fa0;
-    --white: #fff; --gray-50: #f8f9fa; --gray-100: #f0f2f5;
-    --gray-200: #e1e4e8; --gray-400: #9ca3af; --gray-600: #4b5563; --gray-800: #1f2937;
-    --red: #dc2626; --green: #16a34a;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,.08); --shadow-md: 0 4px 12px rgba(0,0,0,.12); --shadow-lg: 0 8px 32px rgba(0,0,0,.18);
-    --radius: 6px; --nav-h: 56px; --footer-h: 48px; --sidebar-w: 220px; --drawer-w: 380px;
-  }
-  html,body { height:100%; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:14px; color:var(--gray-800); background:var(--gray-100); }
-  #topnav { position:fixed; top:0; left:0; right:0; height:var(--nav-h); background:var(--accent); color:var(--white); display:flex; align-items:center; padding:0 16px; gap:12px; z-index:200; box-shadow:var(--shadow-md); }
-  #topnav .logo { height:28px; }
-  #topnav .title { font-size:15px; font-weight:600; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .view-toggle { display:flex; background:rgba(255,255,255,.15); border-radius:var(--radius); overflow:hidden; }
-  .view-toggle button { border:none; background:transparent; color:rgba(255,255,255,.75); padding:6px 14px; cursor:pointer; font-size:13px; font-weight:500; }
-  .view-toggle button.active { background:rgba(255,255,255,.25); color:var(--white); }
-  #btn-report { position:relative; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.3); color:var(--white); padding:6px 14px; border-radius:var(--radius); cursor:pointer; font-size:13px; font-weight:500; }
-  #btn-report:hover { background:rgba(255,255,255,.28); }
-  #report-badge { display:none; position:absolute; top:-6px; right:-6px; background:var(--red); color:var(--white); font-size:10px; font-weight:700; min-width:18px; height:18px; border-radius:9px; align-items:center; justify-content:center; padding:0 4px; }
-  #report-badge.visible { display:flex; }
-  #shell { display:flex; padding-top:var(--nav-h); height:100%; transition:padding-right .25s; }
-  #shell.drawer-open { padding-right:var(--drawer-w); }
-  #sidebar { width:var(--sidebar-w); flex-shrink:0; background:var(--white); border-right:1px solid var(--gray-200); display:flex; flex-direction:column; position:fixed; top:var(--nav-h); bottom:var(--footer-h); left:0; overflow-y:auto; z-index:100; }
-  #radio-strip { border-bottom:1px solid var(--gray-200); padding:10px 8px; }
-  #cat-nav { flex:1; padding:10px 8px; overflow-y:auto; }
-  .strip-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--gray-400); margin-bottom:6px; padding:0 4px; }
-  .radio-btn,.cat-btn { display:block; width:100%; text-align:left; padding:7px 10px; border:none; background:transparent; border-radius:var(--radius); cursor:pointer; font-size:13px; color:var(--gray-600); font-weight:500; }
-  .radio-btn:hover,.cat-btn:hover { background:var(--gray-100); color:var(--gray-800); }
-  .radio-btn.active,.cat-btn.active { background:var(--accent-light); color:var(--accent); font-weight:600; }
-  .radio-btn:disabled { opacity:0.35; cursor:default; }
-  #main { margin-left:var(--sidebar-w); flex:1; padding:20px; overflow-y:auto; padding-bottom:calc(var(--footer-h) + 20px); }
-  #search-bar { display:flex; align-items:center; gap:8px; background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:8px 12px; margin-bottom:16px; box-shadow:var(--shadow-sm); }
-  #search-bar input { border:none; outline:none; flex:1; font-size:14px; background:transparent; }
-  #search-clear { border:none; background:none; cursor:pointer; color:var(--gray-400); font-size:16px; display:none; }
-  #search-clear.visible { display:block; }
-  .section-header { display:flex; align-items:baseline; gap:10px; margin-bottom:10px; position:sticky; top:-20px; z-index:100; background:var(--white); padding:28px 0 4px; box-shadow: 0 2px 4px rgba(0,0,0,.06); margin-top:-20px; }
-table.acc-table thead tr th { position:sticky; top:41px; z-index:99; background:var(--white); }
-  .section-header h2 { font-size:16px; font-weight:700; }
-  .section-header .count { font-size:12px; color:var(--gray-400); }
-  .subsection-title { font-size:12px; font-weight:600; color:var(--gray-600); text-transform:uppercase; letter-spacing:.05em; padding:10px 0 6px; border-bottom:1px solid var(--gray-200); margin-bottom:0; }
-  .acc-table-wrap { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow-sm); overflow-x:auto; margin-bottom:24px; }
-  table.acc-table { width:100%; border-collapse:collapse; font-size:13px; }
-  table.acc-table th { white-space:nowrap; }
-  table.acc-table td { white-space:nowrap; }
-  table.acc-table td.desc-col { white-space:normal; min-width:180px; max-width:280px; }
-  table.acc-table thead tr { background:var(--gray-50); border-bottom:2px solid var(--gray-200); }
-  table.acc-table th { padding:9px 10px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--gray-600); white-space:nowrap; }
-  table.acc-table th.chk-col,table.acc-table td.chk-col { width:36px; text-align:center; }
-  table.acc-table td { padding:8px 10px; border-bottom:1px solid var(--gray-200); vertical-align:middle; }
-  table.acc-table tr:last-child td { border-bottom:none; }
-  table.acc-table tbody tr:hover { background:var(--gray-50); }
-  table.acc-table tbody tr.selected { background:var(--accent-light); }
-  .section-row td { background:var(--gray-50); font-size:11px; font-weight:700; color:var(--gray-600); text-transform:uppercase; letter-spacing:.05em; padding:6px 10px; border-top:1px solid var(--gray-200); }
-  .part-no { font-family:'SF Mono','Consolas',monospace; font-size:12px; color:var(--accent); cursor:pointer; white-space:nowrap; }
-  .part-no:hover { text-decoration:underline; }
-  .badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 5px; border-radius:3px; margin-right:2px; white-space:nowrap; }
-  .badge-ip68 { background:#d1fae5; color:#065f46; } .badge-ip67 { background:#d1fae5; color:#065f46; } .badge-ip54 { background:#fef9c3; color:#854d0e; }
-  .badge-ul { background:#fce7f3; color:#9d174d; } .badge-bt { background:#ede9fe; color:#5b21b6; } .badge-atex { background:#ffedd5; color:#9a3412; }
-  .badge-impres { background:#dbeafe; color:#1d4ed8; }
-  .note-cell { font-size:11px; color:var(--gray-600); max-width:220px; }
-  .chk { color:var(--green); } .dash { color:var(--gray-400); }
-  input[type=checkbox] { width:15px; height:15px; cursor:pointer; accent-color:var(--accent); }
-  #view-matrix { display:none; } #view-matrix.active { display:block; }
-  #view-radio { display:none; } #view-radio.active { display:block; }
-  table.matrix-table { width:100%; border-collapse:collapse; font-size:12px; }
-  table.matrix-table th { padding:8px 6px; font-size:11px; font-weight:700; text-transform:uppercase; color:var(--gray-600); background:var(--gray-50); border-bottom:2px solid var(--gray-200); white-space:nowrap; text-align:center; }
-  table.matrix-table th.left { text-align:left; min-width:160px; }
-  table.matrix-table td { padding:7px 6px; border-bottom:1px solid var(--gray-200); text-align:center; vertical-align:middle; }
-  table.matrix-table td.left { text-align:left; }
-  table.matrix-table tbody tr:hover { background:var(--gray-50); }
-  #drawer { position:fixed; top:var(--nav-h); right:0; bottom:var(--footer-h); width:var(--drawer-w); background:var(--white); border-left:1px solid var(--gray-200); box-shadow:var(--shadow-lg); transform:translateX(100%); transition:transform .25s ease; display:flex; flex-direction:column; z-index:150; }
-  #drawer.open { transform:translateX(0); }
-  #drawer-header { padding:14px 16px; border-bottom:1px solid var(--gray-200); display:flex; align-items:center; justify-content:space-between; }
-  #drawer-header h3 { font-size:15px; font-weight:700; }
-  #btn-drawer-close { border:none; background:none; cursor:pointer; font-size:20px; color:var(--gray-400); line-height:1; }
-  #drawer-body { flex:1; overflow-y:auto; padding:12px; }
-  .drawer-item { display:flex; gap:10px; align-items:flex-start; padding:10px; border:1px solid var(--gray-200); border-radius:var(--radius); margin-bottom:8px; background:var(--gray-50); }
-  .drawer-item-ph { width:48px; height:48px; background:var(--gray-200); border-radius:4px; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--gray-400); font-size:18px; }
-  .drawer-item-info { flex:1; min-width:0; }
-  .drawer-item-pn { font-family:'SF Mono','Consolas',monospace; font-size:12px; color:var(--accent); font-weight:600; }
-  .drawer-item-desc { font-size:12px; color:var(--gray-800); margin-top:2px; }
-  .drawer-item-rm { border:none; background:none; cursor:pointer; color:var(--gray-400); font-size:16px; padding:0 4px; }
-  .drawer-item-rm:hover { color:var(--red); }
-  #drawer-footer { padding:12px 16px; border-top:1px solid var(--gray-200); display:flex; gap:8px; }
-  #btn-export-pdf { flex:1; background:var(--accent); color:var(--white); border:none; padding:10px; border-radius:var(--radius); cursor:pointer; font-size:14px; font-weight:600; }
-  #btn-export-pdf:hover { background:var(--accent-mid); }
-  #btn-clear-report { background:var(--gray-100); color:var(--gray-600); border:none; padding:10px 14px; border-radius:var(--radius); cursor:pointer; font-size:14px; }
-  #drawer-empty { text-align:center; color:var(--gray-400); padding:40px 20px; font-size:13px; }
-  #footer-bar { position:fixed; bottom:0; left:0; right:0; height:var(--footer-h); background:var(--white); border-top:1px solid var(--gray-200); display:flex; align-items:center; padding:0 16px; gap:12px; z-index:200; box-shadow:0 -2px 8px rgba(0,0,0,.06); transform:translateY(100%); transition:transform .2s; }
-  #footer-bar.visible { transform:translateY(0); }
-  #footer-count { font-size:13px; color:var(--gray-600); }
-  #footer-count strong { color:var(--accent); }
-  #btn-footer-report { background:var(--accent); color:var(--white); border:none; padding:7px 16px; border-radius:var(--radius); cursor:pointer; font-size:13px; font-weight:600; margin-left:auto; }
-  #btn-footer-clear { background:none; border:none; cursor:pointer; color:var(--gray-400); font-size:13px; padding:4px 8px; }
-  #toast { position:fixed; bottom:calc(var(--footer-h)+12px); left:50%; transform:translateX(-50%) translateY(20px); background:var(--gray-800); color:var(--white); padding:8px 16px; border-radius:20px; font-size:13px; opacity:0; transition:opacity .2s,transform .2s; pointer-events:none; z-index:300; white-space:nowrap; }
-  #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
-  .no-results { text-align:center; color:var(--gray-400); padding:40px; font-size:14px; }
-  .matrix-filter-bar { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;background:#f5f2eb;color:#1a1a1a;}
+
+/* ── FROZEN HEADER ── */
+#header{flex-shrink:0;background:#f5f2eb;padding:10px 16px 0;border-bottom:1px solid #ddd9cf;}
+#top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+#top-bar .catalog-title{font-size:15px;font-weight:600;color:#1a1a1a;display:flex;align-items:center;gap:10px;}
+#top-bar .catalog-title img{height:22px;}
+#view-toggle{display:flex;gap:4px;}
+.vtbtn{padding:5px 16px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .2s;}
+.vtbtn.active{background:#1a1a1a;color:#f5f2eb;border-color:#1a1a1a;}
+
+#radio-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.rpill{padding:4px 13px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
+.rpill.active{background:#1a1a1a;color:#f5f2eb;border-color:#1a1a1a;}
+.rpill:hover:not(.active){background:#ede9e0;}
+
+#cat-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding-bottom:10px;}
+.cpill{padding:4px 13px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
+.cpill.active{background:#2d7a4f;color:#fff;border-color:#2d7a4f;}
+.cpill:hover:not(.active){background:#ede9e0;}
+#search-input{margin-left:auto;padding:4px 12px;border-radius:20px;border:1px solid #888;font-size:12px;background:#f5f2eb;color:#1a1a1a;width:160px;outline:none;}
+#search-input:focus{border-color:#2d7a4f;}
+
+/* ── LAYOUT SHELL ── */
+#app{display:flex;flex-direction:column;height:100vh;}
+#table-wrap{flex:1;overflow-y:auto;background:#fff;}
+
+/* ── TABLE ── */
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead th{position:sticky;top:0;z-index:10;padding:7px 8px;text-align:left;font-weight:600;font-size:11px;color:#555;border-bottom:2px solid #ddd9cf;background:#f0ede4;white-space:nowrap;}
+thead th.radio-col{background:#dde8f4;color:#1a5fa8;text-align:center;}
+thead th.feat-col{text-align:center;}
+thead th.check-col{text-align:center;width:52px;}
+thead th.img-col{width:44px;}
+thead th.pn-col{min-width:95px;}
+thead th.desc-col{min-width:200px;}
+
+td{padding:7px 8px;border-bottom:0.5px solid #ede9e0;vertical-align:middle;color:#1a1a1a;}
+tr:hover td{background:#faf8f3;}
+td.feat-col{text-align:center;}
+td.check-col{text-align:center;width:52px;}
+
+.section-row td{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#777;padding:5px 8px;background:#f7f4ed;border-bottom:1px solid #e5e0d5;}
+
+/* ── IMAGE CELL ── */
+.img-box{width:34px;height:34px;background:#f0ede4;border:0.5px solid #ddd9cf;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;transition:opacity .15s;}
+.img-box:hover{opacity:.8;}
+.img-box img{width:34px;height:34px;object-fit:contain;}
+.img-box svg{opacity:.3;}
+
+/* ── PART NUMBER ── */
+.pn-cell{font-weight:700;white-space:nowrap;cursor:pointer;position:relative;}
+.pn-cell:hover{color:#2d7a4f;}
+.pn-cell .copied{position:absolute;left:0;top:-18px;background:#2d7a4f;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none;}
+.pn-cell.flash .copied{opacity:1;}
+
+/* ── FEATURE CELLS ── */
+.chk{color:#2d7a4f;font-size:14px;font-weight:700;}
+.dash{color:#bbb;}
+.ip-badge{display:inline-block;padding:1px 7px;border-radius:20px;border:1.5px solid #2d7a4f;color:#2d7a4f;font-size:10px;font-weight:600;}
+
+/* ── MY LIST CHECKBOX ── */
+.mylist-cb{width:15px;height:15px;cursor:pointer;accent-color:#2d7a4f;}
+
+/* ── REPORT BUTTON ── */
+#btn-report{padding:5px 14px;border-radius:20px;border:1.5px solid #2d7a4f;background:transparent;color:#2d7a4f;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;}
+#btn-report:hover{background:#2d7a4f;color:#fff;}
+#report-badge{background:#2d7a4f;color:#fff;border-radius:20px;padding:0 7px;font-size:11px;min-width:20px;text-align:center;}
+#btn-report:hover #report-badge{background:#fff;color:#2d7a4f;}
+
+/* ── SLIDE-OUT DRAWER ── */
+#drawer{position:fixed;top:0;right:-380px;width:380px;height:100vh;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,.12);z-index:100;display:flex;flex-direction:column;transition:right .3s ease;}
+#drawer.open{right:0;}
+#drawer-header{padding:16px;border-bottom:1px solid #ede9e0;display:flex;align-items:center;justify-content:space-between;}
+#drawer-header h2{font-size:14px;font-weight:600;}
+#drawer-close{background:none;border:none;font-size:18px;cursor:pointer;color:#888;line-height:1;}
+#drawer-body{flex:1;overflow-y:auto;padding:12px;}
+#drawer-empty{color:#aaa;font-size:12px;text-align:center;padding:40px 0;}
+#drawer-footer{padding:12px 16px;border-top:1px solid #ede9e0;display:flex;gap:8px;}
+#btn-clear-list{flex:1;padding:8px;border-radius:8px;border:1px solid #ccc;background:transparent;cursor:pointer;font-size:12px;}
+#btn-export-pdf{flex:2;padding:8px;border-radius:8px;border:none;background:#2d7a4f;color:#fff;cursor:pointer;font-size:12px;font-weight:600;}
+.drawer-item{padding:10px 0;border-bottom:0.5px solid #ede9e0;}
+.drawer-item .di-pn{font-weight:700;font-size:12px;color:#1a1a1a;}
+.drawer-item .di-desc{font-size:11px;color:#666;margin:2px 0 6px;}
+.drawer-item textarea{width:100%;font-size:11px;border:0.5px solid #ddd;border-radius:4px;padding:4px 6px;resize:vertical;min-height:36px;font-family:inherit;color:#1a1a1a;}
+
+/* ── LIGHTBOX ── */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:none;align-items:center;justify-content:center;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:80vw;max-height:80vh;object-fit:contain;border-radius:8px;background:#fff;padding:16px;}
+#lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;line-height:1;}
+
+/* ── OVERLAY ── */
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:90;display:none;}
+#overlay.open{display:block;}
+
+/* ── VIEW TRANSITION ── */
+#table-wrap{transition:opacity .2s;}
+#table-wrap.fading{opacity:0;}
+
+/* ── EMPTY STATE ── */
+#empty-state{text-align:center;padding:60px 20px;color:#aaa;font-size:13px;}
 </style>
 </head>
 <body>
-<nav id="topnav">
-  <img class="logo" src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" alt="Motorola Solutions">
-  <span class="title">PCR Professional Tier &#8212; Accessory Catalog</span>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <div class="view-toggle">
-      <button id="btn-view-radio" class="active" onclick="setView('radio')">By Radio</button>
-      <button id="btn-view-matrix" onclick="setView('matrix')">Full Matrix</button>
+<div id="app">
+
+  <!-- FROZEN HEADER -->
+  <div id="header">
+    <div id="top-bar">
+      <div class="catalog-title">
+        <img src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" alt="Motorola Solutions">
+        MOTOTRBO Professional Catalog
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div id="view-toggle">
+          <button class="vtbtn active" onclick="setView('radio')">By Radio</button>
+          <button class="vtbtn" onclick="setView('matrix')">Full Matrix</button>
+        </div>
+        <button id="btn-report" onclick="openDrawer()">My List <span id="report-badge">0</span></button>
+      </div>
     </div>
-    <button id="btn-report" onclick="toggleDrawer()">Report <span id="report-badge">0</span></button>
+    <div id="radio-row"></div>
+    <div id="cat-row">
+      <!-- category pills injected by JS -->
+      <input id="search-input" type="text" placeholder="Search part number or description..." oninput="renderTable()">
+    </div>
   </div>
-</nav>
-<div id="shell">
-  <aside id="sidebar">
-    <div id="radio-strip"><div class="strip-label">Radio Model</div><div id="radio-buttons"></div></div>
-    <div id="cat-nav"><div class="strip-label">Category</div><div id="cat-buttons"></div></div>
-  </aside>
-  <main id="main">
-    <div id="search-bar">
-      <span style="color:var(--gray-400)">&#128269;</span>
-      <input id="search-input" type="text" placeholder="Search part number or description&#8230;" oninput="onSearch(this.value)">
-      <button id="search-clear" onclick="clearSearch()">&#10005;</button>
-    </div>
-    <div id="view-radio" class="active">
-      <div class="section-header"><h2 id="section-title">Select a radio</h2><span id="section-count" class="count"></span></div>
-      <div id="acc-table-container"></div>
-    </div>
-    <div id="view-matrix">
-      <div class="section-header"><h2>Full Compatibility Matrix</h2><span id="matrix-count" class="count"></span></div>
-      <div id="matrix-cat-filter" class="matrix-filter-bar"></div>
-      <div class="acc-table-wrap"><div id="matrix-container"></div></div>
-    </div>
-  </main>
+
+  <!-- SCROLLABLE TABLE -->
+  <div id="table-wrap">
+    <table id="main-table">
+      <thead id="main-thead"><tr></tr></thead>
+      <tbody id="main-tbody"></tbody>
+    </table>
+    <div id="empty-state" style="display:none;">No accessories match your selection.</div>
+  </div>
+
 </div>
+
+<!-- SLIDE-OUT DRAWER -->
+<div id="overlay" onclick="closeDrawer()"></div>
 <div id="drawer">
-  <div id="drawer-header"><h3>Report List</h3><button id="btn-drawer-close" onclick="toggleDrawer()">&#10005;</button></div>
+  <div id="drawer-header">
+    <h2>My List</h2>
+    <button id="drawer-close" onclick="closeDrawer()">&#10005;</button>
+  </div>
   <div id="drawer-body">
     <div id="drawer-empty">No items selected.<br>Check boxes next to accessories to add them.</div>
     <div id="drawer-items"></div>
   </div>
   <div id="drawer-footer">
-    <button id="btn-clear-report" onclick="clearReport()">Clear</button>
+    <button id="btn-clear-list" onclick="clearList()">Clear All</button>
     <button id="btn-export-pdf" onclick="exportPDF()">Export PDF</button>
   </div>
 </div>
-<div id="footer-bar">
-  <span id="footer-count"><strong id="footer-num">0</strong> items selected</span>
-  <button id="btn-footer-clear" onclick="clearReport()">Clear</button>
-  <button id="btn-footer-report" onclick="toggleDrawer()">View Report &#8594;</button>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">&#10005;</span>
+  <img id="lightbox-img" src="" alt="">
 </div>
-<div id="toast"></div>
-<script src="data/r7-data.js?v=1"></script>
+
+<!-- DATA -->
+<script src="data/r7-data.js?v=2"></script>
+
+<!-- ENGINE -->
 <script>
-// PCR Professional Tier catalog engine v2.0
-// Data format: RADIOS_DATA[radioKey].categories[catKey].sections[].items[]
+// ── STATE ──
+let currentView = 'radio';
+let currentRadio = 'R7';
+let currentCat = 'RSMs';
+let myList = {};
 
-const state = { view:'radio', radio:null, cat:null, search:'', report:new Map(), matrixCat:null };
+// ── RADIOS & CATEGORIES ──
+const RADIOS = ['R7','Ion','R5','R7Ex','XPR 6550','XPR 7550e','XPR 3500e'];
+const CATS = ['RSMs','Batteries','Chargers','Antennas','Headsets','Carry','Cables','All'];
 
-// Radio definitions — PDF sequence order
-const RADIO_DEFS = [
-  {key:'r7',    label:'R7'},
-  {key:'ion',   label:'Ion'},
-  {key:'r5',    label:'R5'},
-  {key:'r7ex',  label:'R7Ex'},
-];
-// XPR radios will be added when their data files are loaded
-const XPR_DEFS = [
-  {key:'xpr7550e', label:'XPR 7550e'},
-  {key:'xpr6550',  label:'XPR 6550'},
-  {key:'xpr3500e', label:'XPR 3500e'},
-  {key:'xpr3300e', label:'XPR 3300e'},
-];
-
-// Column label map
+// ── COL LABELS ──
 const COL_LABELS = {
-  'Part Number':'Part No.','Description':'Desc','IMPRES':'IMPRES','InAud':'Intelligent Audio',
-  'Wndprt':'Windporting/Noise-Cancel','SmartSW':'Smart SW','ProgBtn':'Prog Btn',
-  'Jack':'Jack','IP':'IP Rating','HazLoc':'HazLoc Capable','Dims':'Dimensions (mm)',
-  'NRR':'NRR','Wires':'Wires','Pockets':'Pockets','Capacity':'Capacity',
-  'BT':'BT','ATEX':'ATEX','AINS':'AINS','WWet':'WWet','VolSteps':'VolSteps',
-  'Notes':'Notes','Note':'Note'
+  IMPRES: 'IMPRES',
+  IP: 'IP Rating',
+  HazLoc: 'HazLoc',
+  Wndprt: 'Windport',
+  InAud: 'Intelligent Audio',
+  SmartSW: 'Smart SW',
+  ProgBtn: 'Prog Btn',
+  WWet: 'Work-When-Wet',
+  AINS: 'AINS',
+  Dims: 'Dimensions (mm)',
+  Capacity: 'Capacity',
+  Wires: 'Wires',
+  NRR: 'NRR',
+  Jack: 'Jack',
+  Pockets: 'Pockets'
 };
 
-// Which cols are text/value (not checkmark)
-const TEXT_COLS = new Set(['Part Number','Description','IP','HazLoc','Dims','Jack','NRR','Wires','Pockets','Capacity','Notes','Note']);
+const TEXT_COLS = new Set(['IP','HazLoc','Dims','Capacity','Wires','NRR','Jack','Pockets']);
 
-// checks key → col label mapping
-const CHECKS_TO_COL = {
-  impres:'IMPRES', intel:'InAud', windport:'Wndprt', smartsw:'SmartSW',
-  progbtn:'ProgBtn', jack:'Jack', ip:'IP', hazloc:'HazLoc', bt:'BT',
-  ains:'AINS', wwet:'WWet', volsteps:'VolSteps', fulldx:'FullDx',
-  ion_fw:'Ion FW', atex:'ATEX', nrr:'NRR', wires:'Wires',
-  pockets:'Pockets', capacity:'Capacity', dims:'Dims'
-};
-
-function getAllRadios() {
-  const rd = window.RADIOS_DATA || {};
-  return [...RADIO_DEFS, ...XPR_DEFS].filter(r => rd[r.key]);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  buildRadioStrip();
-  const all = getAllRadios();
-  if (all.length > 0) selectRadio(all[0].key);
-});
-
-function buildRadioStrip() {
-  const el = document.getElementById('radio-buttons');
-  el.innerHTML = '';
-  const rd = window.RADIOS_DATA || {};
-  [...RADIO_DEFS, ...XPR_DEFS].forEach(r => {
-    const avail = !!rd[r.key];
-    const btn = document.createElement('button');
-    btn.className = 'radio-btn';
-    btn.textContent = r.label;
-    btn.disabled = !avail;
-    btn.onclick = () => selectRadio(r.key);
-    btn.dataset.radio = r.key;
-    el.appendChild(btn);
-  });
-}
-
-function selectRadio(key) {
-  state.radio = key; state.cat = null;
-  document.querySelectorAll('.radio-btn').forEach(b => b.classList.toggle('active', b.dataset.radio === key));
-  buildCatNav(key);
-  const cats = getCats(key);
-  if (cats.length > 0) selectCat(cats[0].key);
-}
-
-function getCats(radioKey) {
-  const rd = window.RADIOS_DATA || {};
-  const radio = rd[radioKey];
-  if (!radio || !radio.categories) return [];
-  return Object.entries(radio.categories).map(([k, v]) => ({ key: k, label: v.label || k }));
-}
-
-function buildCatNav(radioKey) {
-  const el = document.getElementById('cat-buttons');
-  el.innerHTML = '';
-  getCats(radioKey).forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'cat-btn';
-    btn.textContent = cat.label;
-    btn.dataset.cat = cat.key;
-    btn.onclick = () => selectCat(cat.key);
-    el.appendChild(btn);
-  });
-}
-
-function selectCat(catKey) {
-  state.cat = catKey;
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === catKey));
+// ── INIT ──
+function init() {
+  buildRadioPills();
+  buildCatPills();
+  applyURLState();
   renderTable();
 }
 
-function getCurrentCatData() {
-  const rd = window.RADIOS_DATA || {};
-  const radio = rd[state.radio];
-  if (!radio || !radio.categories) return null;
-  return radio.categories[state.cat] || null;
+function applyURLState() {
+  const p = new URLSearchParams(location.search);
+  if (p.get('view')) currentView = p.get('view');
+  if (p.get('radio')) currentRadio = p.get('radio');
+  if (p.get('cat')) currentCat = p.get('cat');
+  document.querySelectorAll('.vtbtn').forEach(b => b.classList.toggle('active', b.textContent.trim() === (currentView === 'radio' ? 'By Radio' : 'Full Matrix')));
 }
 
-function allItems(catData) {
-  if (!catData) return [];
-  return (catData.sections || []).flatMap(s => (s.items || []).map(i => ({ ...i, _section: s.title })));
+function pushState() {
+  const u = new URL(location.href);
+  u.searchParams.set('view', currentView);
+  u.searchParams.set('radio', currentRadio);
+  u.searchParams.set('cat', currentCat);
+  history.replaceState({}, '', u);
 }
 
-function filterItems(items) {
-  if (!state.search) return items;
-  const q = state.search.toLowerCase();
-  return items.filter(i => (i.pn && i.pn.toLowerCase().includes(q)) || (i.desc && i.desc.toLowerCase().includes(q)));
+// ── PILLS ──
+function buildRadioPills() {
+  const row = document.getElementById('radio-row');
+  row.innerHTML = RADIOS.map(r =>
+    `<button class="rpill${r===currentRadio?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
+  ).join('');
 }
 
-function renderTable() {
-  const catData = getCurrentCatData();
-  const container = document.getElementById('acc-table-container');
-  document.getElementById('section-title').textContent = catData ? (catData.label || state.cat) : (state.cat || 'Select a category');
+function buildCatPills() {
+  const row = document.getElementById('cat-row');
+  const pills = CATS.map(c =>
+    `<button class="cpill${c===currentCat?' active':''}" onclick="selectCat('${c}')">${c}</button>`
+  ).join('');
+  row.innerHTML = pills + row.innerHTML;
+}
 
-  if (!catData) { container.innerHTML = '<div class="no-results">No data available.</div>'; document.getElementById('section-count').textContent = ''; return; }
+function selectRadio(r) {
+  currentRadio = r;
+  document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', b.textContent.trim()===r));
+  fadeRender();
+  pushState();
+}
 
-  const cols = catData.cols || [];
-  const sections = catData.sections || [];
-  const totalItems = filterItems(allItems(catData));
-  document.getElementById('section-count').textContent = totalItems.length + ' item' + (totalItems.length !== 1 ? 's' : '');
+function selectCat(c) {
+  currentCat = c;
+  document.querySelectorAll('.cpill').forEach(b => b.classList.toggle('active', b.textContent.trim()===c));
+  fadeRender();
+  pushState();
+}
 
-  if (totalItems.length === 0) { container.innerHTML = '<div class="no-results">No items match.</div>'; return; }
+function setView(v) {
+  currentView = v;
+  document.querySelectorAll('.vtbtn').forEach(b => b.classList.toggle('active', b.textContent.trim() === (v==='radio'?'By Radio':'Full Matrix')));
+  // In matrix view deactivate radio pills visually
+  document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', v==='radio' && b.textContent.trim()===currentRadio));
+  fadeRender();
+  pushState();
+}
 
-  let h = '<div class="acc-table-wrap"><table class="acc-table"><thead><tr>';
-  h += '<th class="chk-col"><input type="checkbox" id="chk-all" onchange="toggleAll(this)"></th>';
-  cols.forEach(c => { h += '<th>' + esc(COL_LABELS[c] || c) + '</th>'; });
-  h += '</tr></thead><tbody>';
+function fadeRender() {
+  const tw = document.getElementById('table-wrap');
+  tw.classList.add('fading');
+  setTimeout(() => { renderTable(); tw.classList.remove('fading'); }, 180);
+}
 
-  sections.forEach(sec => {
-    const secItems = filterItems(sec.items || []);
-    if (secItems.length === 0) return;
-    if (sections.length > 1) {
-      h += '<tr class="section-row"><td colspan="' + (cols.length + 1) + '">' + esc(sec.title) + '</td></tr>';
+// ── DATA HELPERS ──
+function getRadioData(radioName) {
+  if (!window.RADIOS_DATA) return null;
+  return window.RADIOS_DATA.find(r => r.radio === radioName) || null;
+}
+
+function getFilteredSections(radioData) {
+  if (!radioData) return [];
+  const search = document.getElementById('search-input').value.toLowerCase();
+  return radioData.sections.map(sec => {
+    let items = sec.items;
+    if (currentCat !== 'All') {
+      items = items.filter(item => (item.cat || '') === currentCat || sec.cat === currentCat);
     }
-    secItems.forEach(item => {
-      const chkd = state.report.has(item.pn) ? ' checked' : '';
-      const sel = state.report.has(item.pn) ? ' selected' : '';
-      const itemEnc = encodeURIComponent(JSON.stringify({ pn: item.pn, desc: item.desc, note: item.note }));
-      h += `<tr class="acc-row${sel}" data-pn="${esc(item.pn)}">`;
-      h += `<td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent('${itemEnc}')))"${chkd}></td>`;
-      cols.forEach(c => {
-        if (c === 'Part Number') {
-      h += `<td><span class="part-no" onclick="copyPN('${esc(item.pn)}')">${esc(item.pn)}</span></td>`;
-        } else if (c === 'Description') {
-          h += '<td>' + esc(item.desc || '') + '</td>';
-        } else if (c === 'IP' || c === 'HazLoc') {
-          const val = item.checks ? item.checks[c === 'IP' ? 'ip' : 'hazloc'] : '';
-          if (val) {
-            const cls = String(val).toLowerCase().replace(/[^a-z0-9]/g,'');
-            h += '<td><span class="badge badge-' + cls + '">' + esc(val) + '</span></td>';
-          } else { h += '<td class="dash">&#8211;</td>'; }
-        } else if (c === 'Notes' || c === 'Note') {
-          h += '<td class="note-cell">' + esc(item.note || '') + '</td>';
-        } else if (c === 'Dims') {
-          const val = item.checks ? item.checks['dims'] : null;
-          h += '<td>' + esc(val != null && val !== 0 ? String(val) : '') + '</td>';
-        } else if (c === 'Jack' || c === 'Jack') {
-          const val = item.checks ? item.checks['jack'] : null;
-          h += '<td>' + esc(val != null && val !== 0 ? String(val) : '') + '</td>';
-        } else {
-          // Find checks key for this column
-          const chkKey = Object.entries(CHECKS_TO_COL).find(([k,v])=>v===c)?.[0];
-          const val = chkKey && item.checks ? item.checks[chkKey] : null;
-          if (val && val !== 0 && val !== false && val !== '0') {
-            const display = (val === 1 || val === true || val === '1') ? '&#10003;' : esc(String(val));
-            h += '<td class="chk">' + display + '</td>';
-          } else { h += '<td class="dash">&#8211;</td>'; }
-        }
+    if (search) {
+      items = items.filter(item =>
+        (item.pn||'').toLowerCase().includes(search) ||
+        (item.desc||'').toLowerCase().includes(search)
+      );
+    }
+    return {...sec, items};
+  }).filter(sec => sec.items.length > 0);
+}
+
+// ── IMAGE FETCH ──
+const IMG_CACHE = {};
+const MSI_BASE = 'https://www.motorolasolutions.com/content/dam/msi/images/products/';
+
+function getImgUrl(pn) {
+  if (IMG_CACHE[pn] !== undefined) return IMG_CACHE[pn];
+  IMG_CACHE[pn] = null;
+  const candidates = [
+    `https://www.motorolasolutions.com/content/dam/msi/images/products/accessories/${pn.toLowerCase()}.jpg`,
+    `https://www.motorolasolutions.com/content/dam/msi/images/products/accessories/${pn.toLowerCase()}_pdp_na_na.jpg`
+  ];
+  const img = new Image();
+  img.onload = () => { IMG_CACHE[pn] = img.src; refreshImgCell(pn); };
+  img.src = candidates[0];
+  return null;
+}
+
+function refreshImgCell(pn) {
+  document.querySelectorAll(`[data-pn="${pn}"] .img-box`).forEach(box => {
+    box.innerHTML = `<img src="${IMG_CACHE[pn]}" alt="${pn}" onclick="openLightbox('${IMG_CACHE[pn]}')">`;
+  });
+}
+
+function camSVG() {
+  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8.5" r="2.2" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 4V3.5A.5.5 0 016 3h4a.5.5 0 01.5.5V4" stroke="currentColor" stroke-width="1.2"/></svg>`;
+}
+
+// ── RENDER TABLE ──
+function renderTable() {
+  const thead = document.getElementById('main-thead');
+  const tbody = document.getElementById('main-tbody');
+  const empty = document.getElementById('empty-state');
+
+  if (currentView === 'radio') renderRadioView(thead, tbody);
+  else renderMatrixView(thead, tbody);
+
+  const hasRows = tbody.querySelectorAll('tr:not(.section-row)').length > 0;
+  empty.style.display = hasRows ? 'none' : 'block';
+}
+
+function renderRadioView(thead, tbody) {
+  const rd = getRadioData(currentRadio);
+  const sections = rd ? getFilteredSections(rd) : [];
+
+  // Collect all feature cols used across visible items
+  const featCols = [];
+  const seen = new Set();
+  sections.forEach(sec => sec.items.forEach(item => {
+    (item.cols || []).forEach(c => { if (!seen.has(c)) { seen.add(c); featCols.push(c); }});
+  }));
+
+  // Header
+  thead.innerHTML = `<tr>
+    <th class="img-col"></th>
+    <th class="pn-col">Part No.</th>
+    <th class="desc-col">Description</th>
+    ${featCols.map(c=>`<th class="feat-col">${COL_LABELS[c]||c}</th>`).join('')}
+    <th class="check-col">My List</th>
+  </tr>`;
+
+  // Body
+  let html = '';
+  sections.forEach(sec => {
+    html += `<tr class="section-row"><td colspan="${3+featCols.length+2}">${sec.label||sec.name||''}</td></tr>`;
+    sec.items.forEach(item => {
+      const pn = item.pn || '';
+      const imgUrl = getImgUrl(pn);
+      const imgHTML = imgUrl
+        ? `<img src="${imgUrl}" alt="${pn}" onclick="openLightbox('${imgUrl}')">`
+        : camSVG();
+      const checked = myList[pn] ? 'checked' : '';
+      const feats = featCols.map(c => {
+        const v = item.checks ? item.checks[c] : undefined;
+        return `<td class="feat-col">${renderFeat(c,v)}</td>`;
+      }).join('');
+      html += `<tr data-pn="${pn}">
+        <td class="img-col"><div class="img-box" onclick="imgClick('${pn}')">${imgHTML}</div></td>
+        <td class="pn-cell" onclick="copyPN('${pn}',this)"><span class="copied">Copied!</span>${pn}</td>
+        <td>${item.desc||''}</td>
+        ${feats}
+        <td class="check-col"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleMyList('${pn}','${(item.desc||'').replace(/'/g,"\\'")}',this)"></td>
+      </tr>`;
+    });
+  });
+  tbody.innerHTML = html;
+}
+
+function renderMatrixView(thead, tbody) {
+  // Gather all items across all radios for current cat/search
+  const allSections = {};
+  const radioFeatCols = {};
+  const search = document.getElementById('search-input').value.toLowerCase();
+
+  RADIOS.forEach(rn => {
+    const rd = getRadioData(rn);
+    if (!rd) return;
+    rd.sections.forEach(sec => {
+      let items = sec.items;
+      if (currentCat !== 'All') items = items.filter(i => (i.cat||'')=== currentCat || sec.cat===currentCat);
+      if (search) items = items.filter(i => (i.pn||'').toLowerCase().includes(search)||(i.desc||'').toLowerCase().includes(search));
+      if (!items.length) return;
+      const key = sec.label||sec.name||'';
+      if (!allSections[key]) allSections[key] = {};
+      items.forEach(item => {
+        const pn = item.pn||'';
+        if (!allSections[key][pn]) allSections[key][pn] = {desc:item.desc||'', radios:{}, checks:item.checks||{}};
+        allSections[key][pn].radios[rn] = true;
       });
-      h += '</tr>';
     });
   });
 
-  h += '</tbody></table></div>';
-  container.innerHTML = h;
+  // Feature cols — standard set for matrix
+  const featCols = ['IMPRES','IP','HazLoc','Wndprt'];
 
-  const allChk = document.getElementById('chk-all');
-  if (allChk) {
-    const ac = totalItems.every(i => state.report.has(i.pn));
-    allChk.checked = ac && totalItems.length > 0;
-    allChk.indeterminate = !ac && totalItems.some(i => state.report.has(i.pn));
-  }
+  // Header
+  thead.innerHTML = `<tr>
+    <th class="img-col"></th>
+    <th class="pn-col">Part No.</th>
+    <th class="desc-col">Description</th>
+    ${RADIOS.map(r=>`<th class="feat-col radio-col">${r}</th>`).join('')}
+    ${featCols.map(c=>`<th class="feat-col">${COL_LABELS[c]||c}</th>`).join('')}
+    <th class="check-col">My List</th>
+  </tr>`;
+
+  let html = '';
+  Object.keys(allSections).forEach(secLabel => {
+    const items = allSections[secLabel];
+    const colSpan = 3 + RADIOS.length + featCols.length + 1;
+    html += `<tr class="section-row"><td colspan="${colSpan}">${secLabel}</td></tr>`;
+    Object.keys(items).forEach(pn => {
+      const item = items[pn];
+      const imgUrl = getImgUrl(pn);
+      const imgHTML = imgUrl ? `<img src="${imgUrl}" alt="${pn}" onclick="openLightbox('${imgUrl}')">` : camSVG();
+      const checked = myList[pn] ? 'checked' : '';
+      const radioCells = RADIOS.map(r => `<td class="feat-col">${item.radios[r]?'<span class="chk">&#10003;</span>':'<span class="dash">&mdash;</span>'}</td>`).join('');
+      const featCells = featCols.map(c => `<td class="feat-col">${renderFeat(c, item.checks[c])}</td>`).join('');
+      html += `<tr data-pn="${pn}">
+        <td class="img-col"><div class="img-box" onclick="imgClick('${pn}')">${imgHTML}</div></td>
+        <td class="pn-cell" onclick="copyPN('${pn}',this)"><span class="copied">Copied!</span>${pn}</td>
+        <td>${item.desc}</td>
+        ${radioCells}
+        ${featCells}
+        <td class="check-col"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleMyList('${pn}','${item.desc.replace(/'/g,"\\'")}',this)"></td>
+      </tr>`;
+    });
+  });
+  tbody.innerHTML = html;
 }
 
-function toggleItem(chk, item) {
-  if (chk.checked) state.report.set(item.pn, item); else state.report.delete(item.pn);
-  chk.closest('tr').classList.toggle('selected', chk.checked);
-  updateReportUI();
+function renderFeat(col, val) {
+  if (val === undefined || val === null || val === 0 || val === false || val === '') return '<span class="dash">&mdash;</span>';
+  if (val === true || val === 1) return '<span class="chk">&#10003;</span>';
+  if (col === 'IP') return `<span class="ip-badge">${val}</span>`;
+  return `<span>${val}</span>`;
 }
 
-function toggleAll(chk) {
-  const catData = getCurrentCatData(); if (!catData) return;
-  const items = filterItems(allItems(catData));
-  items.forEach(i => { if (chk.checked) state.report.set(i.pn, i); else state.report.delete(i.pn); });
-  renderTable(); updateReportUI();
+// ── COPY PART NUMBER ──
+function copyPN(pn, el) {
+  navigator.clipboard.writeText(pn).catch(()=>{});
+  el.classList.add('flash');
+  setTimeout(()=>el.classList.remove('flash'), 1400);
 }
 
-function updateReportUI() {
-  const n = state.report.size;
-  const badge = document.getElementById('report-badge'); badge.textContent = n; badge.classList.toggle('visible', n > 0);
-  document.getElementById('footer-bar').classList.toggle('visible', n > 0);
-  document.getElementById('footer-num').textContent = n;
+// ── IMAGE CLICK ──
+function imgClick(pn) {
+  const url = IMG_CACHE[pn];
+  if (url) openLightbox(url);
+}
+
+// ── LIGHTBOX ──
+function openLightbox(url) {
+  document.getElementById('lightbox-img').src = url;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+// ── MY LIST ──
+function toggleMyList(pn, desc, cb) {
+  if (cb.checked) myList[pn] = {pn, desc, note:''};
+  else delete myList[pn];
+  updateBadge();
+  renderDrawerItems();
+}
+
+function updateBadge() {
+  document.getElementById('report-badge').textContent = Object.keys(myList).length;
+}
+
+function openDrawer() {
+  renderDrawerItems();
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+function clearList() {
+  myList = {};
+  document.querySelectorAll('.mylist-cb').forEach(cb => cb.checked = false);
+  updateBadge();
   renderDrawerItems();
 }
 
 function renderDrawerItems() {
-  const items = Array.from(state.report.values());
+  const items = Object.values(myList);
   const empty = document.getElementById('drawer-empty');
   const container = document.getElementById('drawer-items');
-  if (items.length === 0) { container.innerHTML = ''; empty.style.display = ''; return; }
-  empty.style.display = 'none';
-  container.innerHTML = items.map(i => `<div class="drawer-item"><div class="drawer-item-ph">📦</div><div class="drawer-item-info"><div class="drawer-item-pn">${esc(i.pn)}</div><div class="drawer-item-desc">${esc(i.desc||'')}</div></div><button class="drawer-item-rm" onclick="removeReport('${esc(i.pn)}')">✕</button></div>`).join('');
+  empty.style.display = items.length ? 'none' : 'block';
+  container.innerHTML = items.map(item => `
+    <div class="drawer-item">
+      <div class="di-pn">${item.pn}</div>
+      <div class="di-desc">${item.desc}</div>
+      <textarea placeholder="Notes..." oninput="myList['${item.pn}'].note=this.value">${item.note||''}</textarea>
+    </div>
+  `).join('');
 }
 
-function removeReport(pn) {
-  state.report.delete(pn);
-  const row = document.querySelector('.acc-row[data-pn="' + pn + '"]');
-  if (row) { row.classList.remove('selected'); const chk = row.querySelector('input[type=checkbox]'); if (chk) chk.checked = false; }
-  updateReportUI();
-}
-
-function clearReport() {
-  state.report.clear();
-  document.querySelectorAll('.acc-row').forEach(r => { r.classList.remove('selected'); const c = r.querySelector('input[type=checkbox]'); if (c) c.checked = false; });
-  updateReportUI();
-}
-
-function toggleDrawer() {
-  const open = document.getElementById('drawer').classList.toggle('open');
-  document.getElementById('shell').classList.toggle('drawer-open', open);
-}
-
-function setView(v) {
-  state.view = v;
-  document.getElementById('view-radio').classList.toggle('active', v === 'radio');
-  document.getElementById('view-matrix').classList.toggle('active', v === 'matrix');
-  document.getElementById('btn-view-radio').classList.toggle('active', v === 'radio');
-  document.getElementById('btn-view-matrix').classList.toggle('active', v === 'matrix');
-  if (v === 'matrix') renderMatrix();
-}
-
-function renderMatrix() {
-  const rd = window.RADIOS_DATA || {};
-  const avail = [...RADIO_DEFS, ...XPR_DEFS].filter(r => rd[r.key]);
-  const allCats = new Set();
-  avail.forEach(r => Object.keys(rd[r.key].categories || {}).forEach(k => allCats.add(k)));
-  const catLabels = {};
-  avail.forEach(r => { Object.entries(rd[r.key].categories || {}).forEach(([k,v]) => { catLabels[k] = v.label || k; }); });
-
-  // Category filter
-  document.getElementById('matrix-cat-filter').innerHTML = ['All', ...allCats].map(c => {
-          const active = (!state.matrixCat && c === 'All') || state.matrixCat === c ? ' active' : '';
-          const val = c === 'All' ? '' : c;
-          return `<button class="cat-btn${active}" onclick="setMatrixCat('${val}')">${esc(catLabels[c] || c)}</button>`;
-        }).join('');
-  // Collect all unique items
-  const itemMap = new Map();
-  avail.forEach(r => {
-    const cats = rd[r.key].categories || {};
-    Object.entries(cats).forEach(([catKey, catData]) => {
-      if (state.matrixCat && catKey !== state.matrixCat) return;
-      (catData.sections || []).forEach(sec => {
-        (sec.items || []).forEach(item => {
-          if (!itemMap.has(item.pn)) itemMap.set(item.pn, { pn: item.pn, desc: item.desc, note: item.note, _radios: new Set() });
-          itemMap.get(item.pn)._radios.add(r.key);
-        });
-      });
-    });
-  });
-
-  const items = [...itemMap.values()];
-  document.getElementById('matrix-count').textContent = items.length + ' accessories';
-
-  if (items.length === 0) { document.getElementById('matrix-container').innerHTML = '<div class="no-results">No accessories found.</div>'; return; }
-
-  let h = '<table class="matrix-table"><thead><tr><th class="left chk-col"></th><th class="left">Part No.</th><th class="left" style="min-width:200px">Description</th>';
-  avail.forEach(r => { h += '<th>' + r.label + '</th>'; });
-  h += '</tr></thead><tbody>';
-  items.forEach(item => {
-    const chkd = state.report.has(item.pn) ? ' checked' : '';
-    const sel = state.report.has(item.pn) ? ' selected' : '';
-    const enc = encodeURIComponent(JSON.stringify({ pn: item.pn, desc: item.desc }));
-    h += `<tr class="acc-row${sel}" data-pn="${esc(item.pn)}"><td class="chk-col"><input type="checkbox" onchange="toggleItem(this,JSON.parse(decodeURIComponent('${enc}')))"${chkd}></td>`;
-    h += `<td class="left"><span class="part-no" onclick="copyPN('${esc(item.pn)}')">${esc(item.pn)}</span></td>`;
-    h += '<td class="left">' + esc(item.desc || '') + '</td>';
-    avail.forEach(r => { h += item._radios.has(r.key) ? '<td class="chk">&#10003;</td>' : '<td class="dash">&#8211;</td>'; });
-    h += '</tr>';
-  });
-  h += '</tbody></table>';
-  document.getElementById('matrix-container').innerHTML = h;
-}
-
-function setMatrixCat(c) { state.matrixCat = c || null; renderMatrix(); }
-
-function onSearch(v) {
-  state.search = v.trim();
-  document.getElementById('search-clear').classList.toggle('visible', !!state.search);
-  if (state.view === 'radio') renderTable(); else renderMatrix();
-}
-
-function clearSearch() {
-  state.search = ''; document.getElementById('search-input').value = '';
-  document.getElementById('search-clear').classList.remove('visible');
-  if (state.view === 'radio') renderTable(); else renderMatrix();
-}
-
-function copyPN(pn) { navigator.clipboard.writeText(pn).then(() => showToast('Copied: ' + pn)); }
-
-function showToast(msg) {
-  const t = document.getElementById('toast'); t.textContent = msg;
-  t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2000);
-}
-
+// ── PDF EXPORT (placeholder — full styling next commit) ──
 function exportPDF() {
-  if (state.report.size === 0) { showToast('No items to export'); return; }
-  const items = Array.from(state.report.values());
-  let h = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Accessory Report</title><style>body{font-family:sans-serif;font-size:13px;padding:32px;color:#1f2937}h1{font-size:18px;margin-bottom:4px}.sub{color:#6b7280;margin-bottom:24px;font-size:12px}.item{display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #e5e7eb}.ph{width:56px;height:56px;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:4px;flex-shrink:0}.pn{font-family:monospace;font-size:13px;color:#003087;font-weight:600}.desc{font-size:13px;margin-top:3px}.note{font-size:11px;color:#6b7280;margin-top:2px}</style></head><body>';
-  h += '<h1>Motorola Solutions &#8212; Accessory Report</h1><div class="sub">Generated ' + new Date().toLocaleDateString() + ' &middot; ' + items.length + ' item' + (items.length !== 1 ? 's' : '') + '</div>';
-  items.forEach(i => { h += '<div class="item"><div class="ph"></div><div><div class="pn">' + esc(i.pn) + '</div><div class="desc">' + esc(i.desc || '') + '</div>' + (i.note ? '<div class="note">' + esc(i.note) + '</div>' : '') + '</div></div>'; });
-  h += '</body></html>';
-  const w = window.open('', '_blank'); w.document.write(h); w.document.close(); setTimeout(() => w.print(), 300);
+  const items = Object.values(myList);
+  if (!items.length) { alert('No items in your list yet.'); return; }
+  const win = window.open('','_blank');
+  win.document.write(`<html><head><title>My Accessory List</title>
+  <style>body{font-family:Arial,sans-serif;padding:32px;}h1{font-size:18px;margin-bottom:4px;}
+  .sub{color:#666;font-size:12px;margin-bottom:24px;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{background:#f0ede4;padding:7px 8px;text-align:left;border-bottom:2px solid #ccc;}
+  td{padding:7px 8px;border-bottom:1px solid #eee;}
+  .pn{font-weight:700;}</style></head><body>
+  <img src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" style="height:28px;margin-bottom:12px;"><br>
+  <h1>MOTOTRBO Professional — My Accessory List</h1>
+  <div class="sub">Generated ${new Date().toLocaleDateString()}</div>
+  <table><thead><tr><th>Part No.</th><th>Description</th><th>Notes</th></tr></thead><tbody>
+  ${items.map(i=>`<tr><td class="pn">${i.pn}</td><td>${i.desc}</td><td>${i.note||''}</td></tr>`).join('')}
+  </tbody></table></body></html>`);
+  win.document.close();
+  win.print();
 }
 
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// ── START ──
+document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
