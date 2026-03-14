@@ -131,21 +131,21 @@ td.cc{text-align:center;width:52px;}
 <script src="data/r7-data.js?v=2"></script>
 <script>
 // ── RADIO MAP: display name -> data key ──
-const RADIO_MAP = {
+const PCR_RADIO_MAP = {
   'R7':'r7','Ion':'ion','R5':'r5','R7Ex':'r7ex',
   'XPR 6550':'xpr6550','XPR 7550e':'xpr7550e','XPR 3500e':'xpr3500e'
 };
-const RADIOS = Object.keys(RADIO_MAP);
+const PCR_RADIOS = Object.keys(PCR_RADIO_MAP);
 
 // ── CAT MAP: display name -> data key ──
-const CAT_MAP = {
+const PCR_CAT_MAP = {
   'RSMs':'rsm','Batteries':'batteries','Chargers':'chargers',
   'Antennas':'antennas','Headsets':'headsets','Carry':'carry','Cables':'cables','All':'all'
 };
-const CATS = Object.keys(CAT_MAP);
+const PCR_CATS = Object.keys(PCR_CAT_MAP);
 
 // ── COL LABELS (data key -> display) ──
-const COL_LABELS = {
+const PCR_COL_LABELS = {
   impres:'IMPRES',ip:'IP Rating',hazloc:'HazLoc',windport:'Windport',
   wwet:'Work-When-Wet',intel:'Intelligent Audio',ains:'AINS',
   smartsw:'Smart SW',progbtn:'Prog Btn',volsteps:'Vol Steps',
@@ -153,7 +153,7 @@ const COL_LABELS = {
 };
 
 // ── DEFAULT FEATURE COLS PER VIEW ──
-const DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
+const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
 
 // ── STATE ──
 let currentView = 'radio';
@@ -166,8 +166,8 @@ const IMG_CACHE = {};
 function init() {
   const p = new URLSearchParams(location.search);
   if (p.get('view')) currentView = p.get('view');
-  if (p.get('radio') && RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
-  if (p.get('cat') && CAT_MAP[p.get('cat')]) currentCat = p.get('cat');
+  if (p.get('radio') && PCR_RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
+  if (p.get('cat') && PCR_CAT_MAP[p.get('cat')]) currentCat = p.get('cat');
   buildRadioPills();
   buildCatPills();
   renderTable();
@@ -183,13 +183,13 @@ function pushState() {
 
 // ── PILLS ──
 function buildRadioPills() {
-  document.getElementById('radio-row').innerHTML = RADIOS.map(r =>
+  document.getElementById('radio-row').innerHTML = PCR_RADIOS.map(r =>
     `<button class="rpill${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
   ).join('');
 }
 
 function buildCatPills() {
-  const pills = CATS.map(c =>
+  const pills = PCR_CATS.map(c =>
     `<button class="cpill${c===currentCat?' active':''}" onclick="selectCat('${c}')">${c}</button>`
   ).join('');
   document.getElementById('cat-row').insertAdjacentHTML('afterbegin', pills);
@@ -226,7 +226,7 @@ function fadeRender() {
 }
 
 // ── DATA HELPERS ──
-function getDataKey(radioName) { return RADIO_MAP[radioName]; }
+function getDataKey(radioName) { return PCR_RADIO_MAP[radioName]; }
 
 function getCatSections(radioKey, catKey) {
   const rd = window.RADIOS_DATA && window.RADIOS_DATA[radioKey];
@@ -258,20 +258,20 @@ function renderTable() {
 
 function renderRadioView() {
   const rk = getDataKey(currentRadio);
-  const ck = CAT_MAP[currentCat];
+  const ck = PCR_CAT_MAP[currentCat];
   const sections = getCatSections(rk, ck);
 
   // Collect feat cols from data cols arrays
   const featSet = new Set();
-  sections.forEach(s => (s.cols||DEFAULT_FEAT).forEach(c => featSet.add(c)));
-  const featCols = [...featSet].filter(c => DEFAULT_FEAT.includes(c) || c === 'wwet');
+  sections.forEach(s => (s.cols||PCR_DEFAULT_FEAT).forEach(c => featSet.add(c)));
+  const featCols = [...featSet].filter(c => PCR_DEFAULT_FEAT.includes(c) || c === 'wwet');
 
   const span = 3 + featCols.length + 1;
   document.getElementById('t-head').innerHTML = `<tr>
     <th class="ic"></th>
     <th>Part No.</th>
     <th style="min-width:200px">Description</th>
-    ${featCols.map(c=>`<th class="fc">${COL_LABELS[c]||c}</th>`).join('')}
+    ${featCols.map(c=>`<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
     <th class="cc">My List</th>
   </tr>`;
 
@@ -296,12 +296,12 @@ function renderRadioView() {
 }
 
 function renderMatrixView() {
-  const ck = CAT_MAP[currentCat];
+  const ck = PCR_CAT_MAP[currentCat];
   const search = document.getElementById('search-input').value.toLowerCase().trim();
   const allSecs = {};
 
-  RADIOS.forEach(rn => {
-    const rk = RADIO_MAP[rn];
+  PCR_RADIOS.forEach(rn => {
+    const rk = PCR_RADIO_MAP[rn];
     const rd = window.RADIOS_DATA && window.RADIOS_DATA[rk];
     if (!rd) return;
     const cats = ck==='all' ? Object.values(rd.categories) : [rd.categories[ck]].filter(Boolean);
@@ -318,13 +318,13 @@ function renderMatrixView() {
     });
   });
 
-  const span = 3 + RADIOS.length + DEFAULT_FEAT.length + 1;
+  const span = 3 + PCR_RADIOS.length + PCR_DEFAULT_FEAT.length + 1;
   document.getElementById('t-head').innerHTML = `<tr>
     <th class="ic"></th>
     <th>Part No.</th>
     <th style="min-width:180px">Description</th>
-    ${RADIOS.map(r=>`<th class="fc radio-col">${r}</th>`).join('')}
-    ${DEFAULT_FEAT.map(c=>`<th class="fc">${COL_LABELS[c]||c}</th>`).join('')}
+    ${PCR_RADIOS.map(r=>`<th class="fc radio-col">${r}</th>`).join('')}
+    ${PCR_DEFAULT_FEAT.map(c=>`<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
     <th class="cc">My List</th>
   </tr>`;
 
@@ -338,8 +338,8 @@ function renderMatrixView() {
         <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
         <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
         <td>${item.desc}</td>
-        ${RADIOS.map(r=>`<td class="fc">${item.radios[r]?'<span class="chk">&#10003;</span>':'<span class="dash">&mdash;</span>'}</td>`).join('')}
-        ${DEFAULT_FEAT.map(c=>`<td class="fc">${renderFeat(c,item.checks[c])}</td>`).join('')}
+        ${PCR_RADIOS.map(r=>`<td class="fc">${item.radios[r]?'<span class="chk">&#10003;</span>':'<span class="dash">&mdash;</span>'}</td>`).join('')}
+        ${PCR_DEFAULT_FEAT.map(c=>`<td class="fc">${renderFeat(c,item.checks[c])}</td>`).join('')}
         <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
       </tr>`;
     });
@@ -451,7 +451,7 @@ function exportPDF() {
   win.document.close(); win.print();
 }
 
-if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
