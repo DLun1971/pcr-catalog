@@ -474,7 +474,25 @@ function exportPDF() {
   <p>Generated ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</p>
   <table><thead><tr><th>Part No.</th><th>Description</th><th>Notes</th></tr></thead><tbody>
   ${items.map(i=>`<tr><td class="pn">${i.pn}</td><td>${i.desc}</td><td>${i.note||''}</td></tr>`).join('')}
-  </tbody></table></body></html>`);
+  </tbody></table>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const orig = window.buildRadioPills;
+  window.buildRadioPills = function() {
+    orig();
+    const row = document.getElementById('radio' + '-row');
+    if (!row) return;
+    [{key:'xpr5550e',label:'XPR 5550e'},{key:'xpr4000',label:'XPR 4000'},{key:'xpr2500',label:'XPR 2500'}].forEach(m => {
+      const b = document.createElement('button');
+      b.className = 'rpill mobile';
+      b.textContent = m.label;
+      b.onclick = () => window.selectRadio(m.key);
+      row.appendChild(b);
+    });
+  };
+});
+</script>
+</body></html>`);
   win.document.close(); win.print();
 }
 
