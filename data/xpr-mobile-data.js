@@ -1,167 +1,196 @@
 // xpr-mobile-data.js — MOTOTRBO Mobile Radio Accessories
 // Source: MOTOTRBO Professional Tier Accessory Catalog (pages 73-90)
-// Models: XPR 5550e, XPR 4000 Series, XPR 2500
+// Models: XPR 5550e (XPR 5000/5000e Series), XPR 4000 Series, XPR 2500 Series
 
 const XPR_MOBILE_DATA = {
 
-  // ── MICROPHONES ─────────────────────────────────────────────────────────────
   Microphones: {
-    cols: ['IMPRES','Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['IMPRES','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'IMPRES keypad microphone with 4-way navigation', pn: 'RMN5127', xpr5000e: true, xpr4000: false, xpr2500: false, impres: true },
-      { desc: 'IMPRES keypad microphone', pn: 'RMN5065', xpr5000e: false, xpr4000: true, xpr2500: false, impres: true },
-      { desc: 'Keypad microphone', pn: 'PMMN4089', xpr5000e: false, xpr4000: false, xpr2500: true, impres: false },
-      { desc: 'Standard compact microphone', pn: 'RMN5052', xpr5000e: true, xpr4000: true, xpr2500: false, impres: false },
-      { desc: 'IMPRES heavy-duty microphone', pn: 'RMN5053', xpr5000e: true, xpr4000: true, xpr2500: false, impres: true },
-      { desc: 'Heavy-duty microphone', pn: 'PMMN4091', xpr5000e: false, xpr4000: false, xpr2500: true, impres: false },
-      { desc: 'IMPRES telephone style handset', pn: 'HMN4098', xpr5000e: true, xpr4000: true, xpr2500: false, impres: true },
-      { desc: 'Telephone style handset with hang-up cup', pn: 'PMLN6481', xpr5000e: false, xpr4000: false, xpr2500: true, impres: false },
-      { desc: 'IMPRES visor microphone', pn: 'RMN5054', xpr5000e: true, xpr4000: true, xpr2500: false, impres: true },
-      { desc: 'Visor microphone', pn: 'GMMN4065', xpr5000e: false, xpr4000: false, xpr2500: true, impres: false },
-      { desc: 'Desktop microphone', pn: 'RMN5050', xpr5000e: true, xpr4000: true, xpr2500: false, impres: false },
-      { desc: 'Desktop microphone', pn: 'PMMN4098', xpr5000e: false, xpr4000: false, xpr2500: true, impres: false },
+      { desc: 'IMPRES keypad microphone with 4-way navigation', pn: 'RMN5127', impres: true,  xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'IMPRES keypad microphone',                       pn: 'RMN5065', impres: true,  xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Keypad microphone',                              pn: 'PMMN4089',impres: false, xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'Standard compact microphone',                    pn: 'RMN5052', impres: false, xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'IMPRES heavy-duty microphone',                   pn: 'RMN5053', impres: true,  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Heavy-duty microphone',                          pn: 'PMMN4091',impres: false, xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'IMPRES telephone style handset',                 pn: 'HMN4098', impres: true,  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Telephone style handset with hang-up cup',       pn: 'PMLN6481',impres: false, xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'IMPRES visor microphone',                        pn: 'RMN5054', impres: true,  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Visor microphone',                               pn: 'GMMN4065',impres: false, xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'Desktop microphone',                             pn: 'RMN5050', impres: false, xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Desktop microphone',                             pn: 'PMMN4098',impres: false, xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'Mobile microphone with Bluetooth gateway',       pn: 'PMMN4097',impres: false, xpr5000e: true,  xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── MICROPHONE ACCESSORIES ───────────────────────────────────────────────────
   'Microphone Accessories': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Microphone hang-up clip (requires installation)', pn: 'HLN9073', xpr5000e: true, xpr4000: true, xpr2500: true },
-      { desc: 'Universal microphone hang-up clip (no installation required)', pn: 'HLN9414', xpr5000e: true, xpr4000: true, xpr2500: true },
-      { desc: '10-foot mobile microphone extension cable', pn: 'PMKN4033', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: '20-foot mobile microphone extension cable', pn: 'PMKN4034', xpr5000e: true, xpr4000: true, xpr2500: false },
+      { desc: 'Microphone hang-up clip (requires installation)',          pn: 'HLN9073',  xpr5000e: true,  xpr4000: true,  xpr2500: true  },
+      { desc: 'Universal microphone hang-up clip (no installation)',      pn: 'HLN9414',  xpr5000e: true,  xpr4000: true,  xpr2500: true  },
+      { desc: '10-foot mobile microphone extension cable',                pn: 'PMKN4033', xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: '20-foot mobile microphone extension cable',                pn: 'PMKN4034', xpr5000e: true,  xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── EXTERNAL PTT ─────────────────────────────────────────────────────────────
   'External PTT': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Pushbutton PTT for visor microphone', pn: 'RLN5926', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Emergency footswitch for visor microphone', pn: 'RLN5929', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Remote mount footswitch PTT', pn: 'RLN4856', xpr5000e: false, xpr4000: false, xpr2500: true },
-      { desc: 'Remote mount pushbutton PTT', pn: 'RLN4857', xpr5000e: false, xpr4000: false, xpr2500: true },
-      { desc: 'External PTT with emergency footswitch', pn: 'RLN4836', xpr5000e: false, xpr4000: false, xpr2500: true },
-      { desc: 'Gooseneck PTT', pn: 'RLN4858A', xpr5000e: false, xpr4000: false, xpr2500: true },
+      { desc: 'Pushbutton PTT for visor microphone',         pn: 'RLN5926',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Emergency footswitch for visor microphone',   pn: 'RLN5929',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Remote mount footswitch PTT',                 pn: 'RLN4856',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'Remote mount pushbutton PTT',                 pn: 'RLN4857',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'External PTT with emergency footswitch',      pn: 'RLN4836',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: 'Gooseneck PTT',                               pn: 'RLN4858A', xpr5000e: false, xpr4000: false, xpr2500: true  },
     ]
   },
 
-  // ── LONG RANGE WIRELESS MOBILE ACCESSORY KITS ────────────────────────────────
   'Long Range Wireless Kits': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Long range wireless kit with vehicular charger', pn: 'RLN6551', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Long range wireless kit (RSM and gateway)', pn: 'RLN6552', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Mobile microphone with Bluetooth gateway', pn: 'PMMN4097', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Wireless RSM with battery and clip', pn: 'RLN6544', xpr5000e: true, xpr4000: true, xpr2500: false },
+      { desc: 'Long range wireless kit with vehicular charger',         pn: 'RLN6551', xpr5000e: true, xpr4000: true,  xpr2500: false },
+      { desc: 'Long range wireless kit (RSM and gateway)',              pn: 'RLN6552', xpr5000e: true, xpr4000: true,  xpr2500: false },
+      { desc: 'Wireless RSM with battery and clip',                     pn: 'RLN6544', xpr5000e: true, xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── LONG RANGE WIRELESS CHARGERS & REPLACEMENT PARTS ────────────────────────
   'Long Range Wireless Chargers': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Wireless RSM battery, 1750 mAh Li-Ion', pn: 'PMNN4461', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Dual unit charger with US/CAN power supply', pn: 'PMLN7120', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Vehicular charger with cigarette lighter plug', pn: 'PMLN6716', xpr5000e: true, xpr4000: true, xpr2500: false },
+      { desc: 'Wireless RSM battery, 1750 mAh Li-Ion',              pn: 'PMNN4461', xpr5000e: true, xpr4000: true,  xpr2500: false },
+      { desc: 'Dual unit charger with US/CAN power supply',          pn: 'PMLN7120', xpr5000e: true, xpr4000: true,  xpr2500: false },
+      { desc: 'Vehicular charger with cigarette lighter plug',       pn: 'PMLN6716', xpr5000e: true, xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── OPCRIT WIRELESS BT ACCESSORIES ───────────────────────────────────────────
   'OpCrit Wireless BT': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'BT accessory kit with flexible earpiece, pod, and cradle (US)', pn: 'RLN6500', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'XBT wireless behind-the-neck headset', pn: 'RLN6490', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'XBT wireless headband style headset', pn: 'RLN6491', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless earpiece with 12-inch cable', pn: 'NNTN8125', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless PTT pod with US charger', pn: 'NNTN8127', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless PTT pod (without charger)', pn: 'NNTN8191', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless 1-wire surveillance kit with translucent tube', pn: 'PMLN7052', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless earbud, 11.5" cable', pn: 'NNTN8294', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Wireless earbud, 45" cable', pn: 'NNTN8295', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'BT accessory kit with flexible earpiece, pod and cradle (US)',   pn: 'RLN6500',  xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'BT accessory kit with flexible earpiece, pod and cradle',        pn: 'PMLN7181', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'BT accessory kit with flexible earpiece, pod and cradle (US)',   pn: 'RLN6556',  xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'OpCrit wireless 1-wire surveillance kit with translucent tube',  pn: 'PMLN7052', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'XBT wireless behind-the-neck headset',                           pn: 'RLN6490',  xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'XBT wireless headband style headset',                            pn: 'RLN6491',  xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Wireless earpiece with 12-inch cable',                           pn: 'NNTN8125', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Wireless PTT pod with US charger',                               pn: 'NNTN8127', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Wireless PTT pod (without charger)',                             pn: 'NNTN8191', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Wireless earbud, 11.5" cable',                                   pn: 'NNTN8294', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Wireless earbud, 45" cable',                                     pn: 'NNTN8295', xpr5000e: true, xpr4000: false, xpr2500: false },
     ]
   },
 
-  // ── OPCRIT WIRELESS REPLACEMENT PARTS ────────────────────────────────────────
   'OpCrit Wireless Replacement Parts': {
-    cols: ['Description','Part #','XPR 5000/5000e'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e'],
     items: [
-      // Placeholder — PDF data needed
+      { desc: 'Eartube for comport earpiece (pack of 10)',                             pn: 'RLN5037',  xpr5000e: true },
+      { desc: 'Replacement ear tips kit (20 sm, 20 med, 20 lg, 10 clips)',            pn: 'NNTN8361', xpr5000e: true },
+      { desc: 'Swivel clip for OpCrit/enhanced OpCrit wireless pods',                 pn: 'PMLN6246', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (US)',                  pn: 'PMPN4027', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (AU/NZ)',               pn: 'PMPN4007', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (EU/UK)',               pn: 'PMPN4006', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (PRC)',                 pn: 'PMPN4008', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (ARG)',                 pn: 'PMPN4016', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (BRZ)',                 pn: 'PMPN4023', xpr5000e: true },
+      { desc: 'Replacement micro-USB charger for wireless pod (EU)',                  pn: 'PMPN4028', xpr5000e: true },
     ]
   },
 
-  // ── CONTROL STATION ACCESSORIES ──────────────────────────────────────────────
   'Control Station': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Power supply 14V 10 amp (1-25W)', pn: 'HPN4008', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Desktop tray with speaker', pn: 'RSN4005', xpr5000e: true, xpr4000: true, xpr2500: false },
+      { desc: 'Power supply 14V 10 amp (1-25W)',  pn: 'HPN4008', xpr5000e: true, xpr4000: true,  xpr2500: false },
+      { desc: 'Desktop tray with speaker',         pn: 'RSN4005', xpr5000e: true, xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── INSTALLATION & MOUNTING ───────────────────────────────────────────────────
   'Installation & Mounting': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: 'Low profile trunnion kit', pn: 'RLN6466', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'Low profile trunnion kit', pn: 'RLN6077', xpr5000e: false, xpr4000: true, xpr2500: false },
-      { desc: 'High profile trunnion kit', pn: 'RLN6467', xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: 'High profile trunnion kit', pn: 'RLN6078', xpr5000e: false, xpr4000: true, xpr2500: true },
-      { desc: 'Key lock trunnion kit', pn: 'RLN6468', xpr5000e: true, xpr4000: false, xpr2500: true },
-      { desc: 'Remote mount adapter kit', pn: 'PMLN6404', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'Low profile trunnion kit (under dash)',         pn: 'RLN6466', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'Low profile trunnion kit (under dash)',         pn: 'RLN6077', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'High profile trunnion kit (under dash/floor)',  pn: 'RLN6467', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'High profile trunnion kit (under dash/floor)',  pn: 'RLN6078', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Key lock trunnion kit',                         pn: 'RLN6079', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Key lock trunnion kit',                         pn: 'RLN6468', xpr5000e: true,  xpr4000: false, xpr2500: true  },
+      { desc: 'Direct in-dashboard mounting kit',              pn: 'RLN5933', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Direct in-dashboard mounting kit',              pn: 'RLN6465', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'In-dash mounting kit DIN',                      pn: 'FTN6083', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'Mobile remote mount adapter kit',               pn: 'PMLN5404',xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Mobile remote mount adapter kit',               pn: 'PMLN6404',xpr5000e: true,  xpr4000: false, xpr2500: true  },
     ]
   },
 
-  // ── EXTERNAL SPEAKERS ────────────────────────────────────────────────────────
   'External Speakers': {
-    cols: ['Description','Part #','Watts','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','Watts','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      { desc: '13W external speaker', pn: 'RSN4002', watts: 13, xpr5000e: true, xpr4000: false, xpr2500: false },
-      { desc: '13W external speaker', pn: 'RSN4001', watts: 13, xpr5000e: false, xpr4000: false, xpr2500: true },
-      { desc: '7.5W external speaker', pn: 'HSN8145', watts: 7.5, xpr5000e: false, xpr4000: true, xpr2500: false },
+      { desc: '13W external speaker',        pn: 'RSN4002',  watts: '13W',  xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: '13W external speaker',        pn: 'RSN4001',  watts: '13W',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: '7.5W external speaker',       pn: 'RSN4003',  watts: '7.5W', xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: '5W external speaker',         pn: 'RSN4004',  watts: '5W',   xpr5000e: false, xpr4000: false, xpr2500: true  },
+      { desc: '7.5W external speaker',       pn: 'HSN8145',  watts: '7.5W', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Speaker extension cable',     pn: 'GMKN4084', watts: '—',    xpr5000e: false, xpr4000: false, xpr2500: true  },
     ]
   },
 
-  // ── CABLES ───────────────────────────────────────────────────────────────────
   Cables: {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      // Placeholder — PDF data needed
+      { desc: 'Mobile remote mount 5-meter cable kit',                         pn: 'PMKN4073', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'Mobile remote mount 3-meter cable kit',                         pn: 'PMKN4074', xpr5000e: true,  xpr4000: false, xpr2500: false },
+      { desc: 'Mobile remote mount 5-meter cable kit',                         pn: 'PMKN4144', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'Mobile remote mount 3-meter cable kit',                         pn: 'PMKN4143', xpr5000e: false, xpr4000: true,  xpr2500: false },
+      { desc: 'IMPRES mobile MAP non-PC adapter',                              pn: 'PMKN4070', xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'IMPRES mobile MMP non-PC adapter',                              pn: 'PMKN4072', xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Power cable to battery, 10ft, 15A, 14AWG (1-25W radios)',       pn: 'HKN4137',  xpr5000e: true,  xpr4000: true,  xpr2500: true  },
+      { desc: 'Power cable to battery, 10ft, 20A, 12AWG (1-60W radios)',       pn: 'HKN4191',  xpr5000e: true,  xpr4000: true,  xpr2500: true  },
+      { desc: 'Power cable to battery, 20ft, 20A, 10AWG (1-60W radios)',       pn: 'HKN4192',  xpr5000e: true,  xpr4000: true,  xpr2500: true  },
+      { desc: 'Ignition sense cable',                                          pn: 'RKN4136',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Mobile and repeater rear accessory programming cable',          pn: 'PMKN4010', xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Mobile and repeater rear programming, test and alignment cable',pn: 'PMKN4016', xpr5000e: true,  xpr4000: true,  xpr2500: false },
+      { desc: 'Mobile rear accessory connector universal cable',               pn: 'PMKN4018', xpr5000e: true,  xpr4000: true,  xpr2500: false },
     ]
   },
 
-  // ── ANTENNAS ─────────────────────────────────────────────────────────────────
   Antennas: {
-    cols: ['Description','Part #','Band','Freq (MHz)','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','Band','Freq (MHz)','GPS','Mount'],
     items: [
-      { desc: 'GPS/UHF combination 1/4 wave antenna (403-430 MHz)', pn: 'PMAE4030', band: 'UHF', freq: '403-430', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'GPS/VHF combination through-hole antenna (136-144 MHz)', pn: 'RAD4214', band: 'VHF', freq: '136-144', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'VHF urban roof mount 1/4 wave (162-174 MHz)', pn: 'HAD4009', band: 'VHF', freq: '162-174', xpr5000e: true, xpr4000: true, xpr2500: true },
-      { desc: 'Magnetic mount GPS active antenna', pn: 'PMAN4002', band: 'GPS', freq: '—', xpr5000e: true, xpr4000: true, xpr2500: false },
-      { desc: 'Mobile mini-U antenna adapter, 8-foot cable', pn: 'HKN9088', band: '—', freq: '—', xpr5000e: true, xpr4000: false, xpr2500: false },
+      { desc: 'GPS/UHF combination 1/4 wave (403-430 MHz)',          pn: 'PMAE4030', band: 'UHF',     freq: '403-430',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 1/4 wave (450-470 MHz)',          pn: 'PMAE4031', band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 3.5 dB gain (406-420 MHz)',       pn: 'PMAE4032', band: 'UHF',     freq: '406-420',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 3.5 dB gain (450-470 MHz)',       pn: 'PMAE4033', band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 5 dB gain (450-470 MHz)',         pn: 'PMAE4034', band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 2 dB gain (403-527 MHz)',         pn: 'HAE6019',  band: 'UHF',     freq: '403-527',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/UHF combination 1/4 wave (470-527 MHz)',          pn: 'HAE6020',  band: 'UHF',     freq: '470-527',   gps: true,  mount: 'Through-hole' },
+      { desc: 'UHF wide area 3.5 dB gain (450-470 MHz)',             pn: 'HAE4011',  band: 'UHF',     freq: '450-470',   gps: false, mount: 'Through-hole' },
+      { desc: 'UHF wide area 2 dB gain (403-527 MHz)',               pn: 'HAE6022',  band: 'UHF',     freq: '403-527',   gps: false, mount: 'Through-hole' },
+      { desc: 'UHF wide area 5 dB gain (445-470 MHz)',               pn: 'RAE4004ARB',band: 'UHF',    freq: '445-470',   gps: false, mount: 'Through-hole' },
+      { desc: 'UHF urban roof mount 1/4 wave (403-430 MHz)',         pn: 'PMAE4040', band: 'UHF',     freq: '403-430',   gps: false, mount: 'Roof mount' },
+      { desc: 'UHF urban roof mount 1/4 wave (450-470 MHz)',         pn: 'PMAE4041', band: 'UHF',     freq: '450-470',   gps: false, mount: 'Roof mount' },
+      { desc: 'UHF urban roof mount 1/4 wave (470-512 MHz)',         pn: 'HAE4004',  band: 'UHF',     freq: '470-512',   gps: false, mount: 'Roof mount' },
+      { desc: 'GPS/VHF combination 1/4 wave (136-144 MHz)',          pn: 'RAD4214',  band: 'VHF',     freq: '136-144',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/VHF combination 1/4 wave (146-150.8 MHz)',        pn: 'RAD4215',  band: 'VHF',     freq: '146-150.8', gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/VHF combination 1/4 wave (150.8-162 MHz)',        pn: 'RAD4216',  band: 'VHF',     freq: '150.8-162', gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/VHF combination 1/4 wave (162-174 MHz)',          pn: 'RAD4217',  band: 'VHF',     freq: '162-174',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/VHF combination 3 dB gain (146-172 MHz)',         pn: 'RAD4218',  band: 'VHF',     freq: '146-172',   gps: true,  mount: 'Through-hole' },
+      { desc: 'VHF urban roof mount 1/4 wave (162-174 MHz)',         pn: 'HAD4009',  band: 'VHF',     freq: '162-174',   gps: false, mount: 'Roof mount' },
+      { desc: 'GPS/800-900 MHz 1/4 wave (806-941 MHz)',              pn: 'HAF4029',  band: '800/900', freq: '806-941',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/800-900 MHz 3 dB gain (806-941 MHz)',             pn: 'HAF4030',  band: '800/900', freq: '806-941',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/800-900 MHz stubby (806-941 MHz)',                pn: 'HAF4032',  band: '800/900', freq: '806-941',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS/800-900 MHz 5 dB gain (806-941 MHz)',             pn: 'HAF4033',  band: '800/900', freq: '806-941',   gps: true,  mount: 'Through-hole' },
+      { desc: 'GPS fixed mount active antenna',                      pn: 'PMAN4000', band: 'GPS',     freq: '—',         gps: true,  mount: 'Fixed' },
+      { desc: 'GPS glass mount active antenna',                      pn: 'PMAN4001', band: 'GPS',     freq: '—',         gps: true,  mount: 'Glass' },
+      { desc: 'GPS magnetic mount active antenna',                   pn: 'PMAN4002', band: 'GPS',     freq: '—',         gps: true,  mount: 'Magnetic' },
+      { desc: 'GPS fixed mount active antenna',                      pn: 'PMAN4008', band: 'GPS',     freq: '—',         gps: true,  mount: 'Fixed' },
+      { desc: 'GPS glass mount active antenna',                      pn: 'PMAN4009', band: 'GPS',     freq: '—',         gps: true,  mount: 'Glass' },
+      { desc: 'GPS magnetic mount active antenna',                   pn: 'PMAN4010', band: 'GPS',     freq: '—',         gps: true,  mount: 'Magnetic' },
     ]
   },
 
-  // ── ANTENNA ACCESSORIES ───────────────────────────────────────────────────────
   'Antenna Accessories': {
-    cols: ['Description','Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
-    checks: {},
+    cols: ['Part #','XPR 5000/5000e','XPR 4000','XPR 2500'],
     items: [
-      // Placeholder — PDF data needed
+      { desc: 'Mobile mini-U antenna adapter, 8-foot cable',  pn: 'HKN9088', xpr5000e: true, xpr4000: false, xpr2500: false },
     ]
   },
 
