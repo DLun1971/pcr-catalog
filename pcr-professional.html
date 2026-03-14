@@ -146,13 +146,38 @@ const PCR_CATS = Object.keys(PCR_CAT_MAP);
 
 // ── COL LABELS (data key -> display) ──
 const PCR_COL_LABELS = {
-  impres:'IMPRES',ip:'IP Rating',hazloc:'HazLoc',windport:'Windport',
-  wwet:'Work-When-Wet',intel:'Intelligent Audio',ains:'AINS',
-  smartsw:'Smart SW',progbtn:'Prog Btn',volsteps:'Vol Steps',
-  jack:'Jack',bt:'Bluetooth',fulldx:'Full Duplex',ion_fw:'Ion FW'
+  impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
+  wwet:'Work-When-Wet', intel:'Intelligent Audio', ains:'AINS',
+  progbtn:'Prog Btn', volsteps:'Vol Steps', jack:'Jack',
+  bt:'Bluetooth', fulldx:'Full Duplex', ion_fw:'Ion FW',
+  nrr:'NRR', nc:'Noise Cancel', wires:'Wires',
+  hstype:'Headset Type', epstyle:'Earpiece Style',
+  mic:'Mic', ptt:'PTT',
+  chem:'Chemistry', mah:'Capacity (mAh)', temp:'Temp Range',
+  dims:'Dimensions', weight:'Weight',
+  pockets:'Pockets', voltage:'Voltage', material:'Material',
+  belt_sz:'Belt Size', swivel:'Swivel', display:'Display', drings:'D-Rings',
+  style:'Style', band:'Band', freq_mhz:'Freq (MHz)',
+  ant_type:'Antenna Type', len_cm:'Length (cm)',
+  talktime:'Talk Time', chrgtime:'Charge Time',
+  eptype:'Earpiece Type', opscrit:'Ops Critical',
+  pairing:'Pairing', range:'Range'
 };
 
-// ── DEFAULT FEATURE COLS PER VIEW ──
+// ── FEATURE COLS PER CATEGORY (checks keys, matching PDF) ──
+const PCR_CAT_FEAT = {
+  rsm:         ['impres','ip','hazloc','windport','wwet','intel','ains','progbtn','jack'],
+  wireless:    ['ip','hazloc','bt','fulldx','mic','ptt','talktime','chrgtime','weight'],
+  surveillance:['impres','hazloc','intel','nrr','wires','hstype','epstyle','mic','ptt'],
+  headsets:    ['impres','ip','hazloc','intel','nrr','nc','hstype','epstyle','mic','ptt'],
+  batteries:   ['impres','chem','mah','ip','hazloc','temp'],
+  chargers:    ['impres','pockets','voltage','chem','belt_sz','swivel','display','drings'],
+  carry:       ['style','material','belt_sz','swivel'],
+  antennas:    ['band','freq_mhz','ant_type','len_cm','hazloc'],
+  cables:      [],
+  all:         ['impres','ip','hazloc','windport']
+};
+// Matrix view always shows radio compat cols only — no feat cols needed
 const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
 
 // ── STATE ──
@@ -261,8 +286,9 @@ function renderRadioView() {
   const ck = PCR_CAT_MAP[currentCat];
   const sections = getCatSections(rk, ck);
 
-  // Always use the canonical lowercase check keys
-  const featCols = PCR_DEFAULT_FEAT;
+  // Use per-category feature cols from the PDF
+  const catKey = PCR_CAT_MAP[currentCat] || 'all';
+  const featCols = PCR_CAT_FEAT[catKey] || PCR_DEFAULT_FEAT;
 
   const span = 3 + featCols.length + 1;
   document.getElementById('t-head').innerHTML = `<tr>
@@ -284,7 +310,7 @@ function renderRadioView() {
         <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
         <td>${item.desc||''}</td>
         ${featCols.map(c=>`<td class="fc">${renderFeat(c,item.checks?item.checks[c]:undefined)}</td>`).join('')}
-        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')},${JSON.stringify(JSON.stringify(item.checks||{}))},${JSON.stringify(sec.title||'')})"></td>
+        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
       </tr>`;
     });
   });
@@ -338,7 +364,7 @@ function renderMatrixView() {
         <td>${item.desc}</td>
         ${PCR_RADIOS.map(r=>`<td class="fc">${item.radios[r]?'<span class="chk">&#10003;</span>':'<span class="dash">&mdash;</span>'}</td>`).join('')}
         ${PCR_DEFAULT_FEAT.map(c=>`<td class="fc">${renderFeat(c,item.checks[c])}</td>`).join('')}
-        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)},${JSON.stringify(JSON.stringify(item.checks||{}))},${JSON.stringify(title)})"></td>
+        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
       </tr>`;
     });
   });
@@ -401,12 +427,9 @@ function copyPN(pn, el) {
 function closeLB() { document.getElementById('lightbox').classList.remove('open'); }
 
 // ── MY LIST ──
-function toggleML(pn, cb, desc, checksJson, section) {
-  if (cb.checked) {
-    let checks = {};
-    try { checks = JSON.parse(checksJson||'{}'); } catch(e){}
-    myList[pn] = {pn, desc, note:'', checks, section: section||''};
-  } else delete myList[pn];
+function toggleML(pn, cb, desc) {
+  if (cb.checked) myList[pn] = {pn, desc, note:''};
+  else delete myList[pn];
   document.getElementById('report-badge').textContent = Object.keys(myList).length;
   if (document.getElementById('drawer').classList.contains('open')) renderDrawer();
 }
@@ -435,66 +458,21 @@ function renderDrawer() {
 function exportPDF() {
   const items = Object.values(myList);
   if (!items.length) { alert('No items in your list yet.'); return; }
-  const featCols = PCR_DEFAULT_FEAT;
-  const isMatrix = currentView === 'matrix';
-
-  // Group items by section
-  const sections = {};
-  items.forEach(item => {
-    const sec = item.section || 'My Accessories';
-    if (!sections[sec]) sections[sec] = [];
-    sections[sec].push(item);
-  });
-
-  const radioCols = isMatrix ? PCR_RADIOS.map(r => `<th style="background:#dde8f4;color:#1a5fa8;text-align:center;padding:6px 8px;font-size:10px;border-bottom:2px solid #ccc;">${r}</th>`).join('') : '';
-  const featHeaders = featCols.map(c => `<th style="text-align:center;padding:6px 8px;font-size:10px;background:#f0ede4;border-bottom:2px solid #ccc;">${PCR_COL_LABELS[c]||c}</th>`).join('');
-
-  let tableRows = '';
-  Object.keys(sections).forEach(secName => {
-    const colCount = 3 + (isMatrix ? PCR_RADIOS.length : 0) + featCols.length + 1;
-    tableRows += `<tr><td colspan="${colCount}" style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#777;padding:5px 8px;background:#f7f4ed;border-bottom:1px solid #e5e0d5;">${secName}</td></tr>`;
-    sections[secName].forEach(item => {
-      const radioTds = isMatrix ? PCR_RADIOS.map(r => `<td style="text-align:center;padding:6px 8px;border-bottom:1px solid #eee;">${item.radios&&item.radios[r]?'&#10003;':'&mdash;'}</td>`).join('') : '';
-      const featTds = featCols.map(c => {
-        const v = item.checks ? item.checks[c] : undefined;
-        let cell = '&mdash;';
-        if (v===1||v===true) cell = '<span style="color:#2d7a4f;font-weight:700;">&#10003;</span>';
-        else if (c==='ip'&&v) cell = `<span style="display:inline-block;padding:1px 6px;border-radius:20px;border:1.5px solid #2d7a4f;color:#2d7a4f;font-size:10px;font-weight:600;">${v}</span>`;
-        else if (v) cell = v;
-        return `<td style="text-align:center;padding:6px 8px;border-bottom:1px solid #eee;">${cell}</td>`;
-      }).join('');
-      tableRows += `<tr>
-        <td style="padding:6px 8px;border-bottom:1px solid #eee;font-weight:700;white-space:nowrap;">${item.pn}</td>
-        <td style="padding:6px 8px;border-bottom:1px solid #eee;">${item.desc}${item.note ? '<br><span style=\"font-size:10px;color:#888;font-style:italic;\">' + item.note + '</span>' : ''}</td>
-        ${radioTds}${featTds}
-      </tr>`;
-    });
-  });
-
   const win = window.open('','_blank');
-  win.document.write(`<!DOCTYPE html><html><head><title>My Accessory List</title>
-  <style>
-    body{font-family:Arial,sans-serif;padding:32px;color:#1a1a1a;font-size:12px;}
-    h1{font-size:16px;margin:8px 0 2px;font-weight:700;}
-    .sub{font-size:11px;color:#666;margin-bottom:20px;}
-    table{width:100%;border-collapse:collapse;font-size:11px;}
-    th{background:#f0ede4;padding:6px 8px;text-align:left;border-bottom:2px solid #ccc;font-size:10px;font-weight:700;}
-    @media print{body{padding:16px;}button{display:none;}}
-  </style></head><body>
-  <img src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" style="height:26px;margin-bottom:12px;display:block;">
+  win.document.write(`<html><head><title>My Accessory List</title>
+  <style>body{font-family:Arial,sans-serif;padding:32px;color:#1a1a1a;}
+  h1{font-size:16px;margin:8px 0 2px;}p{font-size:11px;color:#666;margin-bottom:20px;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{background:#f0ede4;padding:7px 8px;text-align:left;border-bottom:2px solid #ccc;font-size:11px;}
+  td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+  .pn{font-weight:700;}</style></head><body>
+  <img src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" style="height:26px;margin-bottom:10px;display:block;">
   <h1>MOTOTRBO Professional — My Accessory List</h1>
-  <div class="sub">Generated ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})} &nbsp;|&nbsp; ${items.length} item${items.length!==1?'s':''} &nbsp;|&nbsp; View: ${isMatrix?'Full Matrix':'By Radio — '+currentRadio}</div>
-  <table>
-    <thead><tr>
-      <th style="min-width:90px;">Part No.</th>
-      <th style="min-width:180px;">Description / Notes</th>
-      ${radioCols}${featHeaders}
-    </tr></thead>
-    <tbody>${tableRows}</tbody>
-  </table>
-  <script>window.onload=()=>window.print();</script>
-  </body></html>`);
-  win.document.close();
+  <p>Generated ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</p>
+  <table><thead><tr><th>Part No.</th><th>Description</th><th>Notes</th></tr></thead><tbody>
+  ${items.map(i=>`<tr><td class="pn">${i.pn}</td><td>${i.desc}</td><td>${i.note||''}</td></tr>`).join('')}
+  </tbody></table></body></html>`);
+  win.document.close(); win.print();
 }
 
 document.addEventListener('DOMContentLoaded', init);
