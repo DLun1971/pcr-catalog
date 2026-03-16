@@ -245,6 +245,9 @@ function setView(v) {
   currentView = v;
   syncViewBtns();
   document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', v==='radio' && b.textContent.trim()===currentRadio));
+        { id: 'xpr-mobile', label: 'XPR 5550e', cls: 'rpill mobile', group: 'XPR Mobile' },
+        { id: 'xpr-mobile', label: 'XPR 4000',  cls: 'rpill mobile', group: 'XPR Mobile' },
+        { id: 'xpr-mobile', label: 'XPR 2500',  cls: 'rpill mobile', group: 'XPR Mobile' },
   fadeRender(); pushState();
 }
 
