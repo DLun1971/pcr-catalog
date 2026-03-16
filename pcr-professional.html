@@ -201,7 +201,6 @@ function init() {
   if (p.get('radio') && PCR_RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
   if (p.get('cat') && PCR_CAT_MAP[p.get('cat')]) currentCat = p.get('cat');
   buildRadioPills();
-  buildCatPills();
   renderTable();
 }
 
@@ -214,11 +213,6 @@ function pushState() {
 }
 
 // ── PILLS ──
-function buildRadioPills() {
-  document.getElementById('radio-row').innerHTML = PCR_RADIOS.map(r =>
-    `<button class="rpill${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
-  ).join('');
-}
 
 function buildRadioPills() {
   const radios = [
