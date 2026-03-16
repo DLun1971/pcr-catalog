@@ -52,3 +52,5 @@ const XPR_PORTABLE_DATA = {
     ]}]}
   }
 };
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['xpr-portable'] = XPR_PORTABLE_DATA;
