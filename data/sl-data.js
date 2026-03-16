@@ -1,38 +1,120 @@
-// SL Series Portable Radio Accessory Data
-// Covers: SL 3500, SL 7000 series (aggregated)
+// SL Series Accessory Data
+// Covers: SL 3500e, SL 3500Max, SL 7000, SL 7000e
+// Source: MOTOTRBO Professional Tier Accessory Catalog (PDF)
 const SL_DATA = {
   categories: {
-    rsm: { label: 'RSMs', sections: [{ title: 'Remote Speaker Microphones', items: [
-      { img: null, pn: 'PMMN4013', desc: 'Remote Speaker Microphone, Standard', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 1 } },
-      { img: null, pn: 'PMMN4075', desc: 'IMPRES Compact Microphone', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500: 0, sl7000: 1 } },
-    ]}]},
-    wireless: { label: 'Wireless', sections: [{ title: 'Wireless RSM', items: [
-      { img: null, pn: 'PMMN4100', desc: 'WM500 Wireless RSM', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 0, sl7000: 1 } },
-    ]}]},
-    surveillance: { label: 'Surveillance', sections: [{ title: 'Surveillance Kits', items: [
-      { img: null, pn: 'PMLN6530', desc: 'Surveillance Kit, Translucent Tube', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 1 } },
-    ]}]},
-    headsets: { label: 'Headsets', sections: [{ title: 'Headsets', items: [
-      { img: null, pn: 'RMN5127', desc: 'IMPRES Keypad Headset', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500: 0, sl7000: 1 } },
-    ]}]},
-    batteries: { label: 'Batteries', sections: [{ title: 'Batteries', items: [
-      { img: null, pn: 'PMNN4468', desc: 'IMPRES Li-Ion 2300mAh Slim Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 0 } },
-      { img: null, pn: 'PMNN4424', desc: 'IMPRES Li-Ion 2150mAh Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500: 0, sl7000: 1 } },
-    ]}]},
-    chargers: { label: 'Chargers', sections: [{ title: 'Chargers', items: [
-      { img: null, pn: 'WPLN4228', desc: 'IMPRES Single Unit Charger', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 1 } },
-    ]}]},
-    carry: { label: 'Carry', sections: [{ title: 'Carry Solutions', items: [
-      { img: null, pn: 'PMLN7128', desc: 'Carry Holster with Belt Clip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 0 } },
-      { img: null, pn: 'PMLN4651', desc: 'Carry Holder, Belt Clip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 0, sl7000: 1 } },
-    ]}]},
-    antennas: { label: 'Antennas', sections: [{ title: 'Antennas', items: [
-      { img: null, pn: 'PMAE4089', desc: 'UHF Whip Antenna', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 1 } },
-    ]}]},
-    cables: { label: 'Cables', sections: [{ title: 'Programming Cables', items: [
-      { img: null, pn: 'PMKN4147', desc: 'USB Programming Cable', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500: 1, sl7000: 1 } },
-    ]}]}
+    rsm: {
+      label: 'RSMs',
+      sections: [
+        { title: 'Remote Speaker Microphones', items: [
+          { img: null, pn: 'PMMN4125', desc: 'RM250 RSM (IP54)', note: 'SL Series specific', checks: { impres: 0, ip: 'IP54', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMMN4071', desc: 'IMPRES Noise-Canceling RSM, Large (IP54)', note: '', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMMN4073', desc: 'IMPRES Windporting RSM, Small (IP54)', note: '', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 1, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMMN4075', desc: 'RSM, Small (IP54)', note: '', checks: { impres: 0, ip: 'IP54', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMMN4076', desc: 'Noise-Canceling RSM, Large (IP54)', note: '', checks: { impres: 0, ip: 'IP54', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    surveillance: {
+      label: 'Surveillance',
+      sections: [
+        { title: 'Surveillance Kits', items: [
+          { img: null, pn: 'PMLN7157', desc: '1-Wire Surveillance Kit (IP54)', note: '', checks: { impres: 0, ip: 'IP54', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN7158', desc: '2-Wire Surveillance Kit (IP54)', note: '', checks: { impres: 0, ip: 'IP54', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN6754', desc: 'Earpiece Replacement Kit', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN6755', desc: 'Earpiece Replacement Kit, Large', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    headsets: {
+      label: 'Headsets & Earpieces',
+      sections: [
+        { title: 'Mag One Headsets', items: [
+          { img: null, pn: 'PMLN4620', desc: 'Mag One Receive-Only Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN4443', desc: 'Mag One Single-Wire Lapel Microphone with Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN5101', desc: 'Mag One Over-the-Ear Headset with Boom Microphone', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN5096', desc: 'Mag One Two-Wire Surveillance Kit with Clear Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN5097', desc: 'Mag One Two-Wire Surveillance Kit with Beige Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'Bluetooth Accessories', items: [
+          { img: null, pn: 'NNTN8189', desc: 'IMPRES Bluetooth RSM', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'NN003748A01', desc: 'Bluetooth Earpiece (Motorola)', note: 'BT', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    batteries: {
+      label: 'Batteries',
+      sections: [
+        { title: 'IMPRES Slim Batteries', items: [
+          { img: null, pn: 'PMNN4468', desc: 'IMPRES Li-Ion Slim Battery, 1420 mAh (Standard)', note: 'Li-Ion, slim', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMNN4469', desc: 'IMPRES Li-Ion Slim Battery, 2150 mAh (High Capacity)', note: 'Li-Ion, slim', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'Non-IMPRES Slim Batteries', items: [
+          { img: null, pn: 'PMNN4470', desc: 'Li-Ion Slim Battery, 1420 mAh (Standard)', note: 'Li-Ion, slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMNN4471', desc: 'Li-Ion Slim Battery, 2150 mAh (High Capacity)', note: 'Li-Ion, slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    chargers: {
+      label: 'Chargers',
+      sections: [
+        { title: 'IMPRES Single-Unit Slim Chargers', items: [
+          { img: null, pn: 'WPLN4228', desc: 'IMPRES Single-Unit Slim Charger (US)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'WPLN4229', desc: 'IMPRES Single-Unit Slim Charger (UK)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'WPLN4230', desc: 'IMPRES Single-Unit Slim Charger (EU)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'WPLN4231', desc: 'IMPRES Single-Unit Slim Charger (AU)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'Multi-Unit Slim Chargers', items: [
+          { img: null, pn: 'WPLN4220', desc: 'IMPRES Multi-Unit Slim Charger, 6-Bank (US)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'WPLN4221', desc: 'IMPRES Multi-Unit Slim Charger, 6-Bank (INTL)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMPN4170', desc: 'Multi-Unit Slim Charger, 6-Bank (US)', note: 'SL Series specific', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMPN4171', desc: 'Multi-Unit Slim Charger, 6-Bank (INTL)', note: 'SL Series specific', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'Vehicle Chargers', items: [
+          { img: null, pn: 'WPLN4265', desc: 'IMPRES Vehicle Charger (Slim)', note: 'SL Series specific', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMPN4169', desc: 'Vehicle Charger (Slim)', note: 'SL Series specific', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    carry: {
+      label: 'Carry',
+      sections: [
+        { title: 'Cases', items: [
+          { img: null, pn: 'PMLN6244', desc: 'Carry Case, Leather (SL Series)', note: 'Slim form factor', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN6245', desc: 'Carry Case, Fabric (SL Series)', note: 'Slim form factor', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'Belt Clips', items: [
+          { img: null, pn: 'PMLN6246', desc: 'Replacement Belt Clip (SL Series)', note: 'Slim form factor', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMLN6247', desc: 'Spring Action Belt Clip (SL Series)', note: 'Slim form factor', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    antennas: {
+      label: 'Antennas',
+      sections: [
+        { title: 'UHF Antennas', items: [
+          { img: null, pn: 'PMAE4096', desc: 'UHF Slim Stubby Antenna (403-450 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAE4097', desc: 'UHF Slim Stubby Antenna (440-490 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAE4098', desc: 'UHF Slim Stubby Antenna (470-527 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAE4099', desc: 'UHF Slim Whip Antenna (403-527 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+        { title: 'VHF Antennas', items: [
+          { img: null, pn: 'PMAD4148', desc: 'VHF Slim Stubby Antenna (136-155 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAD4149', desc: 'VHF Slim Stubby Antenna (144-165 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAD4150', desc: 'VHF Slim Stubby Antenna (152-174 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+          { img: null, pn: 'PMAD4151', desc: 'VHF Slim Whip Antenna (136-174 MHz)', note: 'SL Series slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
+    cables: {
+      label: 'Cables',
+      sections: [
+        { title: 'Programming Cables', items: [
+          { img: null, pn: 'PMKN4147', desc: 'Programming Cable (USB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
+        ]},
+      ]
+    },
   }
 };
-window.RADIOS_DATA = window.RADIOS_DATA || {};
+if (!window.RADIOS_DATA) window.RADIOS_DATA = {};
 window.RADIOS_DATA['sl'] = SL_DATA;
