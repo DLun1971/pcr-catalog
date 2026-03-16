@@ -110,6 +110,7 @@ td.cc{text-align:center;width:52px;}
       <button class="mstab mobile-tab" onclick="setMatrixTab('mobile')">Mobile Radios</button>
     </div>
     <div id="cat-row">
+      <div id="cat-pills"></div>
       <input id="search-input" type="text" placeholder="Search part number or description..." oninput="renderTable()">
     </div>
   </div>
@@ -238,6 +239,7 @@ function init() {
   if (p.get('cat')   && PCR_CAT_MAP[p.get('cat')])     currentCat   = p.get('cat');
   if (p.get('mtab')  && ['portable','mobile'].includes(p.get('mtab'))) currentMatrixTab = p.get('mtab');
   buildRadioPills();
+  buildCatPills();
   renderTable();
 }
 
@@ -271,7 +273,16 @@ function selectRadio(r) {
   document.querySelectorAll('.rpill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim() === r)
   );
+  buildCatPills();
   fadeRender(); pushState();
+}
+function buildCatPills() {
+  const mobile = isMobileRadio(currentRadio);
+  const map = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
+  if (!Object.keys(map).includes(currentCat)) currentCat = 'All';
+  document.getElementById('cat-pills').innerHTML = Object.keys(map).map(label =>
+    `<button class="cpill${label===currentCat?' active':''}" onclick="selectCat('${label}')">${label}</button>`
+  ).join('');
 }
 
 function selectCat(c) {
@@ -281,6 +292,7 @@ function selectCat(c) {
   );
   fadeRender(); pushState();
 }
+
 
 function setView(v) {
   currentView = v;
@@ -355,41 +367,87 @@ function renderTable() {
 
 // ── RADIO VIEW ──
 function renderRadioView() {
-  const rk = getDataKey(currentRadio);
-  const ck = PCR_CAT_MAP[currentCat];
-  const sections = getCatSections(rk, ck);
+  const rk     = getDataKey(currentRadio);
+  const mobile = isMobileRadio(currentRadio);
 
-  const catKey  = PCR_CAT_MAP[currentCat] || 'all';
-  const featCols = PCR_CAT_FEAT[catKey] || PCR_DEFAULT_FEAT;
-  const span = 3 + featCols.length + 1;
-
-  document.getElementById('t-head').innerHTML = `<tr>
-    <th class="ic"></th>
-    <th>Part No.</th>
-    <th style="min-width:200px">Description</th>
-    ${featCols.map(c => `<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
-    <th class="cc">My List</th>
-  </tr>`;
-
-  let html = '';
-  sections.forEach(sec => {
-    html += `<tr class="sr"><td colspan="${span}">${sec.title||''}</td></tr>`;
-    (sec.items||[]).forEach(item => {
-      const pn = item.pn||'';
-      const checked = myList[pn] ? 'checked' : '';
-      html += `<tr data-pn="${pn}">
-        <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
-        <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
-        <td>${item.desc||''}</td>
-        ${featCols.map(c => `<td class="fc">${renderFeat(c, item[c])}</td>`).join('')}
-        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
-      </tr>`;
+  if (mobile) {
+    const ck  = MOBILE_CAT_MAP[currentCat] || 'all';
+    const sections = getCatSections(rk, ck);
+    const rd  = window.RADIOS_DATA && window.RADIOS_DATA[rk];
+    // Use col defs from the selected category, or fall back to default compat cols
+    const colDefs = (ck !== 'all' && rd && rd.categories[ck])
+      ? rd.categories[ck].cols
+      : [
+          { key:'desc',     label:'Description',    type:'text'  },
+          { key:'pn',       label:'Part #',         type:'pn'    },
+          { key:'xpr5000e', label:'XPR 5000/5000e', type:'check' },
+          { key:'xpr4000',  label:'XPR 4000',       type:'check' },
+          { key:'xpr2500',  label:'XPR 2500',       type:'check' },
+        ];
+    const span = 2 + colDefs.length;
+    document.getElementById('t-head').innerHTML = `<tr>
+      <th class="ic"></th>
+      ${colDefs.map(c => {
+        if (c.key === 'desc') return `<th style="min-width:200px">Description</th>`;
+        if (c.key === 'pn')   return `<th>Part No.</th>`;
+        if (c.type === 'check') return `<th class="fc mobile-col">${c.label}</th>`;
+        return `<th class="fc">${c.label}</th>`;
+      }).join('')}
+      <th class="cc">My List</th>
+    </tr>`;
+    let html = '';
+    sections.forEach(sec => {
+      html += `<tr class="sr"><td colspan="${span}">${sec.title||''}</td></tr>`;
+      (sec.items||[]).forEach(item => {
+        const pn = item.pn||'';
+        const checked = myList[pn] ? 'checked' : '';
+        html += `<tr data-pn="${pn}">
+          <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
+          ${colDefs.map(c => {
+            if (c.key === 'pn')   return `<td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>`;
+            if (c.key === 'desc') return `<td>${item.desc||''}</td>`;
+            return `<td class="fc">${renderFeat(c.key, item[c.key])}</td>`;
+          }).join('')}
+          <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
+        </tr>`;
+      });
     });
-  });
+    document.getElementById('t-body').innerHTML = html || '';
+    document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
+    prefetchImages(sections);
 
-  document.getElementById('t-body').innerHTML = html || '';
-  document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
-  prefetchImages(sections);
+  } else {
+    const ck       = PCR_CAT_MAP[currentCat] || 'all';
+    const sections = getCatSections(rk, ck);
+    const featCols = PCR_CAT_FEAT[ck] || PCR_DEFAULT_FEAT;
+    const span     = 3 + featCols.length + 1;
+    document.getElementById('t-head').innerHTML = `<tr>
+      <th class="ic"></th>
+      <th>Part No.</th>
+      <th style="min-width:200px">Description</th>
+      ${featCols.map(c => `<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
+      <th class="cc">My List</th>
+    </tr>`;
+    let html = '';
+    sections.forEach(sec => {
+      html += `<tr class="sr"><td colspan="${span}">${sec.title||''}</td></tr>`;
+      (sec.items||[]).forEach(item => {
+        const pn = item.pn||'';
+        const checked = myList[pn] ? 'checked' : '';
+        html += `<tr data-pn="${pn}">
+          <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
+          <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
+          <td>${item.desc||''}</td>
+          ${featCols.map(c => `<td class="fc">${renderFeat(c, item[c])}</td>`).join('')}
+          <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
+        </tr>`;
+      });
+    });
+    document.getElementById('t-body').innerHTML = html || '';
+    document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
+    prefetchImages(sections);
+  }
+}
 }
 
 // ── MATRIX VIEW ──
