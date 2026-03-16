@@ -286,7 +286,7 @@ function renderTable() {
   if (currentView === 'radio') renderRadioView();
   else renderMatrixView();
 }
-function getDataKey(r) { return r; }
+function getDataKey(r) { return PCR_RADIO_MAP[r] || r; }
 function renderRadioView() {
   const rk = getDataKey(currentRadio);
   const ck = PCR_CAT_MAP[currentCat];
