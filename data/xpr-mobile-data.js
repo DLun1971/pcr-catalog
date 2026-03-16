@@ -195,3 +195,6 @@ const XPR_MOBILE_DATA = {
   },
 
 };
+
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['xpr-mobile'] = XPR_MOBILE_DATA;
