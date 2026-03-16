@@ -436,7 +436,7 @@ function renderRadioView() {
           <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
           <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
           <td>${item.desc||''}</td>
-          ${featCols.map(c => `<td class="fc">${renderFeat(c, item[c])}</td>`).join('')}
+          ${featCols.map(c => `<td class="fc">${renderFeat(c, item.checks?.[c])}</td>`).join('')}
           <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
         </tr>`;
       });
