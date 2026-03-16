@@ -168,7 +168,25 @@ const PCR_CAT_MAP = {
   'Headsets':'headsets','Batteries':'batteries','Chargers':'chargers',
   'Carry':'carry','Antennas':'antennas','Cables':'cables','All':'all'
 };
+// ── MOBILE CAT MAP: display label -> xpr-mobile category key ──
+const MOBILE_CAT_MAP = {
+  'Microphones':       'microphones',
+  'Mic Accessories':   'mic_accessories',
+  'External PTT':      'ext_ptt',
+  'Wireless Kits':     'wireless_kits',
+  'Wireless Chargers': 'wireless_chargers',
+  'OpCrit Wireless':   'opcrit_wireless',
+  'OpCrit Parts':      'opcrit_parts',
+  'Control Station':   'control_station',
+  'Installation':      'installation',
+  'Speakers':          'speakers',
+  'Cables':            'cables',
+  'Antennas':          'antennas',
+  'Ant Accessories':   'ant_accessories',
+  'All':               'all'
+};
 
+function isMobileRadio(r) { return MOBILE_RADIOS.includes(r); }
 // ── COL LABELS ──
 const PCR_COL_LABELS = {
   impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
