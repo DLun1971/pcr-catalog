@@ -146,14 +146,17 @@ td.cc{text-align:center;width:52px;}
 
 <script src="data/r7-data.js?v=3"></script>
 <script src="data/xpr-mobile-data.js?v=2"></script>
+<script src="data/xpr-portable-data.js?v=1"></script>
+<script src="data/sl-data.js?v=1"></script>
 <script>
-// ── RADIO MAP: display label -> data key ──
+// ââ RADIO MAP: display label -> data key ââ
 const PCR_RADIO_MAP = {
   'R7':'r7','Ion':'ion','R5':'r5','R7Ex':'r7ex',
-  'XPR 5000':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile'
+  'XPR 5000':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile',
+    'XPR Portable':'xpr-portable','SL Series':'sl'
 };
 
-const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex'];
+const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex','XPR Portable','SL Series'];
 const MOBILE_RADIOS   = ['XPR 5000','XPR 4000','XPR 2500'];
 const MOBILE_COL_KEYS = {
   'XPR 5000':'xpr5000e',
@@ -161,14 +164,14 @@ const MOBILE_COL_KEYS = {
   'XPR 2500': 'xpr2500'
 };
 
-// ── CAT MAP: display name -> data key ──
+// ââ CAT MAP: display name -> data key ââ
 const PCR_CAT_MAP = {
   'RSMs':'rsm','Wireless':'wireless','Surveillance':'surveillance',
   'Headsets':'headsets','Batteries':'batteries','Chargers':'chargers',
   'Carry':'carry','Antennas':'antennas','Cables':'cables','All':'all'
 };
 
-// ── MOBILE CAT MAP: display label -> xpr-mobile category key ──
+// ââ MOBILE CAT MAP: display label -> xpr-mobile category key ââ
 const MOBILE_CAT_MAP = {
   'Microphones':       'microphones',
   'Mic Accessories':   'mic_accessories',
@@ -188,7 +191,7 @@ const MOBILE_CAT_MAP = {
 
 function isMobileRadio(r) { return MOBILE_RADIOS.includes(r); }
 
-// ── COL LABELS ──
+// ââ COL LABELS ââ
 const PCR_COL_LABELS = {
   impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
   wwet:'Work-When-Wet', intel:'Intelligent Audio', ains:'AINS',
@@ -208,7 +211,7 @@ const PCR_COL_LABELS = {
   pairing:'Pairing', range:'Range'
 };
 
-// ── FEATURE COLS PER CATEGORY ──
+// ââ FEATURE COLS PER CATEGORY ââ
 const PCR_CAT_FEAT = {
   rsm:         ['impres','ip','hazloc','windport','wwet','intel','ains','progbtn','jack'],
   wireless:    ['ip','hazloc','bt','fulldx','mic','ptt','talktime','chrgtime','weight'],
@@ -223,7 +226,7 @@ const PCR_CAT_FEAT = {
 };
 const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
 
-// ── STATE ──
+// ââ STATE ââ
 let currentView      = 'radio';
 let currentRadio     = 'R7';
 let currentCat       = 'All';
@@ -231,7 +234,7 @@ let currentMatrixTab = 'portable';
 let myList = {};
 const IMG_CACHE = {};
 
-// ── INIT ──
+// ââ INIT ââ
 function init() {
   const p = new URLSearchParams(location.search);
   if (p.get('view'))  currentView  = p.get('view');
@@ -252,7 +255,7 @@ function pushState() {
   history.replaceState({}, '', u);
 }
 
-// ── RADIO PILLS ──
+// ââ RADIO PILLS ââ
 function buildRadioPills() {
   const row = document.getElementById('radio-row');
   row.innerHTML =
@@ -267,7 +270,7 @@ function buildRadioPills() {
     ).join('');
 }
 
-// ── CAT PILLS ──
+// ââ CAT PILLS ââ
 function buildCatPills() {
   const mobile = isMobileRadio(currentRadio);
   const map = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
@@ -325,7 +328,7 @@ function fadeRender() {
   setTimeout(() => { renderTable(); tw.classList.remove('fading'); }, 160);
 }
 
-// ── DATA HELPERS ──
+// ââ DATA HELPERS ââ
 function getDataKey(radioLabel) { return PCR_RADIO_MAP[radioLabel] || radioLabel; }
 
 function getCatSections(radioKey, catKey) {
@@ -358,13 +361,13 @@ function getCatSections(radioKey, catKey) {
   return sections;
 }
 
-// ── RENDER DISPATCHER ──
+// ââ RENDER DISPATCHER ââ
 function renderTable() {
   if (currentView === 'radio') renderRadioView();
   else renderMatrixView();
 }
 
-// ── RADIO VIEW ──
+// ââ RADIO VIEW ââ
 function renderRadioView() {
   const rk     = getDataKey(currentRadio);
   const mobile = isMobileRadio(currentRadio);
@@ -447,7 +450,7 @@ function renderRadioView() {
   }
 }
 
-// ── MATRIX VIEW ──
+// ââ MATRIX VIEW ââ
 function renderMatrixView() {
   if (currentMatrixTab === 'portable') renderPortableMatrix();
   else renderMobileMatrix();
@@ -560,7 +563,7 @@ function renderMobileMatrix() {
   document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
 }
 
-// ── FEATURE RENDERER ──
+// ââ FEATURE RENDERER ââ
 function renderFeat(col, val) {
   if (val === undefined || val === null || val === 0 || val === false || val === '')
     return '<span class="dash">&mdash;</span>';
@@ -569,7 +572,7 @@ function renderFeat(col, val) {
   return `<span>${val}</span>`;
 }
 
-// ── IMAGES ──
+// ââ IMAGES ââ
 function camSVG() {
   return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8.5" r="2.2" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 4V3.5A.5.5 0 016 3h4a.5.5 0 01.5.5V4" stroke="currentColor" stroke-width="1.2"/></svg>`;
 }
@@ -605,17 +608,17 @@ function imgClick(pn) {
   }
 }
 
-// ── COPY PN ──
+// ââ COPY PN ââ
 function copyPN(pn, el) {
   navigator.clipboard.writeText(pn).catch(()=>{});
   el.classList.add('flash');
   setTimeout(() => el.classList.remove('flash'), 1400);
 }
 
-// ── LIGHTBOX ──
+// ââ LIGHTBOX ââ
 function closeLB() { document.getElementById('lightbox').classList.remove('open'); }
 
-// ── MY LIST ──
+// ââ MY LIST ââ
 function toggleML(pn, cb, desc) {
   if (cb.checked) myList[pn] = { pn, desc, note:'' };
   else delete myList[pn];
