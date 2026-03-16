@@ -153,10 +153,8 @@ const PCR_RADIO_MAP = {
   'XPR 5550e':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile'
 };
 
-// Portable and mobile radio label lists (display names, no data keys)
 const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex'];
 const MOBILE_RADIOS   = ['XPR 5550e','XPR 4000','XPR 2500'];
-// Compat col keys inside xpr-mobile data that map to each mobile radio label
 const MOBILE_COL_KEYS = {
   'XPR 5550e':'xpr5000e',
   'XPR 4000': 'xpr4000',
@@ -169,6 +167,7 @@ const PCR_CAT_MAP = {
   'Headsets':'headsets','Batteries':'batteries','Chargers':'chargers',
   'Carry':'carry','Antennas':'antennas','Cables':'cables','All':'all'
 };
+
 // ── MOBILE CAT MAP: display label -> xpr-mobile category key ──
 const MOBILE_CAT_MAP = {
   'Microphones':       'microphones',
@@ -188,6 +187,7 @@ const MOBILE_CAT_MAP = {
 };
 
 function isMobileRadio(r) { return MOBILE_RADIOS.includes(r); }
+
 // ── COL LABELS ──
 const PCR_COL_LABELS = {
   impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
@@ -252,7 +252,7 @@ function pushState() {
   history.replaceState({}, '', u);
 }
 
-// ── PILLS ──
+// ── RADIO PILLS ──
 function buildRadioPills() {
   const row = document.getElementById('radio-row');
   row.innerHTML =
@@ -267,6 +267,16 @@ function buildRadioPills() {
     ).join('');
 }
 
+// ── CAT PILLS ──
+function buildCatPills() {
+  const mobile = isMobileRadio(currentRadio);
+  const map = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
+  if (!Object.keys(map).includes(currentCat)) currentCat = 'All';
+  document.getElementById('cat-pills').innerHTML = Object.keys(map).map(label =>
+    `<button class="cpill${label===currentCat?' active':''}" onclick="selectCat('${label}')">${label}</button>`
+  ).join('');
+}
+
 function selectRadio(r) {
   currentRadio = r;
   if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
@@ -275,15 +285,6 @@ function selectRadio(r) {
   );
   buildCatPills();
   fadeRender(); pushState();
-}
-  }
-function buildCatPills() {
-  const mobile = isMobileRadio(currentRadio);
-  const map = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
-  if (!Object.keys(map).includes(currentCat)) currentCat = 'All';
-  document.getElementById('cat-pills').innerHTML = Object.keys(map).map(label =>
-    `<button class="cpill${label===currentCat?' active':''}" onclick="selectCat('${label}')">${label}</button>`
-  ).join('');
 }
 
 function selectCat(c) {
@@ -294,13 +295,10 @@ function selectCat(c) {
   fadeRender(); pushState();
 }
 
-
 function setView(v) {
   currentView = v;
   syncViewBtns();
-  // show/hide matrix sub-tabs
   document.getElementById('matrix-subtabs').style.display = v === 'matrix' ? 'flex' : 'none';
-  // clear radio pill active state when switching to matrix
   document.querySelectorAll('.rpill').forEach(b =>
     b.classList.toggle('active', v === 'radio' && b.textContent.trim() === currentRadio)
   );
@@ -372,10 +370,9 @@ function renderRadioView() {
   const mobile = isMobileRadio(currentRadio);
 
   if (mobile) {
-    const ck  = MOBILE_CAT_MAP[currentCat] || 'all';
+    const ck = MOBILE_CAT_MAP[currentCat] || 'all';
     const sections = getCatSections(rk, ck);
-    const rd  = window.RADIOS_DATA && window.RADIOS_DATA[rk];
-    // Use col defs from the selected category, or fall back to default compat cols
+    const rd = window.RADIOS_DATA && window.RADIOS_DATA[rk];
     const colDefs = (ck !== 'all' && rd && rd.categories[ck])
       ? rd.categories[ck].cols
       : [
@@ -449,7 +446,6 @@ function renderRadioView() {
     prefetchImages(sections);
   }
 }
-}
 
 // ── MATRIX VIEW ──
 function renderMatrixView() {
@@ -458,7 +454,7 @@ function renderMatrixView() {
 }
 
 function renderPortableMatrix() {
-  const ck = PCR_CAT_MAP[currentCat];
+  const ck = PCR_CAT_MAP[currentCat] || 'all';
   const search = document.getElementById('search-input').value.toLowerCase().trim();
   const allSecs = {};
 
@@ -508,7 +504,6 @@ function renderPortableMatrix() {
       </tr>`;
     });
   });
-
   document.getElementById('t-body').innerHTML = html || '';
   document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
 }
@@ -526,7 +521,6 @@ function renderMobileMatrix() {
           if (search && !(pn.toLowerCase().includes(search)||(item.desc||'').toLowerCase().includes(search))) return;
           if (!allSecs[sec.title]) allSecs[sec.title] = {};
           if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = { desc: item.desc||'', compat: {} };
-          // map each mobile label to its compat col key in the data
           MOBILE_RADIOS.forEach(label => {
             const colKey = MOBILE_COL_KEYS[label];
             if (item[colKey]) allSecs[sec.title][pn].compat[label] = true;
@@ -562,7 +556,6 @@ function renderMobileMatrix() {
       </tr>`;
     });
   });
-
   document.getElementById('t-body').innerHTML = html || '';
   document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
 }
@@ -629,7 +622,7 @@ function toggleML(pn, cb, desc) {
   document.getElementById('report-badge').textContent = Object.keys(myList).length;
   if (document.getElementById('drawer').classList.contains('open')) renderDrawer();
 }
-function openDrawer()  {
+function openDrawer() {
   renderDrawer();
   document.getElementById('drawer').classList.add('open');
   document.getElementById('overlay').classList.add('open');
