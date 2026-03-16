@@ -14,24 +14,24 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'RM Series - GCAI Mini Connector (R7 / Ion)',
             items: [
-              { img: null, pn: 'PMMN4128', desc: 'RM780 IMPRES Windporting RSM, Large, Work-When-Wet', note: 'IP68, UL HazLoc, 2 prog buttons + emergency, intelligent audio', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 1, ains: 0, windport: 0, wwet: 0, volsteps: 0, progbtn: 0, jack: 0 } },
-              { img: null, pn: 'PMMN4140', desc: 'RM760 IMPRES Windporting RSM, Large Basic, Work-When-Wet', note: 'IP68, UL HazLoc, intelligent audio - requires Ion firmware M-Ion.2022.03+', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 1, bt: 0, fulldx: 1, ains: 0, windport: 1, wwet: 1, volsteps: 2, progbtn: 0, jack: 0 } },
-              { img: null, pn: 'PMMN4131', desc: 'RM730 IMPRES Windporting RSM, Small', note: 'IP68, UL HazLoc, emergency button - requires Ion firmware M-Ion.2022.03+', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 1, bt: 0, fulldx: 1, ains: 0, windport: 1, wwet: 0, volsteps: 2, progbtn: 0, jack: 0 } },
+              { img: null, pn: 'PMMN4128', desc: 'RM780 IMPRES Windporting RSM, Large, Work-When-Wet', note: 'IP68, UL HazLoc, 2 prog buttons + emergency, intelligent audio', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':1,'smart_sw':0,'progbtn':1,'jack':0,'dims':'77x58x25'} },
+              { img: null, pn: 'PMMN4140', desc: 'RM760 IMPRES Windporting RSM, Large Basic, Work-When-Wet', note: 'IP68, UL HazLoc, intelligent audio - requires Ion firmware M-Ion.2022.03+', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':1,'smart_sw':0,'progbtn':0,'jack':0,'dims':'77x58x25'} },
+              { img: null, pn: 'PMMN4131', desc: 'RM730 IMPRES Windporting RSM, Small', note: 'IP68, UL HazLoc, emergency button - requires Ion firmware M-Ion.2022.03+', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':0,'smart_sw':0,'progbtn':1,'jack':0,'dims':'70x55x22'} },
             ]
           },
           {
             title: 'NS750 Series - Omni-Directional RSM (R7)',
             items: [
-              { img: null, pn: 'PMMN4150', desc: 'NS750 IMPRES Omni-Directional RSM, Large Front PTT + Side PTT, Long Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet - EMEA only', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 0, windport: 1, smart_sw: 1, progbtn: 1, jack: '3.5mm', dims: '94x68x45' } },
-              { img: null, pn: 'PMMN4151', desc: 'NS750 IMPRES Omni-Directional RSM, Large Front PTT + Side PTT, Short Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet - EMEA only', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 0, windport: 1, smart_sw: 1, progbtn: 1, jack: '3.5mm', dims: '94x68x45' } },
-              { img: null, pn: 'PMMN4150_BLK', desc: 'NS750 IMPRES Omni-Directional RSM, Black, Long Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 0, windport: 1, smart_sw: 1, progbtn: 1, jack: '3.5mm', dims: '94x68x45' } },
-              { img: null, pn: 'PMMN4151_BLK', desc: 'NS750 IMPRES Omni-Directional RSM, Black, Short Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 0, windport: 1, smart_sw: 1, progbtn: 1, jack: '3.5mm', dims: '94x68x45' } },
+              { img: null, pn: 'PMMN4150', desc: 'NS750 IMPRES Omni-Directional RSM, Large Front PTT + Side PTT, Long Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet - EMEA only', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':0,'smart_sw':1,'progbtn':1,'jack':'3.5mm','dims':'94x68x45'} },
+              { img: null, pn: 'PMMN4151', desc: 'NS750 IMPRES Omni-Directional RSM, Large Front PTT + Side PTT, Short Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet - EMEA only', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':0,'smart_sw':1,'progbtn':1,'jack':'3.5mm','dims':'94x68x45'} },
+              { img: null, pn: 'PMMN4150_BLK', desc: 'NS750 IMPRES Omni-Directional RSM, Black, Long Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':0,'smart_sw':1,'progbtn':1,'jack':'3.5mm','dims':'94x68x45'} },
+              { img: null, pn: 'PMMN4151_BLK', desc: 'NS750 IMPRES Omni-Directional RSM, Black, Short Cable', note: 'IP68, UL HazLoc, smart audio switching, work-when-wet', checks: {'impres':1,'ip':'IP68','hazloc':'UL','intel':1,'windport':1,'wwet':0,'smart_sw':1,'progbtn':1,'jack':'3.5mm','dims':'94x68x45'} },
             ]
           },
           {
             title: 'Wireless RSM',
             items: [
-              { img: null, pn: 'PMMN4127', desc: 'WM500 Wireless Remote Speaker Microphone', note: 'Operations Critical BT, 18hr battery, IP67, requires R7 fw R04.00.00+', checks: { ip: 1, bt: 0, fulldx: 1, nfc: 0, emg: 0, fw_req: 'm', eptype: 0, mic: 0, ptt: 0, talktime: 0, chrgtime: 0, weight: 0, dims: 0, opscrit: 0, pairing: 0, range: 0, hazloc: 0 } },
+              { img: null, pn: 'PMMN4127', desc: 'WM500 Wireless Remote Speaker Microphone', note: 'Operations Critical BT, 18hr battery, IP67, requires R7 fw R04.00.00+', checks: {'impres':0,'ip':'IP67','hazloc':0,'intel':0,'windport':1,'wwet':0,'smart_sw':0,'progbtn':0,'jack':'3.5mm','dims':'80x57x24'} },
             ]
           },
           {
@@ -56,9 +56,9 @@ var RADIOS_DATA = {'r7': {
               { img: null, pn: 'PMLN7188', desc: 'Earpiece with Translucent Tube and Eartip', note: '3.5mm jack, transmit only, UL HazLoc', checks: { impres: 0, ip: 0, hazloc: 'UL', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, smart_sw: 0, progbtn: 0, jack: 0, dims: 0 } },
               { img: null, pn: 'GMMN4585', desc: 'Savox HC-1 Helmet Headset - Bone Mic, Single Speaker', note: 'Nexus connector, transmit & receive', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, smart_sw: 0, progbtn: 0, jack: 0, dims: 0 } },
               { img: null, pn: 'GMMN4584', desc: 'Savox HC-2 Helmet Headset - Bone Mic, Dual Speaker', note: 'Nexus connector, transmit & receive', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, smart_sw: 0, progbtn: 0, jack: 0, dims: 0 } },
-              { img: null, pn: 'PMLN8265', desc: 'Over-The-Head Headset with Nexus Connector', note: 'Transmit & receive', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '26dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8266', desc: 'Backend Headset with Nexus Connector', note: 'Transmit & receive', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '24dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8267', desc: 'Hard Hat Attached Headset with Nexus Connector', note: 'Transmit & receive', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '24dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN8265', desc: 'Over-The-Head Headset with Nexus Connector', note: 'Transmit & receive', checks: {'impres':0,'ip':0,'hazloc':0,'intel':0,'nrr':'26dB','nc':0,'hstype':'Over-head','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
+              { img: null, pn: 'PMLN8266', desc: 'Backend Headset with Nexus Connector', note: 'Transmit & receive', checks: {'impres':0,'ip':0,'hazloc':0,'intel':0,'nrr':'24dB','nc':0,'hstype':'Neckband','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
+              { img: null, pn: 'PMLN8267', desc: 'Hard Hat Attached Headset with Nexus Connector', note: 'Transmit & receive', checks: {'impres':0,'ip':0,'hazloc':0,'intel':0,'nrr':'24dB','nc':0,'hstype':'Hard hat','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
             ]
           },
           {
@@ -79,14 +79,14 @@ var RADIOS_DATA = {'r7': {
             title: 'Operations Critical Wireless',
             items: [
               { img: null, pn: 'PMMN4127', desc: 'WM500 Wireless Remote Speaker Microphone', note: 'Operations Critical BT, 18hr, IP67, omni windporting mic, requires fw R04.00.00+', checks: { ip: 1, bt: 0, fulldx: 1, nfc: 0, emg: 0, fw_req: 'm', eptype: 0, mic: 0, ptt: 0, talktime: 0, chrgtime: 0, weight: 0, dims: 0, opscrit: 0, pairing: 0, range: 0, hazloc: 0 } },
-              { img: null, pn: 'PMLN8123', desc: 'Operations Critical Wireless BT Earpiece with PTT', note: 'Over-ear swivel, boom mic, 8hr battery, full duplex with Ion, standard pairing, 30ft', checks: { ip: 0, bt: 1, fulldx: 1, nfc: 0, emg: 0, fw_req: '—', eptype: 0, mic: 0, ptt: 0, talktime: 0, chrgtime: 0, weight: 0, dims: 0, opscrit: 0, pairing: 0, range: 0, hazloc: 0 } },
+              { img: null, pn: 'PMLN8123', desc: 'Operations Critical Wireless BT Earpiece with PTT', note: 'Over-ear swivel, boom mic, 8hr battery, full duplex with Ion, standard pairing, 30ft', checks: {'ip':0,'hazloc':0,'bt':1,'fulldx':1,'mic':'Boom','ptt':1,'talktime':'8h','chrgtime':'3h','weight':'23g','opscrit':'OC','pairing':'Standard','range':'30ft'} },
             ]
           },
           {
             title: 'WP300 Wireless Bluetooth PTT Pod',
             items: [
-              { img: null, pn: 'PMLN8298', desc: 'WP300 Wireless Bluetooth PTT Pod', note: 'IP67, 18hr battery, NFC, 30m range, emergency button - requires fw R02.25.02.1000+', checks: { ip: 1, bt: 1, fulldx: 0, nfc: 1, emg: 1, fw_req: 'm', eptype: 0, mic: 0, ptt: 0, talktime: 0, chrgtime: 0, weight: 0, dims: 0, opscrit: 0, pairing: 0, range: 0, hazloc: 0 } },
-              { img: null, pn: 'PMLN8401', desc: 'WP300 Wireless Bluetooth PTT Pod with Surveillance Earpiece', note: 'IP67, 18hr battery, NFC, 30m range', checks: { ip: 1, bt: 1, fulldx: 0, nfc: 1, emg: 0, fw_req: 'm', eptype: 0, mic: 0, ptt: 0, talktime: 0, chrgtime: 0, weight: 0, dims: 0, opscrit: 0, pairing: 0, range: 0, hazloc: 0 } },
+              { img: null, pn: 'PMLN8298', desc: 'WP300 Wireless Bluetooth PTT Pod', note: 'IP67, 18hr battery, NFC, 30m range, emergency button - requires fw R02.25.02.1000+', checks: {'ip':'IP67','hazloc':0,'bt':1,'fulldx':0,'nfc':1,'emg':1,'ptt':1,'talktime':'18h','chrgtime':0,'pairing':'Standard','range':'30m'} },
+              { img: null, pn: 'PMLN8401', desc: 'WP300 Wireless Bluetooth PTT Pod with Surveillance Earpiece', note: 'IP67, 18hr battery, NFC, 30m range', checks: {'ip':'IP67','hazloc':0,'bt':1,'fulldx':0,'nfc':1,'emg':0,'ptt':1,'talktime':'18h','chrgtime':0,'pairing':'Standard','range':'30m'} },
             ]
           },
           {
@@ -118,19 +118,19 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Surveillance Kits - R7 & Ion (Extra Loud)',
             items: [
-              { img: null, pn: 'PMLN8341', desc: 'IMPRES 1-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: { impres: 1, hazloc: 'UL', intel: 1, fulldx: 1, ion_fw: 0, wires: '1', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8342', desc: 'IMPRES 2-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: { impres: 1, hazloc: 'UL', intel: 1, fulldx: 1, ion_fw: 0, wires: '2', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8343', desc: 'IMPRES 3-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: { impres: 1, hazloc: 'UL', intel: 1, fulldx: 1, ion_fw: 0, wires: '3', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8295', desc: 'IMPRES 2-Wire Swivel Earhook with Removable Eartip, Loud, Black', note: 'Intelligent audio, full duplex with Ion - requires Ion fw M-Ion.2022.03+', checks: { impres: 1, hazloc: 0, intel: 1, fulldx: 1, ion_fw: 1, wires: '2', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8337', desc: 'IMPRES 1-Wire Single Earbud with Removable Earhook, Loud, Black', note: 'Intelligent audio, full duplex with Ion - requires Ion fw M-Ion.2022.03+', checks: { impres: 1, hazloc: 0, intel: 1, fulldx: 1, ion_fw: 1, wires: '1', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN8341', desc: 'IMPRES 1-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: {'impres':1,'hazloc':'UL','intel':1,'fulldx':1,'wires':'1'} },
+              { img: null, pn: 'PMLN8342', desc: 'IMPRES 2-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: {'impres':1,'hazloc':'UL','intel':1,'fulldx':1,'wires':'2'} },
+              { img: null, pn: 'PMLN8343', desc: 'IMPRES 3-Wire Surveillance Kit, Translucent Tube, Extra Loud, Black', note: 'Intelligent audio, full duplex with Ion, UL HazLoc', checks: {'impres':1,'hazloc':'UL','intel':1,'fulldx':1,'wires':'3'} },
+              { img: null, pn: 'PMLN8295', desc: 'IMPRES 2-Wire Swivel Earhook with Removable Eartip, Loud, Black', note: 'Intelligent audio, full duplex with Ion - requires Ion fw M-Ion.2022.03+', checks: {'impres':1,'hazloc':0,'intel':1,'fulldx':1,'wires':'2'} },
+              { img: null, pn: 'PMLN8337', desc: 'IMPRES 1-Wire Single Earbud with Removable Earhook, Loud, Black', note: 'Intelligent audio, full duplex with Ion - requires Ion fw M-Ion.2022.03+', checks: {'impres':1,'hazloc':0,'intel':1,'fulldx':1,'wires':'1'} },
             ]
           },
           {
             title: 'IMPRES Surveillance Kits - R7 Only (Loud)',
             items: [
-              { img: null, pn: 'PMLN8644', desc: 'IMPRES 1-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: { impres: 1, hazloc: 0, intel: 1, fulldx: 0, ion_fw: 0, wires: '1', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8645', desc: 'IMPRES 2-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: { impres: 1, hazloc: 0, intel: 1, fulldx: 0, ion_fw: 0, wires: '2', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8646', desc: 'IMPRES 3-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: { impres: 1, hazloc: 0, intel: 1, fulldx: 0, ion_fw: 0, wires: '3', hstype: 0, epstyle: 0, nrr: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN8644', desc: 'IMPRES 1-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: {'impres':1,'hazloc':0,'intel':1,'fulldx':0,'wires':'1'} },
+              { img: null, pn: 'PMLN8645', desc: 'IMPRES 2-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: {'impres':1,'hazloc':0,'intel':1,'fulldx':0,'wires':'2'} },
+              { img: null, pn: 'PMLN8646', desc: 'IMPRES 3-Wire Surveillance Kit, Translucent Tube, Loud, Black', note: 'Intelligent audio, R7 only', checks: {'impres':1,'hazloc':0,'intel':1,'fulldx':0,'wires':'3'} },
             ]
           },
           {
@@ -155,8 +155,8 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'Heavy Duty Headsets - IMPRES (R7 & Ion)',
             items: [
-              { img: null, pn: 'PMLN8085', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic, IP54', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc, PTT on ear cup', checks: { impres: 1, ip: 1, hazloc: 'UL', intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8086', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic, IP54', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc, PTT on ear cup', checks: { impres: 1, ip: 1, hazloc: 'UL', intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN8085', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic, IP54', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc, PTT on ear cup', checks: {'impres':1,'ip':'IP54','hazloc':'UL','intel':1,'nrr':'24dB','nc':1,'hstype':'Behind-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
+              { img: null, pn: 'PMLN8086', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic, IP54', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc, PTT on ear cup', checks: {'impres':1,'ip':'IP54','hazloc':'UL','intel':1,'nrr':'24dB','nc':1,'hstype':'Over-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
             ]
           },
           {
@@ -165,7 +165,7 @@ var RADIOS_DATA = {'r7': {
               { img: null, pn: 'PMLN8265', desc: 'CH-3 Over-the-Head Headset with Nexus Connector', note: '26dB NRR, dual-ear, boom mic - requires PTT adapter PMLN8297. Ion fw M-Ion.2022.03+', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '26dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
               { img: null, pn: 'PMLN8266', desc: 'CH-3 Neckband Headset with Nexus Connector', note: '24dB NRR, dual-ear, boom mic - requires PTT adapter PMLN8297. Ion fw M-Ion.2022.03+', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '24dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
               { img: null, pn: 'PMLN8267', desc: 'CH-3 Hard Hat Attached Headset with Nexus Connector (hat not included)', note: '24dB NRR, dual-ear, boom mic - requires PTT adapter PMLN8297. Ion fw M-Ion.2022.03+', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '24dB', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN8297', desc: 'PTT Nexus Adapter (required for CH-3 headsets above)', note: 'Ion fw M-Ion.2022.03+', checks: { impres: 0, ip: 0, hazloc: 0, intel: 0, ion_fw: 1, nrr: '—', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN8297', desc: 'PTT Nexus Adapter (required for CH-3 headsets above)', note: 'Ion fw M-Ion.2022.03+', checks: {'impres':0,'ip':0,'hazloc':0,'intel':0,'nrr':'—','nc':0,'hstype':'Adapter','epstyle':'—','mic':'—','ptt':'Nexus'} },
             ]
           }
         ]
@@ -178,10 +178,10 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Li-Ion Batteries - R7',
             items: [
-              { img: null, pn: 'PMNN4807', desc: 'IMPRES Li-Ion 2200mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 118g', checks: { impres: 1, chem: 'Li-Ion', mah: '2200', ip: 'IP68', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4809', desc: 'IMPRES Li-Ion 2850mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 135g', checks: { impres: 1, chem: 'Li-Ion', mah: '2850', ip: 'IP68', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4810', desc: 'IMPRES Li-Ion 3200mAh IP68 TIA4950 Battery', note: 'IP66/IP68, UL HazLoc, 116x55x23mm, 168g', checks: { impres: 1, chem: 'Li-Ion', mah: '3200', ip: 'IP68', hazloc: 'UL', temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4603', desc: 'IMPRES Li-Ion 3200mAh IP68 Battery', note: 'IP66/IP68, 116x55x23mm, 168g', checks: { impres: 1, chem: 'Li-Ion', mah: '3200', ip: 'IP68', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
+              { img: null, pn: 'PMNN4807', desc: 'IMPRES Li-Ion 2200mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 118g', checks: {'impres':1,'chem':'Li-Ion','mah':'2200','ip':'IP68','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4809', desc: 'IMPRES Li-Ion 2850mAh IP68 Slim Battery', note: 'IP66/IP68, 116x55x17mm, 135g', checks: {'impres':1,'chem':'Li-Ion','mah':'2850','ip':'IP68','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4810', desc: 'IMPRES Li-Ion 3200mAh IP68 TIA4950 Battery', note: 'IP66/IP68, UL HazLoc, 116x55x23mm, 168g', checks: {'impres':1,'chem':'Li-Ion','mah':'3200','ip':'IP68','hazloc':'UL','temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4603', desc: 'IMPRES Li-Ion 3200mAh IP68 Battery', note: 'IP66/IP68, 116x55x23mm, 168g', checks: {'impres':1,'chem':'Li-Ion','mah':'3200','ip':'IP68','hazloc':0,'temp':'-20 to +60°C'} },
             ]
           }
         ]
@@ -266,12 +266,12 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'R7 Hard Cases',
             items: [
-              { img: null, pn: 'PMLN8299', desc: 'Hard Carry Case, Small', note: 'R7 hard case', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
-              { img: null, pn: 'PMLN8300', desc: 'Hard Carry Case, Medium', note: 'R7 hard case', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
-              { img: null, pn: 'PMLN8301', desc: 'Hard Carry Case, Large', note: 'R7 hard case', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
-              { img: null, pn: 'PMLN8302', desc: 'Hard Carry Case with Display, Small', note: 'R7 hard case, display model', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
-              { img: null, pn: 'PMLN8303', desc: 'Hard Carry Case with Display, Medium', note: 'R7 hard case, display model', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
-              { img: null, pn: 'PMLN8304', desc: 'Hard Carry Case with Display, Large', note: 'R7 hard case, display model', checks: { style: 'Case', material: 'Hard', belt_sz: '-', swivel: 0 } },
+              { img: null, pn: 'PMLN8299', desc: 'Hard Carry Case, Small', note: 'R7 hard case', checks: {'style':'Case','material':'Hard leather','belt_sz':'3\'','swivel':0} },
+              { img: null, pn: 'PMLN8300', desc: 'Hard Carry Case, Medium', note: 'R7 hard case', checks: {'style':'Case','material':'Hard leather','belt_sz':'2.5\'','swivel':1} },
+              { img: null, pn: 'PMLN8301', desc: 'Hard Carry Case, Large', note: 'R7 hard case', checks: {'style':'Case','material':'Hard leather','belt_sz':'3\'','swivel':0} },
+              { img: null, pn: 'PMLN8302', desc: 'Hard Carry Case with Display, Small', note: 'R7 hard case, display model', checks: {'style':'Case','material':'Hard leather','belt_sz':'3\'','swivel':1} },
+              { img: null, pn: 'PMLN8303', desc: 'Hard Carry Case with Display, Medium', note: 'R7 hard case, display model', checks: {'style':'Case','material':'Hard leather','belt_sz':'2.5\'','swivel':1} },
+              { img: null, pn: 'PMLN8304', desc: 'Hard Carry Case with Display, Large', note: 'R7 hard case, display model', checks: {'style':'Case','material':'Hard leather','belt_sz':'3\'','swivel':0} },
             ]
           },
           {
@@ -375,18 +375,18 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'RM Series - New GCAI Mini Connector',
             items: [
-              { img: null, pn: 'PMMN4170', desc: 'RM560 IMPRES Windporting RSM, Large, Work-When-Wet', note: 'IP67, UL HazLoc, AI-trained suppression, intelligent audio, emergency button, prog button', checks: {  } },
-              { img: null, pn: 'PMMN4171', desc: 'RM530 IMPRES Windporting RSM, Small, Work-When-Wet', note: 'IP67, UL HazLoc, AI-trained suppression, intelligent audio, emergency button', checks: { impres: 1, ip: 'IP67', hazloc: 'UL', intel: 1, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
+              { img: null, pn: 'PMMN4170', desc: 'RM560 IMPRES Windporting RSM, Large, Work-When-Wet', note: 'IP67, UL HazLoc, AI-trained suppression, intelligent audio, emergency button, prog button', checks: {'impres':1,'ip':'IP67','hazloc':'UL','intel':1,'windport':1,'wwet':0,'volsteps':0,'progbtn':0,'jack':'3.5mm','dims':'61x85x26'} },
+              { img: null, pn: 'PMMN4171', desc: 'RM530 IMPRES Windporting RSM, Small, Work-When-Wet', note: 'IP67, UL HazLoc, AI-trained suppression, intelligent audio, emergency button', checks: {'impres':1,'ip':'IP67','hazloc':'UL','intel':1,'windport':1,'wwet':0,'volsteps':0,'progbtn':0,'jack':'3.5mm','dims':'59x78x22'} },
             ]
           },
           {
             title: 'Standard RSMs (Legacy Connector)',
             items: [
-              { img: null, pn: 'PMMN4071', desc: 'IMPRES Noise-Canceling RSM, Large', note: 'IP54, UL HazLoc, noise-canceling, volume control high/low', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
-              { img: null, pn: 'PMMN4073', desc: 'IMPRES Windporting RSM, Small', note: 'IP55, UL HazLoc, windporting, volume control high/low', checks: { impres: 1, ip: 'IP55', hazloc: 'UL', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
-              { img: null, pn: 'PMMN4075', desc: 'Windporting RSM, Small, Submersible', note: 'IP57, UL HazLoc, windporting', checks: { impres: 0, ip: 'IP57', hazloc: 'UL', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
-              { img: null, pn: 'PMMN4076', desc: 'Windporting RSM, Small', note: 'IP54, UL HazLoc, windporting, prog button', checks: { impres: 0, ip: 'IP54', hazloc: 'UL', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
-              { img: null, pn: 'PMMN4108', desc: 'Windporting RSM', note: 'IP67, windporting, volume control high/low', checks: { impres: 0, ip: 'IP67', hazloc: 0, intel: 0, ion_fw: 0, bt: 0, fulldx: 0, windport: 0, volsteps: 0, progbtn: 0, jack: 0, dims: 0 } },
+              { img: null, pn: 'PMMN4071', desc: 'IMPRES Noise-Canceling RSM, Large', note: 'IP54, UL HazLoc, noise-canceling, volume control high/low', checks: {'impres':1,'ip':'IP54','hazloc':'UL','intel':0,'windport':0,'wwet':0,'volsteps':0,'progbtn':0,'jack':0,'dims':'60x78x28'} },
+              { img: null, pn: 'PMMN4073', desc: 'IMPRES Windporting RSM, Small', note: 'IP55, UL HazLoc, windporting, volume control high/low', checks: {'impres':1,'ip':'IP55','hazloc':'UL','intel':0,'windport':1,'wwet':0,'volsteps':0,'progbtn':0,'jack':0,'dims':'55x60x27'} },
+              { img: null, pn: 'PMMN4075', desc: 'Windporting RSM, Small, Submersible', note: 'IP57, UL HazLoc, windporting', checks: {'impres':0,'ip':'IP57','hazloc':'UL','intel':0,'windport':1,'wwet':0,'volsteps':0,'progbtn':0,'jack':0,'dims':'55x60x27'} },
+              { img: null, pn: 'PMMN4076', desc: 'Windporting RSM, Small', note: 'IP54, UL HazLoc, windporting, prog button', checks: {'impres':0,'ip':'IP54','hazloc':'UL','intel':0,'windport':1,'wwet':0,'volsteps':0,'progbtn':1,'jack':0,'dims':'55x60x27'} },
+              { img: null, pn: 'PMMN4108', desc: 'Windporting RSM', note: 'IP67, windporting, volume control high/low', checks: {'impres':0,'ip':'IP67','hazloc':0,'intel':1,'windport':1,'wwet':0,'volsteps':0,'progbtn':0,'jack':0,'dims':'60x78x28'} },
             ]
           },
           {
@@ -517,18 +517,18 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'Heavy Duty Headsets - IMPRES',
             items: [
-              { img: null, pn: 'PMLN6760', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, PTT on ear cup', checks: { impres: 1, ip: 0, hazloc: 0, intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN6763', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc', checks: { impres: 1, ip: 0, hazloc: 'UL', intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN7464', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio', checks: { impres: 1, ip: 0, hazloc: 0, intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN7465', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc', checks: { impres: 1, ip: 0, hazloc: 'UL', intel: 1, ion_fw: 0, nrr: '24dB', nc: 1, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN6760', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, PTT on ear cup', checks: {'impres':1,'ip':0,'hazloc':0,'intel':1,'nrr':'24dB','nc':1,'hstype':'Behind-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
+              { img: null, pn: 'PMLN6763', desc: 'Heavy Duty Behind-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc', checks: {'impres':1,'ip':0,'hazloc':'UL','intel':1,'nrr':'24dB','nc':1,'hstype':'Behind-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
+              { img: null, pn: 'PMLN7464', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio', checks: {'impres':1,'ip':0,'hazloc':0,'intel':1,'nrr':'24dB','nc':1,'hstype':'Over-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
+              { img: null, pn: 'PMLN7465', desc: 'Heavy Duty Over-the-Head Headset, Noise-Canceling Boom Mic', note: '24dB NRR, dual-muff, IMPRES intelligent audio, UL HazLoc', checks: {'impres':1,'ip':0,'hazloc':'UL','intel':1,'nrr':'24dB','nc':1,'hstype':'Over-head','epstyle':'Dual-muff','mic':'Boom','ptt':'On-cup'} },
             ]
           },
           {
             title: 'Lightweight & Mag One Headsets',
             items: [
-              { img: null, pn: 'PMLN6635', desc: 'Lightweight Over-the-Head Headset, Single Muff, In-Line PTT, Boom Mic', note: 'UL HazLoc, lightweight', checks: { impres: 0, ip: 0, hazloc: 'UL', intel: 0, ion_fw: 0, nrr: '—', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN6761', desc: 'Mag One Ultra-Lite Behind-the-Head Headset', note: 'Single-ear, IMPRES, boom mic, in-line PTT', checks: { impres: 1, ip: 0, hazloc: 0, intel: 0, ion_fw: 0, nrr: '—', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
-              { img: null, pn: 'PMLN6759', desc: 'IMPRES Temple Transducer with Boom Mic and In-Line PTT', note: 'Behind-the-head, bone conduction, IMPRES intelligent audio', checks: { impres: 1, ip: 0, hazloc: 0, intel: 1, ion_fw: 0, nrr: '—', nc: 0, hstype: 0, epstyle: 0, mic: 0, ptt: 0, weight: 0 } },
+              { img: null, pn: 'PMLN6635', desc: 'Lightweight Over-the-Head Headset, Single Muff, In-Line PTT, Boom Mic', note: 'UL HazLoc, lightweight', checks: {'impres':0,'ip':0,'hazloc':'UL','intel':0,'nrr':'—','nc':0,'hstype':'Over-head','epstyle':'Single-ear','mic':'Boom','ptt':'In-line'} },
+              { img: null, pn: 'PMLN6761', desc: 'Mag One Ultra-Lite Behind-the-Head Headset', note: 'Single-ear, IMPRES, boom mic, in-line PTT', checks: {'impres':1,'ip':0,'hazloc':0,'intel':0,'nrr':'—','nc':0,'hstype':'Behind-head','epstyle':'Single-ear','mic':'Boom','ptt':'In-line'} },
+              { img: null, pn: 'PMLN6759', desc: 'IMPRES Temple Transducer with Boom Mic and In-Line PTT', note: 'Behind-the-head, bone conduction, IMPRES intelligent audio', checks: {'impres':1,'ip':0,'hazloc':0,'intel':1,'nrr':'—','nc':0,'hstype':'Behind-head','epstyle':'Bone cond','mic':'Boom','ptt':'In-line'} },
             ]
           },
           {
@@ -550,10 +550,10 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES Li-Ion Batteries - R5',
             items: [
-              { img: null, pn: 'PMNN4878', desc: 'Li-Ion IP67 2400mAh Battery', note: 'IP67, 122x55x24mm, 144g - EMEA and APAC only', checks: { impres: 0, chem: 'Li-Ion', mah: '2400', ip: 'IP67', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4888', desc: 'IMPRES Slim Li-Ion IP67 2200mAh Battery', note: 'IP67, 122x55x18mm, 120g', checks: { impres: 1, chem: 'Li-Ion', mah: '2200', ip: 'IP67', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4889', desc: 'IMPRES High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, 122x55x24mm, 148g', checks: { impres: 1, chem: 'Li-Ion', mah: '3200', ip: 'IP67', hazloc: 0, temp: '-20 to +60°C', dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4890', desc: 'IMPRES UL High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, UL HazLoc, 122x55x24mm, 162g', checks: { impres: 1, chem: 'Li-Ion', mah: '3200', ip: 'IP67', hazloc: 'UL', temp: '-20 to +60°C', dims: 0, weight: 0 } },
+              { img: null, pn: 'PMNN4878', desc: 'Li-Ion IP67 2400mAh Battery', note: 'IP67, 122x55x24mm, 144g - EMEA and APAC only', checks: {'impres':0,'chem':'Li-Ion','mah':'2400','ip':'IP67','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4888', desc: 'IMPRES Slim Li-Ion IP67 2200mAh Battery', note: 'IP67, 122x55x18mm, 120g', checks: {'impres':1,'chem':'Li-Ion','mah':'2200','ip':'IP67','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4889', desc: 'IMPRES High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, 122x55x24mm, 148g', checks: {'impres':1,'chem':'Li-Ion','mah':'3200','ip':'IP67','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4890', desc: 'IMPRES UL High Capacity Li-Ion IP67 3200mAh Battery', note: 'IP67, UL HazLoc, 122x55x24mm, 162g', checks: {'impres':1,'chem':'Li-Ion','mah':'3200','ip':'IP67','hazloc':'UL','temp':'-20 to +60°C'} },
             ]
           }
         ]
@@ -861,9 +861,9 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'IMPRES 2 Li-Ion Batteries - Ion',
             items: [
-              { img: null, pn: 'PMNN4803', desc: 'IMPRES 2 Li-Ion 2820mAh IP68 Slim Battery', note: 'IP68, 114x69x16mm, 145g', checks: { impres: 1, chem: 'Li-Ion', mah: '2820', ip: 'IP68', hazloc: 0, temp: '-20 to +60°C', impres2: 0, dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4804', desc: 'IMPRES 2 Li-Ion 2900mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x24mm, 171g', checks: { impres: 1, chem: 'Li-Ion', mah: '2900', ip: 'IP68', hazloc: 'UL', temp: '-20 to +60°C', impres2: 0, dims: 0, weight: 0 } },
-              { img: null, pn: 'PMNN4805', desc: 'IMPRES 2 Li-Ion 4400mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x27mm, 211g', checks: { impres: 1, chem: 'Li-Ion', mah: '4400', ip: 'IP68', hazloc: 'UL', temp: '-20 to +60°C', impres2: 0, dims: 0, weight: 0 } },
+              { img: null, pn: 'PMNN4803', desc: 'IMPRES 2 Li-Ion 2820mAh IP68 Slim Battery', note: 'IP68, 114x69x16mm, 145g', checks: {'impres':1,'chem':'Li-Ion','mah':'2820','ip':'IP68','hazloc':0,'temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4804', desc: 'IMPRES 2 Li-Ion 2900mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x24mm, 171g', checks: {'impres':1,'chem':'Li-Ion','mah':'2900','ip':'IP68','hazloc':'UL','temp':'-20 to +60°C'} },
+              { img: null, pn: 'PMNN4805', desc: 'IMPRES 2 Li-Ion 4400mAh IP68 TIA4950 Battery', note: 'IP68, UL HazLoc, 114x69x27mm, 211g', checks: {'impres':1,'chem':'Li-Ion','mah':'4400','ip':'IP68','hazloc':'UL','temp':'-20 to +60°C'} },
             ]
           }
         ]
@@ -972,8 +972,8 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'ATEX/IECEx RSMs',
             items: [
-              { img: null, pn: 'PMMN4163', desc: 'NS750Ex IMPRES ATEX Omni-Directional RSM, IP66/IP67', note: 'ATEX/IECEx certified; AI-trained Noise Suppression with R7Ex; up to 103 phons', checks: {  } },
-              { img: null, pn: 'PMMN4164', desc: 'RM750Ex IMPRES ATEX RSM, IP66/IP68', note: 'ATEX/IECEx certified; AI-trained Noise Suppression with R7Ex; 102 phon max; compact form factor', checks: { impres: 1, ip: 'IP68', hazloc: 'ATEX', intel: 0, ion_fw: 0, bt: 0, fulldx: 0, anc: 0, sptt: 0, jack: 0 } },
+              { img: null, pn: 'PMMN4163', desc: 'NS750Ex IMPRES ATEX Omni-Directional RSM, IP66/IP67', note: 'ATEX/IECEx certified; AI-trained Noise Suppression with R7Ex; up to 103 phons', checks: {'impres':1,'ip':'IP67','hazloc':'ATEX','intel':1,'windport':1,'wwet':0,'smart_sw':1,'progbtn':1,'jack':'3.5mm','dims':'94x68x45'} },
+              { img: null, pn: 'PMMN4164', desc: 'RM750Ex IMPRES ATEX RSM, IP66/IP68', note: 'ATEX/IECEx certified; AI-trained Noise Suppression with R7Ex; 102 phon max; compact form factor', checks: {'impres':1,'ip':'IP68','hazloc':'ATEX','intel':1,'windport':0,'wwet':0,'smart_sw':0,'progbtn':0,'jack':0,'dims':'70x55x22'} },
             ]
           },
           {
@@ -1018,14 +1018,14 @@ var RADIOS_DATA = {'r7': {
           {
             title: 'HS700Ex Heavy-Duty Headsets (ATEX/IECEx, IP65/IP67)',
             items: [
-              { img: null, pn: 'PMLN8628', desc: 'HS700Ex Heavy-Duty Over-the-Head Headset with NC Boom Mic, IP65/IP67, 26dB NRR', note: 'ATEX/IECEx; Nexus connector; requires PMMN4163 RSM or AD700Ex adapter PMLN8634', checks: { impres: 0, ip: 1, hazloc: 'ATEX', intel: 0, ion_fw: 0, nrr: '26dB', nc: 0, hstype: 0, contype: 0, snr: 0, mic: 0, pttreq: 0 } },
-              { img: null, pn: 'PMLN8629', desc: 'HS700Ex Heavy-Duty Hard-Hat Attached Headset with NC Boom Mic, IP65/IP67, 24dB NRR', note: 'ATEX/IECEx; hard hat not included', checks: { impres: 0, ip: 1, hazloc: 'ATEX', intel: 0, ion_fw: 0, nrr: '24dB', nc: 0, hstype: 0, contype: 0, snr: 0, mic: 0, pttreq: 0 } },
+              { img: null, pn: 'PMLN8628', desc: 'HS700Ex Heavy-Duty Over-the-Head Headset with NC Boom Mic, IP65/IP67, 26dB NRR', note: 'ATEX/IECEx; Nexus connector; requires PMMN4163 RSM or AD700Ex adapter PMLN8634', checks: {'impres':0,'ip':'IP54','hazloc':'ATEX','intel':0,'nrr':'26dB','nc':0,'hstype':'Over-head','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
+              { img: null, pn: 'PMLN8629', desc: 'HS700Ex Heavy-Duty Hard-Hat Attached Headset with NC Boom Mic, IP65/IP67, 24dB NRR', note: 'ATEX/IECEx; hard hat not included', checks: {'impres':0,'ip':'IP54','hazloc':'ATEX','intel':0,'nrr':'24dB','nc':0,'hstype':'Neckband','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
             ]
           },
           {
             title: 'HS750Ex Headsets with Ambient Sound Control (ATEX/IECEx, IP65)',
             items: [
-              { img: null, pn: 'PMLN8631', desc: 'HS750Ex Over-the-Head Headset with NC Boom Mic + Ambient Sound Control, IP65, 25dB NRR', note: 'ATEX/IECEx; Nexus connector', checks: { impres: 0, ip: 1, hazloc: 'ATEX', intel: 0, ion_fw: 0, nrr: '25dB', nc: 0, hstype: 0, contype: 0, snr: 0, mic: 0, pttreq: 0 } },
+              { img: null, pn: 'PMLN8631', desc: 'HS750Ex Over-the-Head Headset with NC Boom Mic + Ambient Sound Control, IP65, 25dB NRR', note: 'ATEX/IECEx; Nexus connector', checks: {'impres':0,'ip':'IP54','hazloc':'ATEX','intel':0,'nrr':'24dB','nc':0,'hstype':'Hard hat','epstyle':'Dual-ear','mic':'Boom','ptt':'Req adapter'} },
               { img: null, pn: 'PMLN8632', desc: 'HS750Ex Hard-Hat Attached Headset with NC Boom Mic + Ambient Sound Control, IP65, 24dB NRR', note: 'ATEX/IECEx; hard hat not included', checks: { impres: 0, ip: 1, hazloc: 'ATEX', intel: 0, ion_fw: 0, nrr: '24dB', nc: 0, hstype: 0, contype: 0, snr: 0, mic: 0, pttreq: 0 } },
             ]
           },
