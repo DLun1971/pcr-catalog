@@ -139,6 +139,7 @@ const PCR_RADIO_MAP = {
   'R7':'r7','Ion':'ion','R5':'r5','R7Ex':'r7ex',
   'XPR 6550':'xpr6550','XPR 7550e':'xpr7550e','XPR 3500e':'xpr3500e'
   ,'XPR 5550e':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile'
+  <script src="data/xpr-mobile-data.js"></script>
 };
 const PCR_RADIOS = Object.keys(PCR_RADIO_MAP);
 
@@ -481,6 +482,48 @@ function exportPDF() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Register XPR Mobile with catalog renderer
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+
+const XPR_CAT_KEYS = {
+  'Microphones':        'mics',
+  'External PTT':       'ptt',
+  'Cables':             'cables',
+  'Antennas':           'antennas',
+  'Antenna Accessories':'ant_acc',
+  'Power Cables':       'pwr',
+  'Mounting Brackets':  'mounts',
+  'Control Heads':      'ctrl_heads',
+  'Control Head Cables':'ctrl_cables',
+  'Programming Cables': 'prog',
+  'Speaker Kits':       'speakers',
+  'Noise Cancelling':   'noise',
+  'Miscellaneous':      'misc'
+};
+
+window.RADIOS_DATA['xpr-mobile'] = {
+  name: "MOTOTRBO XPR Mobile",
+  sub: "XPR 5550e \u2022 XPR 4000 \u2022 XPR 2500",
+  tags: ['xpr5550e', 'xpr4000', 'xpr2500'],
+  tagStyles: {
+    xpr5550e: 'background:#1a6faf;color:#fff',
+    xpr4000:  'background:#2e7d32;color:#fff',
+    xpr2500:  'background:#6a1b9a;color:#fff'
+  },
+  categories: Object.fromEntries(
+    Object.entries(XPR_MOBILE_DATA).map(([name, cat]) => {
+      const key = XPR_CAT_KEYS[name] || name.toLowerCase().replace(/\s+/g,'_');
+      return [key, {
+        label:    name,
+        icon:     '',
+        cols:     cat.cols,
+        sections: [{ title: '', items: cat.items }]
+      }];
+    })
+  )
+};
+
 </script>
 </body>
 </html>
