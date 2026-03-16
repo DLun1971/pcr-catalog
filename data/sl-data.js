@@ -34,3 +34,5 @@ const SL_DATA = {
     ]}]}
   }
 };
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['sl'] = SL_DATA;
