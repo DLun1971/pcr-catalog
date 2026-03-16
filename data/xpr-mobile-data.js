@@ -1,5 +1,5 @@
 // xpr-mobile-data.js — MOTOTRBO Mobile Radio Accessories
-// Source: MOTOTRBO Professional Tier Accessory Catalog (pages 73-90)
+// Source: MOTOTRBO Professional Tier Accessory Catalog (pages 57-72)
 // Models: XPR 5550e (XPR 5000/5000e Series), XPR 4000 Series, XPR 2500 Series
 
 window.RADIOS_DATA = window.RADIOS_DATA || {};
@@ -8,12 +8,12 @@ window.RADIOS_DATA['xpr-mobile'] = {
 
     microphones: {
       cols: [
-        { key: 'desc',      label: 'Description',    type: 'text' },
-        { key: 'pn',        label: 'Part #',         type: 'pn' },
-        { key: 'impres',    label: 'IMPRES',         type: 'check' },
-        { key: 'xpr5000e',  label: 'XPR 5000/5000e', type: 'check' },
-        { key: 'xpr4000',   label: 'XPR 4000',       type: 'check' },
-        { key: 'xpr2500',   label: 'XPR 2500',       type: 'check' },
+        { key: 'desc',     label: 'Description',    type: 'text' },
+        { key: 'pn',       label: 'Part #',         type: 'pn' },
+        { key: 'impres',   label: 'IMPRES',         type: 'check' },
+        { key: 'xpr5000e', label: 'XPR 5000/5000e', type: 'check' },
+        { key: 'xpr4000',  label: 'XPR 4000',       type: 'check' },
+        { key: 'xpr2500',  label: 'XPR 2500',       type: 'check' },
       ],
       sections: [
         {
@@ -68,19 +68,14 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'External PTT (XPR 5000/5000e / XPR 4000)',
+          title: 'External Push-to-Talk (PTT)',
           items: [
-            { desc: 'Pushbutton PTT for visor microphone',       pn: 'RLN5926',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
-            { desc: 'Emergency footswitch for visor microphone', pn: 'RLN5929',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
-          ]
-        },
-        {
-          title: 'External PTT (XPR 2500)',
-          items: [
-            { desc: 'Remote mount footswitch PTT',          pn: 'RLN4856',  xpr5000e: false, xpr4000: false, xpr2500: true },
-            { desc: 'Remote mount pushbutton PTT',          pn: 'RLN4857',  xpr5000e: false, xpr4000: false, xpr2500: true },
-            { desc: 'External PTT with emergency footswitch', pn: 'RLN4836', xpr5000e: false, xpr4000: false, xpr2500: true },
-            { desc: 'Gooseneck PTT',                        pn: 'RLN4858A', xpr5000e: false, xpr4000: false, xpr2500: true },
+            { desc: 'Pushbutton PTT for visor microphone',         pn: 'RLN5926',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+            { desc: 'Emergency footswitch for visor microphone',   pn: 'RLN5929',  xpr5000e: true,  xpr4000: true,  xpr2500: false },
+            { desc: 'Remote mount footswitch PTT',                 pn: 'RLN4856',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: 'Remote mount pushbutton PTT',                 pn: 'RLN4857',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: 'External PTT with emergency footswitch',      pn: 'RLN4836',  xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: 'Gooseneck PTT',                               pn: 'RLN4858A', xpr5000e: false, xpr4000: false, xpr2500: true  },
           ]
         }
       ]
@@ -96,7 +91,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'Long Range Wireless Kits (XPR 5000/5000e / XPR 4000)',
+          title: 'Long Range Wireless Mobile Accessory Kits',
           items: [
             { desc: 'Long range wireless kit with vehicular charger', pn: 'RLN6551', xpr5000e: true, xpr4000: true, xpr2500: false },
             { desc: 'Long range wireless kit (RSM and gateway)',      pn: 'RLN6552', xpr5000e: true, xpr4000: true, xpr2500: false },
@@ -116,11 +111,11 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'Long Range Wireless Chargers (XPR 5000/5000e / XPR 4000)',
+          title: 'Long Range Wireless Chargers and Replacement Parts',
           items: [
-            { desc: 'Wireless RSM battery, 1750 mAh Li-Ion',         pn: 'PMNN4461', xpr5000e: true, xpr4000: true, xpr2500: false },
-            { desc: 'Dual unit charger with US/CAN power supply',     pn: 'PMLN7120', xpr5000e: true, xpr4000: true, xpr2500: false },
-            { desc: 'Vehicular charger with cigarette lighter plug',  pn: 'PMLN6716', xpr5000e: true, xpr4000: true, xpr2500: false },
+            { desc: 'Wireless RSM battery, 1750 mAh Li-Ion',        pn: 'PMNN4461', xpr5000e: true, xpr4000: true, xpr2500: false },
+            { desc: 'Dual unit charger with US/CAN power supply',    pn: 'PMLN7120', xpr5000e: true, xpr4000: true, xpr2500: false },
+            { desc: 'Vehicular charger with cigarette lighter plug', pn: 'PMLN6716', xpr5000e: true, xpr4000: true, xpr2500: false },
           ]
         }
       ]
@@ -136,7 +131,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'OpCrit Wireless BT (XPR 5000/5000e)',
+          title: 'Operations Critical Wireless Bluetooth\u00ae Accessories',
           items: [
             { desc: 'BT accessory kit with flexible earpiece, pod and cradle (US)',  pn: 'RLN6500',  xpr5000e: true, xpr4000: false, xpr2500: false },
             { desc: 'BT accessory kit with flexible earpiece, pod and cradle',       pn: 'PMLN7181', xpr5000e: true, xpr4000: false, xpr2500: false },
@@ -164,7 +159,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'OpCrit Wireless Replacement Parts (XPR 5000/5000e)',
+          title: 'Operations Critical Wireless Replacement Parts',
           items: [
             { desc: 'Eartube for comport earpiece (pack of 10)',                  pn: 'RLN5037',  xpr5000e: true, xpr4000: false, xpr2500: false },
             { desc: 'Replacement ear tips kit (20 sm, 20 med, 20 lg, 10 clips)', pn: 'NNTN8361', xpr5000e: true, xpr4000: false, xpr2500: false },
@@ -191,7 +186,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'Control Station (XPR 5000/5000e / XPR 4000)',
+          title: 'Control Station Accessories',
           items: [
             { desc: 'Power supply 14V 10 amp (1-25W)', pn: 'HPN4008', xpr5000e: true, xpr4000: true, xpr2500: false },
             { desc: 'Desktop tray with speaker',        pn: 'RSN4005', xpr5000e: true, xpr4000: true, xpr2500: false },
@@ -210,7 +205,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'Installation & Mounting',
+          title: 'Installation and Mounting Accessories',
           items: [
             { desc: 'Low profile trunnion kit (under dash)',         pn: 'RLN6466',  xpr5000e: true,  xpr4000: false, xpr2500: false },
             { desc: 'Low profile trunnion kit (under dash)',         pn: 'RLN6077',  xpr5000e: false, xpr4000: true,  xpr2500: false },
@@ -241,11 +236,11 @@ window.RADIOS_DATA['xpr-mobile'] = {
         {
           title: 'External Speakers',
           items: [
-            { desc: '13W external speaker',    pn: 'RSN4002',  watts: '13W',  xpr5000e: true,  xpr4000: false, xpr2500: false },
-            { desc: '13W external speaker',    pn: 'RSN4001',  watts: '13W',  xpr5000e: false, xpr4000: false, xpr2500: true  },
-            { desc: '7.5W external speaker',   pn: 'RSN4003',  watts: '7.5W', xpr5000e: false, xpr4000: false, xpr2500: true  },
-            { desc: '5W external speaker',     pn: 'RSN4004',  watts: '5W',   xpr5000e: false, xpr4000: false, xpr2500: true  },
-            { desc: '7.5W external speaker',   pn: 'HSN8145',  watts: '7.5W', xpr5000e: false, xpr4000: true,  xpr2500: false },
+            { desc: '13W external speaker',    pn: 'RSN4002',  watts: '13W',    xpr5000e: true,  xpr4000: false, xpr2500: false },
+            { desc: '13W external speaker',    pn: 'RSN4001',  watts: '13W',    xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: '7.5W external speaker',   pn: 'RSN4003',  watts: '7.5W',   xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: '5W external speaker',     pn: 'RSN4004',  watts: '5W',     xpr5000e: false, xpr4000: false, xpr2500: true  },
+            { desc: '7.5W external speaker',   pn: 'HSN8145',  watts: '7.5W',   xpr5000e: false, xpr4000: true,  xpr2500: false },
             { desc: 'Speaker extension cable', pn: 'GMKN4084', watts: '\u2014', xpr5000e: false, xpr4000: false, xpr2500: true  },
           ]
         }
@@ -293,25 +288,25 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'UHF Antennas',
+          title: 'Antennas \u2014 UHF',
           items: [
-            { desc: 'GPS/UHF combination 1/4 wave (403-430 MHz)',    pn: 'PMAE4030',   band: 'UHF',     freq: '403-430',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 1/4 wave (450-470 MHz)',    pn: 'PMAE4031',   band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 3.5 dB gain (406-420 MHz)', pn: 'PMAE4032',   band: 'UHF',     freq: '406-420',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 3.5 dB gain (450-470 MHz)', pn: 'PMAE4033',   band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 5 dB gain (450-470 MHz)',   pn: 'PMAE4034',   band: 'UHF',     freq: '450-470',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 2 dB gain (403-527 MHz)',   pn: 'HAE6019',    band: 'UHF',     freq: '403-527',   gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/UHF combination 1/4 wave (470-527 MHz)',    pn: 'HAE6020',    band: 'UHF',     freq: '470-527',   gps: true,  mount: 'Through-hole' },
-            { desc: 'UHF wide area 3.5 dB gain (450-470 MHz)',       pn: 'HAE4011',    band: 'UHF',     freq: '450-470',   gps: false, mount: 'Through-hole' },
-            { desc: 'UHF wide area 2 dB gain (403-527 MHz)',         pn: 'HAE6022',    band: 'UHF',     freq: '403-527',   gps: false, mount: 'Through-hole' },
-            { desc: 'UHF wide area 5 dB gain (445-470 MHz)',         pn: 'RAE4004ARB', band: 'UHF',     freq: '445-470',   gps: false, mount: 'Through-hole' },
-            { desc: 'UHF urban roof mount 1/4 wave (403-430 MHz)',   pn: 'PMAE4040',   band: 'UHF',     freq: '403-430',   gps: false, mount: 'Roof mount' },
-            { desc: 'UHF urban roof mount 1/4 wave (450-470 MHz)',   pn: 'PMAE4041',   band: 'UHF',     freq: '450-470',   gps: false, mount: 'Roof mount' },
-            { desc: 'UHF urban roof mount 1/4 wave (470-512 MHz)',   pn: 'HAE4004',    band: 'UHF',     freq: '470-512',   gps: false, mount: 'Roof mount' },
+            { desc: 'GPS/UHF combination 1/4 wave (403-430 MHz)',    pn: 'PMAE4030',   band: 'UHF', freq: '403-430', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 1/4 wave (450-470 MHz)',    pn: 'PMAE4031',   band: 'UHF', freq: '450-470', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 3.5 dB gain (406-420 MHz)', pn: 'PMAE4032',   band: 'UHF', freq: '406-420', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 3.5 dB gain (450-470 MHz)', pn: 'PMAE4033',   band: 'UHF', freq: '450-470', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 5 dB gain (450-470 MHz)',   pn: 'PMAE4034',   band: 'UHF', freq: '450-470', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 2 dB gain (403-527 MHz)',   pn: 'HAE6019',    band: 'UHF', freq: '403-527', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/UHF combination 1/4 wave (470-527 MHz)',    pn: 'HAE6020',    band: 'UHF', freq: '470-527', gps: true,  mount: 'Through-hole' },
+            { desc: 'UHF wide area 3.5 dB gain (450-470 MHz)',       pn: 'HAE4011',    band: 'UHF', freq: '450-470', gps: false, mount: 'Through-hole' },
+            { desc: 'UHF wide area 2 dB gain (403-527 MHz)',         pn: 'HAE6022',    band: 'UHF', freq: '403-527', gps: false, mount: 'Through-hole' },
+            { desc: 'UHF wide area 5 dB gain (445-470 MHz)',         pn: 'RAE4004ARB', band: 'UHF', freq: '445-470', gps: false, mount: 'Through-hole' },
+            { desc: 'UHF urban roof mount 1/4 wave (403-430 MHz)',   pn: 'PMAE4040',   band: 'UHF', freq: '403-430', gps: false, mount: 'Roof mount' },
+            { desc: 'UHF urban roof mount 1/4 wave (450-470 MHz)',   pn: 'PMAE4041',   band: 'UHF', freq: '450-470', gps: false, mount: 'Roof mount' },
+            { desc: 'UHF urban roof mount 1/4 wave (470-512 MHz)',   pn: 'HAE4004',    band: 'UHF', freq: '470-512', gps: false, mount: 'Roof mount' },
           ]
         },
         {
-          title: 'VHF Antennas',
+          title: 'Antennas \u2014 VHF',
           items: [
             { desc: 'GPS/VHF combination 1/4 wave (136-144 MHz)',   pn: 'RAD4214', band: 'VHF', freq: '136-144',   gps: true,  mount: 'Through-hole' },
             { desc: 'GPS/VHF combination 1/4 wave (146-150.8 MHz)', pn: 'RAD4215', band: 'VHF', freq: '146-150.8', gps: true,  mount: 'Through-hole' },
@@ -322,22 +317,22 @@ window.RADIOS_DATA['xpr-mobile'] = {
           ]
         },
         {
-          title: '800/900 MHz Antennas',
+          title: 'Antennas \u2014 800/900 MHz',
           items: [
-            { desc: 'GPS/800-900 MHz 1/4 wave (806-941 MHz)',  pn: 'HAF4029',  band: '800/900', freq: '806-941', gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/800-900 MHz 3 dB gain (806-941 MHz)', pn: 'HAF4030',  band: '800/900', freq: '806-941', gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/800-900 MHz stubby (806-941 MHz)',    pn: 'HAF4032',  band: '800/900', freq: '806-941', gps: true,  mount: 'Through-hole' },
-            { desc: 'GPS/800-900 MHz 5 dB gain (806-941 MHz)', pn: 'HAF4033',  band: '800/900', freq: '806-941', gps: true,  mount: 'Through-hole' },
+            { desc: 'GPS/800-900 MHz 1/4 wave (806-941 MHz)',  pn: 'HAF4029', band: '800/900', freq: '806-941', gps: true, mount: 'Through-hole' },
+            { desc: 'GPS/800-900 MHz 3 dB gain (806-941 MHz)', pn: 'HAF4030', band: '800/900', freq: '806-941', gps: true, mount: 'Through-hole' },
+            { desc: 'GPS/800-900 MHz stubby (806-941 MHz)',    pn: 'HAF4032', band: '800/900', freq: '806-941', gps: true, mount: 'Through-hole' },
+            { desc: 'GPS/800-900 MHz 5 dB gain (806-941 MHz)', pn: 'HAF4033', band: '800/900', freq: '806-941', gps: true, mount: 'Through-hole' },
           ]
         },
         {
-          title: 'GPS Antennas',
+          title: 'Antennas \u2014 GPS',
           items: [
-            { desc: 'GPS fixed mount active antenna',   pn: 'PMAN4000', band: 'GPS', freq: '\u2014', gps: true, mount: 'Fixed' },
-            { desc: 'GPS glass mount active antenna',   pn: 'PMAN4001', band: 'GPS', freq: '\u2014', gps: true, mount: 'Glass' },
+            { desc: 'GPS fixed mount active antenna',    pn: 'PMAN4000', band: 'GPS', freq: '\u2014', gps: true, mount: 'Fixed' },
+            { desc: 'GPS glass mount active antenna',    pn: 'PMAN4001', band: 'GPS', freq: '\u2014', gps: true, mount: 'Glass' },
             { desc: 'GPS magnetic mount active antenna', pn: 'PMAN4002', band: 'GPS', freq: '\u2014', gps: true, mount: 'Magnetic' },
-            { desc: 'GPS fixed mount active antenna',   pn: 'PMAN4008', band: 'GPS', freq: '\u2014', gps: true, mount: 'Fixed' },
-            { desc: 'GPS glass mount active antenna',   pn: 'PMAN4009', band: 'GPS', freq: '\u2014', gps: true, mount: 'Glass' },
+            { desc: 'GPS fixed mount active antenna',    pn: 'PMAN4008', band: 'GPS', freq: '\u2014', gps: true, mount: 'Fixed' },
+            { desc: 'GPS glass mount active antenna',    pn: 'PMAN4009', band: 'GPS', freq: '\u2014', gps: true, mount: 'Glass' },
             { desc: 'GPS magnetic mount active antenna', pn: 'PMAN4010', band: 'GPS', freq: '\u2014', gps: true, mount: 'Magnetic' },
           ]
         }
@@ -354,7 +349,7 @@ window.RADIOS_DATA['xpr-mobile'] = {
       ],
       sections: [
         {
-          title: 'Antenna Accessories (XPR 5000/5000e)',
+          title: 'Antenna Accessories',
           items: [
             { desc: 'Mobile mini-U antenna adapter, 8-foot cable', pn: 'HKN9088', xpr5000e: true, xpr4000: false, xpr2500: false },
           ]
