@@ -220,11 +220,16 @@ function buildRadioPills() {
   ).join('');
 }
 
-function buildCatPills() {
-  const pills = PCR_CATS.map(c =>
-    `<button class="cpill${c===currentCat?' active':''}" onclick="selectCat('${c}')">${c}</button>`
+function buildRadioPills() {
+  const radios = [
+    ...PCR_RADIOS.map(r => ({ id: r, label: r, mobile: false })),
+    { id: 'xpr-mobile', label: 'XPR 5550e', mobile: true },
+    { id: 'xpr-mobile', label: 'XPR 4000',  mobile: true },
+    { id: 'xpr-mobile', label: 'XPR 2500',  mobile: true },
+  ];
+  document.getElementById('radio-row').innerHTML = radios.map(r =>
+    `<button class="rpill${r.mobile?' mobile':''}${r.id===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r.id}')">${r.label}</button>`
   ).join('');
-  document.getElementById('cat-row').insertAdjacentHTML('afterbegin', pills);
 }
 
 function selectRadio(r) {
@@ -243,11 +248,8 @@ function selectCat(c) {
 function setView(v) {
   currentView = v;
   syncViewBtns();
-  document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', v==='radio' && b.textContent.trim()===currentRadio));
-        { id: 'xpr-mobile', label: 'XPR 5550e', cls: 'rpill mobile', group: 'XPR Mobile' },
-        { id: 'xpr-mobile', label: 'XPR 4000',  cls: 'rpill mobile', group: 'XPR Mobile' },
-        { id: 'xpr-mobile', label: 'XPR 2500',  cls: 'rpill mobile', group: 'XPR Mobile' },
-  fadeRender(); pushState();
+ document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', v==='radio' && b.textContent.trim()===currentRadio));
+  fadeRender(); pushState(); 
 }
 
 function syncViewBtns() {
