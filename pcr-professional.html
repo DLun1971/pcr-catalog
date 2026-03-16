@@ -16,23 +16,31 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .vtbtn{padding:5px 16px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .2s;}
 .vtbtn.active{background:#1a1a1a;color:#f5f2eb;border-color:#1a1a1a;}
 #radio-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.pill-group-label{font-size:10px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;padding:0 4px;align-self:center;}
+.pill-group-sep{width:1px;height:18px;background:#ccc;margin:0 2px;align-self:center;}
 .rpill{padding:4px 13px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
 .rpill.active{background:#1a1a1a;color:#f5f2eb;border-color:#1a1a1a;}
 .rpill:hover:not(.active){background:#ede9e0;}
-.rpill.mobile{background:#555;color:#f5f2eb;border-color:#555;}
-.rpill.mobile.active{background:#222;color:#fff;border-color:#222;}
-.rpill.mobile:hover:not(.active){background:#3a3a3a;color:#fff;}
+.rpill.mobile{border-color:#1a6faf;color:#1a6faf;}
+.rpill.mobile.active{background:#1a6faf;color:#fff;border-color:#1a6faf;}
+.rpill.mobile:hover:not(.active){background:#e8f0f8;}
 #cat-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding-bottom:10px;}
 .cpill{padding:4px 13px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
 .cpill.active{background:#2d7a4f;color:#fff;border-color:#2d7a4f;}
 .cpill:hover:not(.active){background:#ede9e0;}
 #search-input{margin-left:auto;padding:4px 12px;border-radius:20px;border:1px solid #888;font-size:12px;background:#f5f2eb;color:#1a1a1a;width:180px;outline:none;}
 #search-input:focus{border-color:#2d7a4f;}
+#matrix-subtabs{display:none;align-items:center;gap:6px;padding:6px 0 2px;}
+.mstab{padding:4px 16px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
+.mstab.active{background:#555;color:#fff;border-color:#555;}
+.mstab.active.mobile-tab{background:#1a6faf;border-color:#1a6faf;}
+.mstab:hover:not(.active){background:#ede9e0;}
 #table-wrap{flex:1;overflow-y:auto;background:#fff;transition:opacity .2s;}
 #table-wrap.fading{opacity:0;}
 table{width:100%;border-collapse:collapse;font-size:12px;}
 thead th{position:sticky;top:0;z-index:10;padding:7px 8px;text-align:left;font-weight:600;font-size:11px;color:#555;border-bottom:2px solid #ddd9cf;background:#f0ede4;white-space:nowrap;}
 thead th.radio-col{background:#dde8f4;color:#1a5fa8;text-align:center;}
+thead th.mobile-col{background:#e8f0f8;color:#1a6faf;text-align:center;}
 thead th.fc{text-align:center;}
 thead th.cc{text-align:center;width:52px;}
 thead th.ic{width:44px;}
@@ -97,6 +105,10 @@ td.cc{text-align:center;width:52px;}
       </div>
     </div>
     <div id="radio-row"></div>
+    <div id="matrix-subtabs">
+      <button class="mstab active" onclick="setMatrixTab('portable')">Portable Radios</button>
+      <button class="mstab mobile-tab" onclick="setMatrixTab('mobile')">Mobile Radios</button>
+    </div>
     <div id="cat-row">
       <input id="search-input" type="text" placeholder="Search part number or description..." oninput="renderTable()">
     </div>
@@ -132,15 +144,23 @@ td.cc{text-align:center;width:52px;}
 </div>
 
 <script src="data/r7-data.js?v=2"></script>
-  <script src="data/xpr-mobile-data.js"></script>
+<script src="data/xpr-mobile-data.js?v=2"></script>
 <script>
-// ── RADIO MAP: display name -> data key ──
+// ── RADIO MAP: display label -> data key ──
 const PCR_RADIO_MAP = {
   'R7':'r7','Ion':'ion','R5':'r5','R7Ex':'r7ex',
-  'XPR 6550':'xpr6550','XPR 7550e':'xpr7550e','XPR 3500e':'xpr3500e'
-  ,'XPR 5550e':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile'
+  'XPR 5550e':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile'
 };
-const PCR_RADIOS = Object.keys(PCR_RADIO_MAP);
+
+// Portable and mobile radio label lists (display names, no data keys)
+const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex'];
+const MOBILE_RADIOS   = ['XPR 5550e','XPR 4000','XPR 2500'];
+// Compat col keys inside xpr-mobile data that map to each mobile radio label
+const MOBILE_COL_KEYS = {
+  'XPR 5550e':'xpr5000e',
+  'XPR 4000': 'xpr4000',
+  'XPR 2500': 'xpr2500'
+};
 
 // ── CAT MAP: display name -> data key ──
 const PCR_CAT_MAP = {
@@ -148,9 +168,8 @@ const PCR_CAT_MAP = {
   'Headsets':'headsets','Batteries':'batteries','Chargers':'chargers',
   'Carry':'carry','Antennas':'antennas','Cables':'cables','All':'all'
 };
-const PCR_CATS = Object.keys(PCR_CAT_MAP);
 
-// ── COL LABELS (data key -> display) ──
+// ── COL LABELS ──
 const PCR_COL_LABELS = {
   impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
   wwet:'Work-When-Wet', intel:'Intelligent Audio', ains:'AINS',
@@ -170,12 +189,11 @@ const PCR_COL_LABELS = {
   pairing:'Pairing', range:'Range'
 };
 
-// ── FEATURE COLS PER CATEGORY (checks keys, matching PDF) ──
+// ── FEATURE COLS PER CATEGORY ──
 const PCR_CAT_FEAT = {
   rsm:         ['impres','ip','hazloc','windport','wwet','intel','ains','progbtn','jack'],
   wireless:    ['ip','hazloc','bt','fulldx','mic','ptt','talktime','chrgtime','weight'],
   surveillance:['impres','hazloc','intel','nrr','wires','hstype','epstyle','mic','ptt'],
-  wireless:    ['ip','hazloc','bt','fulldx','mic','ptt','talktime','chrgtime','weight'],
   headsets:    ['impres','ip','hazloc','intel','nrr','nc','hstype','epstyle','mic','ptt'],
   batteries:   ['impres','chem','mah','ip','hazloc','temp'],
   chargers:    ['impres','pockets','voltage','chem','belt_sz','swivel','display','drings'],
@@ -184,80 +202,102 @@ const PCR_CAT_FEAT = {
   cables:      [],
   all:         ['impres','ip','hazloc','windport']
 };
-// Matrix view always shows radio compat cols only — no feat cols needed
 const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
 
 // ── STATE ──
-let currentView = 'radio';
-let currentRadio = 'R7';
-let currentCat = 'All';
+let currentView      = 'radio';
+let currentRadio     = 'R7';
+let currentCat       = 'All';
+let currentMatrixTab = 'portable';
 let myList = {};
 const IMG_CACHE = {};
 
 // ── INIT ──
 function init() {
   const p = new URLSearchParams(location.search);
-  if (p.get('view')) currentView = p.get('view');
+  if (p.get('view'))  currentView  = p.get('view');
   if (p.get('radio') && PCR_RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
-  if (p.get('cat') && PCR_CAT_MAP[p.get('cat')]) currentCat = p.get('cat');
+  if (p.get('cat')   && PCR_CAT_MAP[p.get('cat')])     currentCat   = p.get('cat');
+  if (p.get('mtab')  && ['portable','mobile'].includes(p.get('mtab'))) currentMatrixTab = p.get('mtab');
   buildRadioPills();
   renderTable();
 }
 
 function pushState() {
   const u = new URL(location.href);
-  u.searchParams.set('view', currentView);
+  u.searchParams.set('view',  currentView);
   u.searchParams.set('radio', currentRadio);
-  u.searchParams.set('cat', currentCat);
+  u.searchParams.set('cat',   currentCat);
+  u.searchParams.set('mtab',  currentMatrixTab);
   history.replaceState({}, '', u);
 }
 
 // ── PILLS ──
-
 function buildRadioPills() {
-  const radios = [
-    ...PCR_RADIOS.map(r => ({ id: r, label: r, mobile: false })),
-    { id: 'xpr-mobile', label: 'XPR 5550e', mobile: true },
-    { id: 'xpr-mobile', label: 'XPR 4000',  mobile: true },
-    { id: 'xpr-mobile', label: 'XPR 2500',  mobile: true },
-  ];
-  document.getElementById('radio-row').innerHTML = radios.map(r =>
-    `<button class="rpill${r.mobile?' mobile':''}${r.id===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r.id}')">${r.label}</button>`
-  ).join('');
+  const row = document.getElementById('radio-row');
+  row.innerHTML =
+    '<span class="pill-group-label">Portable</span>' +
+    PORTABLE_RADIOS.map(r =>
+      `<button class="rpill${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
+    ).join('') +
+    '<span class="pill-group-sep"></span>' +
+    '<span class="pill-group-label">Mobile</span>' +
+    MOBILE_RADIOS.map(r =>
+      `<button class="rpill mobile${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
+    ).join('');
 }
 
 function selectRadio(r) {
   currentRadio = r;
   if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
-  document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', b.textContent.trim()===r));
+  document.querySelectorAll('.rpill').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === r)
+  );
   fadeRender(); pushState();
 }
 
 function selectCat(c) {
   currentCat = c;
-  document.querySelectorAll('.cpill').forEach(b => b.classList.toggle('active', b.textContent.trim()===c));
+  document.querySelectorAll('.cpill').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === c)
+  );
   fadeRender(); pushState();
 }
 
 function setView(v) {
   currentView = v;
   syncViewBtns();
- document.querySelectorAll('.rpill').forEach(b => b.classList.toggle('active', v==='radio' && b.textContent.trim()===currentRadio));
-  fadeRender(); pushState(); 
+  // show/hide matrix sub-tabs
+  document.getElementById('matrix-subtabs').style.display = v === 'matrix' ? 'flex' : 'none';
+  // clear radio pill active state when switching to matrix
+  document.querySelectorAll('.rpill').forEach(b =>
+    b.classList.toggle('active', v === 'radio' && b.textContent.trim() === currentRadio)
+  );
+  fadeRender(); pushState();
+}
+
+function setMatrixTab(tab) {
+  currentMatrixTab = tab;
+  document.querySelectorAll('.mstab').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim().toLowerCase().startsWith(tab))
+  );
+  fadeRender(); pushState();
 }
 
 function syncViewBtns() {
-  document.querySelectorAll('.vtbtn').forEach(b => b.classList.toggle('active', b.textContent.trim()===(currentView==='radio'?'By Radio':'Full Matrix')));
+  document.querySelectorAll('.vtbtn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === (currentView === 'radio' ? 'By Radio' : 'Full Matrix'))
+  );
 }
 
 function fadeRender() {
   const tw = document.getElementById('table-wrap');
   tw.classList.add('fading');
-  setTimeout(()=>{ renderTable(); tw.classList.remove('fading'); }, 160);
+  setTimeout(() => { renderTable(); tw.classList.remove('fading'); }, 160);
 }
 
 // ── DATA HELPERS ──
-function getDataKey(radioName) { return PCR_RADIO_MAP[radioName]; }
+function getDataKey(radioLabel) { return PCR_RADIO_MAP[radioLabel] || radioLabel; }
 
 function getCatSections(radioKey, catKey) {
   const rd = window.RADIOS_DATA && window.RADIOS_DATA[radioKey];
@@ -266,42 +306,50 @@ function getCatSections(radioKey, catKey) {
   let sections = [];
   if (catKey === 'all') {
     Object.values(rd.categories).forEach(cat => {
-      cat.sections.forEach(sec => sections.push({title: sec.title, items: sec.items, cols: cat.cols}));
+      cat.sections.forEach(sec =>
+        sections.push({ title: sec.title, items: sec.items, cols: cat.cols })
+      );
     });
   } else {
     const cat = rd.categories[catKey];
     if (!cat) return [];
-    cat.sections.forEach(sec => sections.push({title: sec.title, items: sec.items, cols: cat.cols}));
+    cat.sections.forEach(sec =>
+      sections.push({ title: sec.title, items: sec.items, cols: cat.cols })
+    );
   }
   if (search) {
-    sections = sections.map(s => ({...s, items: s.items.filter(i =>
-      (i.pn||'').toLowerCase().includes(search) || (i.desc||'').toLowerCase().includes(search)
-    )})).filter(s => s.items.length);
+    sections = sections.map(s => ({
+      ...s,
+      items: s.items.filter(i =>
+        (i.pn||'').toLowerCase().includes(search) ||
+        (i.desc||'').toLowerCase().includes(search)
+      )
+    })).filter(s => s.items.length);
   }
   return sections;
 }
 
-// ── RENDER ──
+// ── RENDER DISPATCHER ──
 function renderTable() {
   if (currentView === 'radio') renderRadioView();
   else renderMatrixView();
 }
-function getDataKey(r) { return PCR_RADIO_MAP[r] || r; }
+
+// ── RADIO VIEW ──
 function renderRadioView() {
   const rk = getDataKey(currentRadio);
   const ck = PCR_CAT_MAP[currentCat];
   const sections = getCatSections(rk, ck);
 
-  // Use per-category feature cols from the PDF
-  const catKey = PCR_CAT_MAP[currentCat] || 'all';
+  const catKey  = PCR_CAT_MAP[currentCat] || 'all';
   const featCols = PCR_CAT_FEAT[catKey] || PCR_DEFAULT_FEAT;
-
   const span = 3 + featCols.length + 1;
+
   document.getElementById('t-head').innerHTML = `<tr>
     <th class="ic"></th>
     <th>Part No.</th>
     <th style="min-width:200px">Description</th>
-    ${featCols.map(c=>`<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
+    ${featCols.map(c => `<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
     <th class="cc">My List</th>
   </tr>`;
 
@@ -310,50 +358,59 @@ function renderRadioView() {
     html += `<tr class="sr"><td colspan="${span}">${sec.title||''}</td></tr>`;
     (sec.items||[]).forEach(item => {
       const pn = item.pn||'';
-      const checked = myList[pn]?'checked':'';
+      const checked = myList[pn] ? 'checked' : '';
       html += `<tr data-pn="${pn}">
         <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
         <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
         <td>${item.desc||''}</td>
-        ${featCols.map(c=>`<td class="fc">${renderFeat(c,item.checks?item.checks[c]:undefined)}</td>`).join('')}
+        ${featCols.map(c => `<td class="fc">${renderFeat(c, item[c])}</td>`).join('')}
         <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
       </tr>`;
     });
   });
+
   document.getElementById('t-body').innerHTML = html || '';
   document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
   prefetchImages(sections);
 }
 
+// ── MATRIX VIEW ──
 function renderMatrixView() {
+  if (currentMatrixTab === 'portable') renderPortableMatrix();
+  else renderMobileMatrix();
+}
+
+function renderPortableMatrix() {
   const ck = PCR_CAT_MAP[currentCat];
   const search = document.getElementById('search-input').value.toLowerCase().trim();
   const allSecs = {};
 
-  PCR_RADIOS.forEach(rn => {
+  PORTABLE_RADIOS.forEach(rn => {
     const rk = PCR_RADIO_MAP[rn];
     const rd = window.RADIOS_DATA && window.RADIOS_DATA[rk];
     if (!rd) return;
-    const cats = ck==='all' ? Object.values(rd.categories) : [rd.categories[ck]].filter(Boolean);
+    const cats = ck === 'all'
+      ? Object.values(rd.categories)
+      : [rd.categories[ck]].filter(Boolean);
     cats.forEach(cat => {
       (cat.sections||[]).forEach(sec => {
         (sec.items||[]).forEach(item => {
           const pn = item.pn||'';
           if (search && !(pn.toLowerCase().includes(search)||(item.desc||'').toLowerCase().includes(search))) return;
           if (!allSecs[sec.title]) allSecs[sec.title] = {};
-          if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = {desc:item.desc||'',radios:{},checks:item.checks||{}};
+          if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = { desc: item.desc||'', radios: {} };
           allSecs[sec.title][pn].radios[rn] = true;
         });
       });
     });
   });
 
-  const span = 3 + PCR_RADIOS.length + PCR_DEFAULT_FEAT.length + 1;
+  const span = 3 + PORTABLE_RADIOS.length + 1;
   document.getElementById('t-head').innerHTML = `<tr>
     <th class="ic"></th>
     <th>Part No.</th>
     <th style="min-width:180px">Description</th>
-    ${PCR_RADIOS.map(r=>`<th class="fc radio-col">${r}</th>`).join('')}
+    ${PORTABLE_RADIOS.map(r => `<th class="fc radio-col">${r}</th>`).join('')}
     <th class="cc">My List</th>
   </tr>`;
 
@@ -362,24 +419,83 @@ function renderMatrixView() {
     html += `<tr class="sr"><td colspan="${span}">${title}</td></tr>`;
     Object.keys(allSecs[title]).forEach(pn => {
       const item = allSecs[title][pn];
-      const checked = myList[pn]?'checked':'';
+      const checked = myList[pn] ? 'checked' : '';
       html += `<tr data-pn="${pn}">
         <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
         <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
         <td>${item.desc}</td>
-        ${PCR_RADIOS.map(r=>`<td class="fc">${item.radios[r]?'<span class="chk">&#10003;</span>':'<span class="dash">&mdash;</span>'}</td>`).join('')}
+        ${PORTABLE_RADIOS.map(r => `<td class="fc">${item.radios[r]
+          ? '<span class="chk">&#10003;</span>'
+          : '<span class="dash">&mdash;</span>'}</td>`).join('')}
         <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
       </tr>`;
     });
   });
+
   document.getElementById('t-body').innerHTML = html || '';
   document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
 }
 
+function renderMobileMatrix() {
+  const search = document.getElementById('search-input').value.toLowerCase().trim();
+  const rd = window.RADIOS_DATA && window.RADIOS_DATA['xpr-mobile'];
+  const allSecs = {};
+
+  if (rd) {
+    Object.values(rd.categories).forEach(cat => {
+      (cat.sections||[]).forEach(sec => {
+        (sec.items||[]).forEach(item => {
+          const pn = item.pn||'';
+          if (search && !(pn.toLowerCase().includes(search)||(item.desc||'').toLowerCase().includes(search))) return;
+          if (!allSecs[sec.title]) allSecs[sec.title] = {};
+          if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = { desc: item.desc||'', compat: {} };
+          // map each mobile label to its compat col key in the data
+          MOBILE_RADIOS.forEach(label => {
+            const colKey = MOBILE_COL_KEYS[label];
+            if (item[colKey]) allSecs[sec.title][pn].compat[label] = true;
+          });
+        });
+      });
+    });
+  }
+
+  const span = 3 + MOBILE_RADIOS.length + 1;
+  document.getElementById('t-head').innerHTML = `<tr>
+    <th class="ic"></th>
+    <th>Part No.</th>
+    <th style="min-width:180px">Description</th>
+    ${MOBILE_RADIOS.map(r => `<th class="fc mobile-col">${r}</th>`).join('')}
+    <th class="cc">My List</th>
+  </tr>`;
+
+  let html = '';
+  Object.keys(allSecs).forEach(title => {
+    html += `<tr class="sr"><td colspan="${span}">${title}</td></tr>`;
+    Object.keys(allSecs[title]).forEach(pn => {
+      const item = allSecs[title][pn];
+      const checked = myList[pn] ? 'checked' : '';
+      html += `<tr data-pn="${pn}">
+        <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
+        <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
+        <td>${item.desc}</td>
+        ${MOBILE_RADIOS.map(r => `<td class="fc">${item.compat[r]
+          ? '<span class="chk">&#10003;</span>'
+          : '<span class="dash">&mdash;</span>'}</td>`).join('')}
+        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
+      </tr>`;
+    });
+  });
+
+  document.getElementById('t-body').innerHTML = html || '';
+  document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
+}
+
+// ── FEATURE RENDERER ──
 function renderFeat(col, val) {
-  if (val===undefined||val===null||val===0||val===false||val==='') return '<span class="dash">&mdash;</span>';
-  if (val===true||val===1) return '<span class="chk">&#10003;</span>';
-  if (col==='ip') return `<span class="ip-badge">${val}</span>`;
+  if (val === undefined || val === null || val === 0 || val === false || val === '')
+    return '<span class="dash">&mdash;</span>';
+  if (val === true || val === 1) return '<span class="chk">&#10003;</span>';
+  if (col === 'ip') return `<span class="ip-badge">${val}</span>`;
   return `<span>${val}</span>`;
 }
 
@@ -387,17 +503,14 @@ function renderFeat(col, val) {
 function camSVG() {
   return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8.5" r="2.2" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 4V3.5A.5.5 0 016 3h4a.5.5 0 01.5.5V4" stroke="currentColor" stroke-width="1.2"/></svg>`;
 }
-
 function imgCell(pn) {
   const url = IMG_CACHE[pn];
   if (url) return `<img src="${url}" alt="${pn}">`;
   return camSVG();
 }
-
 function prefetchImages(sections) {
   sections.forEach(sec => (sec.items||[]).forEach(item => tryLoadImg(item.pn||'')));
 }
-
 function tryLoadImg(pn) {
   if (!pn || IMG_CACHE[pn] !== undefined) return;
   IMG_CACHE[pn] = null;
@@ -414,17 +527,19 @@ function tryLoadImg(pn) {
   };
   img.src = urls[0];
 }
-
 function imgClick(pn) {
   const url = IMG_CACHE[pn];
-  if (url) { document.getElementById('lb-img').src = url; document.getElementById('lightbox').classList.add('open'); }
+  if (url) {
+    document.getElementById('lb-img').src = url;
+    document.getElementById('lightbox').classList.add('open');
+  }
 }
 
 // ── COPY PN ──
 function copyPN(pn, el) {
   navigator.clipboard.writeText(pn).catch(()=>{});
   el.classList.add('flash');
-  setTimeout(()=>el.classList.remove('flash'), 1400);
+  setTimeout(() => el.classList.remove('flash'), 1400);
 }
 
 // ── LIGHTBOX ──
@@ -432,33 +547,36 @@ function closeLB() { document.getElementById('lightbox').classList.remove('open'
 
 // ── MY LIST ──
 function toggleML(pn, cb, desc) {
-  if (cb.checked) myList[pn] = {pn, desc, note:''};
+  if (cb.checked) myList[pn] = { pn, desc, note:'' };
   else delete myList[pn];
   document.getElementById('report-badge').textContent = Object.keys(myList).length;
   if (document.getElementById('drawer').classList.contains('open')) renderDrawer();
 }
-
-function openDrawer() { renderDrawer(); document.getElementById('drawer').classList.add('open'); document.getElementById('overlay').classList.add('open'); }
-function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); }
-
+function openDrawer()  {
+  renderDrawer();
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
 function clearList() {
   myList = {};
-  document.querySelectorAll('.mylist-cb').forEach(cb=>cb.checked=false);
+  document.querySelectorAll('.mylist-cb').forEach(cb => cb.checked = false);
   document.getElementById('report-badge').textContent = '0';
   renderDrawer();
 }
-
 function renderDrawer() {
   const items = Object.values(myList);
-  document.getElementById('drawer-empty').style.display = items.length?'none':'block';
-  document.getElementById('drawer-items').innerHTML = items.map(i=>`
+  document.getElementById('drawer-empty').style.display = items.length ? 'none' : 'block';
+  document.getElementById('drawer-items').innerHTML = items.map(i => `
     <div class="di">
       <div class="di-pn">${i.pn}</div>
       <div class="di-desc">${i.desc}</div>
       <textarea placeholder="Notes..." oninput="myList['${i.pn}'].note=this.value">${i.note||''}</textarea>
     </div>`).join('');
 }
-
 function exportPDF() {
   const items = Object.values(myList);
   if (!items.length) { alert('No items in your list yet.'); return; }
@@ -471,7 +589,7 @@ function exportPDF() {
   td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:top;}
   .pn{font-weight:700;}</style></head><body>
   <img src="https://dlun1971.github.io/Shared/motorola-solutions-logo.png" style="height:26px;margin-bottom:10px;display:block;">
-  <h1>MOTOTRBO Professional — My Accessory List</h1>
+  <h1>MOTOTRBO Professional \u2014 My Accessory List</h1>
   <p>Generated ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</p>
   <table><thead><tr><th>Part No.</th><th>Description</th><th>Notes</th></tr></thead><tbody>
   ${items.map(i=>`<tr><td class="pn">${i.pn}</td><td>${i.desc}</td><td>${i.note||''}</td></tr>`).join('')}
@@ -480,48 +598,6 @@ function exportPDF() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
-// Register XPR Mobile with catalog renderer
-window.RADIOS_DATA = window.RADIOS_DATA || {};
-
-const XPR_CAT_KEYS = {
-  'Microphones':        'mics',
-  'External PTT':       'ptt',
-  'Cables':             'cables',
-  'Antennas':           'antennas',
-  'Antenna Accessories':'ant_acc',
-  'Power Cables':       'pwr',
-  'Mounting Brackets':  'mounts',
-  'Control Heads':      'ctrl_heads',
-  'Control Head Cables':'ctrl_cables',
-  'Programming Cables': 'prog',
-  'Speaker Kits':       'speakers',
-  'Noise Cancelling':   'noise',
-  'Miscellaneous':      'misc'
-};
-
-window.RADIOS_DATA['xpr-mobile'] = {
-  name: "MOTOTRBO XPR Mobile",
-  sub: "XPR 5550e \u2022 XPR 4000 \u2022 XPR 2500",
-  tags: ['xpr5550e', 'xpr4000', 'xpr2500'],
-  tagStyles: {
-    xpr5550e: 'background:#1a6faf;color:#fff',
-    xpr4000:  'background:#2e7d32;color:#fff',
-    xpr2500:  'background:#6a1b9a;color:#fff'
-  },
-  categories: Object.fromEntries(
-    Object.entries(XPR_MOBILE_DATA).map(([name, cat]) => {
-      const key = XPR_CAT_KEYS[name] || name.toLowerCase().replace(/\s+/g,'_');
-      return [key, {
-        label:    name,
-        icon:     '',
-        cols:     cat.cols,
-        sections: [{ title: '', items: cat.items }]
-      }];
-    })
-  )
-};
-
 </script>
 </body>
 </html>
