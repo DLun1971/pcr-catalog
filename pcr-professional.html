@@ -314,9 +314,7 @@ function selectRadio(r) {
   const _srvm = PCR_VARIANT_MAP[r];
   currentVariant = _srvm ? _srvm.keys[0] : null;
   if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
-  document.querySelectorAll('.rpill').forEach(b =>
-    b.classList.toggle('active', b.textContent.trim() === r)
-  );
+  buildRadioPills();
   buildCatPills();
   fadeRender(); pushState();
 }
