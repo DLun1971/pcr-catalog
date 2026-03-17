@@ -10,23 +10,23 @@ const DP_ATEX_DATA = {
   categories: {
 
     // ── CAT 1: BATTERIES ──────────────────────────────────────────────────────
-    batteries: {
-      label: 'Batteries',
-      cols: ['dp4400e','dp4600e','dp4800e'],
-      sections: [
-        {
-          title: 'DP ATEX / HazLoc Batteries',
-          items: [
-            { img: null, pn: 'NNTN8359', desc: 'IMPRES Li-Ion 2075mAh IP67 ATEX/IECEx Battery',
-              checks: { impres: 1, chem: 'Li-Ion', capacity_mah: 2075, dims_mm: '135x57x23', weight_g: 220, hazloc: 'ATEX/IECEx', ip: 'IP67', op_temp: '-10/+50\u00b0C',
-                dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
-            { img: null, pn: 'NNTN8386', desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery',
-              checks: { impres: 1, chem: 'Li-Ion', capacity_mah: 2075, dims_mm: '135x57x23', weight_g: 220, hazloc: 'CSA157', ip: 'IP67', op_temp: '-10/+50\u00b0C',
-                dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
-          ]
-        }
+ batteries: {
+  label: 'Batteries',
+  cols: ['dp4400e','dp4600e','dp4800e','Chem','Typical Capacity (mAh)','Dims','Weight','IP','HazLoc','Temp'],
+  sections: [
+    {
+      title: 'DP ATEX / HazLoc Batteries',
+      items: [
+        { img: null, pn: 'NNTN8359', desc: 'IMPRES Li-Ion 2075mAh IP67 ATEX/IECEx Battery',
+          checks: { impres: 1, chem: 'Li-Ion', mah: 2075, dims: '135x57x23', weight: 220, hazloc: 'ATEX/IECEx', ip: 'IP67', temp: '-10/+50\u00b0C',
+            dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
+        { img: null, pn: 'NNTN8386', desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery',
+          checks: { impres: 1, chem: 'Li-Ion', mah: 2075, dims: '135x57x23', weight: 220, hazloc: 'CSA157', ip: 'IP67', temp: '-10/+50\u00b0C',
+            dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
       ]
-    },
+    }
+  ]
+},
 
     // ── CAT 2: CHARGERS ───────────────────────────────────────────────────────
     chargers: {
