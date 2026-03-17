@@ -33,3 +33,6 @@ window.DP_ATEX_DATA = {
   impres_tools:   { label: 'IMPRES Battery Mgmt Tools', sections: [] },
   bluetooth:      { label: 'Bluetooth / Ops Critical Wireless', sections: [] },
 };
+
+if (!window.RADIOS_DATA) window.RADIOS_DATA = {};
+window.RADIOS_DATA['dp-atex'] = DP_ATEX_DATA;
