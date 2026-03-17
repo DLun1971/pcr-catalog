@@ -1,208 +1,1212 @@
-// XPR 7000 Series Accessory Data
-// Covers: XPR 7000, XPR 7000e
-// Source: MOTOTRBO Professional Tier Accessory Catalog (PDF)
-const XPR7000_DATA = {
-  categories: {
-    rsm: {
-      label: 'RSMs',
-      sections: [
-        { title: 'Remote Speaker Microphones', items: [
-          { img: null, pn: 'PMMN4024', desc: 'Windporting RSM, Small (IP54)', note: '', checks: { impres: 0, ip: 'IP54', hazloc: 'UL', windport: 1, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4025', desc: 'IMPRES Windporting RSM, Small (IP54)', note: '', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 1, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4040', desc: 'Windporting RSM, Small, Submersible (IP57)', note: '', checks: { impres: 0, ip: 'IP57', hazloc: 'UL', windport: 1, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4046', desc: 'IMPRES Windporting RSM, Large, Submersible (IP57)', note: '', checks: { impres: 1, ip: 'IP57', hazloc: 'UL', windport: 1, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4050', desc: 'IMPRES Noise-Canceling RSM, Large (IP54)', note: '', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'NNTN8382', desc: 'IMPRES INC Dual Mic Noise Suppression RSM, Submersible (IP57)', note: '', checks: { impres: 1, ip: 'IP57', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'NNTN8383', desc: 'IMPRES INC Dual Mic Noise Suppression RSM (IP54)', note: '', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4067', desc: 'IMPRES Windporting RSM (IP64)', note: '', checks: { impres: 1, ip: 'IP64', hazloc: '', windport: 1, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4094', desc: 'IMPRES ATEX Active Noise-Canceling RSM, Large Front PTT + Side PTT (IP67)', note: 'ATEX', checks: { impres: 1, ip: 'IP67', hazloc: 'ATEX', windport: 0, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4110', desc: 'IMPRES ATEX Omni RSM, Large Front PTT + Side PTT (IP67)', note: 'ATEX', checks: { impres: 1, ip: 'IP67', hazloc: 'ATEX', windport: 1, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4102', desc: 'IMPRES Active Noise-Canceling RSM, Large Front PTT + Side PTT (IP67)', note: '', checks: { impres: 1, ip: 'IP67', hazloc: 'UL', windport: 0, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4113', desc: 'IMPRES Omni RSM, Large Front PTT + Side PTT (IP67)', note: '', checks: { impres: 1, ip: 'IP67', hazloc: 'UL', windport: 1, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMMN4099', desc: 'IMPRES Windporting RSM, Large, Submersible (IP68)', note: '', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', windport: 1, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'RSM Accessories - Standard 3.5mm Jack', items: [
-          { img: null, pn: 'AARLN4885', desc: 'Receive-Only Covered Earbud with Coiled Cord', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN4941',   desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7560',  desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'WADN4190',  desc: 'Receive-Only Flexible Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN4620',  desc: 'Receive-Only D-Shell Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7396',  desc: 'D-Shell Adjustable Earpiece', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7188',  desc: 'Translucent Tube RX Only (for ATEX RSMs)', note: 'For PMMN4094/4110/4102/4113', checks: { impres: 0, ip: '', hazloc: 'ATEX', windport: 0, xpr7000: 0, xpr7000e: 1 } },
-        ]},
-        { title: 'RSM Accessories - Threaded 3.5mm Jack', items: [
-          { img: null, pn: 'BDN6719',   desc: 'One-Wire Flexible Ear Receiver, Black (NNTN8383 only)', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'BDN6726',   desc: 'One-Wire Earpiece, Black (NNTN8383 only)', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'RSM Replacement Parts', items: [
-          { img: null, pn: 'RLN6074',   desc: 'Replacement Coil Cord Kit (for PMMN4024, PMMN4040)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6075',   desc: 'Replacement Coil Cord Kit (for PMMN4025, PMMN4046, PMMN4050)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    surveillance: {
-      label: 'Surveillance',
-      sections: [
-        { title: 'Surveillance Kits', items: [
-          { img: null, pn: 'PMLN6125',  desc: '1-Wire Receive-Only Earpiece, Black', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6126',  desc: '1-Wire Receive-Only Earpiece, Beige', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6127',  desc: 'IMPRES 2-Wire Earhook with Earbud Earpiece, Black', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6128',  desc: 'IMPRES 2-Wire Earhook with Earbud Earpiece, Beige', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'NNTN8459',  desc: '1-Wire Surveillance Kit with Translucent Tube, Black', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6129',  desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Black', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6130',  desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Beige', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6123',  desc: 'IMPRES 3-Wire Surveillance Kit with Translucent Tube, Black', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6124',  desc: 'IMPRES 3-Wire Surveillance Kit with Translucent Tube, Beige', note: '', checks: { impres: 1, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7269',  desc: '2-Wire Surveillance Kit with Translucent Tube, Black', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7270',  desc: '2-Wire Surveillance Kit with Translucent Tube, Beige', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6754',  desc: 'IMPRES 3-Wire Surveillance Kit with QD Translucent Tube, Black', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6755',  desc: 'IMPRES 3-Wire Surveillance Kit with QD Translucent Tube, Beige', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7158',  desc: '1-Wire Surveillance Kit, Black', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7157',  desc: '2-Wire Surveillance Kit, Black', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Surveillance Replacement Parts', items: [
-          { img: null, pn: 'RLN6242',     desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6282',     desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '5080384F72',  desc: 'Replacement Foam Plugs for RLN6242, Pack of 50 Pairs (NRR 24dB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN5886',     desc: 'Low Noise Kit with 1 Clear Rubber Eartip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '67009254001', desc: 'Replacement Standard Clear Rubber Eartip, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'HKLN4608',   desc: 'Replacement QD Translucent Tube with 1 Clear Rubber Eartip (for PMLN5724/26)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6175',   desc: 'Replacement QD Translucent Tube with 1 Clear Rubber Eartip (for PMLN5957)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    headsets: {
-      label: 'Headsets',
-      sections: [
-        { title: 'Heavy Duty Headsets', items: [
-          { img: null, pn: 'PMLN6760',  desc: 'Heavy Duty Behind-the-Head Headset, Dual Muff, Noise-Canceling Boom (IP54)', note: 'See user guide for replacement parts', checks: { impres: 1, ip: 'IP54', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6763',  desc: 'Heavy Duty Behind-the-Head Headset, Dual Muff, Noise-Canceling Boom (IP54) HazLoc', note: 'See user guide for replacement parts', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7464',  desc: 'Heavy Duty Over-the-Head Headset, Dual Muff, Noise-Canceling Boom (IP54)', note: 'See user guide for replacement parts', checks: { impres: 1, ip: 'IP54', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7465',  desc: 'Heavy Duty Over-the-Head Headset, Dual Muff, Noise-Canceling Boom (IP54) HazLoc', note: 'See user guide for replacement parts', checks: { impres: 1, ip: 'IP54', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Mag One Headsets', items: [
-          { img: null, pn: 'PMLN6635',  desc: 'Lightweight Over-the-Head Headset, Single Muff, In-Line PTT', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6761',  desc: 'Mag One Ultra-Lite Behind-the-Head Headset, Single Ear', note: 'Replacement parts: 6104000K01 windscreen, 4204005K01 clothing clip', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6759',  desc: 'IMPRES Temple Transducer with Boom Mic and In-Line PTT', note: 'Bone conduction', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: '3M Peltor Headsets', items: [
-          { img: null, pn: 'PMLN8265',  desc: 'CH-3 Series Over-the-Head Headset with Nexus Connector, Dual Ear (NRR 26dB)', note: '3M Peltor MT74H52A-110-34A', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN8266',  desc: 'CH-3 Series Neckband Headset with Nexus Connector, Dual Ear (NRR 24dB)', note: '3M Peltor MT74H52A-110-34B', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN8267',  desc: 'CH-3 Series Hard Hat Attached with Nexus Connector, Dual Ear (NRR 24dB)', note: '3M Peltor MT74H52P3E-110-34A. Hat not included.', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN8297',  desc: 'PTT Nexus Adapter (for 3M Peltor headsets)', note: '3M Peltor FL40114-34', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Mag One Earpieces', items: [
-          { img: null, pn: 'PMLN5733',  desc: 'Mag One Earbud with In-Line Mic and PTT', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN5727',  desc: 'Mag One Swivel Earpiece with In-Line Mic and PTT', note: '', checks: { impres: 0, ip: '', hazloc: 'UL', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN5732',  desc: 'Mag One Earset with Boom Mic and In-Line PTT', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN6757',  desc: 'Adjustable D-Style Earpiece with In-Line Mic and PTT', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Hearing Protection', items: [
-          { img: null, pn: 'RLN6511',  desc: 'EP7-Small Hearing Protector [Sonic Defenders] Ultra Earplugs (NRR 28dB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6512',  desc: 'EP7-Medium Hearing Protector [Sonic Defenders] Ultra Earplugs (NRR 28dB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6513',  desc: 'EP7-Large Hearing Protector [Sonic Defenders] Ultra Earplugs (NRR 28dB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-batteries: {
-  label: 'Batteries',
-  cols: ['xpr7000','xpr7000e','Chem','Typical Capacity (mAh)','Dims','Weight','IP','HazLoc','Temp'],
-  sections: [
-    { title: 'Li-Ion Batteries', items: [
-      { img: null, pn: 'PMNN4491', desc: 'IMPRES Li-Ion 2150mAh Battery',
-        checks: { impres: 1, chem: 'Li-Ion', mah: 2150, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
-      { img: null, pn: 'PMNN4409', desc: 'IMPRES Li-Ion 2300mAh Battery',
-        checks: { impres: 1, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
-      { img: null, pn: 'PMNN4407', desc: 'Li-Ion 2300mAh Battery',
-        checks: { impres: 0, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
-      { img: null, pn: 'PMNN4468', desc: 'IMPRES Li-Ion 2300mAh Slim Battery',
-        checks: { impres: 1, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 0, xpr7000e: 1 } },
-      { img: null, pn: 'PMNN4424', desc: 'IMPRES Li-Ion 3000mAh Battery',
-        checks: { impres: 1, chem: 'Li-Ion', mah: 3000, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
-      { img: null, pn: 'PMNN4477', desc: 'IMPRES Li-Ion 3600mAh Battery',
-        checks: { impres: 1, chem: 'Li-Ion', mah: 3600, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
-    ]},
-  ]
-},
-    chargers: {
-      label: 'Chargers',
-      sections: [
-        { title: 'Single-Unit Chargers', items: [
-          { img: null, pn: 'WPLN4226',  desc: 'IMPRES Single-Unit Charger, US/NA Plug', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'WPLN4228',  desc: 'IMPRES Single-Unit Charger, EU Plug', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'WPLN4232',  desc: 'IMPRES Single-Unit Charger, UK Plug', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'WPLN4253',  desc: 'IMPRES Single-Unit Charger, AUS Plug', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Multi-Unit Chargers', items: [
-          { img: null, pn: 'WPLN4284',  desc: 'IMPRES Multi-Unit Charger, US/NA Plug (6-pocket)', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'WPLN4285',  desc: 'IMPRES Multi-Unit Charger, EU Plug (6-pocket)', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Vehicle Chargers', items: [
-          { img: null, pn: 'NNTN7616',  desc: 'IMPRES Single-Unit Rapid Rate Vehicular Charger, Heavy-Duty Permanent Mount', note: 'Hard-wired to vehicle battery', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    carry: {
-      label: 'Carry',
-      sections: [
-        { title: 'Carry Cases', items: [
-          { img: null, pn: 'PMLN4651',  desc: 'Spring Action 2-Inch Belt Clip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN7008',  desc: 'Spring Action 2.5-Inch Belt Clip', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN5610',  desc: 'Replacement 2.5-Inch Swivel Belt Loop', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMLN5611',  desc: 'Replacement 3-Inch Leather Swivel Belt Loop', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'HLN9985',   desc: 'Waterproof Bag with Large Strap', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'NTN5243',   desc: 'Adjustable Nylon Carrying Strap', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6486',   desc: 'Leather Radio Strap', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6487',   desc: 'Leather Radio Strap - XL', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'RLN6488',   desc: 'Anti-Sway Strap for Leather Radio Straps', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    antennas: {
-      label: 'Antennas',
-      sections: [
-        { title: 'Antennas', items: [
-          { img: null, pn: 'PMAE4079',     desc: 'UHF/GPS Wideband Slim Whip Antenna (403-527 MHz, 15cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4117',     desc: 'VHF/GPS Helical Antenna (136-155 MHz, 15cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4116',     desc: 'VHF/GPS Helical Antenna (144-165 MHz, 15cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4118',     desc: 'VHF/GPS Helical Antenna (152-174 MHz, 15cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4147',     desc: 'VHF/GPS Wideband Slim Whip Antenna (136-174 MHz, 20cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAE4069',     desc: 'UHF/GPS Stubby Antenna (403-450 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAE4070',     desc: 'UHF/GPS Stubby Antenna (440-490 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAE4071',     desc: 'UHF/GPS Stubby Antenna (470-527 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4119',     desc: 'VHF/GPS Stubby Antenna (136-148 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4120',     desc: 'VHF/GPS Stubby Antenna (146-160 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMAD4121',     desc: 'VHF Stubby Antenna (160-174 MHz, 9cm)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-        { title: 'Antenna Accessories', items: [
-          { img: null, pn: '32012144001', desc: 'Gray Antenna ID Bands, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '32012144002', desc: 'Yellow Antenna ID Bands, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '32012144003', desc: 'Green Antenna ID Bands, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '32012144004', desc: 'Blue Antenna ID Bands, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: '32012144005', desc: 'Purple Antenna ID Bands, Pack of 10', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    cables: {
-      label: 'Cables',
-      sections: [
-        { title: 'Programming Cables', items: [
-          { img: null, pn: 'PMKN4147',  desc: 'Programming Cable (USB)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
-    software: {
-      label: 'Software & Licenses',
-      sections: [
-        { title: 'IMPRES Battery Fleet Management (License Keys)', items: [
-          { img: null, pn: 'HKVN4036',  desc: 'IMPRES Battery Fleet Management Entitlement ID (EID) - NA/CAN', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'HKVN4037',  desc: 'IMPRES Battery Fleet Management Entitlement ID (EID) - EMEA', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'HKVN4038',  desc: 'IMPRES Battery Fleet Management Entitlement ID (EID) - Latin America', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'HKVN4039',  desc: 'IMPRES Battery Fleet Management Entitlement ID (EID) - Asia', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
+// XPR 7000 / XPR 7000e Series Accessory Data
+// Source: MOTOTRBO Professional Tier Accessory Catalog (2026)
+// Part numbers and specs verified from PDF pages 55-57
+
+const xpr7000Categories = [
+  // ── Category 1: Batteries ──────────────────────────────────────────────────
+  {
+    id: 'batteries',
+    label: 'Batteries',
+    cols: [
+      'Description', 'Part Number',
+      'IMPRES', 'Chemistry', 'Typical Capacity (mAh)',
+      'Dimensions (mm)', 'Weight', 'HazLoc', 'IP Rating', 'Operating Temp'
+    ],
+    items: [
+      {
+        desc: 'IMPRES Slim Li-Ion 2100mAh IP68 Battery',
+        part: 'PMNN4491',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2100,
+        dims_mm: '113 x 52 x 18',
+        weight_g: 130,
+        hazloc: '',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2450mAh IP68 Battery',
+        part: 'PMNN4544',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2450,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 150,
+        hazloc: '',
+        ip: 'IP68',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 3000mAh IP68 Battery',
+        part: 'PMNN4493',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 3000,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 155,
+        hazloc: '',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 3000mAh IP68 Battery (for use with silent alert belt clip PMLN7296)',
+        part: 'PMNN4488',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 3000,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 155,
+        hazloc: '',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2900mAh IP68 TIA4950 Battery',
+        part: 'PMNN4490',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2900,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 210,
+        hazloc: 'UL',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2800mAh IP67 Battery',
+        part: 'PMNN4448',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2800,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 155,
+        hazloc: '',
+        ip: 'IP67',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2500mAh IP68 TIA4950 Battery',
+        part: 'NNTN8560',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2500,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 210,
+        hazloc: 'UL',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2900mAh IP68 TIA4950 Battery',
+        part: 'PMNN4489',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2900,
+        dims_mm: '113 x 52 x 23',
+        weight_g: 210,
+        hazloc: 'UL',
+        ip: 'IP68',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 1700mAh IP57 Battery',
+        part: 'PMNN4066',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 1700,
+        dims_mm: '129 x 55 x 19',
+        weight_g: 145,
+        hazloc: '',
+        ip: 'IP57',
+        op_temp: '-10\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES Li-Ion 2400mAh IP57 Battery',
+        part: 'PMNN4077',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2400,
+        dims_mm: '129 x 55 x 23',
+        weight_g: 160,
+        hazloc: '',
+        ip: 'IP57',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'Motorola Original NiMH 1480mAh IP57 Battery',
+        part: 'PMNN4065',
+        impres: false,
+        chem: 'NiMH',
+        capacity_mah: 1480,
+        dims_mm: '129 x 55 x 21',
+        weight_g: 215,
+        hazloc: '',
+        ip: 'IP57',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      }
+    ]
+  },
+
+  // ── Category 2: Chargers ───────────────────────────────────────────────────
+  {
+    id: 'chargers',
+    label: 'Chargers',
+    cols: [
+      'Description', 'Part Number',
+      'IMPRES', 'Chemistry', 'Power Source', 'Dimensions (mm)', 'Pockets'
+    ],
+    items: [
+      // Single-Unit Chargers
+      {
+        desc: 'IMPRES Single-Unit Charger, US/CAN Plug',
+        part: 'PMPN4576A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '120 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, ARG Plug',
+        part: 'PMPN4573A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, BRZ Plug',
+        part: 'PMPN4575A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, UK Plug',
+        part: 'PMPN4572A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, EURO Plug',
+        part: 'PMPN4577A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, AU/NZ Plug',
+        part: 'PMPN4571A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, JAP Plug',
+        part: 'PMPN4578A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, KOR Plug',
+        part: 'PMPN4574A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, CHN Plug',
+        part: 'PMPN4579A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      {
+        desc: 'IMPRES Single-Unit Charger, INDIA Plug',
+        part: 'PMPN4582A',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '51 x 88 x 94',
+        pockets: 1
+      },
+      // Multi-Unit Chargers
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, US/CAN Plug',
+        part: 'PMPN4284',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, UK Plug',
+        part: 'PMPN4290',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, EURO Plug',
+        part: 'PMPN4289',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, AU/NZ Plug',
+        part: 'PMPN4293',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, ARG Plug',
+        part: 'PMPN4291',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, BZL Plug',
+        part: 'PMPN4292',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, JAP Plug',
+        part: 'PMPN4295',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, KOR Plug',
+        part: 'PMPN4294',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, CHN Plug',
+        part: 'PMPN4296',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      {
+        desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, TW Plug',
+        part: 'PMPN4462',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '100-240 VAC',
+        dims_mm: '153 x 445 x 292',
+        pockets: 6
+      },
+      // Vehicle Chargers
+      {
+        desc: 'IMPRES Single-Unit Rapid Rate Vehicular Charger, Heavy-Duty Permanent Mount',
+        part: 'NNTN7616',
+        impres: true,
+        chem: 'Li-Ion, NiMH',
+        pwr_src: '12 VDC (hardwire)',
+        dims_mm: '200 x 83 x 97',
+        pockets: 1
+      }
+    ]
+  },
+
+  // ── Category 3: RSM / Audio ────────────────────────────────────────────────
+  {
+    id: 'rsm',
+    label: 'RSM / Audio',
+    cols: [
+      'Description', 'Part Number',
+      'IMPRES', 'Intelligent Audio', 'AI Noise Suppression',
+      'Windporting/Noise Canceling', 'Full Duplex', 'Volume Control',
+      'Prog Button', 'Audio Jack', 'IP Rating', 'HazLoc', 'Dimensions (mm)'
+    ],
+    items: [
+      {
+        desc: 'Windporting Remote Speaker Microphone, Small (IP54)',
+        part: 'PMMN4024',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: true,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP54',
+        hazloc: '',
+        dims_mm: '55 x 60 x 27'
+      },
+      {
+        desc: 'IMPRES Windporting Remote Speaker Microphone, Small (IP54)',
+        part: 'PMMN4025',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: true,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP54',
+        hazloc: 'UL',
+        dims_mm: '55 x 60 x 27'
+      },
+      {
+        desc: 'Windporting Remote Speaker Microphone, Small, Submersible (IP57)',
+        part: 'PMMN4040',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP57',
+        hazloc: 'UL',
+        dims_mm: '55 x 60 x 27'
+      },
+      {
+        desc: 'IMPRES Windporting Remote Speaker Microphone, Large, Submersible (IP57)',
+        part: 'PMMN4046',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP57',
+        hazloc: 'UL',
+        dims_mm: '60 x 78 x 28'
+      },
+      {
+        desc: 'IMPRES Noise-Canceling Remote Speaker Microphone, Large (IP54)',
+        part: 'PMMN4050',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Noise-Canceling',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP54',
+        hazloc: 'UL',
+        dims_mm: '60 x 78 x 28'
+      },
+      {
+        desc: 'IMPRES Industrial Noise-Canceling (INC) Dual Mic. Noise Suppression RSM, Submersible (IP57)',
+        part: 'NNTN8382',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Dual Mic. Noise Suppression',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP57',
+        hazloc: 'UL',
+        dims_mm: '60 x 78 x 28'
+      },
+      {
+        desc: 'IMPRES Industrial Noise-Canceling (INC) Dual Mic. Noise Suppression RSM (IP54)',
+        part: 'NNTN8383',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Dual Mic. Noise Suppression',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP54',
+        hazloc: 'UL',
+        dims_mm: '60 x 78 x 28'
+      },
+      {
+        desc: 'IMPRES Windporting Remote Speaker Microphone (IP64)',
+        part: 'PMMN4067',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: true,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP64',
+        hazloc: 'ATEX',
+        dims_mm: '60 x 78 x 28'
+      },
+      {
+        desc: 'IMPRES Active Noise-Canceling RSM with Large Front PTT and Side PTT (IP67)',
+        part: 'PMMN4102',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        windporting: 'Noise-Canceling',
+        full_duplex: false,
+        vol_ctrl: true,
+        prog_btn: 'Nexus and 3.5mm locking',
+        audio_jack: true,
+        ip: 'IP67',
+        hazloc: 'UL',
+        dims_mm: '68 x 94 x 29'
+      },
+      {
+        desc: 'IMPRES Omni Remote Speaker Microphone with Large Front PTT and Side PTT (IP67)',
+        part: 'PMMN4113',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: true,
+        prog_btn: 'Nexus and 3.5mm locking',
+        audio_jack: true,
+        ip: 'IP67',
+        hazloc: 'UL',
+        dims_mm: '68 x 94 x 29'
+      },
+      {
+        desc: 'IMPRES Windporting Remote Speaker Microphone, Large, Submersible (IP68)',
+        part: 'PMMN4099',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: 'Windporting',
+        full_duplex: false,
+        vol_ctrl: false,
+        prog_btn: '',
+        audio_jack: true,
+        ip: 'IP68',
+        hazloc: 'UL',
+        dims_mm: '60 x 78 x 28'
+      }
+    ]
+  },
+
+  // ── Category 4: Surveillance / Earpieces ──────────────────────────────────
+  {
+    id: 'surveillance',
+    label: 'Surveillance / Earpieces',
+    cols: [
+      'Description', 'Part Number',
+      'IMPRES', 'Intelligent Audio', 'AI Noise Suppression',
+      'Ear Type', 'Mic Type', 'Full Duplex', 'HazLoc'
+    ],
+    items: [
+      {
+        desc: '1-Wire Receive-Only Earpiece, Black',
+        part: 'PMLN6125',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Earpiece',
+        mic_type: '',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: '1-Wire Receive-Only Earpiece, Beige',
+        part: 'PMLN6126',
+        impres: true,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Earpiece',
+        mic_type: '',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 2-Wire Earhook with Earbud Earpiece, Black',
+        part: 'PMLN6127',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Earpiece',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 2-Wire Earhook with Earbud Earpiece, Beige',
+        part: 'PMLN6128',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Earpiece',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: '1-Wire Surveillance Kit with Translucent Tube, Black',
+        part: 'NNTN8459',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: '',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Black',
+        part: 'PMLN6129',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Beige',
+        part: 'PMLN6130',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 3-Wire Surveillance Kit with Translucent Tube, Black',
+        part: 'PMLN6123',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'Separate',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES 3-Wire Surveillance Kit with Translucent Tube, Beige',
+        part: 'PMLN6124',
+        impres: true,
+        intel_audio: true,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'Separate',
+        full_duplex: false,
+        hazloc: 'UL'
+      },
+      {
+        desc: '2-Wire Surveillance Kit with Translucent Tube, Black',
+        part: 'PMLN7269',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: ''
+      },
+      {
+        desc: '2-Wire Surveillance Kit with Translucent Tube, Beige',
+        part: 'PMLN7270',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: ''
+      },
+      {
+        desc: '1-Wire Surveillance Kit, Black',
+        part: 'PMLN7158',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: '',
+        full_duplex: false,
+        hazloc: ''
+      },
+      {
+        desc: '2-Wire Surveillance Kit, Black',
+        part: 'PMLN7157',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        full_duplex: false,
+        hazloc: ''
+      }
+    ]
+  },
+
+  // ── Category 5: Headsets ───────────────────────────────────────────────────
+  {
+    id: 'headsets',
+    label: 'Headsets',
+    cols: [
+      'Description', 'Part Number',
+      'IMPRES', 'Headset Type', 'Ear Style', 'NRR (dB)', 'Mic Type', 'HazLoc'
+    ],
+    items: [
+      {
+        desc: 'Heavy Duty Behind-the-Head Headset with Noise-Canceling Boom Microphone IP54',
+        part: 'PMLN8085',
+        impres: true,
+        headset_type: 'Behind-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone IP54',
+        part: 'PMLN8086',
+        impres: true,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'Heavy Duty Behind-the-Head Headset with Noise-Canceling Boom Microphone',
+        part: 'PMLN6852',
+        impres: true,
+        headset_type: 'Behind-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: ''
+      },
+      {
+        desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone',
+        part: 'PMLN7466',
+        impres: true,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: ''
+      },
+      {
+        desc: 'Heavy Duty Behind-the-Head Headset with Noise-Canceling Boom Microphone (UL)',
+        part: 'PMLN6853',
+        impres: true,
+        headset_type: 'Behind-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone (UL)',
+        part: 'PMLN7467',
+        impres: true,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'IMPRES Temple Transducer Headset',
+        part: 'PMLN5101',
+        impres: true,
+        headset_type: 'Behind-the-head',
+        ear_style: 'Bone conduction',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: ''
+      },
+      {
+        desc: 'Lightweight Over-the-Head Headset',
+        part: 'RMN5058',
+        impres: true,
+        headset_type: 'Over-the-head',
+        ear_style: 'Single-ear',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      // 3M Peltor
+      {
+        desc: 'MT Series Over-The-Head Headset, Direct Radio Connect (3M Peltor MT7H79A-97-UL-34)',
+        part: 'RMN5137',
+        impres: false,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-ear',
+        nrr_db: 25,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'MT Series Neckband Headset, Direct Radio Connect (3M Peltor MT7H79B-97-UL-34)',
+        part: 'RMN5138',
+        impres: false,
+        headset_type: 'Neckband',
+        ear_style: 'Dual-ear',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'MT Series Hard Hat Attached Headset, Direct Radio Connect (3M Peltor MT7H79P3E-97-UL-34)',
+        part: 'RMN5139',
+        impres: false,
+        headset_type: 'Hard hat attached',
+        ear_style: 'Dual-ear',
+        nrr_db: 21,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      }
+    ]
+  },
+
+  // ── Category 6: Carry ──────────────────────────────────────────────────────
+  {
+    id: 'carry',
+    label: 'Carry Solutions',
+    cols: [
+      'Description', 'Part Number',
+      'Material', 'Belt Size (in)', 'Swivel/Fixed', 'Display', 'D-Rings'
+    ],
+    items: [
+      {
+        desc: 'Hard Leather Case with 2.5 Inch Swivel Belt Loop (Display Model)',
+        part: 'PMLN8300',
+        material: 'Hard leather',
+        belt_sz: '2.5',
+        swivel: 'Swivel',
+        display: 'Display',
+        d_rings: true
+      },
+      {
+        desc: 'Hard Leather Case with 3 Inch Swivel Belt Loop (Display Model)',
+        part: 'PMLN8299',
+        material: 'Hard leather',
+        belt_sz: '3',
+        swivel: 'Swivel',
+        display: 'Display',
+        d_rings: true
+      },
+      {
+        desc: 'Hard Leather Case with 3 Inch Fixed Belt Loop (Display Model)',
+        part: 'PMLN8301',
+        material: 'Hard leather',
+        belt_sz: '3',
+        swivel: 'Fixed',
+        display: 'Display',
+        d_rings: true
+      },
+      {
+        desc: 'Hard Leather Case with 2.5 Inch Swivel Belt Loop (Non-Display Model)',
+        part: 'PMLN8303',
+        material: 'Hard leather',
+        belt_sz: '2.5',
+        swivel: 'Swivel',
+        display: 'Non-display',
+        d_rings: true
+      },
+      {
+        desc: 'Hard Leather Case with 3 Inch Swivel Belt Loop (Non-Display Model)',
+        part: 'PMLN8302',
+        material: 'Hard leather',
+        belt_sz: '3',
+        swivel: 'Swivel',
+        display: 'Non-display',
+        d_rings: true
+      },
+      {
+        desc: 'Hard Leather Case with 3 Inch Fixed Belt Loop (Non-Display Model)',
+        part: 'PMLN8304',
+        material: 'Hard leather',
+        belt_sz: '3',
+        swivel: 'Fixed',
+        display: 'Non-display',
+        d_rings: true
+      },
+      {
+        desc: 'Replacement 2.5 Inch Swivel Belt Loop',
+        part: 'PMLN5610',
+        material: 'Hard leather',
+        belt_sz: '2.5',
+        swivel: 'Swivel',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Replacement 3 Inch Leather Swivel Belt Loop',
+        part: 'PMLN5611',
+        material: 'Hard leather',
+        belt_sz: '3',
+        swivel: 'Swivel',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Spring Action 2 Inch Belt Clip',
+        part: 'PMLN4651',
+        material: 'Plastic',
+        belt_sz: '2',
+        swivel: 'Fixed',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Spring Action 2.5 Inch Belt Clip',
+        part: 'PMLN7008',
+        material: 'Plastic',
+        belt_sz: '2.5',
+        swivel: 'Fixed',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Waterproof Bag with Large Strap',
+        part: 'HLN9985',
+        material: 'Waterproof',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      },
+      {
+        desc: 'Universal Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch',
+        part: 'HLN6602',
+        material: 'Nylon',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      },
+      {
+        desc: 'Adjustable Nylon Carrying Strap',
+        part: 'NTN5243',
+        material: 'Nylon',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      },
+      {
+        desc: 'Leather Radio Strap',
+        part: 'RLN6486',
+        material: 'Leather',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      },
+      {
+        desc: 'Leather Radio Strap - XL',
+        part: 'RLN6487',
+        material: 'Leather',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      },
+      {
+        desc: 'Nylon Wrist Strap',
+        part: 'PMLN6074',
+        material: 'Nylon',
+        belt_sz: '',
+        swivel: '',
+        display: '',
+        d_rings: false
+      }
+    ]
+  },
+
+  // ── Category 7: Antennas ───────────────────────────────────────────────────
+  {
+    id: 'antennas',
+    label: 'Antennas',
+    cols: [
+      'Description', 'Part Number',
+      'Band', 'Frequency (MHz)', 'Length (cm)', 'Type'
+    ],
+    items: [
+      { desc: 'UHF/GPS Combination Wideband Slim Whip Antenna (400-527 MHz)', part: 'PMAE4079', band: 'UHF', freq_mhz: '403-527', len_cm: 15, ant_type: 'Whip' },
+      { desc: 'VHF/GPS Combination Helical Antenna (136-155 MHz)', part: 'PMAD4117', band: 'VHF', freq_mhz: '136-155', len_cm: 15, ant_type: 'Helical' },
+      { desc: 'VHF/GPS Combination Helical Antenna (144-165 MHz)', part: 'PMAD4116', band: 'VHF', freq_mhz: '144-165', len_cm: 15, ant_type: 'Helical' },
+      { desc: 'VHF/GPS Combination Helical Antenna (152-174 MHz)', part: 'PMAD4118', band: 'VHF', freq_mhz: '152-174', len_cm: 15, ant_type: 'Helical' },
+      { desc: 'UHF/GPS Combination Stubby Antenna (400-450 MHz)', part: 'PMAE4069', band: 'UHF', freq_mhz: '403-450', len_cm: 9, ant_type: 'Stubby' },
+      { desc: 'UHF/GPS Combination Stubby Antenna (440-490 MHz)', part: 'PMAE4070', band: 'UHF', freq_mhz: '440-490', len_cm: 11, ant_type: 'Stubby' },
+      { desc: 'UHF/GPS Combination Stubby Antenna (470-527 MHz)', part: 'PMAE4071', band: 'UHF', freq_mhz: '470-527', len_cm: 11, ant_type: 'Stubby' },
+      { desc: 'VHF/GPS Combination Stubby Antenna (136-148 MHz)', part: 'PMAD4119', band: 'VHF', freq_mhz: '136-148', len_cm: 9, ant_type: 'Stubby' },
+      { desc: 'VHF/GPS Combination Stubby Antenna (146-160 MHz)', part: 'PMAD4120', band: 'VHF', freq_mhz: '146-160', len_cm: 9, ant_type: 'Stubby' },
+      { desc: 'VHF Stubby Antenna (320-360 MHz)', part: 'PMAD4135', band: 'VHF', freq_mhz: '320-360', len_cm: null, ant_type: 'Stubby' },
+      { desc: 'VHF Stubby Antenna (300-337 MHz)', part: 'PMAD4137', band: 'VHF', freq_mhz: '300-337', len_cm: null, ant_type: 'Stubby' },
+      { desc: '800 MHz Flexible Whip Antenna (806-870 MHz)', part: 'PMAF4011', band: '800/900 MHz', freq_mhz: '806-870', len_cm: 16.4, ant_type: 'Whip' },
+      { desc: '900 MHz Flexible Whip Antenna (896-941 MHz)', part: 'PMAF4012', band: '800/900 MHz', freq_mhz: '896-941', len_cm: 14, ant_type: 'Whip' },
+      { desc: '800/900 Stubby Antenna (806-870 MHz)', part: 'PMAF4009', band: '800/900 MHz', freq_mhz: '806-870', len_cm: 12, ant_type: 'Short whip' },
+      { desc: '800/900 Stubby Antenna (896-941 MHz)', part: 'PMAF4010', band: '800/900 MHz', freq_mhz: '896-941', len_cm: 11.2, ant_type: 'Short whip' },
+      { desc: 'UHF Antenna Kit for the 403-425 MHz Range', part: 'PMAE4078', band: 'UHF', freq_mhz: '403-425', len_cm: 1.9, ant_type: 'Stubby' },
+      { desc: 'UHF Antenna Kit for the 420-445 MHz Range', part: 'PMAE4076', band: 'UHF', freq_mhz: '420-445', len_cm: 1.9, ant_type: 'Stubby' },
+      { desc: 'UHF Antenna Kit for the 438-470 MHz Range', part: 'PMAE4077', band: 'UHF', freq_mhz: '438-470', len_cm: 1.9, ant_type: 'Stubby' },
+      { desc: 'UHF Stubby Antenna Kit for the 450-490 MHz Range', part: 'PMAE4091', band: 'UHF', freq_mhz: '450-490', len_cm: 1.9, ant_type: 'Stubby' },
+      { desc: 'UHF Stubby Antenna Kit for the 480-527 MHz Range', part: 'PMAE4092', band: 'UHF', freq_mhz: '480-527', len_cm: 1.9, ant_type: 'Stubby' },
+      { desc: 'UHF SHORT Stubby Antenna (400-450 MHz)', part: 'AN000350A01', band: 'UHF', freq_mhz: '400-450', len_cm: 6, ant_type: 'Short stubby' },
+      { desc: 'UHF SHORT Stubby Antenna (440-490 MHz)', part: 'AN000351A01', band: 'UHF', freq_mhz: '440-490', len_cm: 6, ant_type: 'Short stubby' },
+      { desc: 'UHF Stubby Wideband (400-527 MHz)', part: 'AN000348A01', band: 'UHF', freq_mhz: '400-527', len_cm: 9, ant_type: 'Stubby' },
+      { desc: 'Antenna Kit for the 800 MHz Range', part: 'PMAF4017', band: '800/900 MHz', freq_mhz: '806-870', len_cm: 1.1, ant_type: 'Stubby' },
+      { desc: 'Antenna Kit for the 900 MHz Range', part: 'PMAF4018', band: '800/900 MHz', freq_mhz: '896-941', len_cm: 0.5, ant_type: 'Stubby' }
+    ]
+  },
+
+  // ── Category 8: Cables ─────────────────────────────────────────────────────
+  {
+    id: 'cables',
+    label: 'Cables',
+    cols: ['Description', 'Part Number'],
+    items: [
+      { desc: 'Portable Programming Cable (USB) for XPR 6000/7000 Series', part: 'PMKN4012' },
+      { desc: 'Programming, Test, and Alignment Cable for XPR 6000/7000 Series', part: 'PMKN4013' },
+      { desc: 'Portable Telemetry Cable', part: 'PMKN4040' },
+      { desc: 'Portable to RS232 DB25M Connector Cable', part: 'PMKN4071' },
+      { desc: 'Test Alignment, TTR and Programming Cable', part: 'PMKN4126' }
+    ]
+  },
+
+  // ── Category 9: Screen Protectors ─────────────────────────────────────────
+  {
+    id: 'screen_protectors',
+    label: 'Screen Protectors',
+    cols: ['Description', 'Part Number'],
+    items: [
+      { desc: 'Screen Protector, Clear (Single Pack - Qty 1)', part: 'AY000808A01' },
+      { desc: 'Screen Protector, Clear (Bulk Pack - Qty 10)', part: 'AY000808A02' },
+      { desc: 'Screen Protector, Clear (Bulk Pack - Qty 50)', part: 'AY000808A03' }
+    ]
+  },
+
+  // ── Category 10: Programming Cables ───────────────────────────────────────
+  {
+    id: 'programming_cables',
+    label: 'Programming Cables',
+    cols: ['Description', 'Part Number'],
+    items: [
+      { desc: 'Portable Programming Cable (USB) for XPR 6000/7000 Series', part: 'PMKN4012' },
+      { desc: 'Programming, Test, and Alignment Cable for XPR 6000/7000 Series', part: 'PMKN4013' }
+    ]
+  },
+
+  // ── Category 11: IMPRES Battery Management Tools ───────────────────────────
+  {
+    id: 'impres_tools',
+    label: 'IMPRES Battery Mgmt Tools',
+    cols: ['Description', 'Part Number'],
+    items: [
+      { desc: 'IMPRES Battery Fleet Management License Key, NA/CAN', part: 'HKVN4036' },
+      { desc: 'IMPRES Battery Fleet Management License Key, EMEA', part: 'HKVN4037' },
+      { desc: 'IMPRES Battery Fleet Management License Key, LA', part: 'HKVN4038' },
+      { desc: 'IMPRES Battery Fleet Management License Key, Asia', part: 'HKVN4039' }
+    ]
+  },
+
+  // ── Category 12: Bluetooth / Ops Critical Wireless ────────────────────────
+  {
+    id: 'bluetooth',
+    label: 'Bluetooth / Ops Critical Wireless',
+    cols: [
+      'Description', 'Part Number',
+      'Ear Type', 'Mic Type', 'PTT',
+      'Talk Time (hrs)', 'Charge Time (hrs)', 'Weight (g)'
+    ],
+    items: [
+      {
+        desc: 'Operations Critical Wireless Bluetooth Adapter',
+        part: 'PMLN5712',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: 'On adapter',
+        talk_time_hr: 30,
+        charge_time_hr: null,
+        weight_g: 65
+      },
+      {
+        desc: 'Operations Critical Wireless RSM with Battery and Belt Clip',
+        part: 'RLN6561',
+        ear_type: 'N/A',
+        mic_type: 'Omni directional, windporting equivalent',
+        ptt: 'On microphone',
+        talk_time_hr: 28,
+        charge_time_hr: 3,
+        weight_g: 158
+      },
+      {
+        desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset',
+        part: 'RLN6490',
+        ear_type: 'Dual-muff',
+        mic_type: 'Boom',
+        ptt: 'On ear cup',
+        talk_time_hr: 22,
+        charge_time_hr: 7,
+        weight_g: 429
+      },
+      {
+        desc: 'XBT Operations Critical Wireless Headband Style Headset',
+        part: 'RLN6491',
+        ear_type: 'Dual-muff',
+        mic_type: 'Boom',
+        ptt: 'On ear cup',
+        talk_time_hr: 22,
+        charge_time_hr: 7,
+        weight_g: 422
+      },
+      {
+        desc: 'Operations Critical Wireless Earpiece with 12 Inch Cable (with US/JP Charger)',
+        part: 'NNTN8125',
+        ear_type: 'Over-the-ear (CommPort)',
+        mic_type: 'Directional, above earpiece',
+        ptt: 'On PTT pod',
+        talk_time_hr: 10,
+        charge_time_hr: 3,
+        weight_g: 43
+      },
+      {
+        desc: 'Operations Critical Wireless Push-To-Talk Pod (with US Charger)',
+        part: 'NNTN8127',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: 'On PTT pod',
+        talk_time_hr: 10,
+        charge_time_hr: 3,
+        weight_g: 43
+      },
+      {
+        desc: 'Operation Critical Wireless Bluetooth Earpiece with PTT',
+        part: 'PMLN7851',
+        ear_type: 'Over-the-ear (swivel)',
+        mic_type: 'Boom',
+        ptt: 'On boom mic',
+        talk_time_hr: 8,
+        charge_time_hr: 3,
+        weight_g: 23
+      },
+      {
+        desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US Plug)',
+        part: 'RLN6500',
+        ear_type: 'Over-the-ear (swivel)',
+        mic_type: 'In-line',
+        ptt: 'Radio only',
+        talk_time_hr: 8,
+        charge_time_hr: 18,
+        weight_g: null
+      },
+      {
+        desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle',
+        part: 'PMLN7181',
+        ear_type: 'Over-the-ear (swivel)',
+        mic_type: 'Boom',
+        ptt: 'Radio only',
+        talk_time_hr: 8,
+        charge_time_hr: 18,
+        weight_g: null
+      },
+      {
+        desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US Plug)',
+        part: 'RLN6556',
+        ear_type: 'Over-the-ear (swivel)',
+        mic_type: 'Boom',
+        ptt: 'Radio only',
+        talk_time_hr: 8,
+        charge_time_hr: 18,
+        weight_g: null
+      },
+      {
+        desc: 'Operations Critical Wireless 1-Wire Surveillance Kit with Translucent Tube',
+        part: 'PMLN7052',
+        ear_type: 'Clear rubber eartip',
+        mic_type: 'In-line',
+        ptt: 'On pod (order separately)',
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'Enhanced Operations Critical Wireless Adapter with Touch Pairing',
+        part: 'PMLN5993',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: 'On adapter',
+        talk_time_hr: 35,
+        charge_time_hr: null,
+        weight_g: 65
+      },
+      {
+        desc: 'Enhanced Operations Critical Wireless Earpiece with 12 Inch Cable and PTT Pod',
+        part: 'NTN2570',
+        ear_type: 'Over-the-ear (CommPort)',
+        mic_type: 'Directional, above earpiece',
+        ptt: 'On PTT pod',
+        talk_time_hr: 10,
+        charge_time_hr: 3,
+        weight_g: 43
+      },
+      {
+        desc: 'Enhanced Operations Critical Wireless Push-To-Talk Pod',
+        part: 'NTN2571',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: 'On PTT pod',
+        talk_time_hr: 10,
+        charge_time_hr: 3,
+        weight_g: 43
+      }
+    ]
   }
-};
-if (!window.RADIOS_DATA) window.RADIOS_DATA = {};
-window.RADIOS_DATA['xpr7000'] = XPR7000_DATA;
+];
+
+// Wire into RADIOS_DATA
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['xpr7000'] = xpr7000Categories;
