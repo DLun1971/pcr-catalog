@@ -60,16 +60,7 @@ const SL_DATA = {
             { img: null, pn: 'PMLN6745', desc: 'Replacement Battery Cover (for PMNN4468)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
             { img: null, pn: 'PMLN7074', desc: 'Replacement Battery Cover (for PMNN4468)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
           ]
-        },
-        {
-          title: 'DP4000 EX / XPR 7000 IS (HazLoc) Batteries',
-          items: [
-            { img: null, pn: 'NNTN8359', desc: 'IMPRES Li-Ion 2075mAh IP67 ATEX Battery', note: '135x57x23mm, 220g, -10 to +50C', checks: { impres: 1, ip: 'IP67', hazloc: 'ATEX', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 0, sl7000e: 0 } },
-            { img: null, pn: 'NNTN8386', desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery', note: '135x57x23mm, 220g, -10 to +50C', checks: { impres: 1, ip: 'IP67', hazloc: 'UL', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 0, sl7000e: 0 } },
-          ]
         }
-      ]
-    },
     chargers: {
       label: 'Chargers',
       sections: [
