@@ -1,3 +1,338 @@
-// ion-data.js â Ion accessory data
-// Stub â to be populated from PDF reference
-const ION_DATA = [];
+// ion-data.js — MOTOTRBO Ion Accessory Data
+// Source: MOTOTRBO Professional Tier Accessory Catalog (Motorola Solutions)
+// All part numbers PDF-verified. Do not extrapolate or add unverified items.
+// Ion uses IMPRES 2 batteries and chargers (distinct from R7 IMPRES series).
+// Ion carry cases are plastic (unique form factor vs R7 leather cases).
+
+const ionCategories = [
+
+  // ── CAT 1: BATTERIES ──────────────────────────────────────────────────────
+  {
+    id: 1,
+    name: 'Batteries',
+    items: [
+      {
+        desc: 'IMPRES 2 Li-Ion 2820mAh IP68 Slim Battery',
+        part: 'PMNN4803',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2820,
+        dims_mm: '114 x 69 x 16',
+        weight_g: 145,
+        hazloc: '',
+        ip: 'IP68',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES 2 Li-Ion 2900mAh IP68 TIA4950 Battery',
+        part: 'PMNN4804',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2900,
+        dims_mm: '114 x 69 x 24',
+        weight_g: 171,
+        hazloc: 'UL',
+        ip: 'IP68',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      },
+      {
+        desc: 'IMPRES 2 Li-Ion 4400mAh IP68 TIA4950 Battery',
+        part: 'PMNN4805',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 4400,
+        dims_mm: '114 x 69 x 27',
+        weight_g: 211,
+        hazloc: 'UL',
+        ip: 'IP68',
+        op_temp: '-20\u00b0C to +60\u00b0C'
+      }
+    ]
+  },
+
+  // ── CAT 2: CHARGERS ───────────────────────────────────────────────────────
+  {
+    id: 2,
+    name: 'Chargers',
+    items: [
+      // IMPRES 2 Single-Unit (Ion-specific PMPN45xx series)
+      { desc: 'IMPRES 2 Single-Unit Charger, US Plug',    part: 'PMPN4524', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '120 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, ARG Plug',   part: 'PMPN4512', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, BRZ Plug',   part: 'PMPN4515', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, UK Plug',    part: 'PMPN4510', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, EURO Plug',  part: 'PMPN4525', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, AU/NZ Plug', part: 'PMPN4511', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, JAP Plug',   part: 'PMPN4609', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, KOR Plug',   part: 'PMPN4514', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      { desc: 'IMPRES 2 Single-Unit Charger, INDIA Plug', part: 'PMPN4641', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC',     dims_mm: '52 x 88 x 94', pockets: 1 },
+      // IMPRES 2 Multi-Unit (Ion-specific PMPN4498 series — different dims from R7)
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, US Plug',    part: 'PMPN4498', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, UK Plug',    part: 'PMPN4516', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, EURO Plug',  part: 'PMPN4499', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, AU/NZ Plug', part: 'PMPN4517', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, ARG Plug',   part: 'PMPN4518', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, BZL Plug',   part: 'PMPN4521', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, JAP Plug',   part: 'PMPN4295', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, KOR Plug',   part: 'PMPN4520', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      { desc: 'IMPRES 2 Multi-Unit Fast Charger, INDIA Plug', part: 'PMPN4642', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '170 x 445 x 116', pockets: 6 },
+      // Vehicle — Ion-specific cradle
+      { desc: 'IMPRES 2 Charging Cradle with Mounting Kit (cigarette lighter adapter)', part: 'PMPN4607', impres: true, chem: 'Li-Ion', pwr_src: '12 VDC (cigarette lighter)', dims_mm: '75 x 45 x 133', pockets: 1 }
+    ]
+  },
+
+  // ── CAT 3: RSM / AUDIO ────────────────────────────────────────────────────
+  {
+    id: 3,
+    name: 'RSM/Audio',
+    items: [
+      {
+        desc: 'RM780 IMPRES Windporting Remote Speaker Microphone, Large, Work-When-Wet, IP68',
+        part: 'PMMN4128',
+        impres: true,
+        intel_audio: true,
+        ai_noise: true,
+        windporting: true,
+        noise_cancel: false,
+        full_duplex: false,
+        vol_ctrl: '2-step',
+        prog_btn: '2 programmable + 1 emergency',
+        audio_jack: true,
+        ip: 'IP68',
+        hazloc: 'UL',
+        dims_mm: '77 x 58 x 25'
+      },
+      {
+        desc: 'RM760 IMPRES Windporting Remote Speaker Microphone, Large Basic, Work-When-Wet, IP68',
+        part: 'PMMN4140',
+        impres: true,
+        intel_audio: true,
+        ai_noise: true,
+        windporting: true,
+        noise_cancel: false,
+        full_duplex: false,
+        vol_ctrl: '2-step',
+        prog_btn: '',
+        audio_jack: false,
+        ip: 'IP68',
+        hazloc: 'UL',
+        dims_mm: '77 x 58 x 25'
+      },
+      {
+        desc: 'RM730 IMPRES Windporting Remote Speaker Microphone, Small, IP68',
+        part: 'PMMN4131',
+        impres: true,
+        intel_audio: true,
+        ai_noise: true,
+        windporting: true,
+        noise_cancel: false,
+        full_duplex: false,
+        vol_ctrl: '2-step',
+        prog_btn: '1 emergency',
+        audio_jack: false,
+        ip: 'IP68',
+        hazloc: 'UL',
+        dims_mm: '70 x 55 x 22'
+      },
+      {
+        desc: 'WM500 Wireless Remote Speaker Microphone (compatible with PMLN7560 earpiece)',
+        part: 'PMMN4127',
+        impres: false,
+        intel_audio: false,
+        ai_noise: false,
+        windporting: true,
+        noise_cancel: false,
+        full_duplex: true,
+        vol_ctrl: '',
+        prog_btn: '',
+        audio_jack: false,
+        ip: 'IP67',
+        hazloc: '',
+        dims_mm: '80 x 57.5 x 24.5'
+      }
+    ]
+  },
+
+  // ── CAT 4: SURVEILLANCE / EARPIECES ──────────────────────────────────────
+  {
+    id: 4,
+    name: 'Surveillance/Earpieces',
+    items: [
+      // Ion supports full duplex telephony on these kits
+      { desc: 'IMPRES 1-Wire Surveillance Kit with Translucent Tube, Extra Loud Audio, Black', part: 'PMLN8341', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: true, hazloc: 'UL' },
+      { desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Extra Loud Audio, Black', part: 'PMLN8342', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: true, hazloc: 'UL' },
+      { desc: 'IMPRES 3-Wire Surveillance Kit with Translucent Tube, Extra Loud Audio, Black', part: 'PMLN8343', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: true, hazloc: 'UL' },
+      { desc: 'IMPRES 2-Wire Swivel Earhook with Removable Eartip, Loud Audio, Black',         part: 'PMLN8295', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Removable black rubber eartip', mic_type: '', full_duplex: true, hazloc: 'UL' },
+      { desc: 'IMPRES 1-Wire Single Earbud with Removable Earhook, Loud Audio, Black',         part: 'PMLN8337', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Single earbud', mic_type: '', full_duplex: true, hazloc: 'UL' }
+    ]
+  },
+
+  // ── CAT 5: HEADSETS ───────────────────────────────────────────────────────
+  {
+    id: 5,
+    name: 'Headsets',
+    items: [
+      {
+        desc: 'Heavy Duty Behind-the-Head Headset with Noise-Canceling Boom Microphone, IP54',
+        part: 'PMLN8085',
+        impres: true,
+        headset_type: 'Behind-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      {
+        desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone, IP54',
+        part: 'PMLN8086',
+        impres: true,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-muff',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: 'UL'
+      },
+      // 3M Peltor CH-3 Series (Ion compatible per PDF)
+      {
+        desc: 'CH-3 Series Over-the-Head Headset with Nexus Connector (3M Peltor MT74H52A-110-34A)',
+        part: 'PMLN8265',
+        impres: false,
+        headset_type: 'Over-the-head',
+        ear_style: 'Dual-ear',
+        nrr_db: 26,
+        mic_type: 'Boom',
+        hazloc: ''
+      },
+      {
+        desc: 'CH-3 Series Neckband Headset with Nexus Connector (3M Peltor MT74H52A-110-34B)',
+        part: 'PMLN8266',
+        impres: false,
+        headset_type: 'Neckband',
+        ear_style: 'Dual-ear',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: ''
+      },
+      {
+        desc: 'CH-3 Series Hard Hat Attached with Nexus Connector (3M Peltor MT74H52P3E-110-34A)',
+        part: 'PMLN8267',
+        impres: false,
+        headset_type: 'Hard hat attached',
+        ear_style: 'Dual-ear',
+        nrr_db: 24,
+        mic_type: 'Boom',
+        hazloc: ''
+      }
+    ]
+  },
+
+  // ── CAT 6: CARRY ──────────────────────────────────────────────────────────
+  // Ion has unique plastic carry cases — different from R7 leather cases
+  {
+    id: 6,
+    name: 'Carry',
+    items: [
+      { desc: 'Plastic Carry Case with 2.5in Fixed-Angle Spring-Action Belt Clip', part: 'PMLN8126', material: 'Plastic', belt_sz: '2.5', swivel: false, display: false, d_rings: false },
+      { desc: 'Plastic Carry Case with 2.5in Hard Leather Swivel Belt Loop',       part: 'PMLN8127', material: 'Plastic', belt_sz: '2.5', swivel: true,  display: false, d_rings: false },
+      { desc: 'Replacement 2in Fixed Angle Spring-Action Belt Clip',               part: 'PMLN4651', material: 'Plastic', belt_sz: '2',   swivel: false, display: false, d_rings: false },
+      { desc: 'Replacement 2.5in Fixed Angle Spring-Action Belt Clip',             part: 'PMLN7008', material: 'Plastic', belt_sz: '2.5', swivel: false, display: false, d_rings: false },
+      { desc: 'Replacement 2.5in Hard Leather Swivel Belt Loop',                   part: 'PMLN5407', material: 'Leather', belt_sz: '2.5', swivel: true,  display: false, d_rings: false },
+      { desc: 'Replacement 3in Hard Leather Swivel Belt Loop',                     part: 'PMLN5409', material: 'Leather', belt_sz: '3',   swivel: true,  display: false, d_rings: false }
+    ]
+  },
+
+  // ── CAT 7: ANTENNAS ───────────────────────────────────────────────────────
+  // Ion shares R7 antenna lineup plus adds short stubbies and 800/900 whip
+  {
+    id: 7,
+    name: 'Antennas',
+    items: [
+      { desc: 'UHF/GPS Combination Wideband Slim Whip Antenna', part: 'PMAE4079',    band: 'UHF',     freq_mhz: '403-527', len_cm: 15,   ant_type: 'Whip' },
+      { desc: 'VHF/GPS Combination Helical Antenna',            part: 'PMAD4117',    band: 'VHF',     freq_mhz: '136-155', len_cm: 15,   ant_type: 'Helical' },
+      { desc: 'VHF/GPS Combination Helical Antenna',            part: 'PMAD4116',    band: 'VHF',     freq_mhz: '144-165', len_cm: 15,   ant_type: 'Helical' },
+      { desc: 'VHF/GPS Combination Helical Antenna',            part: 'PMAD4118',    band: 'VHF',     freq_mhz: '152-174', len_cm: 15,   ant_type: 'Helical' },
+      { desc: 'UHF/GPS Combination Stubby Antenna',             part: 'PMAE4069',    band: 'UHF',     freq_mhz: '403-450', len_cm: 9,    ant_type: 'Stubby' },
+      { desc: 'UHF/GPS Combination Stubby Antenna',             part: 'PMAE4070',    band: 'UHF',     freq_mhz: '440-490', len_cm: 9,    ant_type: 'Stubby' },
+      { desc: 'UHF/GPS Combination Stubby Antenna',             part: 'PMAE4071',    band: 'UHF',     freq_mhz: '470-527', len_cm: 9,    ant_type: 'Stubby' },
+      // Short stubbies (Ion-specific additions)
+      { desc: 'UHF Short Stubby Antenna',                       part: 'AN000350A01', band: 'UHF',     freq_mhz: '400-450', len_cm: 6,    ant_type: 'Short stubby' },
+      { desc: 'UHF Short Stubby Antenna',                       part: 'AN000351A01', band: 'UHF',     freq_mhz: '440-490', len_cm: 6,    ant_type: 'Short stubby' },
+      { desc: 'UHF Stubby Wideband Antenna',                    part: 'AN000348A01', band: 'UHF',     freq_mhz: '400-527', len_cm: 9,    ant_type: 'Stubby' },
+      // 800/900 MHz (Ion-specific)
+      { desc: 'Ion 800/900 Whip Antenna',                       part: 'AN000415A01', band: '800/900', freq_mhz: '806-941', len_cm: 14,   ant_type: 'Whip' }
+    ]
+  },
+
+  // ── CAT 8: CABLES ─────────────────────────────────────────────────────────
+  {
+    id: 8,
+    name: 'Cables',
+    items: [
+      { desc: 'Mini GCAI Interface Cable (USB) \u2014 connects radio to computer via USB port', part: 'PMKN4265' }
+    ]
+  },
+
+  // ── CAT 9: SCREEN PROTECTORS ──────────────────────────────────────────────
+  // No Ion screen protector listed in this PDF
+  {
+    id: 9,
+    name: 'Screen Protectors',
+    items: []
+  },
+
+  // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────
+  {
+    id: 10,
+    name: 'Programming Cables',
+    items: [
+      { desc: 'Mini GCAI Interface Cable (USB) \u2014 full rate data transfer to computer', part: 'PMKN4265' },
+      { desc: 'UL Certified Programming/Data Cable', part: 'PMKN4230' }
+    ]
+  },
+
+  // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
+  {
+    id: 11,
+    name: 'IMPRES Battery Mgmt Tools',
+    items: [
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA',     part: 'HKVN4038' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia',   part: 'HKVN4039' }
+    ]
+  },
+
+  // ── CAT 12: BLUETOOTH / OPS CRITICAL WIRELESS ─────────────────────────────
+  {
+    id: 12,
+    name: 'Bluetooth/Ops Critical Wireless',
+    items: [
+      {
+        desc: 'WM500 Wireless Remote Speaker Microphone (compatible with PMLN7560 earpiece)',
+        part: 'PMMN4127',
+        ear_type: 'N/A',
+        mic_type: 'Omni directional, Windporting',
+        ptt: true,
+        talk_time_hr: 18,
+        charge_time_hr: 2,
+        weight_g: 128
+      },
+      {
+        desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT',
+        part: 'PMLN8123',
+        ear_type: 'Over-the-ear (swivel)',
+        mic_type: 'Boom',
+        ptt: true,
+        talk_time_hr: 8,
+        charge_time_hr: 3,
+        weight_g: 23
+      }
+    ]
+  }
+
+];
+
+// Wire into global RADIOS_DATA
+if (typeof window !== 'undefined') {
+  window.RADIOS_DATA = window.RADIOS_DATA || {};
+  window.RADIOS_DATA['ion'] = ionCategories;
+}
