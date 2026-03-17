@@ -86,6 +86,11 @@ td.cc{text-align:center;width:52px;}
 #lb-img{max-width:80vw;max-height:80vh;object-fit:contain;border-radius:8px;background:#fff;padding:12px;}
 #lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:30px;cursor:pointer;line-height:1;}
 #empty-state{text-align:center;padding:60px;color:#aaa;font-size:13px;display:none;}
+
+.variant-row { display:flex; align-items:center; gap:6px; padding:4px 0 2px 2px; flex-wrap:wrap; }
+.variant-label { font-size:11px; color:var(--color-text-tertiary,#888); font-weight:500; text-transform:uppercase; letter-spacing:0.05em; }
+.vpill { font-size:11px; padding:2px 9px; border-radius:20px; border:0.5px solid var(--pill-border,#ccc); background:var(--pill-bg,#f5f5f5); color:var(--pill-text,#333); cursor:pointer; }
+.vpill.active { background:#185FA5; color:#E6F1FB; border-color:#185FA5; }
 </style>
 </head>
 <body>
@@ -159,6 +164,13 @@ const PCR_RADIO_MAP = {
     'XPR 7000':'xpr7000','DP ATEX':'dp-atex','XPR 6000':'xpr6000','XPR 3000':'xpr3000','SL Series':'sl'
 };
 
+
+const PCR_VARIANT_MAP = {
+  'XPR 7000':  { keys: ['xpr7000','xpr7000e'],                       labels: ['XPR 7000','XPR 7000e'] },
+  'XPR 3000':  { keys: ['xpr3000','xpr3000e'],                       labels: ['XPR 3000','XPR 3000e'] },
+  'SL Series': { keys: ['sl7000','sl7000e','sl3500e','sl3500max'],    labels: ['SL 7000','SL 7000e','SL 3500e','SL 3500 Max'] },
+  'DP ATEX':   { keys: ['dp4400e','dp4600e','dp4800e'],               labels: ['DP 4400e','DP 4600e','DP 4800e'] },
+};
 const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex','XPR 7000','DP ATEX','XPR 6000','XPR 3000','SL Series'];
 const MOBILE_RADIOS   = ['XPR 5000','XPR 4000','XPR 2500'];
 const MOBILE_COL_KEYS = {
@@ -232,6 +244,7 @@ const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
 // ââ STATE ââ
 let currentView      = 'radio';
 let currentRadio     = 'R7';
+let currentVariant = null;
 let currentCat       = 'All';
 let currentMatrixTab = 'portable';
 let myList = {};
@@ -259,10 +272,15 @@ function pushState() {
 }
 
 // ââ RADIO PILLS ââ
+
+function selectVariant(key) {
+  currentVariant = key;
+  buildRadioPills();
+  fadeRender();
+}
 function buildRadioPills() {
   const row = document.getElementById('radio-row');
-  row.innerHTML =
-    '<span class="pill-group-label">Portable</span>' +
+  let html = '<span class="pill-group-label">Portable</span>' +
     PORTABLE_RADIOS.map(r =>
       `<button class="rpill${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
     ).join('') +
@@ -271,6 +289,16 @@ function buildRadioPills() {
     MOBILE_RADIOS.map(r =>
       `<button class="rpill mobile${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
     ).join('');
+  const vm = currentRadio && PCR_VARIANT_MAP[currentRadio];
+  if (vm && currentView === 'radio') {
+    html += '<div class="variant-row">' +
+      '<span class="variant-label">Variant:</span>' +
+      vm.keys.map((k, i) =>
+        `<button class="vpill${k===currentVariant?' active':''}" onclick="selectVariant('${k}')">${vm.labels[i]}</button>`
+      ).join('') +
+      '</div>';
+  }
+  row.innerHTML = html;
 }
 
 // ââ CAT PILLS ââ
@@ -285,6 +313,8 @@ function buildCatPills() {
 
 function selectRadio(r) {
   currentRadio = r;
+  const vm = PCR_VARIANT_MAP[r];
+  currentVariant = vm ? vm.keys[0] : null;
   if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
   document.querySelectorAll('.rpill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim() === r)
