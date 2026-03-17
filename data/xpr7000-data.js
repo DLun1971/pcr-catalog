@@ -104,19 +104,26 @@ const XPR7000_DATA = {
         ]},
       ]
     },
-    batteries: {
-      label: 'Batteries',
-      sections: [
-        { title: 'Li-Ion Batteries', items: [
-          { img: null, pn: 'PMNN4491',  desc: 'IMPRES Li-Ion 2150mAh Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMNN4409',  desc: 'IMPRES Li-Ion 2300mAh Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMNN4407',  desc: 'Li-Ion 2300mAh Battery', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMNN4468',  desc: 'IMPRES Li-Ion 2300mAh Slim Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 0, xpr7000e: 1 } },
-          { img: null, pn: 'PMNN4424',  desc: 'IMPRES Li-Ion 3000mAh Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-          { img: null, pn: 'PMNN4477',  desc: 'IMPRES Li-Ion 3600mAh Battery', note: '', checks: { impres: 1, ip: '', hazloc: '', windport: 0, xpr7000: 1, xpr7000e: 1 } },
-        ]},
-      ]
-    },
+batteries: {
+  label: 'Batteries',
+  cols: ['xpr7000','xpr7000e','Chem','Typical Capacity (mAh)','Dims','Weight','IP','HazLoc','Temp'],
+  sections: [
+    { title: 'Li-Ion Batteries', items: [
+      { img: null, pn: 'PMNN4491', desc: 'IMPRES Li-Ion 2150mAh Battery',
+        checks: { impres: 1, chem: 'Li-Ion', mah: 2150, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
+      { img: null, pn: 'PMNN4409', desc: 'IMPRES Li-Ion 2300mAh Battery',
+        checks: { impres: 1, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
+      { img: null, pn: 'PMNN4407', desc: 'Li-Ion 2300mAh Battery',
+        checks: { impres: 0, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
+      { img: null, pn: 'PMNN4468', desc: 'IMPRES Li-Ion 2300mAh Slim Battery',
+        checks: { impres: 1, chem: 'Li-Ion', mah: 2300, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 0, xpr7000e: 1 } },
+      { img: null, pn: 'PMNN4424', desc: 'IMPRES Li-Ion 3000mAh Battery',
+        checks: { impres: 1, chem: 'Li-Ion', mah: 3000, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
+      { img: null, pn: 'PMNN4477', desc: 'IMPRES Li-Ion 3600mAh Battery',
+        checks: { impres: 1, chem: 'Li-Ion', mah: 3600, dims: null, weight: null, ip: null, hazloc: null, temp: null, xpr7000: 1, xpr7000e: 1 } },
+    ]},
+  ]
+},
     chargers: {
       label: 'Chargers',
       sections: [
