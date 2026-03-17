@@ -17,7 +17,7 @@ const DP_ATEX_DATA = {
                 dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
             { img: null, pn: 'NNTN8386', desc: 'IMPRES Li-Ion 2075mAh IP67 CSA Battery',
               note: '135x57x23mm, 220g, -10 to +50°C',
-              checks: { impres: 1, chem: 'Li-Ion', capacity_mah: 2075, dims_mm: '135x57x23', weight_g: 220, hazloc: 'UL', ip: 'IP67', op_temp: '-10/+50°C',
+              checks: { impres: 1, chem: 'Li-Ion', capacity_mah: 2075, dims_mm: '135x57x23', weight_g: 220, hazloc: 'CSA', ip: 'IP67', op_temp: '-10/+50°C',
                 dp4400e: 1, dp4600e: 1, dp4800e: 1 } },
           ]
         }
