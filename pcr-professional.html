@@ -333,9 +333,7 @@ function setView(v) {
   currentView = v;
   syncViewBtns();
   document.getElementById('matrix-subtabs').style.display = v === 'matrix' ? 'flex' : 'none';
-  document.querySelectorAll('.rpill').forEach(b =>
-    b.classList.toggle('active', v === 'radio' && b.textContent.trim() === currentRadio)
-  );
+  buildRadioPills();
   fadeRender(); pushState();
 }
 
