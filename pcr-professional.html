@@ -284,26 +284,22 @@ function buildRadioPills() {
   const row = document.getElementById('radio-row');
   let html = '<span class="pill-group-label">Portable</span>' +
     PORTABLE_RADIOS.map(r =>
-      `<button class="rpill${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
+      '<button class="rpill' + (r===currentRadio&&currentView==='radio'?' active':'') + '" onclick="selectRadio(\'' + r + '\')">' + r + '</button>'
     ).join('') +
     '<span class="pill-group-sep"></span>' +
     '<span class="pill-group-label">Mobile</span>' +
     MOBILE_RADIOS.map(r =>
-      `<button class="rpill mobile${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
+      '<button class="rpill mobile' + (r===currentRadio&&currentView==='radio'?' active':'') + '" onclick="selectRadio(\'' + r + '\')">' + r + '</button>'
     ).join('');
-  const _bvm = PCR_VARIANT_MAP[currentRadio];
+  const _bvm = currentRadio ? PCR_VARIANT_MAP[currentRadio] : null;
   if (_bvm && currentView === 'radio') {
-    html += '<div class="variant-row">' +
-      '<span class="variant-label">Variant:</span>' +
-      _bvm.keys.map((k, i) =>
-        `<button class="vpill${k===currentVariant?' active':''}" onclick="selectVariant('${k}')">${vm.labels[i]}</button>`
-      ).join('') +
-      '</div>';
+    const subPills = _bvm.keys.map(function(k, i) {
+      return '<button class="vpill' + (k===currentVariant?' active':'') + '" onclick="selectVariant(\'' + k + '\')">' + _bvm.labels[i] + '</button>';
+    }).join('');
+    html += '<div class="variant-row"><span class="variant-label">Variant:</span>' + subPills + '</div>';
   }
   row.innerHTML = html;
 }
-
-// ââ CAT PILLS ââ
 function buildCatPills() {
   const mobile = isMobileRadio(currentRadio);
   const map = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
