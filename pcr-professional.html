@@ -315,8 +315,8 @@ function buildCatPills() {
 
 function selectRadio(r) {
   currentRadio = r;
-  const vm = PCR_VARIANT_MAP[r];
-  currentVariant = vm ? vm.keys[0] : null;
+  const _srvm = PCR_VARIANT_MAP[r];
+  currentVariant = _srvm ? _srvm.keys[0] : null;
   if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
   document.querySelectorAll('.rpill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim() === r)
