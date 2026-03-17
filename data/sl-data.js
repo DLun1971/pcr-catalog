@@ -61,6 +61,8 @@ const SL_DATA = {
             { img: null, pn: 'PMLN7074', desc: 'Replacement Battery Cover (for PMNN4468)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
           ]
         }
+      ]
+    },
     chargers: {
       label: 'Chargers',
       sections: [
