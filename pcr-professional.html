@@ -256,6 +256,8 @@ function init() {
   if (p.get('view'))  currentView  = p.get('view');
   if (p.get('radio') && PCR_RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
   if (p.get('cat')   && PCR_CAT_MAP[p.get('cat')])     currentCat   = p.get('cat');
+  const _initVm = PCR_VARIANT_MAP[currentRadio];
+  currentVariant = _initVm ? _initVm.keys[0] : null;
   if (p.get('mtab')  && ['portable','mobile'].includes(p.get('mtab'))) currentMatrixTab = p.get('mtab');
   buildRadioPills();
   buildCatPills();
@@ -289,11 +291,11 @@ function buildRadioPills() {
     MOBILE_RADIOS.map(r =>
       `<button class="rpill mobile${r===currentRadio&&currentView==='radio'?' active':''}" onclick="selectRadio('${r}')">${r}</button>`
     ).join('');
-  const vm = currentRadio && PCR_VARIANT_MAP[currentRadio];
-  if (vm && currentView === 'radio') {
+  const _bvm = PCR_VARIANT_MAP[currentRadio];
+  if (_bvm && currentView === 'radio') {
     html += '<div class="variant-row">' +
       '<span class="variant-label">Variant:</span>' +
-      vm.keys.map((k, i) =>
+      _bvm.keys.map((k, i) =>
         `<button class="vpill${k===currentVariant?' active':''}" onclick="selectVariant('${k}')">${vm.labels[i]}</button>`
       ).join('') +
       '</div>';
