@@ -45,14 +45,29 @@ const SL_DATA = {
     batteries: {
       label: 'Batteries',
       sections: [
-        { title: 'IMPRES Slim Batteries', items: [
-          { img: null, pn: 'PMNN4468', desc: 'IMPRES Li-Ion Slim Battery, 1420 mAh (Standard)', note: 'Li-Ion, slim', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
-          { img: null, pn: 'PMNN4469', desc: 'IMPRES Li-Ion Slim Battery, 2150 mAh (High Capacity)', note: 'Li-Ion, slim', checks: { impres: 1, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
-        ]},
-        { title: 'Non-IMPRES Slim Batteries', items: [
-          { img: null, pn: 'PMNN4470', desc: 'Li-Ion Slim Battery, 1420 mAh (Standard)', note: 'Li-Ion, slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
-          { img: null, pn: 'PMNN4471', desc: 'Li-Ion Slim Battery, 2150 mAh (High Capacity)', note: 'Li-Ion, slim', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 1, sl7000e: 1 } },
-        ]},
+        {
+          title: 'SL 7000 / 7000e Batteries',
+          items: [
+            { img: null, pn: 'PMNN4440', desc: 'Li-Ion 1700mAh IP68 Battery', note: '96x56x15mm, 110g', checks: { impres: 0, ip: 'IP68', hazloc: '', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 1, sl7000e: 1 } },
+            { img: null, pn: 'PMNN4502', desc: 'IMPRES Li-Ion 3000mAh IP68 Battery', note: '96x56x23mm, 155g', checks: { impres: 1, ip: 'IP68', hazloc: '', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 1, sl7000e: 1 } },
+            { img: null, pn: 'PMNN4511', desc: 'IMPRES Li-Ion 2900mAh IP68 Battery', note: '96x56x23mm, 155g, -20 to +60C', checks: { impres: 1, ip: 'IP68', hazloc: 'UL', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 1, sl7000e: 1 } },
+          ]
+        },
+        {
+          title: 'SL 300 / 3500e / 3500Max Batteries',
+          items: [
+            { img: null, pn: 'PMNN4468', desc: 'Li-Ion 2300mAh Battery', note: '12x36x54mm, 50g', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
+            { img: null, pn: 'PMLN6745', desc: 'Replacement Battery Cover (for PMNN4468)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
+            { img: null, pn: 'PMLN7074', desc: 'Replacement Battery Cover (for PMNN4468)', note: '', checks: { impres: 0, ip: '', hazloc: '', windport: 0, sl3500e: 1, sl3500max: 1, sl7000: 0, sl7000e: 0 } },
+          ]
+        },
+        {
+          title: 'DP4000 EX / XPR 7000 IS (HazLoc) Batteries',
+          items: [
+            { img: null, pn: 'NNTN8359', desc: 'IMPRES Li-Ion 2075mAh IP67 ATEX Battery', note: '135x57x23mm, 220g, -10 to +50C', checks: { impres: 1, ip: 'IP67', hazloc: 'ATEX', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 0, sl7000e: 0 } },
+            { img: null, pn: 'NNTN8386', desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery', note: '135x57x23mm, 220g, -10 to +50C', checks: { impres: 1, ip: 'IP67', hazloc: 'UL', windport: 0, sl3500e: 0, sl3500max: 0, sl7000: 0, sl7000e: 0 } },
+          ]
+        }
       ]
     },
     chargers: {
