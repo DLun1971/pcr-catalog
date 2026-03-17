@@ -1,31 +1,152 @@
-/* Motorola Accessory Catalog — Shared Rendering Engine — catalog.js */
+/* Motorola Accessory Cataalog.js */
 
 let activeRadio = null;
 let activeCat   = null;
 let searchTerm  = '';
 
 function getBadges(item) {
-  const txt = (item.desc + ' ' + (item.note||'')).toLowerCase();
+  const txt = (item.desc + ' ' + (item.note || '')).toLowerCase();
   const badges = [];
-  if (txt.includes('impres'))                              badges.push('<span class="badge badge-impres">IMPRES</span>');
-  if (txt.includes('ip68'))                                badges.push('<span class="badge badge-ip68">IP68</span>');
-  else if (txt.includes('ip67'))                           badges.push('<span class="badge badge-ip67">IP67</span>');
-  else if (txt.includes('ip66'))                           badges.push('<span class="badge badge-ip66">IP66</span>');
-  else if (txt.includes('ip54'))                           badges.push('<span class="badge badge-ip54">IP54</span>');
-  if (txt.includes('ul hazloc') || txt.includes('ul '))    badges.push('<span class="badge badge-ul">UL</span>');
+  if (txt.includes('impres'))                           badges.push('<span class="badge badge-impres">IMPRES</span>');
+  if (txt.includes('ip68'))                             badges.push('<span class="badge badge-ip68">IP68</span>');
+  else if (txt.includes('ip67'))                        badges.push('<span class="badge badge-ip67">IP67</span>');
+  else if (txt.includes('ip66'))                        badges.push('<span class="badge badge-ip66">IP66</span>');
+  else if (txt.includes('ip54'))                        badges.push('<span class="badge badge-ip54">IP54</span>');
+  if (txt.includes('ul hazloc') || txt.includes('ul ')) badges.push('<span class="badge badge-ul">UL</span>');
   return badges.join('');
 }
 
 const COL_KEY = {
-  'IMPRES':'impres','IP68':'ip68','UL HazLoc':'ul','InAud':'intel',
-  'Ion FW Req':'ion_fw','BT/Wireless':'bt','Full Duplex':'fulldx',
-  'IP Rated':'ip','NRR':'nrr','Noise Cancel':'nc',
-  'Wires':'wires','FW Required':'fw_req','NFC':'nfc','Emg Btn':'emg',
-  'BT':'bt','Capacity':'mah','IP Rating':'ip','Temp Range':'temp',
-  'Pockets':'pockets','Recond.':'recondn',
+  'IMPRES':'impres','IMPRES 2':'impres2',
+  'InAud':'intel',
+  'FulDpx':'fulldx',
+  'Ion FW Req':'ion_fw',
+  'HazLoc':'hazloc','HazLoc Capable':'hazloc',
+  'IP':'ip','IP Rated':'ip','IP':'ip',
+  'NRR':'nrr',
   'AINS':'ains','WWet':'wwet','SmartSW':'smart_sw',
-  'Ambient':'ambient','IMPRES 2':'impres2',
+  'Wndprt':'windport',
+  'Ambient':'ambient',
+  'Noise Cancel':'nc',
+  'BT':'bt','BT/Wireless':'bt',
+  'NFC':'nfc','Emg Btn':'emg','FW Required':'fw_req',
+  'Wires':'wires','Pockets':'pockets','Capacity':'mah','Recond.':'recondn',
+  'Chem':'chem','Volts':'voltage','Power':'pwr_src',
+  'Temp':'temp','Operating Temp':'optemp',
+  'Typical Capacity (mAh)':'mah',
+  'Dims':'dims',
+  'Weight':'weight',
+  'HsTyp':'hstype',
+  'EpStyl':'epstyle','EpTyp':'eptype',
+  'Mic':'mic',
+  'PTT':'ptt','PTT Requirement':'pttreq','PTT Req':'pttreq',
+  'TlkTm':'talktime','ChrgTime':'chrgtime', 'ChrTm':'chrgtime',
+  'OpsCrit':'opscrit',
+  'Pair':'pairing',
+  'Range':'range',
+  'ProgBtn':'progbtn',
+  'Jack':'jack',
+  'Vol Steps':'volsteps',
+  'ConType':'contype',
+  'Speaker':'speaker',
+  'SNR':'snr',
+  'ANC':'anc',
+  'Large Front PTT':'fptt','Side PTT':'sptt',
+  'Noise Type':'noise_type',
+  'Belt':'belt_sz','Clip Dim':'clipdim',
+  'Swivel':'swivel','Display':'display','D-Rings':'drings',
+  'Band':'band','Freq':'freq_mhz','Ant Type':'ant_type','Length':'len_cm',
 };
+
+// Columns that display text values instead of checkmarks — sorted LEFT of checkmark cols
+const TEXT_VALUE_COLS = new Set([
+  'NRR','Wires','FW Required','Capacity','IP','Temp','Pockets',
+  'HazLoc','IP',
+  'Chem','Volts','Power','Noise Type','Style','Coverage',
+  'Matl','Belt','Band','Freq','Ant Type','Length',
+  'Dims','Jack',
+  'Typical Capacity (mAh)','Weight',
+]);
+
+function colWidth(col) {
+  return TEXT_VALUE_COLS.has(col) ? '80px' : '64px';
+}
+
+function ck(v) {
+  if (v === 1 || v === true)  return '<span class="ck">\u2713</span>';
+  if (v === 0 || v === false) return '<span class="dash">\u2014</span>';
+  if (v === '\u2014' || v === null || v === undefined) return '<span class="dash">\u2014</span>';
+  return '<span style="font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted)">' + v + '</span>';
+}
+
+function escapeItemData(obj) {
+  return "'" + JSON.stringify(obj).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+}
+
+function copyPN(pn) {
+  navigator.clipboard.writeText(pn).catch(() => {});
+  const t = document.getElementById('copyToast');
+  t.textContent = '"' + pn + '" copied!';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function highlightPN(pn) {
+  if (!searchTerm || !pn.toLowerCase().includes(searchTerm)) return pn;
+  const idx = pn.toLowerCase().indexOf(searchTerm);
+  return pn.slice(0, idx)
+    + '<span class="pn-match">' + pn.slice(idx, idx + searchTerm.length) + '</span>'
+    + pn.slice(idx + searchTerm.length);
+}
+
+function filterItems(items) {
+  if (!searchTerm) return items;
+  return items.filter(item => item.pn.toLowerCase().includes(searchTerm));
+}
+
+function buildImgCell(item) {
+  if (item.img) {
+    return '<td class="col-img"><img src="' + item.img
+      + '" alt="' + item.desc.replace(/"/g, '&quot;') + '" class="product-thumb"></td>';
+  }
+  return '<td class="col-img"><div class="img-placeholder">📷</div></td>';
+}
+
+function buildCbCell(item, itemData) {
+  const cbChecked = (typeof isSelected === 'function' && isSelected(item.pn)) ? 'checked' : '';
+  return '<td class="report-cb-cell">'
+    + '<input type="checkbox" class="report-cb" value="' + item.pn + '" ' + cbChecked
+    + ' onchange="handleReportCheckbox(this,' + escapeItemData(itemData) + ')">'
+    + '</td>';
+}
+
+function buildItemData(item, cat, sec, radio) {
+  return {
+    partNum:  item.pn,
+    desc:     item.desc,
+    note:     item.note  || null,
+    category: cat.label,
+    section:  sec.title,
+    catalog:  (typeof CATALOG_NAME !== 'undefined') ? CATALOG_NAME : (CATALOG_TITLE || ''),
+    radio:    radio.name,
+    checks:   item.checks || {},
+    img:      item.img    || null,
+  };
+}
+
+function renderSpecCell(col, val) {
+  if (TEXT_VALUE_COLS.has(col)) {
+    if (!val || val === 0) return '<td class="col-check tc"><span class="dash">\u2014</span></td>';
+    return '<td class="col-check tc"><span class="val-text">' + val + '</span></td>';
+  }
+  return '<td class="col-check tc">' + ck(val !== undefined ? val : 0) + '</td>';
+}
+
+function sortCols(cols) {
+  const text  = cols.filter(c => TEXT_VALUE_COLS.has(c));
+  const check = cols.filter(c => !TEXT_VALUE_COLS.has(c));
+  return [...text, ...check];
+}
 
 function renderSidebar() {
   const sb = document.getElementById('radioSidebar');
@@ -68,21 +189,12 @@ function renderCatSidebar() {
   });
 }
 
-function ck(v) {
-  if (v === 1 || v === true)  return '<span class="ck">✓</span>';
-  if (v === 0 || v === false) return '<span class="dash">—</span>';
-  if (v === '—' || v === null || v === undefined) return '<span class="dash">—</span>';
-  return '<span style="font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted)">' + v + '</span>';
-}
-
 function renderContent() {
   const panel = document.getElementById('contentInner');
   const radio = RADIOS[activeRadio];
   const cat   = radio.categories[activeCat];
   const total = cat.sections.reduce((s, sec) => s + sec.items.length, 0);
   const cols  = cat.cols || null;
-  const specCols = cols ? cols.slice(2) : [];
-  const textCols = new Set(['NRR','Wires','FW Required','Capacity','IP Rating','Temp Range','Pockets']);
 
   const tagHtml = radio.tags.map((t, i) =>
     '<span class="rh-tag ' + (radio.tagStyles[i] || '') + '">' + t + '</span>'
@@ -103,161 +215,129 @@ function renderContent() {
     + '</div>';
 
   cat.sections.forEach(sec => {
-    const items = filterItems(sec.items);
+    const items    = filterItems(sec.items);
+    const secCols  = sec.cols || cols;
+    const specCols = secCols ? secCols.filter(c => COL_KEY[c] !== undefined) : [];
     if (!items.length) return;
 
-    // Determine current section title for report tray itemData
-    const currentSectionTitle = sec.title;
+    const isReplacementSection = sec.title.toLowerCase().includes('replacement');
+    const useSpecTable = !isReplacementSection && specCols.length > 0;
 
     html += '<div class="acc-subsection">';
     html += '<div class="acc-subsection-title">' + sec.title + '</div>';
 
-    const isReplacementSection = sec.title.toLowerCase().includes('replacement');
+    if (useSpecTable) {
 
-    if (!isReplacementSection && specCols.length > 0) {
-
-      // Determine whether any item in this section has an img value
-      const hasAnyImg = items.some(item => item.img);
-
-      // Filter out spec columns where no item in this section has a truthy value
-      const activeCols = specCols.filter(col => {
+      const rawActiveCols = specCols.filter(col => {
         const k = COL_KEY[col];
         return items.some(item => {
           if (!item.checks || k === undefined) return false;
           const v = item.checks[k];
-          return v !== undefined && v !== 0 && v !== false && v !== '—' && v !== null;
+          return v !== undefined;
         });
       });
 
-      // Build header: checkbox | [img] | Part Number | Description | ...specCols
-      let headerHtml = '<th class="report-cb-cell"></th>';
-      if (hasAnyImg) headerHtml += '<th class="product-img-cell"></th>';
-      headerHtml += '<th>Part Number</th><th>Description</th>';
-      headerHtml += activeCols.map(c =>
-        '<th class="' + (textCols.has(c) ? '' : 'tc') + '">' + c + '</th>'
-      ).join('');
+      const activeCols = sortCols(rawActiveCols);
+
+      const colgroupHtml = '<colgroup>'
+        + '<col style="width:28px;min-width:28px;max-width:28px">'
+        + '<col style="width:52px;min-width:52px;max-width:52px">'
+        + '<col style="width:130px;min-width:130px;max-width:130px">'
+        + '<col style="min-width:220px;width:auto">'
+        + activeCols.map(c => {
+            const w = colWidth(c);
+            return '<col style="width:' + w + ';min-width:' + w + ';max-width:' + w + '">';
+          }).join('')
+        + '</colgroup>';
+
+      const headerHtml = ''
+        + '<th class="report-cb-cell" style="width:28px;min-width:28px;max-width:28px"></th>'
+        + '<th class="col-img" style="width:52px;min-width:52px;max-width:52px;text-align:center">IMG</th>'
+        + '<th class="col-pn" style="width:130px;min-width:130px;max-width:130px;text-align:center">Part Number</th>'
+        + '<th style="min-width:220px;text-align:center">Description</th>'
+        + activeCols.map(c => {
+            const w = colWidth(c);
+            return '<th class="col-check tc" style="width:' + w + ';min-width:' + w + ';max-width:' + w + '">' + c + '</th>';
+          }).join('');
 
       html += '<div class="table-wrap"><table>'
+        + colgroupHtml
         + '<thead><tr>' + headerHtml + '</tr></thead>'
         + '<tbody>';
 
       items.forEach(item => {
+        const itemData = buildItemData(item, cat, sec, radio);
+        const cbCell   = buildCbCell(item, itemData);
+        const imgCell  = buildImgCell(item);
+        const noteHtml = item.note
+          ? '<div class="td-note">' + item.note + '</div>'
+          : '';
+
         const specCells = activeCols.map(col => {
-          const k = COL_KEY[col];
+          const k   = COL_KEY[col];
           const val = (item.checks && k !== undefined) ? item.checks[k] : undefined;
-          const isText = textCols.has(col);
-
-          if (col === 'UL HazLoc') {
-            if (!val || val === 0) return '<td class="tc"><span class="dash">—</span></td>';
-            const label = typeof val === 'string' ? val : 'UL';
-            return '<td class="tc"><span style="font-family:JetBrains Mono,monospace;font-size:11px;color:var(--muted)">' + label + '</span></td>';
-          }
-
-          if (isText) return '<td style="font-size:12px;color:var(--text2)">' + ck(val) + '</td>';
-          return '<td class="tc">' + ck(val !== undefined ? val : 0) + '</td>';
+          return renderSpecCell(col, val);
         }).join('');
-
-        const noteHtml = item.note ? '<div class="td-note">' + item.note + '</div>' : '';
-
-        // Build itemData for report tray
-        const itemData = {
-          partNum:   item.pn,
-          desc:      item.desc,
-          note:      item.note  || null,
-          category:  cat.label,
-          section:   currentSectionTitle,
-          catalog:   (typeof CATALOG_NAME !== 'undefined') ? CATALOG_NAME : (CATALOG_TITLE || ''),
-          radio:     radio.name,
-          checks:    item.checks || {},
-          img:       item.img    || null,
-        };
-
-        // Checkbox cell
-        const cbChecked = (typeof isSelected === 'function' && isSelected(item.pn)) ? 'checked' : '';
-        const cbCell = '<td class="report-cb-cell">'
-          + '<input type="checkbox" class="report-cb" value="' + item.pn + '" ' + cbChecked
-          + ' onchange="handleReportCheckbox(this,' + escapeItemData(itemData) + ')">'
-          + '</td>';
-
-        // Image cell (only rendered if section has any img)
-        let imgCell = '';
-        if (hasAnyImg) {
-          if (item.img) {
-            imgCell = '<td class="product-img-cell"><img src="' + item.img
-              + '" alt="' + item.desc.replace(/"/g, '&quot;') + '" class="product-thumb"></td>';
-          } else {
-            imgCell = '<td class="product-img-cell"><span class="no-img">—</span></td>';
-          }
-        }
 
         html += '<tr>'
           + cbCell
           + imgCell
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
-          + '<td><div class="td-main">' + item.desc + '</div>' + noteHtml + '</td>'
-          + specCells + '</tr>';
+          + '<td class="col-pn" style="text-align:center"><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+  highlightPN(item.pn) + '</span></td>'
+          + '<td style="min-width:220px;text-align:center;vertical-align:middle">'
+          +   '<div class="td-main">' + item.desc + '</div>' + noteHtml
+          + '</td>'
+          + specCells
+          + '</tr>';
       });
 
       html += '</tbody></table></div>';
 
     } else {
-      // Simple list — no spec columns (replacement sections or cats with no cols)
-      html += '<table class="acc-table"><thead><tr>'
-        + '<th class="report-cb-cell"></th>'
-        + '<th style="width:130px">Part Number</th>'
-        + '<th>Description</th>'
-        + '<th style="width:260px">Notes</th>'
+
+      const colgroupHtml = '<colgroup>'
+        + '<col style="width:28px;min-width:28px;max-width:28px">'
+        + '<col style="width:52px;min-width:52px;max-width:52px">'
+        + '<col style="width:130px;min-width:130px;max-width:130px">'
+        + '<col style="min-width:220px;width:auto">'
+        + '<col style="width:160px;min-width:160px;max-width:160px">'
+        + '</colgroup>';
+
+      html += '<table class="acc-table">'
+        + colgroupHtml
+        + '<thead><tr>'
+        + '<th class="report-cb-cell" style="width:28px;min-width:28px;max-width:28px"></th>'
+        + '<th class="col-img" style="width:52px;min-width:52px;max-width:52px;text-align:center">IMG</th>'
+        + '<th class="col-pn" style="width:130px;min-width:130px;max-width:130px;text-align:center">Part Number</th>'
+        + '<th style="min-width:220px;text-align:center">Description</th>'
+        + '<th class="col-note" style="width:160px;min-width:160px;max-width:160px;text-align:center">Notes</th>'
         + '</tr></thead><tbody>';
 
       items.forEach(item => {
-        const itemData = {
-          partNum:   item.pn,
-          desc:      item.desc,
-          note:      item.note  || null,
-          category:  cat.label,
-          section:   currentSectionTitle,
-          catalog:   (typeof CATALOG_NAME !== 'undefined') ? CATALOG_NAME : (CATALOG_TITLE || ''),
-          radio:     radio.name,
-          checks:    item.checks || {},
-          img:       item.img    || null,
-        };
-
-        const cbChecked = (typeof isSelected === 'function' && isSelected(item.pn)) ? 'checked' : '';
-        const cbCell = '<td class="report-cb-cell">'
-          + '<input type="checkbox" class="report-cb" value="' + item.pn + '" ' + cbChecked
-          + ' onchange="handleReportCheckbox(this,' + escapeItemData(itemData) + ')">'
-          + '</td>';
+        const itemData = buildItemData(item, cat, sec, radio);
+        const cbCell   = buildCbCell(item, itemData);
+        const imgCell  = buildImgCell(item);
 
         html += '<tr>'
           + cbCell
-          + '<td><span class="pn" onclick="copyPN(\'' + item.pn + '\')">' + highlightPN(item.pn) + '</span></td>'
-          + '<td class="desc">' + item.desc + '</td>'
-          + '<td class="note">' + (item.note || '') + '</td>'
+          + imgCell
+          + '<td class="col-pn" style="text-align:center"><span class="pn" onclick="copyPN(\'' + item.pn + '\')">'+  highlightPN(item.pn) + '</span></td>'
+          + '<td style="min-width:220px;text-align:center;vertical-align:middle">'
+          +   '<div class="td-main">' + item.desc + '</div>'
+          +   (item.note ? '<div class="td-note">' + item.note + '</div>' : '')
+          + '</td>'
+          + '<td class="col-note">' + (item.note || '') + '</td>'
           + '</tr>';
       });
 
       html += '</tbody></table>';
     }
 
-    html += '</div>'; // .acc-subsection
+    html += '</div>';
   });
 
-  html += '</div>'; // .cat-section
+  html += '</div>';
   panel.innerHTML = html;
   panel.parentElement.scrollTop = 0;
-}
-
-// Safely serialize itemData for inline onchange attribute
-function escapeItemData(obj) {
-  return "'" + JSON.stringify(obj).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
-}
-
-function copyPN(pn) {
-  navigator.clipboard.writeText(pn).catch(() => {});
-  const t = document.getElementById('copyToast');
-  t.textContent = `"${pn}" copied!`;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 1800);
 }
 
 function renderSubbar() {
@@ -273,7 +353,7 @@ function renderSubbar() {
     <div class="subbar-search-wrap">
       <span class="subbar-search-icon">🔍</span>
       <input class="subbar-search" id="subbarSearch" type="text" placeholder="Search part numbers..." autocomplete="off">
-      <span class="subbar-clear" id="subbarClear">✕</span>
+      <span class="subbar-clear" id="subbarClear">\u2715</span>
     </div>
   `;
   document.body.insertBefore(bar, document.querySelector('.page-body'));
@@ -293,19 +373,6 @@ function renderSubbar() {
     clear.classList.remove('show');
     renderContent();
   });
-}
-
-function highlightPN(pn) {
-  if (!searchTerm || !pn.toLowerCase().includes(searchTerm)) return pn;
-  const idx = pn.toLowerCase().indexOf(searchTerm);
-  return pn.slice(0, idx)
-    + '<span class="pn-match">' + pn.slice(idx, idx + searchTerm.length) + '</span>'
-    + pn.slice(idx + searchTerm.length);
-}
-
-function filterItems(items) {
-  if (!searchTerm) return items;
-  return items.filter(item => item.pn.toLowerCase().includes(searchTerm));
 }
 
 function renderAll() {
