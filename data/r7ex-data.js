@@ -206,12 +206,7 @@ const r7exCategories = [
   },
 
   // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────
-  // No R7Ex-specific programming cable listed in this PDF — stub pending verification
-  {
-    id: 10,
-    name: 'Programming Cables',
-    items: []
-  },
+  // No R7Ex-specific programming cable listed in this PDF — stub pending verification,
 
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
