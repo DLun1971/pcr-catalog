@@ -511,22 +511,19 @@ function fadeRender() {
 function getDataKey(radioLabel) { return PCR_RADIO_MAP[radioLabel] || radioLabel; }
 
 function getCatSections(radioKey, catKey) {
-  const _normKey = radioKey.toLowerCase().replace(/\s+/g, ''); const rd = window.RADIOS_DATA && window.RADIOS_DATA[_normKey];
+  const _normKey = radioKey.toLowerCase().replace(/\s+/g, '');
+  const rd = window.RADIOS_DATA && window.RADIOS_DATA[_normKey];
   if (!rd) return [];
   const search = document.getElementById('search-input').value.toLowerCase().trim();
   let sections = [];
   if (catKey === 'all') {
-    Object.values(rd.categories).forEach(cat => {
-      cat.sections.forEach(sec =>
-        sections.push({ title: sec.title, items: sec.items, cols: cat.cols })
-      );
+    rd.forEach(cat => {
+      sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
     });
   } else {
-    const cat = rd.categories[catKey];
+    const cat = rd.find(c => c.name === catKey);
     if (!cat) return [];
-    cat.sections.forEach(sec =>
-      sections.push({ title: sec.title, items: sec.items, cols: cat.cols })
-    );
+    sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
   }
   if (search) {
     sections = sections.map(s => ({
@@ -537,7 +534,6 @@ function getCatSections(radioKey, catKey) {
       )
     })).filter(s => s.items.length);
   }
-  // Attribute filter
   if (currentAttrFilter) {
     sections = sections.map(s => ({
       ...s,
