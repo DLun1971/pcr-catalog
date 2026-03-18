@@ -297,3 +297,6 @@ window.RADIOS_DATA['xpr6000'] = {
   variants: ['6350', '6550', '6580'],
   categories: XPR6000_CATEGORIES
 };
+
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['xpr6000'] = XPR6000_CATEGORIES;
