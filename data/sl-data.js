@@ -139,7 +139,7 @@ const SL_CATEGORIES = [
   },
   {
     id: 4,
-    name: 'Surveillance / Earpieces',
+    name: 'Surveillance/Earpieces',
     items: [
       { desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Black', part: 'PMLN6129', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: 'UL', variants: ['7000', '7000e', '3500e', '3500Max'] },
       { desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Beige', part: 'PMLN6130', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: 'UL', variants: ['7000', '7000e', '3500e', '3500Max'] },
@@ -235,7 +235,7 @@ const SL_CATEGORIES = [
   },
   {
     id: 11,
-    name: 'IMPRES Battery Mgmt Tools',
+    name: 'IMPRES Tools',
     items: [
       // PDF lists HKVN4036-4039 for XPR 6000/7000/3000 Series. SL not explicitly listed.
       // Flagging as PENDING — do not display for SL until confirmed.
