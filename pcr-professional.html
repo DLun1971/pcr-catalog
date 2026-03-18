@@ -392,7 +392,12 @@ function onRadioDropChange() {
     ddV.disabled = true;
     ddV.innerHTML = '<option value="">No variants</option>';
   }
-  // Update cat dropdown
+  }
+function onCatDropChange() {
+  currentCat = document.getElementById('dd-cat').value;
+  renderRadioView();
+}
+    // Update cat dropdown
   const mobile = MOBILE_RADIOS.includes(r);
   const catMap = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
   const ddC = document.getElementById('dd-cat');
