@@ -267,7 +267,8 @@ const ionCategories = [
     id: 8,
     name: 'Cables',
     items: [
-      { desc: 'Mini GCAI Interface Cable (USB) \u2014 connects radio to computer via USB port', part: 'PMKN4265' }
+      { desc: 'Mini GCAI Interface Cable (USB) \u2014 connects radio to computer via USB port', part: 'PMKN4265' },
+      { desc: 'RIB-Less Programming Cable (USB)', part: 'PMKN4230' }
     ]
   },
 
@@ -279,15 +280,7 @@ const ionCategories = [
     items: []
   },
 
-  // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────
-  {
-    id: 10,
-    name: 'Programming Cables',
-    items: [
-      { desc: 'Mini GCAI Interface Cable (USB) \u2014 full rate data transfer to computer', part: 'PMKN4265' },
-      { desc: 'UL Certified Programming/Data Cable', part: 'PMKN4230' }
-    ]
-  },
+  // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────,
 
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
