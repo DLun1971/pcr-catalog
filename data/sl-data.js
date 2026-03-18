@@ -276,3 +276,6 @@ window.RADIOS_DATA['sl'] = {
   variants: ['7000', '7000e', '3500e', '3500Max'],
   categories: SL_CATEGORIES
 };
+
+window.RADIOS_DATA = window.RADIOS_DATA || {};
+window.RADIOS_DATA['sl'] = SL_CATEGORIES;
