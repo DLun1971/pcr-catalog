@@ -357,7 +357,7 @@ function render() {
         const specKeys = cols.filter(function(c) {
           return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());
         });
-        radioHtml += '<div class="sec-head">' + secName + ' <span class="sec-count">— ' + matches.length + ' item' + (matches.length !== 1 ? 's' : '') + '</span></div>';
+        radioHtml += '<div class="sec-head">' + secName + ' <span class="sec-count">&mdash; ' + matches.length + ' item' + (matches.length !== 1 ? 's' : '') + '</span></div>';
         radioHtml += '<table class="acc-table"><thead><tr>';
         radioHtml += '<th style="width:42px"></th><th>Description</th><th>Part #</th>';
         specKeys.forEach(function(c) { radioHtml += '<th>' + (c.label||c) + '</th>'; });
@@ -374,7 +374,7 @@ function render() {
             const k = c.key || c;
             const v = item[k];
             if (v === true) radioHtml += '<td class="chk-yes" style="text-align:center">✓</td>';
-            else if (v === false || v === null || v === undefined || v === '') radioHtml += '<td class="chk-no" style="text-align:center">—</td>';
+            else if (v === false || v === null || v === undefined || v === '') radioHtml += '<td class="chk-no" style="text-align:center">&mdash;</td>';
             else if (k === 'ip') radioHtml += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
             else if (k === 'hazloc') radioHtml += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
             else radioHtml += '<td style="text-align:center">' + v + '</td>';
