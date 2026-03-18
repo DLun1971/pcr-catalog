@@ -292,7 +292,7 @@ const ionCategories = [
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
     id: 11,
-    name: 'IMPRES Battery Mgmt Tools',
+    name: 'IMPRES Tools',
     items: [
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
@@ -304,7 +304,7 @@ const ionCategories = [
   // ── CAT 12: BLUETOOTH / OPS CRITICAL WIRELESS ─────────────────────────────
   {
     id: 12,
-    name: 'Bluetooth/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       {
         desc: 'WM500 Wireless Remote Speaker Microphone (compatible with PMLN7560 earpiece)',
