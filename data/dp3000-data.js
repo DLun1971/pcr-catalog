@@ -1221,16 +1221,7 @@ const DP3000_CATEGORIES = [
       }
     ]
   }
-,
-  {
-    id: 'programming_cables',
-    label: 'Programming Cables',
-    columns: ['Description','Part Number'],
-    items: [
-      {desc:'Portable Programming Cable (USB)', part:'PMKN4115'},
-      {desc:'Programming, Test, and Alignment Cable', part:'PMKN4117'}
-    ]
-  }
+
 ];
 
 // Wire into global RADIOS_DATA
