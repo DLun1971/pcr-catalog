@@ -220,17 +220,11 @@ const XPR6000_CATEGORIES = [
     name: 'Cables',
     items: [
       { desc: 'Portable Programming Cable (USB) for XPR 6000/7000 Series', part: 'PMKN4012', variants: ['6350','6550','6580'] },
-      { desc: 'Programming, Test, and Alignment Cable for XPR 6000/7000 Series', part: 'PMKN4013', variants: ['6350','6550','6580'] }
-    ]
-  },
   {
     id: 9,
     name: 'Screen Protectors',
     items: [
       // Screen protectors for XPR 6000 not explicitly listed in PDF — PENDING
-    ]
-  },
-      { desc: 'Programming, Test, and Alignment Cable for XPR 6000/7000 Series', part: 'PMKN4013', variants: ['6350','6550','6580'] }
     ]
   },
   {
