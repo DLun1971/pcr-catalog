@@ -81,7 +81,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 4,
-    name: 'Surveillance / Earpieces',
+    name: 'Surveillance/Earpieces',
     items: [
       { desc: '1-Wire Receive-Only Earpiece, Black', part: 'PMLN6125', impres: true, intel_audio: false, ai_noise: false, ear_type: 'Earpiece', mic_type: null, full_duplex: false, hazloc: 'UL', variants: ['6350','6550','6580'] },
       { desc: '1-Wire Receive-Only Earpiece, Beige', part: 'PMLN6126', impres: true, intel_audio: false, ai_noise: false, ear_type: 'Earpiece', mic_type: null, full_duplex: false, hazloc: 'UL', variants: ['6350','6550','6580'] },
@@ -240,7 +240,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 11,
-    name: 'IMPRES Battery Mgmt Tools',
+    name: 'IMPRES Tools',
     items: [
       { desc: 'IMPRES Battery Fleet Management License Key, NA/CAN', part: 'HKVN4036', variants: ['6350','6550','6580'] },
       { desc: 'IMPRES Battery Fleet Management License Key, EMEA', part: 'HKVN4037', variants: ['6350','6550','6580'] },
