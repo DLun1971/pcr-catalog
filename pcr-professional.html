@@ -181,6 +181,18 @@ const VARIANT_MAP = {
 };
 
 const PORTABLE_CATS = ['All','Batteries','Chargers','RSM/Audio','Surveillance/Earpieces','Headsets','Carry','Antennas','Cables','Screen Protectors','Programming Cables','IMPRES Tools','Bluetooth'];
+const LABEL_TO_KEY = {
+  'Description':'desc','Part Number':'part','Part #':'part','IMPRES':'impres',
+  'Chemistry':'chem','Typical Capacity (mAh)':'capacity_mah','Capacity (mAh)':'capacity_mah',
+  'Dimensions (mm)':'dims_mm','Weight':'weight_g','Weight (g)':'weight_g',
+  'HazLoc':'hazloc','IP':'ip','Op Temp':'op_temp','Pockets':'pockets',
+  'Power':'pwr_src','Intel Audio':'intel_audio','Noise Cancel':'noise_cancel',
+  'Ear Type':'ear_type','Mic Type':'mic_type','Full Duplex':'full_duplex',
+  'Type':'headset_type','Ear Style':'ear_style','NRR (dB)':'nrr_db',
+  'Material':'material','Belt Size':'belt_sz','Swivel':'swivel','Display':'display','D-Rings':'d_rings',
+  'Band':'band','Freq (MHz)':'freq_mhz','Length (cm)':'len_cm',
+  'PTT':'ptt','Talk Time (hr)':'talk_time_hr','Charge Time (hr)':'charge_time_hr',
+};
 const COLS_BY_SECTION = {
   'Batteries':       [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'op_temp',label:'Op Temp'}],
   'Chargers':        [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'pwr_src',label:'Power'},{key:'pockets',label:'Pockets'}],
@@ -328,10 +340,10 @@ function render() {
 
   let sections = [];
   if (currentCat === 'All') {
-    sections = rd.map(s => ({name: s.name||s.label, items: s.items || [], cols: s.cols || s.columns || COLS_BY_SECTION[s.name||s.label] || []}));
+    sections = rd.map(s => ({name: s.name||s.label, items: s.items || [], cols: (s.cols || s.columns || COLS_BY_SECTION[s.name||s.label] || []).map(c => typeof c === 'string' ? {key: LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'), label: c} : c)}));
   } else {
     const found = rd.find(s => (s.name||s.label||'').toLowerCase() === currentCat.toLowerCase());
-    if (found) sections = [{name: found.name||found.label, items: found.items || [], cols: found.cols || found.columns || COLS_BY_SECTION[found.name||found.label] || []}];
+    if (found) sections = [{name: found.name||found.label, items: found.items || [], cols: (found.cols || found.columns || COLS_BY_SECTION[found.name||found.label] || []).map(c => typeof c === 'string' ? {key: LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'), label: c} : c)}];
   }
 
   // Apply search
