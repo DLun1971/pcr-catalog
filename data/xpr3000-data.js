@@ -103,7 +103,7 @@ const XPR3000_CATEGORIES = [
   // ── CATEGORY 3: RSM / AUDIO ────────────────────────────────────────────────
   {
     id: 3,
-    name: 'RSM / Audio',
+    name: 'RSM/Audio',
     cols: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppression','Windporting / Noise Type','Full Duplex','Vol Ctrl','Prog Button','Audio Jack','IP Rating','HazLoc','Dimensions (mm)'],
     items: [
       {
@@ -160,7 +160,7 @@ const XPR3000_CATEGORIES = [
   // ── CATEGORY 4: SURVEILLANCE / EARPIECES ──────────────────────────────────
   {
     id: 4,
-    name: 'Surveillance / Earpieces',
+    name: 'Surveillance/Earpieces',
     cols: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppression','Ear Type','Mic Type','Full Duplex','HazLoc'],
     items: [
       { desc: 'IMPRES 2-Wire Surveillance Kit with Translucent Tube, Black', part: 'PMLN6129', impres: true, intel_audio: true, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: 'UL' },
@@ -310,7 +310,7 @@ const XPR3000_CATEGORIES = [
   // ── CATEGORY 11: IMPRES BATTERY MGMT TOOLS ───────────────────────────────
   {
     id: 11,
-    name: 'IMPRES Battery Mgmt Tools',
+    name: 'IMPRES Tools',
     cols: ['Description','Part Number'],
     items: [
       { desc: 'IMPRES Battery Fleet Management License Key, NA/CAN', part: 'HKVN4036' },
@@ -323,7 +323,7 @@ const XPR3000_CATEGORIES = [
   // ── CATEGORY 12: BLUETOOTH / OPS CRITICAL WIRELESS ───────────────────────
   {
     id: 12,
-    name: 'Bluetooth / Ops Critical Wireless',
+    name: 'Bluetooth',
     cols: ['Description','Part Number','Ear Type','Mic Type','PTT','Talk Time (hr)','Charge Time (hr)','Weight (g)'],
     items: [
       { desc: 'Operations Critical Wireless Earpiece with 12" Cable (with US/JP Charger)', part: 'NNTN8125', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
