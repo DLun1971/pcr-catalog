@@ -328,10 +328,10 @@ function render() {
 
   let sections = [];
   if (currentCat === 'All') {
-    sections = rd.map(s => ({name: s.name, items: s.items || [], cols: s.cols || COLS_BY_SECTION[s.name] || []}));
+    sections = rd.map(s => ({name: s.name||s.label, items: s.items || [], cols: s.cols || s.columns || COLS_BY_SECTION[s.name||s.label] || []}));
   } else {
-    const found = rd.find(s => s.name.toLowerCase() === currentCat.toLowerCase());
-    if (found) sections = [{name: found.name, items: found.items || [], cols: found.cols || COLS_BY_SECTION[found.name] || []}];
+    const found = rd.find(s => (s.name||s.label||'').toLowerCase() === currentCat.toLowerCase());
+    if (found) sections = [{name: found.name||found.label, items: found.items || [], cols: found.cols || found.columns || COLS_BY_SECTION[found.name||found.label] || []}];
   }
 
   // Apply search
