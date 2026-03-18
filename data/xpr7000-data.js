@@ -434,7 +434,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 3: RSM / AUDIO ────────────────────────────────────────────────
   {
     id: 'rsm',
-    label: 'RSM / Audio',
+    label: 'RSM/Audio',
     columns: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppress','Windporting/Noise Type','Full Duplex','Vol Ctrl','Prog Button','Audio Jack','IP Rating','HazLoc','Dimensions (mm)'],
     items: [
       {
@@ -630,7 +630,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 4: SURVEILLANCE / EARPIECES ──────────────────────────────────
   {
     id: 'surveillance',
-    label: 'Surveillance / Earpieces',
+    label: 'Surveillance/Earpieces',
     columns: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppress','Ear Type','Mic Type','Full Duplex','HazLoc'],
     items: [
       {
@@ -928,7 +928,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 6: CARRY SOLUTIONS ───────────────────────────────────────────
   {
     id: 'carry',
-    label: 'Carry Solutions',
+    label: 'Carry',
     columns: ['Description','Part Number','Material','Belt Size (in)','Swivel/Fixed','Display','D-Rings'],
     items: [
       {
@@ -1451,7 +1451,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 11: IMPRES BATTERY MGMT TOOLS ───────────────────────────────
   {
     id: 'impres_tools',
-    label: 'IMPRES Battery Mgmt Tools',
+    label: 'IMPRES Tools',
     columns: ['Description','Part Number'],
     items: [
       {
@@ -1480,7 +1480,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 12: BLUETOOTH / OPS CRITICAL WIRELESS ───────────────────────
   {
     id: 'bluetooth',
-    label: 'Bluetooth / Ops Critical Wireless',
+    label: 'Bluetooth',
     columns: ['Description','Part Number','Ear Type','Mic Type','PTT','Talk Time (hr)','Charge Time (hr)','Weight (g)'],
     items: [
       {
