@@ -610,29 +610,610 @@ function renderRadioView() {
     document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
     prefetchImages(sections);
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCR Professional Tier Accessory Catalog</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;background:#f5f2eb;color:#1a1a1a;}
+#app{display:flex;flex-direction:column;height:100vh;}
+
+/* ---- TOPBAR ---- */
+#topbar{flex-shrink:0;background:#185FA5;padding:0 16px;height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.brand-text{font-size:14px;font-weight:600;color:#fff;white-space:nowrap;letter-spacing:.01em;}
+.topbar-right{display:flex;align-items:center;gap:8px;}
+#view-toggle{display:flex;gap:4px;}
+.vtbtn{padding:5px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,.5);font-size:12px;cursor:pointer;background:transparent;color:#fff;transition:all .2s;}
+.vtbtn.active{background:#fff;color:#185FA5;border-color:#fff;}
+#btn-report{padding:5px 14px;border-radius:20px;border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;}
+#btn-report:hover{background:#fff;color:#185FA5;}
+#report-badge{background:#fff;color:#185FA5;border-radius:20px;padding:0 7px;font-size:11px;min-width:20px;text-align:center;font-weight:700;}
+#btn-report:hover #report-badge{background:#185FA5;color:#fff;}
+
+/* ---- SELECTOR ROW ---- */
+#selector-row{flex-shrink:0;background:#F1EFE8;border-bottom:1px solid #ddd9cf;padding:10px 16px;display:flex;align-items:center;gap:12px;}
+#radio-img-zone{width:110px;min-width:110px;height:72px;display:flex;align-items:center;justify-content:center;background:#E8E4DB;border-radius:8px;border:1px solid #ccc;overflow:hidden;}
+#radio-img-zone svg{opacity:.35;}
+.dropdowns{display:flex;align-items:flex-end;gap:10px;flex:1;flex-wrap:wrap;}
+.dd-group{display:flex;flex-direction:column;gap:3px;}
+.dd-label{font-size:10px;font-weight:600;color:#777;text-transform:uppercase;letter-spacing:.06em;}
+select.dd{padding:6px 10px;border-radius:6px;border:1px solid #bbb;font-size:12px;background:#fff;color:#1a1a1a;cursor:pointer;min-width:130px;outline:none;}
+select.dd:focus{border-color:#185FA5;}
+select.dd:disabled{color:#aaa;background:#f0ede4;cursor:default;}
+.selector-btns{display:flex;gap:6px;align-items:flex-end;padding-bottom:0;}
+.btn-apply{padding:6px 18px;border-radius:6px;border:none;background:#185FA5;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s;}
+.btn-apply:hover{background:#0f4a85;}
+.btn-reset{padding:6px 12px;border-radius:6px;border:1px solid #bbb;background:transparent;color:#555;font-size:12px;cursor:pointer;transition:all .2s;}
+.btn-reset:hover{border-color:#888;color:#1a1a1a;}
+
+/* ---- BREADCRUMB ---- */
+#breadcrumb{flex-shrink:0;background:#fff;border-bottom:1px solid #ede9e0;padding:5px 16px;font-size:11px;color:#888;display:flex;align-items:center;gap:4px;}
+#breadcrumb span{color:#1a1a1a;font-weight:500;}
+#breadcrumb .sep{color:#ccc;}
+
+/* ---- MATRIX SUBTABS ---- */
+#matrix-subtabs{display:none;flex-shrink:0;align-items:center;gap:6px;padding:6px 16px;background:#f5f2eb;border-bottom:1px solid #ddd9cf;}
+.mstab{padding:4px 16px;border-radius:20px;border:1px solid #888;font-size:12px;cursor:pointer;background:transparent;color:#1a1a1a;transition:all .15s;}
+.mstab.active{background:#555;color:#fff;border-color:#555;}
+.mstab.active.mobile-tab{background:#185FA5;border-color:#185FA5;}
+.mstab:hover:not(.active){background:#ede9e0;}
+
+/* ---- TABLE ---- */
+#table-wrap{flex:1;overflow-y:auto;background:#fff;transition:opacity .2s;}
+#table-wrap.fading{opacity:0;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead th{position:sticky;top:0;z-index:10;padding:7px 8px;text-align:left;font-weight:600;font-size:11px;color:#555;border-bottom:2px solid #ddd9cf;background:#f0ede4;white-space:nowrap;}
+thead th.radio-col{background:#dde8f4;color:#1a5fa8;text-align:center;}
+thead th.mobile-col{background:#e8f0f8;color:#1a6faf;text-align:center;}
+thead th.fc{text-align:center;}
+thead th.cc{text-align:center;width:52px;}
+thead th.ic{width:44px;}
+td{padding:7px 8px;border-bottom:0.5px solid #ede9e0;vertical-align:middle;}
+tr:hover td{background:#faf8f3;}
+td.fc{text-align:center;}
+td.cc{text-align:center;width:52px;}
+.sr td{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#777;padding:5px 8px;background:#f7f4ed;border-bottom:1px solid #e5e0d5;}
+.img-box{width:34px;height:34px;background:#f0ede4;border:0.5px solid #ddd9cf;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;}
+.img-box:hover{opacity:.75;}
+.img-box img{width:34px;height:34px;object-fit:contain;}
+.img-box svg{opacity:.3;}
+.pn{font-weight:700;white-space:nowrap;cursor:pointer;position:relative;color:#1a1a1a;}
+.pn:hover{color:#2d7a4f;}
+.copied-tip{position:absolute;left:0;top:-20px;background:#2d7a4f;color:#fff;font-size:10px;padding:2px 7px;border-radius:4px;white-space:nowrap;opacity:0;transition:opacity .15s;pointer-events:none;z-index:20;}
+.pn.flash .copied-tip{opacity:1;}
+.chk{color:#2d7a4f;font-weight:700;}
+.dash{color:#ccc;}
+.ip-badge{display:inline-block;padding:1px 7px;border-radius:20px;border:1.5px solid #2d7a4f;color:#2d7a4f;font-size:10px;font-weight:600;}
+.mylist-cb{width:15px;height:15px;cursor:pointer;accent-color:#2d7a4f;}
+#empty-state{text-align:center;padding:60px;color:#aaa;font-size:13px;display:none;}
+
+/* ---- DRAWER ---- */
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:90;display:none;}
+#overlay.open{display:block;}
+#drawer{position:fixed;top:0;right:-400px;width:380px;height:100vh;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,.12);z-index:100;display:flex;flex-direction:column;transition:right .3s ease;}
+#drawer.open{right:0;}
+#drawer-hdr{padding:16px;border-bottom:1px solid #ede9e0;display:flex;align-items:center;justify-content:space-between;}
+#drawer-hdr h2{font-size:14px;font-weight:600;}
+#drawer-close{background:none;border:none;font-size:20px;cursor:pointer;color:#888;line-height:1;}
+#drawer-body{flex:1;overflow-y:auto;padding:12px;}
+#drawer-empty{color:#aaa;font-size:12px;text-align:center;padding:40px 0;}
+#drawer-items .di{padding:10px 0;border-bottom:0.5px solid #ede9e0;}
+#drawer-items .di-pn{font-weight:700;font-size:12px;}
+#drawer-items .di-desc{font-size:11px;color:#666;margin:2px 0 5px;}
+#drawer-items textarea{width:100%;font-size:11px;border:0.5px solid #ddd;border-radius:4px;padding:4px 6px;resize:vertical;min-height:34px;font-family:inherit;}
+#drawer-ftr{padding:12px 16px;border-top:1px solid #ede9e0;display:flex;gap:8px;}
+#btn-clear{flex:1;padding:8px;border-radius:8px;border:1px solid #ccc;background:transparent;cursor:pointer;font-size:12px;}
+#btn-pdf{flex:2;padding:8px;border-radius:8px;border:none;background:#2d7a4f;color:#fff;cursor:pointer;font-size:12px;font-weight:600;}
+
+/* ---- LIGHTBOX ---- */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:none;align-items:center;justify-content:center;}
+#lightbox.open{display:flex;}
+#lb-img{max-width:80vw;max-height:80vh;object-fit:contain;border-radius:8px;background:#fff;padding:12px;}
+#lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:30px;cursor:pointer;line-height:1;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <div class="brand">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="white"/>
+        <path d="M8 16C8 11.582 11.582 8 16 8C20.418 8 24 11.582 24 16C24 20.418 20.418 24 16 24" stroke="#185FA5" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 11V16L19 19" stroke="#185FA5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="2" fill="#185FA5"/>
+      </svg>
+      <span class="brand-text">MOTOTRBO Professional Catalog</span>
+    </div>
+    <div class="topbar-right">
+      <div id="view-toggle">
+        <button class="vtbtn active" onclick="setView('radio')">By Radio</button>
+        <button class="vtbtn" onclick="setView('matrix')">Full Matrix</button>
+      </div>
+      <button id="btn-report" onclick="openDrawer()">My List <span id="report-badge">0</span></button>
+    </div>
+  </div>
+
+  <!-- SELECTOR ROW -->
+  <div id="selector-row">
+    <div id="radio-img-zone">
+      <svg id="radio-silhouette" width="60" height="64" viewBox="0 0 60 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="8" width="36" height="52" rx="5" stroke="#555" stroke-width="2.2"/>
+        <rect x="18" y="14" width="24" height="14" rx="2" fill="#bbb"/>
+        <circle cx="30" cy="38" r="6" stroke="#555" stroke-width="2"/>
+        <rect x="22" y="50" width="16" height="4" rx="2" fill="#bbb"/>
+        <line x1="30" y1="8" x2="30" y2="2" stroke="#555" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="dropdowns">
+      <div class="dd-group">
+        <span class="dd-label">Radio</span>
+        <select class="dd" id="dd-radio" onchange="onRadioDropChange()">
+          <optgroup label="Professional">
+            <option value="R7">R7</option>
+            <option value="Ion">Ion</option>
+            <option value="R5">R5</option>
+            <option value="R7Ex">R7Ex</option>
+          </optgroup>
+          <optgroup label="XPR Portable">
+            <option value="XPR 7000">XPR 7000</option>
+            <option value="DP ATEX">DP ATEX</option>
+            <option value="XPR 6000">XPR 6000</option>
+            <option value="XPR 3000">XPR 3000</option>
+            <option value="SL Series">SL Series</option>
+          </optgroup>
+          <optgroup label="Mobile">
+            <option value="XPR 5000">XPR 5000 (Mobile)</option>
+            <option value="XPR 4000">XPR 4000 (Mobile)</option>
+            <option value="XPR 2500">XPR 2500 (Mobile)</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="dd-group">
+        <span class="dd-label">Variant</span>
+        <select class="dd" id="dd-variant" disabled>
+          <option value="">No variants</option>
+        </select>
+      </div>
+      <div class="dd-group">
+        <span class="dd-label">Accessory Category</span>
+        <select class="dd" id="dd-cat" onchange="onCatDropChange()">
+          <option value="All">All Categories</option>
+        </select>
+      </div>
+      <div class="dd-group">
+        <span class="dd-label">Filter</span>
+        <select class="dd" id="dd-attr">
+          <option value="">No filter</option>
+          <option value="impres">IMPRES only</option>
+          <option value="hazloc">HazLoc only</option>
+          <option value="ip">IP Rated only</option>
+        </select>
+      </div>
+    </div>
+    <div class="selector-btns">
+      <button class="btn-reset" onclick="resetSelectors()">Reset</button>
+      <button class="btn-apply" onclick="applySelectors()">Apply</button>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div id="breadcrumb">
+    <span id="bc-radio">R7</span>
+    <span class="sep">&#8250;</span>
+    <span id="bc-cat">All Categories</span>
+    <span id="bc-filter-wrap" style="display:none"><span class="sep">&#8250;</span><span id="bc-filter"></span></span>
+    <span style="margin-left:auto"><input id="search-input" type="text" placeholder="Search part # or description..." oninput="renderTable()" style="padding:3px 10px;border-radius:20px;border:1px solid #ccc;font-size:11px;width:200px;outline:none;background:#fff;color:#1a1a1a;"></span>
+  </div>
+
+  <!-- MATRIX SUBTABS -->
+  <div id="matrix-subtabs">
+    <button class="mstab active" onclick="setMatrixTab('portable')">Portable Radios</button>
+    <button class="mstab mobile-tab" onclick="setMatrixTab('mobile')">Mobile Radios</button>
+  </div>
+
+  <!-- TABLE -->
+  <div id="table-wrap">
+    <table id="main-table">
+      <thead id="t-head"><tr></tr></thead>
+      <tbody id="t-body"></tbody>
+    </table>
+    <div id="empty-state">No accessories match your selection.</div>
+  </div>
+</div>
+
+<div id="overlay" onclick="closeDrawer()"></div>
+<div id="drawer">
+  <div id="drawer-hdr">
+    <h2>My List</h2>
+    <button id="drawer-close" onclick="closeDrawer()">&#10005;</button>
+  </div>
+  <div id="drawer-body">
+    <div id="drawer-empty">No items selected. Check boxes to add accessories.</div>
+    <div id="drawer-items"></div>
+  </div>
+  <div id="drawer-ftr">
+    <button id="btn-clear" onclick="clearList()">Clear All</button>
+    <button id="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+</div>
+
+<div id="lightbox" onclick="closeLB()">
+  <span id="lb-close" onclick="closeLB()">&#10005;</span>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script src="data/r7-data.js?v=3"></script>
+<script src="data/ion-data.js?v=1"></script>
+<script src="data/r7ex-data.js?v=1"></script>
+<script src="data/r5-data.js?v=1"></script>
+
+
+
+<script src="data/xpr-mobile-data.js?v=2"></script>
+<script src="data/xpr7000-data.js?v=2"></script>
+<script src="data/xpr6000-data.js?v=2"></script>
+<script src="data/xpr3000-data.js?v=2"></script>
+<script src="data/sl-data.js?v=1"></script>
+<script src="data/dp-atex-data.js?v=1"></script>
+<script>
+// —— RADIO MAP: display label -> data key ——
+const PCR_RADIO_MAP = {
+  'R7':'r7','Ion':'ion','R5':'r5','R7Ex':'r7ex',
+  'XPR 5000':'xpr-mobile','XPR 4000':'xpr-mobile','XPR 2500':'xpr-mobile',
+  'XPR 7000':'xpr7000','DP ATEX':'dp-atex','XPR 6000':'xpr6000','XPR 3000':'xpr3000','SL Series':'sl'
+};
+
+const PCR_VARIANT_MAP = {
+  'XPR 7000':  { keys: ['xpr7000','xpr7000e'],                       labels: ['XPR 7000','XPR 7000e'] },
+  'XPR 3000':  { keys: ['xpr3000','xpr3000e'],                       labels: ['XPR 3000','XPR 3000e'] },
+  'SL Series': { keys: ['sl7000','sl7000e','sl3500e','sl3500max'],    labels: ['SL 7000','SL 7000e','SL 3500e','SL 3500 Max'] },
+  'DP ATEX':   { keys: ['dp4400e','dp4600e','dp4800e'],               labels: ['DP 4400e','DP 4600e','DP 4800e'] },
+};
+const PORTABLE_RADIOS = ['R7','Ion','R5','R7Ex','XPR 7000','DP ATEX','XPR 6000','XPR 3000','SL Series'];
+const MOBILE_RADIOS   = ['XPR 5000','XPR 4000','XPR 2500'];
+const MOBILE_COL_KEYS = {
+  'XPR 5000':'xpr5000e',
+  'XPR 4000': 'xpr4000',
+  'XPR 2500': 'xpr2500'
+};
+
+// —— CAT MAP: display name -> data key ——
+const PCR_CAT_MAP = {
+  'All':'all',
+  'RSMs':'RSM/Audio','Wireless':'Bluetooth/Ops Critical Wireless','Surveillance':'Surveillance/Earpieces',
+  'Headsets':'Headsets','Batteries':'Batteries','Chargers':'Chargers',
+  'Carry':'Carry','Antennas':'Antennas','Cables':'Cables','Software':'Software'
+};
+
+// —— MOBILE CAT MAP ——
+const MOBILE_CAT_MAP = {
+  'All':               'all',
+  'Microphones':       'microphones',
+  'Mic Accessories':   'mic_accessories',
+  'External PTT':      'ext_ptt',
+  'Wireless Kits':     'wireless_kits',
+  'Wireless Chargers': 'wireless_chargers',
+  'OpCrit Wireless':   'opcrit_wireless',
+  'OpCrit Parts':      'opcrit_parts',
+  'Control Station':   'control_station',
+  'Installation':      'installation',
+  'Speakers':          'speakers',
+  'Cables':            'cables',
+  'Antennas':          'antennas',
+  'Ant Accessories':   'ant_accessories'
+};
+
+function isMobileRadio(r) { return MOBILE_RADIOS.includes(r); }
+
+// —— COL LABELS ——
+const PCR_COL_LABELS = {
+  impres:'IMPRES', ip:'IP Rating', hazloc:'HazLoc', windport:'Windport',
+  wwet:'Work-When-Wet', intel:'Intelligent Audio', ains:'AINS',
+  progbtn:'Prog Btn', volsteps:'Vol Steps', jack:'Jack',
+  bt:'Bluetooth', fulldx:'Full Duplex', ion_fw:'Ion FW',
+  nrr:'NRR', nc:'Noise Cancel', wires:'Wires',
+  hstype:'Headset Type', epstyle:'Earpiece Style',
+  mic:'Mic', ptt:'PTT',
+  chem:'Chemistry', mah:'Capacity (mAh)', temp:'Temp Range',
+  dims:'Dimensions', weight:'Weight',
+  pockets:'Pockets', voltage:'Voltage', material:'Material',
+  belt_sz:'Belt Size', swivel:'Swivel', display:'Display', drings:'D-Rings',
+  style:'Style', band:'Band', freq_mhz:'Freq (MHz)',
+  ant_type:'Antenna Type', len_cm:'Length (cm)',
+  talktime:'Talk Time', chrgtime:'Charge Time',
+  eptype:'Earpiece Type', opscrit:'Ops Critical',
+  pairing:'Pairing', range:'Range'
+};
+
+// —— FEATURE COLS PER CATEGORY ——
+const PCR_CAT_FEAT = {
+  rsm:         ['impres','ip','hazloc','windport','wwet','intel','ains','progbtn','jack'],
+  wireless:    ['ip','hazloc','bt','fulldx','mic','ptt','talktime','chrgtime','weight'],
+  surveillance:['impres','hazloc','intel','nrr','wires','hstype','epstyle','mic','ptt'],
+  headsets:    ['impres','ip','hazloc','intel','nrr','nc','hstype','epstyle','mic','ptt'],
+  batteries:   ['impres','chem','mah','ip','hazloc','temp'],
+  chargers:    ['impres','pockets','voltage','chem','belt_sz','swivel','display','drings'],
+  carry:       ['style','material','belt_sz','swivel'],
+  antennas:    ['band','freq_mhz','ant_type','len_cm','hazloc'],
+  cables:      [],
+  all:         ['impres','ip','hazloc','windport']
+};
+const PCR_DEFAULT_FEAT = ['impres','ip','hazloc','windport'];
+
+// —— STATE ——
+let currentView      = 'radio';
+let currentRadio     = 'R7';
+let currentVariant   = null;
+let currentCat       = 'All';
+let currentAttrFilter= '';
+let currentMatrixTab = 'portable';
+let myList = {};
+const IMG_CACHE = {};
+
+// —— DROPDOWN BUILDERS ——
+function buildDropdowns() {
+  // Radio dropdown: sync selection
+  const ddR = document.getElementById('dd-radio');
+  ddR.value = currentRadio;
+
+  // Variant dropdown
+  const ddV = document.getElementById('dd-variant');
+  const vm = PCR_VARIANT_MAP[currentRadio];
+  if (vm) {
+    ddV.disabled = false;
+    ddV.innerHTML = vm.keys.map((k,i) =>
+      `<option value="${k}"${k===currentVariant?' selected':''}>${vm.labels[i]}</option>`
+    ).join('');
   } else {
-    const ck       = PCR_CAT_MAP[currentCat] || 'all';
+    ddV.disabled = true;
+    ddV.innerHTML = '<option value="">No variants</option>';
+  }
+
+  // Category dropdown
+  const ddC = document.getElementById('dd-cat');
+  const mobile = isMobileRadio(currentRadio);
+  const catMap = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
+  ddC.innerHTML = Object.entries(catMap).map(([label, key]) =>
+    `<option value="${label}"${label===currentCat?' selected':''}>${label}</option>`
+  ).join('');
+
+  // Attr filter dropdown (value already set via state)
+  document.getElementById('dd-attr').value = currentAttrFilter;
+
+  // Breadcrumb
+  updateBreadcrumb();
+}
+
+function onRadioDropChange() {
+  const r = document.getElementById('dd-radio').value;
+  // Update variant dropdown immediately when radio changes
+  const vm = PCR_VARIANT_MAP[r];
+  const ddV = document.getElementById('dd-variant');
+  if (vm) {
+    ddV.disabled = false;
+    ddV.innerHTML = vm.keys.map((k,i) =>
+      `<option value="${k}">${vm.labels[i]}</option>`
+    ).join('');
+  } else {
+    ddV.disabled = true;
+    ddV.innerHTML = '<option value="">No variants</option>';
+  }
+    // Update cat dropdown
+  const mobile = MOBILE_RADIOS.includes(r);
+  const catMap = mobile ? MOBILE_CAT_MAP : PCR_CAT_MAP;
+  const ddC = document.getElementById('dd-cat');
+  ddC.innerHTML = Object.entries(catMap).map(([label]) =>
+    `<option value="${label}">${label}</option>`
+  ).join('');
+  ddC.value = 'All';
+}
+
+function onCatDropChange() {
+  currentCat = document.getElementById('dd-cat').value;
+  renderRadioView();
+}
+
+function applySelectors() {
+  const r = document.getElementById('dd-radio').value;
+  const vm = PCR_VARIANT_MAP[r];
+  const newVariant = vm ? document.getElementById('dd-variant').value : null;
+
+  currentRadio = r;
+  currentVariant = newVariant;
+  currentCat = document.getElementById('dd-cat').value;
+  currentAttrFilter = document.getElementById('dd-attr').value;
+
+  if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
+  document.getElementById('matrix-subtabs').style.display = 'none';
+  updateBreadcrumb();
+  fadeRender();
+  pushState();
+}
+
+function resetSelectors() {
+  currentRadio = 'R7';
+  currentVariant = null;
+  currentCat = 'All';
+  currentAttrFilter = '';
+  buildDropdowns();
+  if (currentView !== 'radio') { currentView = 'radio'; syncViewBtns(); }
+  fadeRender();
+  pushState();
+}
+
+function updateBreadcrumb() {
+  document.getElementById('bc-radio').textContent = currentVariant
+    ? currentRadio + ' › ' + (PCR_VARIANT_MAP[currentRadio]
+        ? PCR_VARIANT_MAP[currentRadio].labels[PCR_VARIANT_MAP[currentRadio].keys.indexOf(currentVariant)]
+        : currentVariant)
+    : currentRadio;
+  document.getElementById('bc-cat').textContent = currentCat;
+  const fw = document.getElementById('bc-filter-wrap');
+  if (currentAttrFilter) {
+    fw.style.display = '';
+    const labels = {impres:'IMPRES only', hazloc:'HazLoc only', ip:'IP Rated only'};
+    document.getElementById('bc-filter').textContent = labels[currentAttrFilter] || currentAttrFilter;
+  } else {
+    fw.style.display = 'none';
+  }
+}
+
+// —— INIT ——
+function init() {
+  const p = new URLSearchParams(location.search);
+  if (p.get('view'))  currentView  = p.get('view');
+  if (p.get('radio') && PCR_RADIO_MAP[p.get('radio')]) currentRadio = p.get('radio');
+  if (p.get('cat'))   currentCat   = p.get('cat');
+  if (p.get('attr'))  currentAttrFilter = p.get('attr');
+  const _initVm = PCR_VARIANT_MAP[currentRadio];
+  currentVariant = _initVm ? _initVm.keys[0] : null;
+  if (p.get('mtab') && ['portable','mobile'].includes(p.get('mtab'))) currentMatrixTab = p.get('mtab');
+  buildDropdowns();
+  renderTable();
+}
+
+function pushState() {
+  const u = new URL(location.href);
+  u.searchParams.set('view',  currentView);
+  u.searchParams.set('radio', currentRadio);
+  u.searchParams.set('cat',   currentCat);
+  u.searchParams.set('mtab',  currentMatrixTab);
+  if (currentAttrFilter) u.searchParams.set('attr', currentAttrFilter);
+  else u.searchParams.delete('attr');
+  history.replaceState({}, '', u);
+}
+
+function selectCat(c) {
+  currentCat = c;
+  document.getElementById('dd-cat').value = c;
+  updateBreadcrumb();
+  fadeRender(); pushState();
+}
+
+function setView(v) {
+  currentView = v;
+  syncViewBtns();
+  document.getElementById('matrix-subtabs').style.display = v === 'matrix' ? 'flex' : 'none';
+  buildDropdowns();
+  fadeRender(); pushState();
+}
+
+function setMatrixTab(tab) {
+  currentMatrixTab = tab;
+  document.querySelectorAll('.mstab').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim().toLowerCase().startsWith(tab))
+  );
+  fadeRender(); pushState();
+}
+
+function syncViewBtns() {
+  document.querySelectorAll('.vtbtn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim() === (currentView === 'radio' ? 'By Radio' : 'Full Matrix'))
+  );
+}
+
+function fadeRender() {
+  const tw = document.getElementById('table-wrap');
+  tw.classList.add('fading');
+  setTimeout(() => { renderTable(); tw.classList.remove('fading'); }, 160);
+}
+
+// —— DATA HELPERS ——
+function getDataKey(radioLabel) { return PCR_RADIO_MAP[radioLabel] || radioLabel; }
+
+function getCatSections(radioKey, catKey) {
+  const _normKey = radioKey.toLowerCase().replace(/\s+/g, '');
+  const rd = window.RADIOS_DATA && window.RADIOS_DATA[_normKey];
+  if (!rd) return [];
+  const search = document.getElementById('search-input').value.toLowerCase().trim();
+  let sections = [];
+  if (catKey === 'all') {
+    rd.forEach(cat => {
+      sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
+    });
+  } else {
+    const cat = rd.find(c => c.name.toLowerCase() === catKey.toLowerCase());
+    if (!cat) return [];
+    sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
+  }
+  if (search) {
+    sections = sections.map(s => ({
+      ...s,
+      items: s.items.filter(i =>
+        (i.pn||'').toLowerCase().includes(search) ||
+        (i.desc||'').toLowerCase().includes(search)
+      )
+    })).filter(s => s.items.length);
+  }
+  if (currentAttrFilter) {
+    sections = sections.map(s => ({
+      ...s,
+      items: s.items.filter(i => {
+        const c = i.checks || i;
+        if (currentAttrFilter === 'impres') return c.impres === true || c.impres === 1;
+        if (currentAttrFilter === 'hazloc') return c.hazloc && c.hazloc !== '' && c.hazloc !== false;
+        if (currentAttrFilter === 'ip')     return c.ip && c.ip !== '' && c.ip !== false;
+        return true;
+      })
+    })).filter(s => s.items.length);
+  }
+  return sections;
+}
+
+// —— RENDER DISPATCHER ——
+function renderTable() {
+  if (currentView === 'radio') renderRadioView();
+  else renderMatrixView();
+}
+
+// —— RADIO VIEW ——
+function renderRadioView() {
+  const rk     = getDataKey(currentRadio);
+  const mobile = isMobileRadio(currentRadio);
+
+  if (mobile) {
+    const ck = MOBILE_CAT_MAP[currentCat] || 'all';
     const sections = getCatSections(rk, ck);
-    const featCols = PCR_CAT_FEAT[ck] || PCR_DEFAULT_FEAT;
-    const span     = 3 + featCols.length + 1;
+    const rd = window.RADIOS_DATA && window.RADIOS_DATA[rk];
+    const colDefs = (ck !== 'all' && rd && rd.categories[ck])
+      ? rd.categories[ck].cols
+      : [
+          { key:'desc',     label:'Description',    type:'text'  },
+          { key:'pn',       label:'Part #',         type:'pn'    },
+          { key:'xpr5000e', label:'XPR 5000',       type:'check' },
+          { key:'xpr4000',  label:'XPR 4000',       type:'check' },
+          { key:'xpr2500',  label:'XPR 2500',       type:'check' },
+        ];
+    const span = 2 + colDefs.length;
     document.getElementById('t-head').innerHTML = `<tr>
       <th class="ic"></th>
-      <th>Part No.</th>
-      <th style="min-width:200px">Description</th>
-      ${featCols.map(c => `<th class="fc">${PCR_COL_LABELS[c]||c}</th>`).join('')}
+      ${colDefs.map(c => {
+        if (c.key === 'desc') return `<th style="min-width:200px">Description</th>`;
+        if (c.key === 'pn')   return `<th>Part No.</th>`;
+        if (c.type === 'check') return `<th class="fc mobile-col">${c.label}</th>`;
+        return `<th class="fc">${c.label}</th>`;
+      }).join('')}
       <th class="cc">My List</th>
     </tr>`;
     let html = '';
     sections.forEach(sec => {
       html += `<tr class="sr"><td colspan="${span}">${sec.title||''}</td></tr>`;
       (sec.items||[]).forEach(item => {
-        const pn = item.pn||'';
+        const pn = item.part||'';
         const checked = myList[pn] ? 'checked' : '';
         html += `<tr data-pn="${pn}">
           <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
-          <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
-          <td>${item.desc||''}</td>
-          ${featCols.map(c => `<td class="fc">${renderFeat(c, item[c])}</td>`).join('')}
+          ${colDefs.map(c => {
+            if (c.key === 'pn')   return `<td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>`;
+            if (c.key === 'desc') return `<td>${item.desc||''}</td>`;
+            return `<td class="fc">${renderFeat(c.key, item[c.key])}</td>`;
+          }).join('')}
           <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc||'')})"></td>
         </tr>`;
       });
@@ -640,230 +1221,5 @@ function renderRadioView() {
     document.getElementById('t-body').innerHTML = html || '';
     document.getElementById('empty-state').style.display = sections.length ? 'none' : 'block';
     prefetchImages(sections);
-  }
-}
 
-// —— MATRIX VIEW ——
-function renderMatrixView() {
-  if (currentMatrixTab === 'portable') renderPortableMatrix();
-  else renderMobileMatrix();
-}
-
-function renderPortableMatrix() {
-  const ck = PCR_CAT_MAP[currentCat] || 'all';
-  const search = document.getElementById('search-input').value.toLowerCase().trim();
-  const allSecs = {};
-
-  PORTABLE_RADIOS.forEach(rn => {
-    const rk = PCR_RADIO_MAP[rn];
-    const rd = window.RADIOS_DATA && window.RADIOS_DATA[rk];
-    if (!rd) return;
-    const cats = ck === 'all'
-      ? Object.values(rd.categories)
-      : [rd.categories[ck]].filter(Boolean);
-    cats.forEach(cat => {
-      (cat.sections||[]).forEach(sec => {
-        (sec.items||[]).forEach(item => {
-          const pn = item.pn||'';
-          if (search && !(pn.toLowerCase().includes(search)||(item.desc||'').toLowerCase().includes(search))) return;
-          if (!allSecs[sec.title]) allSecs[sec.title] = {};
-          if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = { desc: item.desc||'', radios: {} };
-          allSecs[sec.title][pn].radios[rn] = true;
-        });
-      });
-    });
-  });
-
-  const span = 3 + PORTABLE_RADIOS.length + 1;
-  document.getElementById('t-head').innerHTML = `<tr>
-    <th class="ic"></th>
-    <th>Part No.</th>
-    <th style="min-width:180px">Description</th>
-    ${PORTABLE_RADIOS.map(r => `<th class="fc radio-col">${r}</th>`).join('')}
-    <th class="cc">My List</th>
-  </tr>`;
-
-  let html = '';
-  Object.keys(allSecs).forEach(title => {
-    html += `<tr class="sr"><td colspan="${span}">${title}</td></tr>`;
-    Object.keys(allSecs[title]).forEach(pn => {
-      const item = allSecs[title][pn];
-      const checked = myList[pn] ? 'checked' : '';
-      html += `<tr data-pn="${pn}">
-        <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
-        <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
-        <td>${item.desc}</td>
-        ${PORTABLE_RADIOS.map(r => `<td class="fc">${item.radios[r]
-          ? '<span class="chk">&#10003;</span>'
-          : '<span class="dash">&mdash;</span>'}</td>`).join('')}
-        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
-      </tr>`;
-    });
-  });
-  document.getElementById('t-body').innerHTML = html || '';
-  document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
-}
-
-function renderMobileMatrix() {
-  const search = document.getElementById('search-input').value.toLowerCase().trim();
-  const rd = window.RADIOS_DATA && window.RADIOS_DATA['xpr-mobile'];
-  const allSecs = {};
-
-  if (rd) {
-    Object.values(rd.categories).forEach(cat => {
-      (cat.sections||[]).forEach(sec => {
-        (sec.items||[]).forEach(item => {
-          const pn = item.pn||'';
-          if (search && !(pn.toLowerCase().includes(search)||(item.desc||'').toLowerCase().includes(search))) return;
-          if (!allSecs[sec.title]) allSecs[sec.title] = {};
-          if (!allSecs[sec.title][pn]) allSecs[sec.title][pn] = { desc: item.desc||'', compat: {} };
-          MOBILE_RADIOS.forEach(label => {
-            const colKey = MOBILE_COL_KEYS[label];
-            if (item[colKey]) allSecs[sec.title][pn].compat[label] = true;
-          });
-        });
-      });
-    });
-  }
-
-  const span = 3 + MOBILE_RADIOS.length + 1;
-  document.getElementById('t-head').innerHTML = `<tr>
-    <th class="ic"></th>
-    <th>Part No.</th>
-    <th style="min-width:180px">Description</th>
-    ${MOBILE_RADIOS.map(r => `<th class="fc mobile-col">${r}</th>`).join('')}
-    <th class="cc">My List</th>
-  </tr>`;
-
-  let html = '';
-  Object.keys(allSecs).forEach(title => {
-    html += `<tr class="sr"><td colspan="${span}">${title}</td></tr>`;
-    Object.keys(allSecs[title]).forEach(pn => {
-      const item = allSecs[title][pn];
-      const checked = myList[pn] ? 'checked' : '';
-      html += `<tr data-pn="${pn}">
-        <td><div class="img-box" onclick="imgClick('${pn}')">${imgCell(pn)}</div></td>
-        <td><div class="pn" onclick="copyPN('${pn}',this)"><span class="copied-tip">Copied!</span>${pn}</div></td>
-        <td>${item.desc}</td>
-        ${MOBILE_RADIOS.map(r => `<td class="fc">${item.compat[r]
-          ? '<span class="chk">&#10003;</span>'
-          : '<span class="dash">&mdash;</span>'}</td>`).join('')}
-        <td class="cc"><input type="checkbox" class="mylist-cb" ${checked} onchange="toggleML('${pn}',this,${JSON.stringify(item.desc)})"></td>
-      </tr>`;
-    });
-  });
-  document.getElementById('t-body').innerHTML = html || '';
-  document.getElementById('empty-state').style.display = Object.keys(allSecs).length ? 'none' : 'block';
-}
-
-// —— FEATURE RENDERER ——
-function renderFeat(col, val) {
-  if (val === undefined || val === null || val === 0 || val === false || val === '')
-    return '<span class="dash">&mdash;</span>';
-  if (val === true || val === 1) return '<span class="chk">&#10003;</span>';
-  if (col === 'ip') return `<span class="ip-badge">${val}</span>`;
-  return `<span>${val}</span>`;
-}
-
-// —— IMAGES ——
-function camSVG() {
-  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8.5" r="2.2" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 4V3.5A.5.5 0 016 3h4a.5.5 0 01.5.5V4" stroke="currentColor" stroke-width="1.2"/></svg>`;
-}
-function imgCell(pn) {
-  const url = IMG_CACHE[pn];
-  if (url) return `<img src="${url}" alt="${pn}">`;
-  return camSVG();
-}
-function prefetchImages(sections) {
-  sections.forEach(sec => (sec.items||[]).forEach(item => tryLoadImg(item.pn||'')));
-}
-function tryLoadImg(pn) {
-  if (!pn || IMG_CACHE[pn] !== undefined) return;
-  IMG_CACHE[pn] = null;
-  const urls = [
-    `https://www.motorolasolutions.com/content/dam/msi/images/products/accessories/${pn.toLowerCase()}_pdp_na_na.jpg`,
-    `https://www.motorolasolutions.com/content/dam/msi/images/products/accessories/${pn.toLowerCase()}.jpg`
-  ];
-  const img = new Image();
-  img.onload = () => {
-    IMG_CACHE[pn] = img.src;
-    document.querySelectorAll(`[data-pn="${pn}"] .img-box`).forEach(box => {
-      box.innerHTML = `<img src="${img.src}" alt="${pn}">`;
-    });
-  };
-  img.src = urls[0];
-}
-function imgClick(pn) {
-  const url = IMG_CACHE[pn];
-  if (url) {
-    document.getElementById('lb-img').src = url;
-    document.getElementById('lightbox').classList.add('open');
-  }
-}
-
-// —— COPY PN ——
-function copyPN(pn, el) {
-  navigator.clipboard.writeText(pn).catch(()=>{});
-  el.classList.add('flash');
-  setTimeout(() => el.classList.remove('flash'), 1400);
-}
-
-// —— LIGHTBOX ——
-function closeLB() { document.getElementById('lightbox').classList.remove('open'); }
-
-// —— MY LIST ——
-function toggleML(pn, cb, desc) {
-  if (cb.checked) myList[pn] = { pn, desc, note:'' };
-  else delete myList[pn];
-  document.getElementById('report-badge').textContent = Object.keys(myList).length;
-  if (document.getElementById('drawer').classList.contains('open')) renderDrawer();
-}
-function openDrawer() {
-  renderDrawer();
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('overlay').classList.add('open');
-}
-function closeDrawer() {
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-}
-function clearList() {
-  myList = {};
-  document.querySelectorAll('.mylist-cb').forEach(cb => cb.checked = false);
-  document.getElementById('report-badge').textContent = '0';
-  renderDrawer();
-}
-function renderDrawer() {
-  const items = Object.values(myList);
-  document.getElementById('drawer-empty').style.display = items.length ? 'none' : 'block';
-  document.getElementById('drawer-items').innerHTML = items.map(i => `
-    <div class="di">
-      <div class="di-pn">${i.pn}</div>
-      <div class="di-desc">${i.desc}</div>
-      <textarea placeholder="Notes..." oninput="myList['${i.pn}'].note=this.value">${i.note||''}</textarea>
-    </div>`).join('');
-}
-function exportPDF() {
-  const items = Object.values(myList);
-  if (!items.length) { alert('No items in your list yet.'); return; }
-  const win = window.open('','_blank');
-  win.document.write(`<html><head><title>My Accessory List</title>
-  <style>body{font-family:Arial,sans-serif;padding:32px;color:#1a1a1a;}
-  h1{font-size:16px;margin:8px 0 2px;}p{font-size:11px;color:#666;margin-bottom:20px;}
-  table{width:100%;border-collapse:collapse;font-size:12px;}
-  th{background:#f0ede4;padding:7px 8px;text-align:left;border-bottom:2px solid #ccc;font-size:11px;}
-  td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:top;}
-  .pn{font-weight:700;}</style></head><body>
-  <img src="https://dlun1971.github.io/pcr-catalog/assets/images/motorola-solutions-logo.png" style="height:26px;margin-bottom:10px;display:block;">
-  <h1>MOTOTRBO Professional — My Accessory List</h1>
-  <p>Generated ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</p>
-  <table><thead><tr><th>Part No.</th><th>Description</th><th>Notes</th></tr></thead><tbody>
-  ${items.map(i=>`<tr><td class="pn">${i.pn}</td><td>${i.desc}</td><td>${i.note||''}</td></tr>`).join('')}
-  </tbody></table></body></html>`);
-  win.document.close(); win.print();
-}
-
-document.addEventListener('DOMContentLoaded', init);
-</script>
-</body>
-</html>
+  
