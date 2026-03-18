@@ -237,6 +237,9 @@ td.cc{text-align:center;width:52px;}
 </div>
 
 <script src="data/r7-data.js?v=3"></script>
+<script src="data/ion-data.js?v=1"></script>
+<script src="data/r7ex-data.js?v=1"></script>
+<script src="data/r5-data.js?v=1"></script>
 <script src="data/xpr-mobile-data.js?v=2"></script>
 <script src="data/xpr7000-data.js?v=2"></script>
 <script src="data/xpr6000-data.js?v=2"></script>
@@ -505,7 +508,7 @@ function fadeRender() {
 function getDataKey(radioLabel) { return PCR_RADIO_MAP[radioLabel] || radioLabel; }
 
 function getCatSections(radioKey, catKey) {
-  const rd = window.RADIOS_DATA && window.RADIOS_DATA[radioKey];
+  const _normKey = radioKey.toLowerCase().replace(/\s+/g, ''); const rd = window.RADIOS_DATA && window.RADIOS_DATA[_normKey];
   if (!rd) return [];
   const search = document.getElementById('search-input').value.toLowerCase().trim();
   let sections = [];
