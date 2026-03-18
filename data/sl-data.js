@@ -127,7 +127,7 @@ const SL_CATEGORIES = [
   },
   {
     id: 3,
-    name: 'RSM / Audio',
+    name: 'RSM/Audio',
     items: [
       { desc: 'IMPRES Noise-Canceling RSM, Large (IP54)', part: 'PMMN4071', impres: true, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: true, full_duplex: false, vol_ctrl: false, prog_btn: null, audio_jack: true, ip: 'IP54', hazloc: 'UL', dims_mm: '60x78x28', variants: ['7000', '7000e', '3500e', '3500Max'] },
       { desc: 'IMPRES Windporting RSM, Small (IP55)', part: 'PMMN4073', impres: true, intel_audio: false, ai_noise: false, windporting: true, noise_cancel: false, full_duplex: false, vol_ctrl: false, prog_btn: null, audio_jack: true, ip: 'IP55', hazloc: 'UL', dims_mm: '55x60x27', variants: ['7000', '7000e', '3500e', '3500Max'] },
@@ -173,7 +173,7 @@ const SL_CATEGORIES = [
   },
   {
     id: 6,
-    name: 'Carry Solutions',
+    name: 'Carry',
     items: [
       // SL 7000/7000e
       { desc: 'Carry Holder/Holster for SL Series Radio with Swivel Belt Loop (SL 7000/7000e only)', part: 'PMLN5956', material: 'Plastic', belt_sz: null, swivel: 'Swivel', display: 'Display', d_rings: false, variants: ['7000', '7000e'] },
@@ -243,7 +243,7 @@ const SL_CATEGORIES = [
   },
   {
     id: 12,
-    name: 'Bluetooth / Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       // SL 7000/7000e
       { desc: 'Operations Critical Wireless RSM with Battery and Belt Clip', part: 'RLN6561', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['7000', '7000e'] },
