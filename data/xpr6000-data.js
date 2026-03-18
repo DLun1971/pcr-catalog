@@ -55,7 +55,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 3,
-    name: 'RSM / Audio',
+    name: 'RSM/Audio',
     items: [
       { desc: 'Windporting RSM, Small (IP54)', part: 'PMMN4024', impres: false, intel_audio: false, ai_noise: false, windporting: true, noise_cancel: false, full_duplex: false, vol_ctrl: false, prog_btn: null, audio_jack: true, ip: 'IP54', hazloc: 'UL', dims_mm: '55x60x27', variants: ['6350','6550','6580'] },
       { desc: 'IMPRES Windporting RSM, Small (IP54)', part: 'PMMN4025', impres: true, intel_audio: true, ai_noise: false, windporting: true, noise_cancel: false, full_duplex: false, vol_ctrl: false, prog_btn: null, audio_jack: true, ip: 'IP54', hazloc: 'UL', dims_mm: '55x60x27', variants: ['6350','6550','6580'] },
@@ -126,7 +126,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 6,
-    name: 'Carry Solutions',
+    name: 'Carry',
     items: [
       // ATEX carry cases
       { desc: 'Hard Leather Case with 2.5" Swivel Belt Loop, Non-Display ATEX Model', part: 'PMLN6096', material: 'Hard leather', belt_sz: '2.5', swivel: 'Swivel', display: 'Non-display', d_rings: true, variants: ['6350','6550','6580'] },
@@ -250,7 +250,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 12,
-    name: 'Bluetooth / Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       // External adapters required — XPR 6000 has no embedded BT
       { desc: 'Operations Critical Wireless Bluetooth Adapter (required for XPR 6000)', part: 'PMLN5712', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 30, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
