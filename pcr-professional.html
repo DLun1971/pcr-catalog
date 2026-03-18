@@ -390,9 +390,9 @@ function render() {
       }
     });
     if (!html) {
-      area.innerHTML = '<div class="no-items">No accessories match “' + search + '” across all radios.</div>';
+      area.innerHTML = '<div class="no-items">No accessories match "' + search + '" across all radios.</div>';
     } else {
-      area.innerHTML = '<div style="font-size:11px;color:#888;padding:8px 0 4px">' + totalMatches + ' result' + (totalMatches !== 1 ? 's' : '') + ' across all radios for “' + search + '”</div>' + html;
+      area.innerHTML = '<div style="font-size:11px;color:#888;padding:8px 0 4px">' + totalMatches + ' result' + (totalMatches !== 1 ? 's' : '') + ' across all radios for "' + search + '"</div>' + html;
     }
     return;
   }
