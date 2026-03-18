@@ -338,14 +338,7 @@ const r7Categories = [
     ]
   },
 
-  // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────
-  {
-    id: 10,
-    name: 'Programming Cables',
-    items: [
-      { desc: 'Mini GCAI Interface Cable (USB) \u2014 full rate data transfer to computer', part: 'PMKN4265' }
-    ]
-  },
+  // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────,
 
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
