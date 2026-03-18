@@ -379,7 +379,7 @@ function render() {
             else if (k === 'hazloc') radioHtml += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
             else radioHtml += '<td style="text-align:center">' + v + '</td>';
           });
-          radioHtml += '<td><input type="checkbox" class="row-cb"' + (inList ? ' checked' : '') + ' onchange="toggleItem('' + pn + '',this.checked)"></td>';
+          radioHtml += '<td><input type="checkbox" class="row-cb"' + (inList ? ' checked' : '') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
           radioHtml += '</tr>';
         });
         radioHtml += '</tbody></table>';
