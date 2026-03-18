@@ -396,9 +396,7 @@ function render() {
       const pn   = item.pn || item.part || '';
       const desc = item.desc || item.description || '';
       const inList = myList.includes(pn);
-      let tags = '';
-      if (item.ip)     tags += '<span class="spec-tag tag-ip">' + item.ip + '</span>';
-      if (item.hazloc) tags += '<span class="spec-tag tag-hz">' + item.hazloc + '</span>';
+      const tags = '';
 
       html += '<tr>';
       html += '<td><div class="img-box"></div></td>';
