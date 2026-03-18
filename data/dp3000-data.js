@@ -1230,6 +1230,9 @@ if (typeof window.RADIOS_DATA === 'undefined') window.RADIOS_DATA = {};
     id: 'programming_cables',
     label: 'Programming Cables',
     columns: ['Description','Part Number'],
-    items: [{"desc":"Portable Programming Cable (USB)","part":"PMKN4115"},{"desc":"Programming, Test, and Alignment Cable","part":"PMKN4117"}]
+    items: [
+      {desc:'Portable Programming Cable (USB)', part:'PMKN4115'},
+      {desc:'Programming, Test, and Alignment Cable', part:'PMKN4117'}
+    ]
   },
 window.RADIOS_DATA['dp3000'] = DP3000_CATEGORIES;
