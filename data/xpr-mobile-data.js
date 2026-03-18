@@ -37,7 +37,7 @@ const xpr5000Categories = [
   },
   {
     id: 2,
-    name: 'Microphone Accessories',
+    name: 'Mic Accessories',
     items: [
       { desc: 'Microphone Hang-Up Clip (requires installation)',        part: 'HLN9073' },
       { desc: 'Universal Microphone Hang-Up Clip (no installation)',    part: 'HLN9414' },
@@ -57,7 +57,7 @@ const xpr5000Categories = [
   },
   {
     id: 4,
-    name: 'Long Range Wireless',
+    name: 'Wireless Kits',
     items: [
       { desc: 'Long Range Wireless Kit with Charger (includes long range wireless RSM, mobile microphone Bluetooth gateway, vehicular charger)', part: 'RLN6551' },
       { desc: 'Long Range Wireless Kit (includes long range wireless RSM, mobile microphone Bluetooth gateway)',                                 part: 'RLN6552' },
@@ -82,7 +82,7 @@ const xpr5000Categories = [
   },
   {
     id: 5,
-    name: 'Bluetooth/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       { desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset',  part: 'RLN6490', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 429 },
       { desc: 'XBT Operations Critical Wireless Headband Style Headset',    part: 'RLN6491', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 422 },
@@ -101,7 +101,7 @@ const xpr5000Categories = [
   },
   {
     id: 6,
-    name: 'Control Station Accessories',
+    name: 'Control Station',
     items: [
       { desc: 'Power Supply 14V 10 Amp 117/240 VAC (1-25W)',            part: 'HPN4008' },
       { desc: 'Desktop Tray with Speaker',                              part: 'RSN4005' },
@@ -112,7 +112,7 @@ const xpr5000Categories = [
   },
   {
     id: 7,
-    name: 'Installation & Mounting',
+    name: 'Installation',
     items: [
       { desc: 'Low Profile Trunnion Kit, Under Dash (box)',             part: 'RLN6077' },
       { desc: 'Low Profile Trunnion Kit, Under Dash (box)',             part: 'RLN6466' },
@@ -132,7 +132,7 @@ const xpr5000Categories = [
   },
   {
     id: 8,
-    name: 'External Speakers',
+    name: 'Speakers',
     items: [
       { desc: '13W External Speaker', part: 'RSN4002' },
       { desc: '7.5W External Speaker', part: 'RSN4003' },
@@ -222,7 +222,7 @@ const xpr4000Categories = [
   },
   {
     id: 2,
-    name: 'Microphone Accessories',
+    name: 'Mic Accessories',
     items: [
       { desc: 'Microphone Hang-Up Clip (requires installation)',     part: 'HLN9073' },
       { desc: 'Universal Microphone Hang-Up Clip (no installation)', part: 'HLN9414' },
@@ -242,7 +242,7 @@ const xpr4000Categories = [
   },
   {
     id: 4,
-    name: 'Long Range Wireless',
+    name: 'Wireless Kits',
     items: [
       { desc: 'Long Range Wireless Kit with Charger',           part: 'RLN6551' },
       { desc: 'Long Range Wireless Kit',                        part: 'RLN6552' },
@@ -262,7 +262,7 @@ const xpr4000Categories = [
   },
   {
     id: 5,
-    name: 'Bluetooth/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       // XPR 4000 does not have embedded Bluetooth — note in desc where relevant
       { desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset',  part: 'RLN6490', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 429 },
@@ -274,7 +274,7 @@ const xpr4000Categories = [
   },
   {
     id: 6,
-    name: 'Control Station Accessories',
+    name: 'Control Station',
     items: [
       { desc: 'Power Supply 14V 10 Amp 117/240 VAC (1-25W)', part: 'HPN4008' },
       { desc: 'Desktop Tray with Speaker',                   part: 'RSN4005' },
@@ -285,7 +285,7 @@ const xpr4000Categories = [
   },
   {
     id: 7,
-    name: 'Installation & Mounting',
+    name: 'Installation',
     items: [
       { desc: 'Low Profile Trunnion Kit, Under Dash (box)',           part: 'RLN6077' },
       { desc: 'Low Profile Trunnion Kit, Under Dash (box)',           part: 'RLN6466' },
@@ -305,7 +305,7 @@ const xpr4000Categories = [
   },
   {
     id: 8,
-    name: 'External Speakers',
+    name: 'Speakers',
     items: [
       { desc: '13W External Speaker',    part: 'RSN4002' },
       { desc: '7.5W External Speaker',   part: 'RSN4003' },
@@ -378,7 +378,7 @@ const xpr2500Categories = [
   },
   {
     id: 2,
-    name: 'Microphone Accessories',
+    name: 'Mic Accessories',
     items: [
       { desc: 'Microphone Hang-Up Clip (requires installation)',     part: 'HLN9073' },
       { desc: 'Universal Microphone Hang-Up Clip (no installation)', part: 'HLN9414' }
@@ -396,19 +396,19 @@ const xpr2500Categories = [
   },
   {
     id: 4,
-    name: 'Long Range Wireless',
+    name: 'Wireless Kits',
     items: []
     // XPR 2500 does not support long range wireless per PDF
   },
   {
     id: 5,
-    name: 'Bluetooth/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: []
     // XPR 2500 does not have Bluetooth per PDF
   },
   {
     id: 6,
-    name: 'Control Station Accessories',
+    name: 'Control Station',
     items: [
       { desc: 'Power Supply 14V 10 Amp 117/240 VAC (1-25W)', part: 'HPN4008' },
       { desc: 'Desktop Tray with Speaker',                   part: 'RSN4005' },
@@ -419,7 +419,7 @@ const xpr2500Categories = [
   },
   {
     id: 7,
-    name: 'Installation & Mounting',
+    name: 'Installation',
     items: [
       { desc: 'In-Dash Mounting Kit \u2014 DIN',              part: 'FTN6083' },
       { desc: 'Power Cable to Battery, 10-Foot, 15 Amp, 14 AWG', part: 'HKN4137' },
@@ -433,7 +433,7 @@ const xpr2500Categories = [
   },
   {
     id: 8,
-    name: 'External Speakers',
+    name: 'Speakers',
     items: [
       { desc: '13W External Speaker',    part: 'RSN4002' },
       { desc: '7.5W External Speaker',   part: 'RSN4003' },
