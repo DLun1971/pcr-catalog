@@ -406,8 +406,12 @@ function render() {
       specKeys.forEach(c => {
         const k = c.key || c;
         const v = item[k];
-        if (v === true)       html += '<td class="chk-yes">\u2713</td>';
-        else if (v === false || v === null || v === undefined || v === '') html += '<td class="chk-no">\u2014</td>';
+        const k2 = c.key || c;
+        if (v === true)       html += '<td class="chk-yes" style="text-align:center">\u2713</td>';
+        else if (v === false || v === null || v === undefined || v === '') html += '<td class="chk-no" style="text-align:center">\u2014</td>';
+        else if (k2 === 'ip')     html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
+        else if (k2 === 'hazloc') html += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
+        else if (['capacity_mah','weight_g','nrr_db','pockets','talk_time_hr','charge_time_hr','freq_mhz','len_cm'].includes(k2)) html += '<td style="text-align:center">' + v + '</td>';
         else html += '<td>' + v + '</td>';
       });
 
