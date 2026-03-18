@@ -833,11 +833,7 @@ const DPATEX_CATEGORIES = [
     // PDF does not list Ops Critical Wireless accessories for DP4000 EX Series —
     // Bluetooth is not embedded; ATEX-rated wireless accessories are not listed.
   }
-
-];
-
-// Wire into global RADIOS_DATA
-if (typeof window.RADIOS_DATA === 'undefined') window.RADIOS_DATA = {};
+,
   {
     id: 'programming_cables',
     label: 'Programming Cables',
@@ -846,5 +842,9 @@ if (typeof window.RADIOS_DATA === 'undefined') window.RADIOS_DATA = {};
       {desc:'Portable Programming Cable (USB)', part:'PMKN4012'},
       {desc:'Programming, Test, and Alignment Cable', part:'PMKN4013'}
     ]
-  },
+  }
+];
+
+// Wire into global RADIOS_DATA
+if (typeof window.RADIOS_DATA === 'undefined') window.RADIOS_DATA = {};
 window.RADIOS_DATA['dpatex'] = DPATEX_CATEGORIES;
