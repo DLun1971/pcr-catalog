@@ -412,7 +412,7 @@ function render() {
         else if (k2 === 'ip')     html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
         else if (k2 === 'hazloc') html += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
         else if (['capacity_mah','weight_g','nrr_db','pockets','talk_time_hr','charge_time_hr','freq_mhz','len_cm'].includes(k2)) html += '<td style="text-align:center">' + v + '</td>';
-        else html += '<td>' + v + '</td>';
+        else html += '<td style="text-align:center">' + v + '</td>';
       });
 
       html += '<td><input type="checkbox" class="row-cb"' + (inList ? ' checked' : '') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
