@@ -216,7 +216,7 @@ const r7exCategories = [
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
     id: 11,
-    name: 'IMPRES Battery Mgmt Tools',
+    name: 'IMPRES Tools',
     items: [
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
@@ -229,7 +229,7 @@ const r7exCategories = [
   // ATEX radios: no OCW accessories listed in this PDF for DP4000 EX / R7Ex
   {
     id: 12,
-    name: 'Bluetooth/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: []
   }
 
