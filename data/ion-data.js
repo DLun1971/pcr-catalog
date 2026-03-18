@@ -268,6 +268,7 @@ const ionCategories = [
     name: 'Cables',
     items: [
       { desc: 'Mini GCAI Interface Cable (USB) \u2014 connects radio to computer via USB port', part: 'PMKN4265' },
+      { desc: 'RIB-Less Programming Cable (USB)', part: 'PMKN4230' },
       { desc: 'RIB-Less Programming Cable (USB)', part: 'PMKN4230' }
     ]
   },
