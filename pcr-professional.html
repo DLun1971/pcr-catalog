@@ -521,7 +521,7 @@ function getCatSections(radioKey, catKey) {
       sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
     });
   } else {
-    const cat = rd.find(c => c.name === catKey);
+    const cat = rd.find(c => c.name.toLowerCase() === catKey.toLowerCase());
     if (!cat) return [];
     sections.push({ title: cat.name, items: cat.items, cols: cat.cols || [] });
   }
