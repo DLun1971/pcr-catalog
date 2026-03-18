@@ -225,11 +225,6 @@ const SL_CATEGORIES = [
       { desc: 'Screen Protector, Clear, Single Pack (SL 7000/7000e only)', part: 'AY000267A01', variants: ['7000', '7000e'] }
     ]
   },
-  {
-    id: 10,
-    name: 'Programming Cables',
-    items: [
-      { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R', variants: ['7000', '7000e', '3500e', '3500Max'] },
       { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: '30012055001', variants: ['7000', '7000e', '3500e', '3500Max'] }
     ]
   },
