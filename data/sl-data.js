@@ -213,7 +213,9 @@ const SL_CATEGORIES = [
     id: 8,
     name: 'Cables',
     items: [
-      { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R', variants: ['7000', '7000e', '3500e', '3500Max'] },
+      { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R', variants: ['7000', '7000e', '3500e', '3500Max'] }
+    ]
+  },
   {
     id: 9,
     name: 'Screen Protectors',
