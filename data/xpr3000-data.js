@@ -296,16 +296,7 @@ const XPR3000_CATEGORIES = [
     ]
   },
 
-  // ── CATEGORY 10: PROGRAMMING CABLES ──────────────────────────────────────
-  {
-    id: 10,
-    name: 'Programming Cables',
-    cols: ['Description','Part Number'],
-    items: [
-      { desc: 'Portable Programming Cable (USB) for XPR 3000 Series', part: 'PMKN4115' },
-      { desc: 'Programming, Test, and Alignment Cable for XPR 3000 Series', part: 'PMKN4117' }
-    ]
-  },
+  // ── CATEGORY 10: PROGRAMMING CABLES ──────────────────────────────────────,
 
   // ── CATEGORY 11: IMPRES BATTERY MGMT TOOLS ───────────────────────────────
   {
