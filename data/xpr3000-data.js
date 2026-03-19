@@ -241,14 +241,7 @@ const XPR3000_CATEGORIES = [
 window.RADIOS_DATA = window.RADIOS_DATA || {};
 window.RADIOS_DATA['xpr3000'] = XPR3000_CATEGORIES;
 window.RADIOS_DATA['dp3000'] = XPR3000_CATEGORIES;
-`;
 
-  const encoded = btoa(unescape(encodeURIComponent(content)));
-  const res = await fetch('https://api.github.com/repos/' + repo + '/contents/' + path, {
-    method: 'PUT',
-    headers: { 'Authorization': 'token ' + PAT, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message: 'Fix xpr3000-data.js — commit actual file content', content: encoded, sha: sha })
-  });
-  const result = await res.json();
-  console.log(result.commit ? 'OK: ' + result.commit.sha : JSON.stringify(result));
+
+
 })();PASTE_FULL_FILE_CONTENT_HERE
