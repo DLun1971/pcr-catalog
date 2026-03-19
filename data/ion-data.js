@@ -186,6 +186,25 @@ const ionCategories = [
 
   // ── CAT 4: SURVEILLANCE / EARPIECES ──────────────────────────────────────
   {
+    id: '3b',
+    name: 'RSM/Audio Replacements',
+    items: [
+      // RSM replacement kits
+      { desc: 'Replacement Coil Cord Kit for PMMN4128, PMMN4131, PMMN4140', part: 'PMKN4232', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Low Profile Swivel Clip for PMMN4128, PMMN4131, PMMN4140', part: 'PMLN8121', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Dust Cover, 10-pack, for PMMN4128, PMMN4140', part: 'PMLN8122', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Dust Cover, 10-pack, for PMMN4131', part: 'PMLN8253', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      // Surveillance replacement kits
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip', part: 'PMLN8092', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Eartip, Small (5 per pack)', part: 'PMLN8068', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Eartip, Medium (5 per pack)', part: 'PMLN8069', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Eartip, Large (5 per pack)', part: 'PMLN8070', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Sleeve, Small (25 per pack)', part: 'PMLN8363', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Sleeve, Medium (25 per pack)', part: 'PMLN8364', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Rubber Sleeve, Large (25 per pack)', part: 'PMLN8365', material: null, belt_sz: null, swivel: null, display: null, d_rings: null }
+    ]
+  },
+  {
     id: 4,
     name: 'Surveillance/Earpieces',
     items: [
