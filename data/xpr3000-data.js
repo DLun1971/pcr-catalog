@@ -79,6 +79,14 @@ const XPR3000_CATEGORIES = [
     { desc: "Windporting Remote Speaker Microphone (IP67)", part: "PMMN4108", impres: false, intel_audio: false, ai_noise: false, noise_type: "Windporting", full_duplex: false, vol_ctrl: "High/Low", prog_btn: null, audio_jack: false, ip: "IP67", hazloc: null, dims_mm: "60 x 78 x 28", radios: ["xpr3000","dp3000e"] },
     { desc: "RM250 Wired Remote Speaker Microphone, Large (IP67)", part: "PMMN4125", impres: false, intel_audio: false, ai_noise: false, noise_type: "Windporting", full_duplex: false, vol_ctrl: null, prog_btn: null, audio_jack: false, ip: "IP67", hazloc: null, dims_mm: "58 x 84 x 24", radios: ["xpr3000","dp3000e"] }
   ] },
+  { id: "3b", name: "RSM/Audio Replacements", cols: ["Description","Part Number"], items: [
+    { desc: "Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip", part: "RLN6242", radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Standard Clear Rubber Eartip, Pack of 50", part: "RLN6282", radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs", part: "5080384F72", radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Standard Clear Rubber Eartip, Pack of 10", part: "67009254001", radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5724/5726)", part: "HKLN4608", radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5957)", part: "PMLN6175", radios: ["xpr3000","dp3000e"] }
+  ] },
   { id: 4, name: "Surveillance/Earpieces", cols: ["Description","Part Number","IMPRES","Intelligent Audio","AI Noise Suppression","Ear Type","Mic Type","Full Duplex","HazLoc"], items: [
     { desc: "IMPRES 2-Wire Surveillance Kit with Translucent Tube, Black", part: "PMLN6129", impres: true, intel_audio: true, ai_noise: false, ear_type: "Clear rubber eartip", mic_type: null, full_duplex: false, hazloc: "UL", radios: ["xpr3000"] },
     { desc: "IMPRES 2-Wire Surveillance Kit with Translucent Tube, Beige", part: "PMLN6130", impres: true, intel_audio: true, ai_noise: false, ear_type: "Clear rubber eartip", mic_type: null, full_duplex: false, hazloc: "UL", radios: ["xpr3000"] },
