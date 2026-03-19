@@ -1,9 +1,4 @@
-,
-    { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] }// xpr3000-data.js - XPR 3000 Series + DP3000e accessory data
+// xpr3000-data.js - XPR 3000 Series + DP3000e accessory data
 // PDF-verified: MOTOTRBO Professional Tier Accessory Catalog
 // Covers: XPR 3000, XPR 3000e (NA), DP3000e (EMEA variant of XPR 3000e)
 // Each item tagged with radios:[] array
