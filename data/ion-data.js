@@ -309,7 +309,12 @@ const ionCategories = [
       { desc: 'UHF Short Stubby Antenna',                       part: 'AN000351A01', band: 'UHF',     freq_mhz: '440-490', len_cm: 6,    ant_type: 'Short stubby' },
       { desc: 'UHF Stubby Wideband Antenna',                    part: 'AN000348A01', band: 'UHF',     freq_mhz: '400-527', len_cm: 9,    ant_type: 'Stubby' },
       // 800/900 MHz (Ion-specific)
-      { desc: 'Ion 800/900 Whip Antenna',                       part: 'AN000415A01', band: '800/900', freq_mhz: '806-941', len_cm: 14,   ant_type: 'Whip' }
+      { desc: 'Ion 800/900 Whip Antenna',                       part: 'AN000415A01', band: '800/900', freq_mhz: '806-941', len_cm: 14,   ant_type: 'Whip' },
+      { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
+      { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
+      { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
+      { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
+      { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] }
     ]
   },
 
