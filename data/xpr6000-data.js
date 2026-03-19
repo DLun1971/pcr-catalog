@@ -112,6 +112,26 @@ const XPR6000_CATEGORIES = [
     ]
   },
   {
+    id: '3b',
+    name: 'RSM/Audio Replacements',
+    items: [
+      // RSM accessories with standard 3.5mm jack
+      { desc: 'Replacement Coil Cord Kit for PMMN4024 and PMMN4040', part: 'RLN6074', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Coil Cord Kit for PMMN4025, PMMN4046, and PMMN4050', part: 'RLN6075', variants: ['6350','6550','6580'] },
+      { desc: 'Translucent Tube (RX only) for PMMN4094, PMMN4110, PMMN4102, PMMN4113', part: 'PMLN7188', variants: ['6350','6550','6580'] },
+      { desc: 'One-Wire Flexible Ear Receiver, Black (for NNTN8383 only)', part: 'BDN6719', variants: ['6350','6550','6580'] },
+      { desc: 'One-Wire Earpiece, Black (for NNTN8383 only)', part: 'BDN6726', variants: ['6350','6550','6580'] },
+      // Surveillance accessory replacement kits
+      { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs', part: '5080384F72', variants: ['6350','6550','6580'] },
+      { desc: 'Low Noise Kit with 1 Clear Rubber Eartip', part: 'RLN5886', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 10', part: '67009254001', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5724/5726)', part: 'HKLN4608', variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5957)', part: 'PMLN6175', variants: ['6350','6550','6580'] }
+    ]
+  },
+  {
     id: 4,
     name: 'Surveillance/Earpieces',
     items: [
