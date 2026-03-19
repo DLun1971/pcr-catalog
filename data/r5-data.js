@@ -323,7 +323,7 @@ const R5_CATEGORIES = [
     name: 'Screen Protectors',
     cols: ['Description','Part Number'],
     items: [
-      { desc: 'Dust Cover', part: '0104058J40' }
+      { desc: 'Dust Cover', part: '0104058J40' },
       { desc: 'NFC Kit', part: 'PMLN8671' },
       { desc: 'RFID Tag Kit (EU)', part: 'PMLN8672' },
       { desc: 'RFID Tag Kit (US)', part: 'PMLN8673' },
