@@ -193,6 +193,20 @@ const R5_CATEGORIES = [
 
   // ── CATEGORY 4: SURVEILLANCE / EARPIECES ──────────────────────────────────
   {
+    id: '3b',
+    name: 'RSM/Audio Replacements',
+    items: [
+      // RSM replacement kits (for RM560/RM530)
+      { desc: 'Low Profile Swivel Clip for RM560/RM530', part: 'PMLN8121', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Dust Cover, 10-pack', part: 'PMLN8122', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      // Surveillance accessory replacement kits
+      { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs', part: '5080384F72', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip', part: 'HKLN4608', material: null, belt_sz: null, swivel: null, display: null, d_rings: null }
+    ]
+  },
+  {
     id: 4,
     name: 'Surveillance/Earpieces',
     cols: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppression','Ear Type','Mic Type','Full Duplex','HazLoc'],
