@@ -94,7 +94,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 .tag-hz{background:#EAF3DE;color:#3B6D11}
 #page-wrap{display:flex;align-items:stretch}
 #main-col{flex:1;min-width:0}
-#radio-sidebar{width:220px;flex-shrink:0;background:#fff;border-left:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;padding:24px 16px;position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden}
+#radio-sidebar{width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;padding:24px 16px;position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden}
 #sidebar-img{width:180px;height:180px;object-fit:contain;display:block}
 #sidebar-img.hidden{display:none}
 #sidebar-placeholder{width:180px;height:180px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
@@ -151,6 +151,12 @@ table.acc-table tr:hover td{background:#f9f9f9}
 
 <!-- CONTENT AREA -->
 <div id="page-wrap">
+<div id="radio-sidebar">
+  <img id="sidebar-img" class="hidden" src="" alt="">
+  <div id="sidebar-placeholder">No image</div>
+  <div id="sidebar-name"></div>
+  <div id="sidebar-type"></div>
+</div>
 <div id="main-col">
 <div id="content-area">
   <div id="cat-bar"></div>
@@ -160,12 +166,6 @@ table.acc-table tr:hover td{background:#f9f9f9}
   </div>
   <div id="table-area"></div>
 </div>
-</div>
-<div id="radio-sidebar">
-  <img id="sidebar-img" class="hidden" src="" alt="">
-  <div id="sidebar-placeholder">No image</div>
-  <div id="sidebar-name"></div>
-  <div id="sidebar-type"></div>
 </div>
 </div>
 
