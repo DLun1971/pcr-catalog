@@ -217,7 +217,21 @@ const XPR3000_CATEGORIES = [
     { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle (BZL Plug)", part: "RLN6504", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null, radios: ["xpr3000"] },
     { desc: "Operations Critical Wireless 1-Wire Surveillance Kit with Translucent Tube", part: "PMLN7052", ear_type: "Clear rubber eartip", mic_type: "In-line", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
     { desc: "Operations Critical Wireless Earbud with 11.5 inch Cable", part: "NNTN8294", ear_type: "Earbud", mic_type: "In-line", ptt: false, talk_time_hr: 10, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Operations Critical Wireless Earbud with 45 inch Cable", part: "NNTN8295", ear_type: "Earbud", mic_type: "In-line", ptt: false, talk_time_hr: 10, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] }
+    { desc: "Operations Critical Wireless Earbud with 45 inch Cable", part: "NNTN8295", ear_type: "Earbud", mic_type: "In-line", ptt: false, talk_time_hr: 10, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    // OC Wireless replacement parts
+    { desc: "Replacement Wireless Earpiece 12 inch Cable (for NNTN8125)", part: "NTN2572", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000"] },
+    { desc: "Wireless Earpiece Maintenance Kit (10 silicone tubes, 10 mic seal strips, 2 foam windscreens)", part: "NTN8821", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Ear Strap for Comfort Earpiece, Pack of 10", part: "NTN8988", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Ear Tips Kit for Wireless Earbuds (20 sm/20 med/20 lg/10 clips)", part: "NNTN8361", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Swivel Clip for OC Wireless Pods", part: "PMLN6246", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, US Plug", part: "PMPN4027", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, AU/NZ Plug", part: "PMPN4007", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, EU/UK Plug", part: "PMPN4006", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, PRC Plug", part: "PMPN4008", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, KOR Plug", part: "PMPN4015", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, ARG Plug", part: "PMPN4016", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, BZL Plug", part: "PMPN4023", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug", part: "PMPN4028", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] }
   ] }
 ];
 
