@@ -76,6 +76,7 @@ const R5_CATEGORIES = [
       { desc: 'IMPRES Multi-Unit Charger, CN Plug', part: 'PMPN4296', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '117 x 445 x 170', pockets: 6 },
       { desc: 'IMPRES Multi-Unit Charger, TW Plug', part: 'PMPN4462', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '117 x 445 x 170', pockets: 6 },
       { desc: 'IMPRES Multi-Unit Charger, BIS Plug', part: 'PMPN4610', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '117 x 445 x 170', pockets: 6 },
+      { desc: 'IMPRES Multi-Unit Charger (Base Only, No Plug)', part: 'PMPN4283', impres: true, chem: 'Li-Ion, NiMh', pwr_src: null, dims_mm: '117 x 445 x 170', pockets: 6 },
       // Vehicle
       { desc: 'IMPRES Vehicular Charger Kit', part: 'NNTN7616', impres: true, chem: 'Li-Ion, NiMh', pwr_src: 'Hardwired 12VDC', dims_mm: '133 x 88 x 88', pockets: 1 },
 
@@ -179,15 +180,6 @@ const R5_CATEGORIES = [
         audio_jack: false, ip: 'IP67', hazloc: null,
         dims_mm: '60 x 78 x 28'
       },
-      {
-        desc: 'WM500 Wireless Remote Speaker Microphone',
-        part: 'PMMN4127',
-        impres: false, intel_audio: false, ai_noise: false,
-        noise_type: 'Windporting',
-        full_duplex: false, vol_ctrl: null, prog_btn: null,
-        audio_jack: false, ip: 'IP67', hazloc: null,
-        dims_mm: '80 x 57.5 x 24.5'
-      }
     ]
   },
 
@@ -199,6 +191,8 @@ const R5_CATEGORIES = [
       // RSM replacement kits (for RM560/RM530)
       { desc: 'Low Profile Swivel Clip for RM560/RM530', part: 'PMLN8121', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Dust Cover, 10-pack', part: 'PMLN8122', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Receive-Only Earpiece with Translucent Tube, Loud Audio (for RM560/RM530)', part: 'PMLN8120', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip (for RM560/RM530)', part: 'PMLN8652', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       // Surveillance accessory replacement kits
       { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
@@ -330,6 +324,9 @@ const R5_CATEGORIES = [
     cols: ['Description','Part Number'],
     items: [
       { desc: 'Dust Cover', part: '0104058J40' }
+      { desc: 'NFC Kit', part: 'PMLN8671' },
+      { desc: 'RFID Tag Kit (EU)', part: 'PMLN8672' },
+      { desc: 'RFID Tag Kit (US)', part: 'PMLN8673' },
     ]
   },
 
