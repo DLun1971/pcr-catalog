@@ -1302,6 +1302,11 @@ const XPR7000_CATEGORIES = [
       }
     ]
   },
+      { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
+      { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
+      { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
+      { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
+      { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
 
   // ── CATEGORY 7: ANTENNAS ──────────────────────────────────────────────────
   {
