@@ -159,6 +159,21 @@ const SL_CATEGORIES = [
     ]
   },
   {
+    id: '4b',
+    name: 'Surveillance Replacements & Earpieces',
+    items: [
+      { desc: 'Small Custom Earpiece, Right Ear', part: 'RLN4760', variants: ['7000','7000e'] },
+      { desc: 'Medium Custom Earpiece, Right Ear', part: 'RLN4761', variants: ['7000','7000e'] },
+      { desc: 'Large Custom Earpiece, Right Ear', part: 'RLN4762', variants: ['7000','7000e'] },
+      { desc: 'Small Custom Earpiece, Left Ear', part: 'RLN4763', variants: ['7000','7000e'] },
+      { desc: 'Medium Custom Earpiece, Left Ear', part: 'RLN4764', variants: ['7000','7000e'] },
+      { desc: 'Large Custom Earpiece, Left Ear', part: 'RLN4765', variants: ['7000','7000e'] },
+      { desc: 'Clear EP7-Small Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6511', variants: ['7000','7000e'] },
+      { desc: 'Clear EP7-Medium Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6512', variants: ['7000','7000e'] },
+      { desc: 'Clear EP7-Large Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6513', variants: ['7000','7000e'] }
+    ]
+  },
+  {
     id: 5,
     name: 'Headsets',
     items: [
