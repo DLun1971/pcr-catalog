@@ -311,7 +311,8 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 12,
-    name: ,
+    name: 'BT/Ops Critical Wireless',
+    items: [
       // OC Wireless replacement parts
       { desc: 'Replacement Wireless Earpiece 12 inch Cable (for NNTN8125)', part: 'NTN2572', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       { desc: 'Wireless Earpiece Maintenance Kit (10 silicone tubes, 10 mic seal strips, 2 foam windscreens)', part: 'NTN8821', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
