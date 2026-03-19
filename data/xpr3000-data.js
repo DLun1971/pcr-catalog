@@ -40,7 +40,36 @@ const XPR3000_CATEGORIES = [
     { desc: "IMPRES 2 Multi-Unit Fast Charger, CHN Plug", part: "PMPN4296", impres: true, chem: "Li-Ion, NiMH", pwr_src: "100-240 VAC", dims_mm: "153 x 445 x 292", pockets: 6, radios: ["xpr3000","dp3000e"] },
     { desc: "IMPRES 2 Multi-Unit Fast Charger, TW Plug", part: "PMPN4462", impres: true, chem: "Li-Ion, NiMH", pwr_src: "100-240 VAC", dims_mm: "153 x 445 x 292", pockets: 6, radios: ["xpr3000","dp3000e"] },
     { desc: "IMPRES Single-Unit Rapid Rate Vehicular Charger, Heavy-Duty Permanent Mount", part: "NNTN7616", impres: true, chem: "Li-Ion, NiMH", pwr_src: "12 VDC hardwire", dims_mm: "200 x 83 x 97", pockets: 1, radios: ["xpr3000","dp3000e"] },
-    { desc: "Travel Charger, Rapid Rate with Voltage Regulated Adapter", part: "NNTN8525", impres: false, chem: "Li-Ion, NiMH", pwr_src: "12 VDC cigarette lighter", dims_mm: "58 x 64 x 67", pockets: 1, radios: ["xpr3000","dp3000e"] }
+    { desc: "Travel Charger, Rapid Rate with Voltage Regulated Adapter", part: "NNTN8525", impres: false, chem: "Li-Ion, NiMH", pwr_src: "12 VDC cigarette lighter", dims_mm: "58 x 64 x 67", pockets: 1, radios: ["xpr3000","dp3000e"] },
+
+      // ── SUC Replacement Power Supplies ───────────────────────────────────
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, US Plug", part: "25009297001", impres: false, chem: null, pwr_src: "120 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, EU Plug", part: "PS000037A01", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, UK Plug", part: "PS000037A02", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, AUS/NZ Plug", part: "PS000037A03", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, ARG Plug", part: "PS000037A04", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, CHN Plug", part: "PS000037A05", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, KOR Plug", part: "PS000037A06", impres: false, chem: null, pwr_src: "240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, BRZ Plug", part: "EPNN9356A", impres: false, chem: null, pwr_src: "100-240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, JAP Plug", part: "PMLN5229A", impres: false, chem: null, pwr_src: "100-240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Replacement Power Supply for IMPRES Single-Unit Charger, India Plug", part: "EPNN9295A", impres: false, chem: null, pwr_src: "100-240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+
+      // ── MUC Replacement Power Supply + Cords ─────────────────────────────
+      { desc: "Replacement Power Supply for IMPRES 2 Multi-Unit Charger, 100-240 VAC (no cord)", part: "PS000242A01", impres: false, chem: null, pwr_src: "100-240 VAC", dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, US/CAN Plug", part: "3087791G01", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, EURO Plug", part: "3087791G04", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, UK Plug", part: "3087791G07", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, AUS/NZ Plug", part: "3087791G10", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, ARG Plug", part: "3087791G13", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, KOR Plug", part: "3087791G16", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, JAP Plug", part: "3087791G20", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, BZL Plug", part: "3087791G22", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, CHN Plug", part: "CB000199A01", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Power Cord for IMPRES 2 Multi-Unit Charger, TW Plug", part: "CB000805A01", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+
+      // ── MUC Accessories ──────────────────────────────────────────────────
+      { desc: "Interchangeable Charging Pocket for IMPRES 2 Multi-Unit Charger", part: "AS000129A01", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] },
+      { desc: "Wall Mount Bracket for IMPRES 2 Multi-Unit Charger", part: "BR000272A01", impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, radios: ["xpr3000","dp3000e"] }
   ] },
   { id: 3, name: "RSM/Audio", cols: ["Description","Part Number","IMPRES","Intelligent Audio","AI Noise Suppression","Windporting / Noise Type","Full Duplex","Vol Ctrl","Prog Button","Audio Jack","IP Rating","HazLoc","Dimensions (mm)"], items: [
     { desc: "IMPRES Noise-Canceling Remote Speaker Microphone, Large (IP54)", part: "PMMN4071", impres: true, intel_audio: false, ai_noise: false, noise_type: "Noise-canceling", full_duplex: false, vol_ctrl: null, prog_btn: null, audio_jack: true, ip: "IP54", hazloc: "UL", dims_mm: "60 x 78 x 28", radios: ["xpr3000","dp3000e"] },
