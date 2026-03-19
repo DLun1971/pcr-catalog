@@ -77,7 +77,36 @@ const R5_CATEGORIES = [
       { desc: 'IMPRES Multi-Unit Charger, TW Plug', part: 'PMPN4462', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '117 x 445 x 170', pockets: 6 },
       { desc: 'IMPRES Multi-Unit Charger, BIS Plug', part: 'PMPN4610', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '117 x 445 x 170', pockets: 6 },
       // Vehicle
-      { desc: 'IMPRES Vehicular Charger Kit', part: 'NNTN7616', impres: true, chem: 'Li-Ion, NiMh', pwr_src: 'Hardwired 12VDC', dims_mm: '133 x 88 x 88', pockets: 1 }
+      { desc: 'IMPRES Vehicular Charger Kit', part: 'NNTN7616', impres: true, chem: 'Li-Ion, NiMh', pwr_src: 'Hardwired 12VDC', dims_mm: '133 x 88 x 88', pockets: 1 },
+
+      // ── SUC Replacement Power Supplies ───────────────────────────────────
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, US/CAN/TW/JP Plug', part: 'PS000577A01', impres: false, chem: null, pwr_src: '120 VAC', dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, US/NA Plug', part: 'PS000576A21', impres: false, chem: null, pwr_src: '120 VAC', dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, EU Plug', part: 'PS000576A02', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, UK/HK Plug', part: 'PS000576A03', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, AUS/NZ Plug', part: 'PS000576A04', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, ARG Plug', part: 'PS000576A05', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, CHN Plug', part: 'PS000576A06', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, KOR Plug', part: 'PS000576A07', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, BRZ Plug', part: 'PS000576A08', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null },
+      { desc: 'Replacement Power Supply AC/DC Fixed Blade, India Plug', part: 'PS000576A09', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null },
+
+      // ── MUC Replacement Power Supply + Cords ─────────────────────────────
+      { desc: 'Replacement Power Supply for IMPRES 2 Multi-Unit Charger, 100-240 VAC (no cord)', part: 'PS000242A01', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, US/CAN Plug', part: '3087791G01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, EURO Plug', part: '3087791G04', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, UK Plug', part: '3087791G07', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, AUS/NZ Plug', part: '3087791G10', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, ARG Plug', part: '3087791G13', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, KOR Plug', part: '3087791G16', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, JAP Plug', part: '3087791G20', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, BZL Plug', part: '3087791G22', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, CHN Plug', part: 'CB000199A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, TW Plug', part: 'CB000805A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+
+      // ── MUC Accessories ──────────────────────────────────────────────────
+      { desc: 'Interchangeable Charging Pocket for IMPRES 2 Multi-Unit Charger', part: 'AS000129A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
+      { desc: 'Wall Mount Bracket for IMPRES 2 Multi-Unit Charger', part: 'BR000272A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null }
     ]
   },
 
