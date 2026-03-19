@@ -1,11 +1,4 @@
-(async () => {
-  const PAT = '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';
-  const repo = 'dlun1971/pcr-catalog';
-  const path = 'data/xpr3000-data.js';
-  const sha = '1b26937eafef984afe1539603851c02cffab7df4';
 
-  const content = `// xpr3000-data.js \u2014 XPR 3000 Series + DP3000e accessory data
-// PDF-verified: MOTOTRBO Professional Tier Accessory Catalog
 // Covers: XPR 3000, XPR 3000e (NA), DP3000e (EMEA variant of XPR 3000e)
 // Each item tagged with radios:[] array
 
