@@ -162,13 +162,7 @@ const XPR3000_CATEGORIES = [
     { desc: "Replacement Strap for HLN6602 and RLN4570", part: "1505596Z02", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Radio Pack Radio Utility Case", part: "RLN4815", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Radio Pack Extension Belt for Waists Larger than 40 Inches", part: "4280384F89", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Universal Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch", part: "HLN6602", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "1.75 Inch Wide Leather Belt", part: "4200865599", material: "Leather", belt_sz: "1.75", swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch", part: "RLN4570", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Replacement Strap for HLN6602 and RLN4570", part: "1505596Z02", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Radio Pack Radio Utility Case", part: "RLN4815", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Radio Pack Extension Belt for Waists Larger than 40 Inches", part: "4280384F89", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] }
-  ] },
+                          ] },
   { id: 7, name: "Antennas", cols: ["Description","Part Number","Band","Frequency (MHz)","Length (cm)","Type"], items: [
     { desc: "UHF/GPS Combination Wideband Slim Whip Antenna (400-527 MHz)", part: "PMAE4079", band: "UHF", freq_mhz: "403-527", len_cm: 15, ant_type: "Whip", radios: ["xpr3000","dp3000e"] },
     { desc: "VHF/GPS Combination Helical Antenna (136-155 MHz)", part: "PMAD4117", band: "VHF", freq_mhz: "136-155", len_cm: 15, ant_type: "Helical", radios: ["xpr3000","dp3000e"] },
@@ -185,7 +179,12 @@ const XPR3000_CATEGORIES = [
     { desc: "VHF Stubby Antenna (350-380 MHz)", part: "PMAD4136", band: "VHF", freq_mhz: "350-380", len_cm: null, ant_type: "Stubby", radios: ["xpr3000","dp3000e"] },
     { desc: "VHF Stubby Antenna (360-400 MHz)", part: "PMAD4133", band: "VHF", freq_mhz: "360-400", len_cm: null, ant_type: "Stubby", radios: ["xpr3000","dp3000e"] },
     { desc: "VHF Whip Antenna (300-360 MHz)", part: "PMAD4138", band: "VHF", freq_mhz: "300-360", len_cm: null, ant_type: "Whip", radios: ["xpr3000","dp3000e"] },
-    { desc: "VHF Whip Antenna (350-400 MHz)", part: "PMAD4139", band: "VHF", freq_mhz: "350-400", len_cm: null, ant_type: "Whip", radios: ["xpr3000","dp3000e"] }
+    { desc: "VHF Whip Antenna (350-400 MHz)", part: "PMAD4139", band: "VHF", freq_mhz: "350-400", len_cm: null, ant_type: "Whip", radios: ["xpr3000","dp3000e"] },
+    { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["xpr3000","dp3000e"] }
   ] },
   { id: 8, name: "Cables", cols: ["Description","Part Number"], items: [
     { desc: "Portable Programming Cable (USB) for XPR 3000 Series", part: "PMKN4115", radios: ["xpr3000","dp3000e"] },
