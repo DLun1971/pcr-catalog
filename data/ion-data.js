@@ -279,7 +279,8 @@ const ionCategories = [
         nrr_db: 24,
         mic_type: 'Boom',
         hazloc: ''
-      }
+      },
+      { desc: "PTT Nexus Adapter for 3M Peltor CH-3 Series Headsets", part: "PMLN8297", impres: false, headset_type: "Adapter", ear_style: "N/A", nrr_db: null, mic_type: "N/A", hazloc: "" }
     ]
   },
 
