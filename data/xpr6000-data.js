@@ -54,6 +54,38 @@ const XPR6000_CATEGORIES = [
     ]
   },
   {
+    id: '2b',
+    name: 'Charger Replacements',
+    items: [
+      // SUC Replacement Power Supply Units (PDF-verified, XPR 6000 section)
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, US Plug', part: '25009297001', impres: false, chem: null, pwr_src: '120 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, ARG Plug', part: 'PS000037A04', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, BRZ Plug', part: 'EPNN9356A', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, UK Plug', part: 'PS000037A02', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, EURO Plug', part: 'PS000037A01', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, AU/NZ Plug', part: 'PS000037A03', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, JAP Plug', part: 'PMLN5229A', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, KOR Plug', part: 'PS000037A06', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, CHN Plug', part: 'PS000037A05', impres: false, chem: null, pwr_src: '240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Power Supply for IMPRES Single-Unit Charger, INDIA Plug', part: 'EPNN9295A', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      // MUC Replacement Power Supply (without cord)
+      { desc: 'Replacement Power Supply for IMPRES 2 Multi-Unit Charger, 100-240 VAC (no cord)', part: 'PS000242A01', impres: false, chem: null, pwr_src: '100-240 VAC', dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      // MUC Power Cords (PDF-verified)
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, US/CAN Plug', part: '3087791G01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, UK Plug', part: '3087791G07', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, EURO Plug', part: '3087791G04', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, AU/NZ Plug', part: '3087791G10', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, BZL Plug', part: '3087791G22', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, JAP Plug', part: '3087791G20', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, KOR Plug', part: '3087791G16', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, CHN Plug', part: 'CB000199A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Power Cord for IMPRES 2 Multi-Unit Charger, TW Plug', part: 'CB000805A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      // MUC Accessories
+      { desc: 'IMPRES 2 Multi-Unit Charger Interchangeable Charging Pocket', part: 'AS000129A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] },
+      { desc: 'Wall Mount Bracket for IMPRES 2 Multi-Unit Charger', part: 'BR000272A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null, variants: ['6350','6550','6580'] }
+    ]
+  },
+  {
     id: 3,
     name: 'RSM/Audio',
     items: [
