@@ -243,7 +243,12 @@ const XPR6000_CATEGORIES = [
       { desc: 'Adjustable Nylon Carrying Strap', part: 'NTN5243', material: 'Nylon', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
       { desc: 'Leather Radio Strap', part: 'RLN6486', material: 'Leather', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
       { desc: 'Leather Radio Strap \u2013 XL', part: 'RLN6487', material: 'Leather', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
-      { desc: 'Anti-Sway Strap for Leather Radio Straps', part: 'RLN6488', material: 'Leather', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] }
+      { desc: 'Anti-Sway Strap for Leather Radio Straps', part: 'RLN6488', material: 'Leather', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
+      { desc: '1.75 Inch Wide Leather Belt', part: '4200865599', material: 'Leather', belt_sz: '1.75', swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
+      { desc: 'Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch', part: 'RLN4570', material: null, belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Strap for HLN6602 and RLN4570', part: '1505596Z02', material: null, belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
+      { desc: 'Radio Pack Radio Utility Case', part: 'RLN4815', material: null, belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] },
+      { desc: 'Radio Pack Extension Belt for Waists Larger than 40 Inches', part: '4280384F89', material: null, belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['6350','6550','6580'] }
     ]
   },
   {
