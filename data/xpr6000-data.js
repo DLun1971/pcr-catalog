@@ -326,7 +326,13 @@ const XPR6000_CATEGORIES = [
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, KOR Plug', part: 'PMPN4015', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, ARG Plug', part: 'PMPN4016', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, BZL Plug', part: 'PMPN4023', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
-      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug', part: 'PMPN4028', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] }'Bluetooth',
+      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug', part: 'PMPN4028', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+    ]
+  },
+  {
+    id: 13,
+    name: 'Bluetooth',
+    items: [
       // External adapters required — XPR 6000 has no embedded BT
       { desc: 'Operations Critical Wireless Bluetooth Adapter (required for XPR 6000)', part: 'PMLN5712', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 30, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       { desc: 'Enhanced Operations Critical Wireless Adapter with Touch Pairing (required for XPR 6000)', part: 'PMLN5993', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 35, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
