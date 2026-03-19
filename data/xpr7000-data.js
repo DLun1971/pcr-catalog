@@ -1425,9 +1425,7 @@ const XPR7000_CATEGORIES = [
         variants: ['7350','7550','7580','7580e']
       }
     ]
-        // antenna ID bands follow below
-      // PLACEHOLDER_REMOVE
-
+  },
 
   // ── CATEGORY 7: ANTENNAS ──────────────────────────────────────────────────
   {
