@@ -139,6 +139,12 @@ table.acc-table tr:hover td{background:#f9f9f9}
   <div id="sidebar-placeholder">No image</div>
   <div id="sidebar-name"></div>
   <div id="sidebar-type"></div>
+  <div id="sidebar-acc" style="display:none;margin-top:16px;text-align:center">
+    <img id="sidebar-acc-img" src="" style="width:160px;height:160px;object-fit:contain" alt="">
+    <div id="sidebar-acc-desc" style="font-size:11px;color:#444;margin-top:8px;padding:0 8px;line-height:1.4"></div>
+    <div id="sidebar-acc-pn" style="font-size:11px;font-family:monospace;color:#888;margin-top:4px"></div>
+    <div id="sidebar-acc-back" onclick="restoreRadioSidebar()" style="margin-top:10px;font-size:11px;color:#185FA5;cursor:pointer">&#8592; Back to radio</div>
+  </div>
 </div>
 <div id="main-col">
 <div id="content-area">
@@ -220,6 +226,10 @@ const COLS_BY_SECTION = {
   'Speakers':        [{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'}],
 };
 const MOBILE_CATS   = ['All','Microphones','Mic Accessories','External PTT','Wireless Kits','Control Station','Installation','Speakers','Cables','Antennas'];
+
+const PART_IMAGES = {
+  'PMNN4807': 'https://www.motorolasolutions.com/content/dam/msi/images/accessories/mototrbo-r7-accessories/PMNN4807A/pmnn4807a_slim_01_1290.png',
+};
 
 const RADIO_IMAGES = {
   r7:    'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/r7-series/mototrbo_r7_fkp_redner_front.png',
@@ -421,8 +431,9 @@ function buildSectionsHTML(sections) {
       var pn   = item.pn||item.part||'';
       var desc = item.desc||item.description||'';
       var inList = myList.includes(pn);
-      html += '<tr>';
-      html += '<td><div class="img-box"></div></td>';
+      html += '<tr style="cursor:pointer" onclick="showAccSidebar(\'' + pn + '\',\'' + desc.replace(/'/g,"\\'"） + '\')">';
+      var thumbUrl = PART_IMAGES[pn];
+html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:pointer">' : '<div class="img-box"></div>') + '</td>';
       html += '<td>' + desc + '</td>';
       html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
       specKeys.forEach(function(c) {
@@ -455,6 +466,32 @@ function copyPN(el, pn) {
   el.textContent = 'Copied!';
   el.style.color = '#1D9E75';
   setTimeout(function() { el.textContent = orig; el.style.color = ''; }, 1200);
+}
+
+function showAccSidebar(pn, desc) {
+  var url = PART_IMAGES[pn];
+  var radio = document.getElementById('sidebar-img');
+  var placeholder = document.getElementById('sidebar-placeholder');
+  var name = document.getElementById('sidebar-name');
+  var type = document.getElementById('sidebar-type');
+  var acc = document.getElementById('sidebar-acc');
+  var accImg = document.getElementById('sidebar-acc-img');
+  var accDesc = document.getElementById('sidebar-acc-desc');
+  var accPN = document.getElementById('sidebar-acc-pn');
+  radio.classList.add('hidden');
+  placeholder.style.display = 'none';
+  name.textContent = '';
+  type.textContent = '';
+  acc.style.display = 'block';
+  accImg.src = url || '';
+  accImg.style.display = url ? 'block' : 'none';
+  accDesc.textContent = desc || '';
+  accPN.textContent = pn || '';
+}
+
+function restoreRadioSidebar() {
+  document.getElementById('sidebar-acc').style.display = 'none';
+  updateSidebar();
 }
 
 function toggleMyListPanel() {
