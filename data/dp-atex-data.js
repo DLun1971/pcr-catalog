@@ -503,6 +503,29 @@ const DPATEX_CATEGORIES = [
         mic_type: 'Bone conduction',
         hazloc: 'ATEX',
         variants: ['4400e','4600e','4800e']
+      },
+      // ATEX PTT adapters
+      {
+        desc: 'ATEX Push-to-Talk Adapter (must be ordered with any Heavy Duty Headset)',
+        part: 'PMLN6368',
+        impres: false,
+        headset_type: 'PTT adapter',
+        ear_style: null,
+        nrr_db: null,
+        mic_type: null,
+        hazloc: 'ATEX',
+        variants: ['4400e','4600e','4800e']
+      },
+      {
+        desc: 'ATEX Small Push-to-Talk Adapter',
+        part: 'PMLN6803',
+        impres: false,
+        headset_type: 'PTT adapter',
+        ear_style: null,
+        nrr_db: null,
+        mic_type: null,
+        hazloc: 'ATEX',
+        variants: ['4400e','4600e','4800e']
       }
     ]
   },
