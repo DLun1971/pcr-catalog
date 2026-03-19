@@ -207,7 +207,14 @@ const r7Categories = [
         ip: 'IP68',
         hazloc: 'UL',
         dims_mm: '94 x 68 x 45'
-      }
+      },
+      { desc: "NS750 Color ID Label - Green (10-pack)", part: "PMLN8464", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Color ID Label - Blue (10-pack)", part: "PMLN8465", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Color ID Label - Red (10-pack)", part: "PMLN8466", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Color ID Label - Yellow (10-pack)", part: "PMLN8468", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Color ID Label - Silver (10-pack)", part: "PMLN8469", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Color ID Label - Orange (10-pack)", part: "PMLN8523", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
+      { desc: "NS750 Replacement Swivel Clip", part: "0104068J78", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" }
     ]
   },
 
