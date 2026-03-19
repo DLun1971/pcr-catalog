@@ -303,7 +303,12 @@ const R5_CATEGORIES = [
       { desc: 'VHF/GPS Combination Stubby Antenna (136-148 MHz)', part: 'PMAD4119', band: 'VHF', freq_mhz: '136-148', len_cm: 9, ant_type: 'Stubby' },
       { desc: 'VHF/GPS Combination Stubby Antenna (146-160 MHz)', part: 'PMAD4120', band: 'VHF', freq_mhz: '146-160', len_cm: 9, ant_type: 'Stubby' },
       { desc: 'VHF Stubby Antenna (160-174 MHz)', part: 'PMAD4121', band: 'VHF', freq_mhz: '160-174', len_cm: 9, ant_type: 'Stubby' },
-      { desc: 'UHF Stubby Wideband (400-527 MHz)', part: 'AN000348A01', band: 'UHF', freq_mhz: '400-527', len_cm: 9, ant_type: 'Stubby' }
+      { desc: 'UHF Stubby Wideband (400-527 MHz)', part: 'AN000348A01', band: 'UHF', freq_mhz: '400-527', len_cm: 9, ant_type: 'Stubby' },
+      { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r5"] },
+      { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r5"] },
+      { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r5"] },
+      { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r5"] },
+      { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r5"] }
     ]
   },
 
