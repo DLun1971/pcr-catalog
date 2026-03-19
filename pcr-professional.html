@@ -327,101 +327,100 @@ function updateBreadcrumb() {
 
 // ---- RENDER ----
 function render() {
+  var area   = document.getElementById('table-area');
+  var search = document.getElementById('search-input').value.toLowerCase().trim();
+  if (search.length > 0) { renderGlobalSearch(search, area); return; }
   updateBreadcrumb();
-  const area   = document.getElementById('table-area');
-  const search = document.getElementById('search-input').value.toLowerCase().trim();
-  const rd     = RADIOS_DATA[currentRadioKey.toLowerCase()];
-
-  if (!rd || !rd.length) {
-    area.innerHTML = '<div class="no-items">No data available for this radio.</div>';
-    return;
-  }
-
-  let sections = [];
+  var rd = RADIOS_DATA[currentRadioKey.toLowerCase()];
+  if (!rd || !rd.length) { area.innerHTML = '<div class="no-items">No data available for this radio.</div>'; return; }
+  var sections = [];
   if (currentCat === 'All') {
-    sections = rd.map(s => ({name: s.name||s.label, items: s.items || [], cols: (s.cols || s.columns || COLS_BY_SECTION[s.name||s.label] || []).map(c => typeof c === 'string' ? {key: LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'), label: c} : c)}));
+    sections = rd.map(function(s) { return {name: s.name||s.label, items: s.items||[], cols: (s.cols||s.columns||COLS_BY_SECTION[s.name||s.label]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;})}; });
   } else {
-    const found = rd.find(s => (s.name||s.label||'').toLowerCase() === currentCat.toLowerCase());
-    if (found) sections = [{name: found.name||found.label, items: found.items || [], cols: (found.cols || found.columns || COLS_BY_SECTION[found.name||found.label] || []).map(c => typeof c === 'string' ? {key: LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'), label: c} : c)}];
+    var found = rd.find(function(s){return (s.name||s.label||'').toLowerCase()===currentCat.toLowerCase();});
+    if (found) sections = [{name:found.name||found.label, items:found.items||[], cols:(found.cols||found.columns||COLS_BY_SECTION[found.name||found.label]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;})}];
   }
+  if (currentFilters.impres) sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.impres===true;})};});
+  if (currentFilters.hazloc) sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.hazloc&&i.hazloc!=='';})};});
+  if (currentFilters.ip)     sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.ip&&i.ip!=='';})};});
+  sections = sections.filter(function(s){return s.items.length>0;});
+  if (!sections.length) { area.innerHTML = '<div class="no-items">No accessories match the current filters.</div>'; return; }
+  area.innerHTML = buildSectionsHTML(sections);
+}
 
-  // Apply search
-  if (search) {
-    sections = sections.map(s => ({
-      ...s,
-      items: s.items.filter(i =>
-        (i.pn||i.part||'').toLowerCase().includes(search) ||
-        (i.desc||'').toLowerCase().includes(search)
-      )
-    }));
+function renderGlobalSearch(search, area) {
+  var allRadios = PORTABLE_RADIOS.concat(MOBILE_RADIOS);
+  var totalItems = 0;
+  var matchedRadios = 0;
+  var html = '';
+  allRadios.forEach(function(r) {
+    var rd = RADIOS_DATA[r.key.toLowerCase()];
+    if (!rd || !rd.length) return;
+    var radioHtml = '';
+    var radioItems = 0;
+    rd.forEach(function(s) {
+      var sname = s.name||s.label||'';
+      var cols = (s.cols||s.columns||COLS_BY_SECTION[sname]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;});
+      var items = (s.items||[]).filter(function(i){return (i.pn||i.part||'').toLowerCase().includes(search)||(i.desc||'').toLowerCase().includes(search);});
+      if (currentFilters.impres) items = items.filter(function(i){return i.impres===true;});
+      if (currentFilters.hazloc) items = items.filter(function(i){return i.hazloc&&i.hazloc!=='';});
+      if (currentFilters.ip)     items = items.filter(function(i){return i.ip&&i.ip!=='';});
+      if (!items.length) return;
+      radioItems += items.length;
+      radioHtml += buildSectionsHTML([{name:sname, items:items, cols:cols}]);
+    });
+    if (!radioItems) return;
+    totalItems += radioItems;
+    matchedRadios++;
+    html += '<div class="sec-head" style="background:#f0f4fa;padding:8px 10px;border-radius:4px;margin-top:16px;color:#0C2D5A;font-size:12px;font-weight:600;text-transform:none;letter-spacing:0">';
+    html += r.label + ' <span class="sec-count">— ' + radioItems + ' item' + (radioItems!==1?'s':'') + '</span></div>';
+    html += radioHtml;
+  });
+  var bc = document.getElementById('breadcrumb');
+  if (totalItems === 0) {
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> › No results';
+    area.innerHTML = '<div class="no-items">No accessories found matching "' + search + '".</div>';
+  } else {
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> › ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
+    area.innerHTML = html;
   }
+}
 
-  // Apply filters
-  if (currentFilters.impres) {
-    sections = sections.map(s => ({...s, items: s.items.filter(i => i.impres === true)}));
-  }
-  if (currentFilters.hazloc) {
-    sections = sections.map(s => ({...s, items: s.items.filter(i => i.hazloc && i.hazloc !== '')}));
-  }
-  if (currentFilters.ip) {
-    sections = sections.map(s => ({...s, items: s.items.filter(i => i.ip && i.ip !== '')}));
-  }
-
-  // Remove empty sections
-  sections = sections.filter(s => s.items.length > 0);
-
-  if (!sections.length) {
-    area.innerHTML = '<div class="no-items">No accessories match the current filters.</div>';
-    return;
-  }
-
-  let html = '';
-  sections.forEach(sec => {
-    html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">\u2014 ' + sec.items.length + ' item' + (sec.items.length !== 1 ? 's' : '') + '</span></div>';
+function buildSectionsHTML(sections) {
+  var html = '';
+  sections.forEach(function(sec) {
+    var specKeys = (sec.cols||[]).filter(function(c){return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());});
+    html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">— ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
     html += '<table class="acc-table"><thead><tr>';
     html += '<th style="width:42px"></th>';
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
-
-    // Determine which spec cols to show for this section
-    const specKeys = (sec.cols || []).filter(c => !['desc','pn','part','description'].includes((c.key||c).toLowerCase()));
-    specKeys.forEach(c => {
-      html += '<th>' + (c.label || c) + '</th>';
-    });
+    specKeys.forEach(function(c){html += '<th>' + (c.label||c) + '</th>';});
     html += '<th style="width:36px"></th>';
     html += '</tr></thead><tbody>';
-
-    sec.items.forEach(item => {
-      const pn   = item.pn || item.part || '';
-      const desc = item.desc || item.description || '';
-      const inList = myList.includes(pn);
-      const tags = '';
-
+    sec.items.forEach(function(item) {
+      var pn   = item.pn||item.part||'';
+      var desc = item.desc||item.description||'';
+      var inList = myList.includes(pn);
       html += '<tr>';
       html += '<td><div class="img-box"></div></td>';
-      html += '<td>' + desc + tags + '</td>';
+      html += '<td>' + desc + '</td>';
       html += '<td class="pn">' + pn + '</td>';
-
-      specKeys.forEach(c => {
-        const k = c.key || c;
-        const v = item[k];
-        const k2 = c.key || c;
-        if (v === true)       html += '<td class="chk-yes" style="text-align:center">\u2713</td>';
-        else if (v === false || v === null || v === undefined || v === '') html += '<td class="chk-no" style="text-align:center">\u2014</td>';
-        else if (k2 === 'ip')     html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
-        else if (k2 === 'hazloc') html += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
-        else if (['capacity_mah','weight_g','nrr_db','pockets','talk_time_hr','charge_time_hr','freq_mhz','len_cm'].includes(k2)) html += '<td style="text-align:center">' + v + '</td>';
+      specKeys.forEach(function(c) {
+        var k = c.key||c;
+        var v = item[k];
+        if (v===true) html += '<td class="chk-yes" style="text-align:center">✓</td>';
+        else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">—</td>';
+        else if (k==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
+        else if (k==='hazloc') html += '<td style="text-align:center"><span class="spec-tag tag-hz">' + v + '</span></td>';
         else html += '<td style="text-align:center">' + v + '</td>';
       });
-
-      html += '<td><input type="checkbox" class="row-cb"' + (inList ? ' checked' : '') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
+      html += '<td><input type="checkbox" class="row-cb"' + (inList?' checked':'') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
       html += '</tr>';
     });
-
     html += '</tbody></table>';
   });
-
-  area.innerHTML = html;
+  return html;
 }
 
 // ---- MY LIST ----
