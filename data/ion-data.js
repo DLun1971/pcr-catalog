@@ -370,6 +370,136 @@ const ionCategories = [
         talk_time_hr: 8,
         charge_time_hr: 3,
         weight_g: 23
+      },
+      {
+        desc: 'OC Wireless Earpiece - Standard Eartip',
+        part: 'NTN2572',
+        ear_type: 'In-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Eartip Kit (S/M/L)',
+        part: 'NTN8821',
+        ear_type: 'In-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Behind-the-Head Adapter',
+        part: 'NTN8988',
+        ear_type: 'Behind-the-head',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Charger Clip',
+        part: 'NNTN8361',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Pod Charger Cable',
+        part: 'PMLN6246',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Medium Eartip',
+        part: 'PMPN4027',
+        ear_type: 'In-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Small Eartip',
+        part: 'PMPN4007',
+        ear_type: 'In-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Large Eartip',
+        part: 'PMPN4006',
+        ear_type: 'In-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Swivel Adapter',
+        part: 'PMPN4008',
+        ear_type: 'Over-the-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Earhook (Standard)',
+        part: 'PMPN4015',
+        ear_type: 'Over-the-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Earhook (Large)',
+        part: 'PMPN4016',
+        ear_type: 'Over-the-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Earpiece - Earhook (Small)',
+        part: 'PMPN4023',
+        ear_type: 'Over-the-ear',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
+      },
+      {
+        desc: 'OC Wireless Pod Carrying Case',
+        part: 'PMPN4028',
+        ear_type: 'N/A',
+        mic_type: 'N/A',
+        ptt: false,
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null
       }
     ]
   }
