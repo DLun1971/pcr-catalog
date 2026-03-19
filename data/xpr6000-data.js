@@ -188,7 +188,11 @@ const XPR6000_CATEGORIES = [
       { desc: '3M Peltor MT Series Neckband Headset, Direct Radio Connect', part: 'RMN5138', impres: false, headset_type: 'Neckband', ear_style: 'Dual-ear', nrr_db: 24, mic_type: 'Boom', hazloc: 'UL', variants: ['6350','6550','6580'] },
       { desc: '3M Peltor MT Series Hard Hat Attached Headset, Direct Radio Connect', part: 'RMN5139', impres: false, headset_type: 'Hard hat attached', ear_style: 'Dual-ear', nrr_db: 21, mic_type: 'Boom', hazloc: 'UL', variants: ['6350','6550','6580'] },
       { desc: '3M Peltor TacticalPro Series Neckband Headset with Nexus Connector (limited availability)', part: 'RMN5135', impres: false, headset_type: 'Neckband', ear_style: 'Dual-ear', nrr_db: 25, mic_type: 'Boom', hazloc: null, variants: ['6350','6550','6580'] },
-      { desc: '3M Peltor PTT Nexus Adapter (requires headset)', part: 'PMLN6095', impres: false, headset_type: 'PTT adapter', ear_style: null, nrr_db: null, mic_type: null, hazloc: null, variants: ['6350','6550','6580'] }
+      { desc: '3M Peltor PTT Nexus Adapter (requires headset)', part: 'PMLN6095', impres: false, headset_type: 'PTT adapter', ear_style: null, nrr_db: null, mic_type: null, hazloc: null, variants: ['6350','6550','6580'] },
+      // 3M Peltor replacement parts
+      { desc: '3M Peltor Earmuff Hygiene Kit Black Earseals', part: 'RLN4923', impres: false, headset_type: 'Replacement part', ear_style: null, nrr_db: null, mic_type: null, hazloc: null, variants: ['6350','6550','6580'] },
+      { desc: '3M Peltor Boom Microphone Wind Screen', part: 'RLN6543', impres: false, headset_type: 'Replacement part', ear_style: null, nrr_db: null, mic_type: null, hazloc: null, variants: ['6350','6550','6580'] },
+      { desc: '3M Peltor Metal Boom with Microphone', part: 'RMN5131', impres: false, headset_type: 'Replacement part', ear_style: null, nrr_db: null, mic_type: 'Boom', hazloc: null, variants: ['6350','6550','6580'] }
     ]
   },
   {
@@ -313,6 +317,20 @@ const XPR6000_CATEGORIES = [
     id: 12,
     name: 'BT/Ops Critical Wireless',
     items: [
+      // Discreet kit replacement parts
+      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)', part: 'NNTN8457', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Brown for PMLN7696', part: 'GMLN5262', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Beige for PMLN7696', part: 'GMLN5261', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement 1.4 Volt Battery for PMLN7696 (pack of 6)', part: 'RNN4005', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      // XBT headset replacement parts
+      { desc: 'Replacement Universal 5V Power Supply for XBT Headsets', part: 'RLN6498', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Hygiene Kit for XBT Headsets', part: 'RLN6497', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Cooling Pads for XBT Headsets', part: 'RLN6496', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Boom Microphone for XBT Headsets', part: 'RLN6495', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Replacement Swivel Earpiece with Inline Microphone (pack of 3) for RLN6500', part: 'PRLN6550', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       // OC Wireless replacement parts
       { desc: 'Replacement Wireless Earpiece 12 inch Cable (for NNTN8125)', part: 'NTN2572', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
       { desc: 'Wireless Earpiece Maintenance Kit (10 silicone tubes, 10 mic seal strips, 2 foam windscreens)', part: 'NTN8821', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
