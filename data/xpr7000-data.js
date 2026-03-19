@@ -989,6 +989,130 @@ const XPR7000_CATEGORIES = [
         mic_type: 'Boom',
         hazloc: 'UL',
         variants: ['7350','7550','7580','7580e']
+      },
+      // Tactical headsets
+      {
+        desc: 'Tactical PTT Only Interface Module',
+        part: 'PMLN6827',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Tactical Temple Transducer with Noise-Canceling Boom Microphone (requires interface module PMLN6827)',
+        part: 'PMLN6833',
+        impres: false,
+        headset_type: 'Over-the-Head',
+        ear_style: 'Bone Conduction',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Tactical Remote Body PTT (for use with interface module PMLN6827)',
+        part: 'PMLN6767',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Tactical Remote Ring PTT (for use with interface module PMLN6827)',
+        part: 'PMLN6830',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      // Mag One headsets
+      {
+        desc: 'Mag One Lightweight Over-the-Head Headset',
+        part: 'PMLN5974',
+        impres: false,
+        headset_type: 'Over-the-Head',
+        ear_style: 'Single-Ear',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Mag One Ultra-Lite Behind-the-Head Headset',
+        part: 'PMLN5979',
+        impres: false,
+        headset_type: 'Behind-the-Head',
+        ear_style: 'Single-Ear',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      // 3M Peltor extras
+      {
+        desc: '3M Peltor TacticalPro Series Neckband Headset with Nexus Connector',
+        part: 'RMN5135',
+        impres: false,
+        headset_type: 'Neckband',
+        ear_style: 'Dual-Ear',
+        nrr_db: 25,
+        mic_type: 'Boom',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: '3M Peltor PTT Nexus Adapter (requires headset)',
+        part: 'PMLN6095',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: '3M Peltor Earmuff Hygiene Kit Black Earseals',
+        part: 'RLN4923',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: '3M Peltor Boom Microphone Wind Screen',
+        part: 'RLN6543',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: '',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: '3M Peltor Metal Boom with Microphone',
+        part: 'RMN5131',
+        impres: false,
+        headset_type: 'N/A',
+        ear_style: 'N/A',
+        nrr_db: null,
+        mic_type: 'Boom',
+        hazloc: '',
+        variants: ['7350','7550','7580','7580e']
       }
     ]
   },
@@ -1301,12 +1425,9 @@ const XPR7000_CATEGORIES = [
         variants: ['7350','7550','7580','7580e']
       }
     ]
-  },
-      { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
-      { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
-      { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
-      { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
-      { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ["7350","7550","7580","7580e"] },
+        // antenna ID bands follow below
+      // PLACEHOLDER_REMOVE
+
 
   // ── CATEGORY 7: ANTENNAS ──────────────────────────────────────────────────
   {
@@ -1514,7 +1635,12 @@ const XPR7000_CATEGORIES = [
         len_cm: 0.5,
         ant_type: 'Stubby',
         variants: ['7350','7550','7580','7580e']
-      }
+      // Antenna ID bands
+      { desc: 'Gray antenna ID bands (pack of 10pcs)', part: '32012144001', band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Yellow antenna ID bands (pack of 10pcs)', part: '32012144002', band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Green antenna ID bands (pack of 10pcs)', part: '32012144003', band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Blue antenna ID bands (pack of 10pcs)', part: '32012144004', band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Purple antenna ID bands (pack of 10pcs)', part: '32012144005', band: null, freq_mhz: null, len_cm: null, ant_type: null, variants: ['7350','7550','7580','7580e'] }
     ]
   },
 
@@ -1795,7 +1921,67 @@ const XPR7000_CATEGORIES = [
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, KOR Plug', part: 'PMPN4015', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, ARG Plug', part: 'PMPN4016', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, BZL Plug', part: 'PMPN4023', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
-      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug', part: 'PMPN4028', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] }
+      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug', part: 'PMPN4028', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e']
+      // Completely Discreet Kit
+      {
+        desc: 'Operations Critical Wireless Completely Discreet Earpiece Kit (includes RLN4920 phonak inductive neckloop and RLN4921 phonak phonito)',
+        part: 'PMLN7696',
+        ear_type: 'Completely discreet',
+        mic_type: '',
+        ptt: 'On Y-adapter (order separately)',
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null,
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Wireless Neckloop Y-Adapter and Retention Hook',
+        part: 'NNTN8385',
+        ear_type: '',
+        mic_type: '',
+        ptt: 'On Pod (order separately)',
+        talk_time_hr: null,
+        charge_time_hr: null,
+        weight_g: null,
+        variants: ['7350','7550','7580','7580e']
+      },
+      // OC Wireless discreet kit replacement parts
+      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)', part: 'NNTN8457', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Brown for PMLN7696', part: 'GMLN5262', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Beige for PMLN7696', part: 'GMLN5261', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement 1.4 Volt Battery for PMLN7696 (pack of 6)', part: 'RNN4005', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      // XBT headset replacement parts
+      { desc: 'Replacement Universal 5V Power Supply for XBT Headsets', part: 'RLN6498', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Hygiene Kit for XBT Headsets', part: 'RLN6497', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Cooling Pads for XBT Headsets', part: 'RLN6496', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Boom Microphone for XBT Headsets', part: 'RLN6495', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Swivel Earpiece with Inline Microphone (pack of 3) for RLN6500', part: 'PRLN6550', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      // OC Wireless RSM with charger variants
+      {
+        desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (US Plug)',
+        part: 'RLN6562',
+        ear_type: '',
+        mic_type: 'Omni directional, windporting equivalent',
+        ptt: 'On microphone',
+        talk_time_hr: 28,
+        charge_time_hr: 3,
+        weight_g: 158,
+        variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (AU/NZ Plug)',
+        part: 'PMLN7669',
+        ear_type: '',
+        mic_type: 'Omni directional, windporting equivalent',
+        ptt: 'On microphone',
+        talk_time_hr: 28,
+        charge_time_hr: 3,
+        weight_g: 158,
+        variants: ['7350','7550','7580','7580e']
+      }
     ]
   }
 
