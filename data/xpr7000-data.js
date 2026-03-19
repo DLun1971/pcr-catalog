@@ -658,6 +658,27 @@ const XPR7000_CATEGORIES = [
 
   // ── CATEGORY 4: SURVEILLANCE / EARPIECES ──────────────────────────────────
   {
+    id: 'rsm_replacements',
+    label: 'RSM/Audio Replacements',
+    columns: ['Description','Part Number'],
+    items: [
+      // RSM accessories with standard 3.5mm jack
+      { desc: 'Replacement Coil Cord Kit for PMMN4024 and PMMN4040', part: 'RLN6074', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Coil Cord Kit for PMMN4025, PMMN4046, and PMMN4050', part: 'RLN6075', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Translucent Tube (RX only) for PMMN4094, PMMN4110, PMMN4102, PMMN4113', part: 'PMLN7188', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'One-Wire Flexible Ear Receiver, Black (for NNTN8383 only)', part: 'BDN6719', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'One-Wire Earpiece, Black (for NNTN8383 only)', part: 'BDN6726', variants: ['7350','7550','7580','7580e'] },
+      // Surveillance accessory replacement kits
+      { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs', part: '5080384F72', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Low Noise Kit with 1 Clear Rubber Eartip', part: 'RLN5886', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 10', part: '67009254001', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5724/5726)', part: 'HKLN4608', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5957)', part: 'PMLN6175', variants: ['7350','7550','7580','7580e'] }
+    ]
+  },
+  {
     id: 'surveillance',
     label: 'Surveillance/Earpieces',
     columns: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppress','Ear Type','Mic Type','Full Duplex','HazLoc'],
