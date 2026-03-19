@@ -347,7 +347,11 @@ const ionCategories = [
   {
     id: 9,
     name: 'Screen Protectors',
-    items: []
+    items: [
+      { desc: "Screen Protector, Clear (single pack, Qty 1)", part: "AY000808A01" },
+      { desc: "Screen Protector, Clear (bulk pack, Qty 10)", part: "AY000808A02" },
+      { desc: "Screen Protector, Clear (bulk pack, Qty 50)", part: "AY000808A03" }
+    ]
   },
 
   // ── CAT 10: PROGRAMMING CABLES ────────────────────────────────────────────,
