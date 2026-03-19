@@ -233,6 +233,21 @@ const R5_CATEGORIES = [
 
   // ── CATEGORY 5: HEADSETS ──────────────────────────────────────────────────
   {
+    id: '4b',
+    name: 'Surveillance Replacements & Earpieces',
+    items: [
+      { desc: 'Small Custom Earpiece, Right Ear', part: 'RLN4760', variants: ['R5'] },
+      { desc: 'Medium Custom Earpiece, Right Ear', part: 'RLN4761', variants: ['R5'] },
+      { desc: 'Large Custom Earpiece, Right Ear', part: 'RLN4762', variants: ['R5'] },
+      { desc: 'Small Custom Earpiece, Left Ear', part: 'RLN4763', variants: ['R5'] },
+      { desc: 'Medium Custom Earpiece, Left Ear', part: 'RLN4764', variants: ['R5'] },
+      { desc: 'Large Custom Earpiece, Left Ear', part: 'RLN4765', variants: ['R5'] },
+      { desc: 'Clear EP7-Small Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6511', variants: ['R5'] },
+      { desc: 'Clear EP7-Medium Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6512', variants: ['R5'] },
+      { desc: 'Clear EP7-Large Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6513', variants: ['R5'] }
+    ]
+  },
+  {
     id: 5,
     name: 'Headsets',
     cols: ['Description','Part Number','IMPRES','Headset Type','Ear Style','NRR (dB)','Mic Type','HazLoc'],
