@@ -418,6 +418,51 @@ const r7Categories = [
         weight_g: 128
       },
       {
+        desc: '1.75 Inch Wide Leather Belt',
+        part: '4200865599',
+        material: 'Leather',
+        belt_sz: '1.75',
+        swivel: '',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch',
+        part: 'RLN4570',
+        material: '',
+        belt_sz: '',
+        swivel: '',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Replacement Strap for HLN6602 and RLN4570',
+        part: '1505596Z02',
+        material: '',
+        belt_sz: '',
+        swivel: '',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Radio Pack Radio Utility Case',
+        part: 'RLN4815',
+        material: '',
+        belt_sz: '',
+        swivel: '',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
+        desc: 'Radio Pack Extension Belt for Waists Larger than 40 Inches',
+        part: '4280384F89',
+        material: '',
+        belt_sz: '',
+        swivel: '',
+        display: 'Display/Non-display',
+        d_rings: false
+      },
+      {
         desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT',
         part: 'PMLN8123',
         ear_type: 'Over-the-ear (swivel)',
