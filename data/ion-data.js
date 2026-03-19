@@ -171,22 +171,6 @@ const ionCategories = [
         ip: 'IP68',
         hazloc: 'UL',
         dims_mm: '70 x 55 x 22'
-      },
-      {
-        desc: 'WM500 Wireless Remote Speaker Microphone (compatible with PMLN7560 earpiece)',
-        part: 'PMMN4127',
-        impres: false,
-        intel_audio: false,
-        ai_noise: false,
-        windporting: true,
-        noise_cancel: false,
-        full_duplex: true,
-        vol_ctrl: '',
-        prog_btn: '',
-        audio_jack: false,
-        ip: 'IP67',
-        hazloc: '',
-        dims_mm: '80 x 57.5 x 24.5'
       }
     ]
   },
@@ -323,11 +307,6 @@ const ionCategories = [
       { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
       { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
       { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
-      { desc: "Gray antenna ID bands (pack of 10pcs)", part: "32012144001", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
-      { desc: "Yellow antenna ID bands (pack of 10pcs)", part: "32012144002", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
-      { desc: "Green antenna ID bands (pack of 10pcs)", part: "32012144003", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
-      { desc: "Blue antenna ID bands (pack of 10pcs)", part: "32012144004", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] },
-      { desc: "Purple antenna ID bands (pack of 10pcs)", part: "32012144005", band: null, freq_mhz: null, len_cm: null, ant_type: null, radios: ["r7","ion"] }
     ]
   },
 
@@ -338,7 +317,6 @@ const ionCategories = [
     items: [
       { desc: 'Mini GCAI Interface Cable (USB) \u2014 connects radio to computer via USB port', part: 'PMKN4265' },
       { desc: 'RIB-Less Programming Cable (USB)', part: 'PMKN4230' },
-      { desc: 'RIB-Less Programming Cable (USB)', part: 'PMKN4230' }
     ]
   },
 
