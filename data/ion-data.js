@@ -381,6 +381,17 @@ const ionCategories = [
         charge_time_hr: 3,
         weight_g: 23
       },
+      { desc: "WP300 Wireless Bluetooth PTT POD", part: "PMLN8298", ear_type: "N/A", mic_type: "N/A", ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece", part: "PMLN8401", ear_type: "Clear rubber eartip", mic_type: "N/A", ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Surveillance Earpiece with Translucent Tube", part: "PMLN8190", ear_type: "Clear rubber eartip", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Swivel Earpiece with Eartip, Short Cord", part: "PMLN8125", ear_type: "Over the ear", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Swivel Earpiece with Eartip, Long Cord", part: "PMLN8077", ear_type: "Over the ear", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Vehicle Mount Option", part: "PMLN8332", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Swivel Clip", part: "PMLN6246", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Replacement Eartip, Small (5-pack)", part: "PMLN8068", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Replacement Eartip, Medium (5-pack)", part: "PMLN8069", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Replacement Eartip, Large (5-pack)", part: "PMLN8070", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: "WP300 Replacement Translucent Tube", part: "PMLN8092", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       {
         desc: 'OC Wireless Earpiece - Standard Eartip',
         part: 'NTN2572',
