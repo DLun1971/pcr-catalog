@@ -868,6 +868,24 @@ const XPR7000_CATEGORIES = [
 
   // ── CATEGORY 5: HEADSETS ──────────────────────────────────────────────────
   {
+    id: 'surv_replacements',
+    label: 'Surveillance Replacements & Earpieces',
+    columns: ['Description','Part Number'],
+    items: [
+      // Custom earpieces (for RLN6242 compatible kits)
+      { desc: 'Small Custom Earpiece, Right Ear', part: 'RLN4760', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Medium Custom Earpiece, Right Ear', part: 'RLN4761', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Large Custom Earpiece, Right Ear', part: 'RLN4762', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Small Custom Earpiece, Left Ear', part: 'RLN4763', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Medium Custom Earpiece, Left Ear', part: 'RLN4764', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Large Custom Earpiece, Left Ear', part: 'RLN4765', variants: ['7350','7550','7580','7580e'] },
+      // Hearing protection accessories
+      { desc: 'Clear EP7-Small Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6511', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Clear EP7-Medium Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6512', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Clear EP7-Large Hearing Protectors [Sonic Defenders] Ultra Earplugs, NR 28dB', part: 'RLN6513', variants: ['7350','7550','7580','7580e'] }
+    ]
+  },
+  {
     id: 'headsets',
     label: 'Headsets',
     columns: ['Description','Part Number','IMPRES','Headset Type','Ear Style','NRR (dB)','Mic Type','HazLoc'],
