@@ -228,7 +228,8 @@ const SL_CATEGORIES = [
     id: 8,
     name: 'Cables',
     items: [
-      { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R', variants: ['7000', '7000e', '3500e', '3500Max'] }
+      { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R', variants: ['7000', '7000e', '3500e', '3500Max'] },
+      { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: '30012055001', variants: ['7000', '7000e', '3500e', '3500Max'] }
     ]
   },
   {
