@@ -364,6 +364,20 @@ const DPATEX_CATEGORIES = [
 
   // ── CATEGORY 4: SURVEILLANCE / EARPIECES ──────────────────────────────────
   {
+    id: 'rsm_replacements',
+    label: 'RSM/Audio Replacements',
+    columns: ['Description','Part Number'],
+    items: [
+      // RSM accessories with threaded 3.5mm jack (ATEX)
+      { desc: 'Translucent Tube (RX only) for PMMN4094, PMMN4110, PMMN4102, PMMN4113', part: 'PMLN7188', variants: ['4400e','4600e','4800e'] },
+      // Surveillance accessory replacement kits
+      { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', variants: ['4400e','4600e','4800e'] },
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', variants: ['4400e','4600e','4800e'] },
+      { desc: 'Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs', part: '5080384F72', variants: ['4400e','4600e','4800e'] },
+      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5724/5726)', part: 'HKLN4608', variants: ['4400e','4600e','4800e'] }
+    ]
+  },
+  {
     id: 'surveillance',
     label: 'Surveillance/Earpieces',
     columns: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppress','Ear Type','Mic Type','Full Duplex','HazLoc'],
