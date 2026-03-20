@@ -327,7 +327,7 @@ const ionCategories = [
   // ── CAT 11: IMPRES BATTERY MGMT TOOLS ─────────────────────────────────────
   {
     id: 11,
-    name: 'IMPRES Tools',
+    name: 'Battery Fleet Management',
     items: [
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
       { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
