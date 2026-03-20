@@ -155,6 +155,10 @@ const SL_CATEGORIES = [
       { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip (SL 7000/7000e only)', part: 'RLN6242', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
       { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 10 (SL 7000/7000e only)', part: '67009254001', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
       { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (SL 7000/7000e only)', part: 'HKLN4608', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
+      
+      { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
+      { desc: 'Replacement Foam Plugs for RLN6242, Noise Reduction 24dB, Pack of 50 pairs', part: '5080384F72', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Foam eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
+      { desc: 'Adjustable D-Style Earpiece with In-Line Microphone and Push-to-Talk, Black', part: 'PMLN7159', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Adjustable D-style', mic_type: 'In-line', full_duplex: false, hazloc: null, variants: ['7000', '7000e'] },
       { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip for PMLN5957 (SL 7000/7000e only)', part: 'PMLN6175', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null, variants: ['7000', '7000e'] }
     ]
   },
