@@ -160,8 +160,8 @@ const XPR3000_CATEGORIES = [
     { desc: "Leather Radio Strap", part: "RLN6486", material: "Leather", belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Leather Radio Strap - XL", part: "RLN6487", material: "Leather", belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     
-    { desc: "Replacement 2.5 Inch Leather Swivel Belt Loop",
-    { desc: "Replacement 3 Inch Leather Swivel Belt Loop",
+    { desc: "Replacement 2.5 Inch Leather Swivel Belt Loop", part: "PMLN5610", material: "Hard leather", belt_sz: "2.5", swivel: "Swivel", display: "Display/non-display", d_rings: false, radios: ["xpr3000","dp3000e"] },
+    { desc: "Replacement 3 Inch Leather Swivel Belt Loop", part: "PMLN5611", material: "Hard leather", belt_sz: "3", swivel: "Swivel", display: "Display/non-display", d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Anti-Sway Strap for Leather Radio Straps", part: "RLN6488", material: "Leather", belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Universal Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch", part: "HLN6602", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
       { desc: "Break-Away Chest Pack with Radio Holder", part: "RLN4570", material: "Nylon", belt_sz: "", swivel: false, display: false, d_rings: false, radios: ["xpr3000","dp3000e"] },
