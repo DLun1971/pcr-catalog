@@ -97,7 +97,6 @@ const r7Categories = [
       { desc: 'Wall Mount Bracket for IMPRES 2 Multi-Unit Charger', part: 'BR000272A01', impres: false, chem: null, pwr_src: null, dims_mm: null, pockets: null },
 
       // ── IMPRES 2 Vehicle Charging Cradle ─────────────────────────────────
-      { desc: 'IMPRES 2 Charging Cradle with Mounting Kit', part: 'PMPN4607', impres: true, chem: 'Li-Ion', pwr_src: '12 VDC cigarette lighter', dims_mm: '75 x 45 x 133', pockets: 1 },
       { desc: 'IMPRES Single-Unit Charger, ARG Plug',    part: 'PMPN4573A', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC', dims_mm: '51 x 88 x 94', pockets: 1 },
       { desc: 'IMPRES Single-Unit Charger, BRZ Plug',    part: 'PMPN4575A', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '100-240 VAC', dims_mm: '51 x 88 x 94', pockets: 1 },
       { desc: 'IMPRES Single-Unit Charger, UK Plug',     part: 'PMPN4572A', impres: true, chem: 'Li-Ion, NiMh', pwr_src: '240 VAC', dims_mm: '51 x 88 x 94', pockets: 1 },
@@ -143,14 +142,6 @@ const r7Categories = [
         ip: 'IP68',
         hazloc: 'UL',
         dims_mm: '77 x 58 x 25'
-      },
-      {
-        desc: 'Replacement Cigarette Lighter Adapter for PMPN4607',
-        part: 'PS000514A01'
-      },
-      {
-        desc: 'Replacement Strap for PMPN4607',
-        part: 'HW003289A01'
       },
       {
         desc: 'RM760 IMPRES Windporting Remote Speaker Microphone, Large Basic, Work-When-Wet, IP68',
@@ -511,46 +502,6 @@ const r7Categories = [
       { desc: "WP300 Replacement Eartip, Large (5-pack)", part: "PMLN8070", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: "WP300 Replacement Translucent Tube", part: "PMLN8092", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       {
-        desc: 'Replacement Wireless Earpiece 12in Cable for NNTN8125',
-        part: 'NTN2572',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Wireless Earpiece Maintenance Kit (10 silicone ear tubes, 10 mic seal strips, 2 foam windscreens)',
-        part: 'NTN8821',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Ear Strap for Comfort Earpiece (pack of 10)',
-        part: 'NTN8988',
-        ear_type: 'Behind-the-head',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 small, 20 medium, 20 large, 10 clips)',
-        part: 'NNTN8361',
-        ear_type: 'N/A',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
         desc: 'Swivel Clip for OC Wireless and Enhanced OC Wireless Pods',
         part: 'PMLN6246',
         ear_type: 'N/A',
@@ -560,134 +511,6 @@ const r7Categories = [
         charge_time_hr: null,
         weight_g: null
       },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (US Plug)',
-        part: 'PMPN4027',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (AU/NZ Plug)',
-        part: 'PMPN4007',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU/UK Plug)',
-        part: 'PMPN4006',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (PRC Plug)',
-        part: 'PMPN4008',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (KOR Plug)',
-        part: 'PMPN4015',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (ARG Plug)',
-        part: 'PMPN4016',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (BRZL Plug)',
-        part: 'PMPN4023',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU Plug)',
-        part: 'PMPN4028',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)',
-        part: 'NNTN8457'
-      },
-      {
-        desc: 'Replacement Phonak Inductive Neckloop for PMLN7696',
-        part: 'RLN4920'
-      },
-      {
-        desc: 'Replacement Phonak Nano Ear Receiver, Brown (for PMLN7696)',
-        part: 'GMLN5262'
-      },
-      {
-        desc: 'Replacement Phonak Nano Ear Receiver, Beige (for PMLN7696)',
-        part: 'GMLN5261'
-      },
-      {
-        desc: 'Replacement 1.4V Battery for PMLN7696 (pack of 6)',
-        part: 'RNN4005'
-      },
-      {
-        desc: 'Replacement Universal 5V Power Supply for XBT Headsets',
-        part: 'RLN6498'
-      },
-      {
-        desc: 'Replacement Hygiene Kit for XBT Headsets',
-        part: 'RLN6497'
-      },
-      {
-        desc: 'Replacement Cooling Pads for XBT Headsets',
-        part: 'RLN6496'
-      },
-      {
-        desc: 'Replacement Boom Microphone for XBT Headsets',
-        part: 'RLN6495'
-      },
-      {
-        desc: 'Replacement Behind-the-Neck Band for XBT Headsets',
-        part: 'RLN6493'
-      },
-      {
-        desc: 'Replacement Headband Style Band for XBT Headsets',
-        part: 'RLN6492'
-      },
-      {
-        desc: 'Replacement Swivel Earpiece with Inline Microphone (3-pack) for RLN6500',
-        part: 'PRLN6550'
-      }
     ]
   }
 
