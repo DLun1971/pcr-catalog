@@ -381,23 +381,49 @@ const XPR6000_CATEGORIES = [
     name: 'Bluetooth',
     items: [
       // External adapters required — XPR 6000 has no embedded BT
-      { desc: 'Operations Critical Wireless Bluetooth Adapter (required for XPR 6000)', part: 'PMLN5712', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 30, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
-      { desc: 'Enhanced Operations Critical Wireless Adapter with Touch Pairing (required for XPR 6000)', part: 'PMLN5993', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 35, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'] },
+      { desc: 'Operations Critical Wireless Bluetooth Adapter (required for XPR 6000)', part: 'PMLN5712', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 30, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'],
+        ip: 'IP57'
+      },
+      { desc: 'Enhanced Operations Critical Wireless Adapter with Touch Pairing (required for XPR 6000)', part: 'PMLN5993', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 35, charge_time_hr: null, weight_g: null, variants: ['6350','6550','6580'],
+        ip: 'IP57'
+      },
       // RSM wireless
-      { desc: 'Operations Critical Wireless RSM with Battery and Belt Clip', part: 'RLN6561', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'] },
-      { desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (US Plug)', part: 'RLN6562', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'] },
-      { desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (AU/NZ Plug)', part: 'PMLN7669', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'] },
+      { desc: 'Operations Critical Wireless RSM with Battery and Belt Clip', part: 'RLN6561', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (US Plug)', part: 'RLN6562', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (AU/NZ Plug)', part: 'PMLN7669', ear_type: null, mic_type: 'Omni directional, windporting equivalent', ptt: true, talk_time_hr: 28, charge_time_hr: 3, weight_g: 158, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
       // XBT headsets
-      { desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset', part: 'RLN6490', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 429, variants: ['6350','6550','6580'] },
-      { desc: 'XBT Operations Critical Wireless Headband Style Headset', part: 'RLN6491', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 422, variants: ['6350','6550','6580'] },
+      { desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset', part: 'RLN6490', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 429, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'XBT Operations Critical Wireless Headband Style Headset', part: 'RLN6491', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 422, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
       // Earpieces and PTT pods
-      { desc: 'Operations Critical Wireless Earpiece with 12" Cable (with US/JP Charger)', part: 'NNTN8125', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
-      { desc: 'Operations Critical Wireless Earpiece with 12" Cable (without Charger)', part: 'NNTN8189', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
-      { desc: 'Operations Critical Wireless PTT Pod (with US Charger)', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
-      { desc: 'Operations Critical Wireless PTT Pod (without Charger)', part: 'NNTN8191', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
+      { desc: 'Operations Critical Wireless Earpiece with 12" Cable (with US/JP Charger)', part: 'NNTN8125', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Operations Critical Wireless Earpiece with 12" Cable (without Charger)', part: 'NNTN8189', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Operations Critical Wireless PTT Pod (with US Charger)', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Operations Critical Wireless PTT Pod (without Charger)', part: 'NNTN8191', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
       // Enhanced ops critical
-      { desc: 'Enhanced Operations Critical Wireless Earpiece with 12" Cable and PTT Pod', part: 'NTN2570', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
-      { desc: 'Enhanced Operations Critical Wireless PTT Pod', part: 'NTN2571', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'] },
+      { desc: 'Enhanced Operations Critical Wireless Earpiece with 12" Cable and PTT Pod', part: 'NTN2570', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
+      { desc: 'Enhanced Operations Critical Wireless PTT Pod', part: 'NTN2571', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, variants: ['6350','6550','6580'],
+        ip: 'IP54'
+      },
       // BT accessory kits
       { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (US Plug)', part: 'RLN6500', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18, variants: ['6350','6550','6580'] },
       { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (ARG Plug)', part: 'RLN6502', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18, variants: ['6350','6550','6580'] },
