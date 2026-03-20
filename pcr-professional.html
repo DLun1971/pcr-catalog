@@ -449,10 +449,11 @@ html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;heig
       html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
       specKeys.forEach(function(c) {
         var k = c.key||c;
-        var v = item[k];
+        var dataKey = COL_KEY[k]||k;
+        var v = item[dataKey];
         if (v===true) html += '<td class="chk-yes" style="text-align:center">✓</td>';
         else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">—</td>';
-        else if (k==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
+        else if (dataKey==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
         else if (k==='hazloc') html += '<td style="text-align:center">' + (v==='UL'?'<span class="spec-tag tag-ul">UL</span>':v==='ATEX'?'<span class="spec-tag tag-atex">ATEX</span>':v==='CSA'?'<span class="spec-tag tag-csa">CSA</span>':v?'<span class="spec-tag tag-hz">'+v+'</span>':'<span class="chk-no">—</span>') + '</td>';
         else html += '<td style="text-align:center">' + v + '</td>';
       });
