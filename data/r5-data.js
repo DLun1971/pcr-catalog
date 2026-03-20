@@ -339,6 +339,10 @@ const R5_CATEGORIES = [
     name: 'IMPRES Tools',
     cols: ['Description','Part Number'],
     items: [
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA',     part: 'HKVN4038' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia',   part: 'HKVN4039' }
     ]
   },
 
