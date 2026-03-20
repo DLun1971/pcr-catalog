@@ -113,7 +113,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
     </div>
     <span id="brand">MOTOTRBO Professional Catalog</span>
   </div>
-  <input id="search-input" placeholder="Search part # or description…" oninput="render()" style="border:0.5px solid rgba(255,255,255,0.3);border-radius:6px;padding:5px 12px;font-size:12px;width:260px;color:#fff;background:rgba(255,255,255,0.1);outline:none">
+  <input id="search-input" placeholder="Search part # or descriptionâ¦" oninput="render()" style="border:0.5px solid rgba(255,255,255,0.3);border-radius:6px;padding:5px 12px;font-size:12px;width:260px;color:#fff;background:rgba(255,255,255,0.1);outline:none">
   <div id="mylist-pill" onclick="toggleMyListPanel()">
     My List <span id="mylist-count">0</span>
   </div>
@@ -190,11 +190,11 @@ const VARIANT_MAP = {
 };
 
 const VARIANT_INFO = {
-  dpatex: 'DP ATEX Series: Covers DP 4400e · 4600e · 4800e — accessory compatibility is consistent across all variants unless noted.',
-  xpr7000: '7000 Series: Covers XPR 7350 · 7550 · 7580 · 7580e · 7550IS — accessory compatibility is consistent across all variants unless noted. Note: XPR 7550IS requires CSA/IS-rated accessories.',
-  xpr6000: '6000 Series: Covers XPR 6100 · 6350 · 6550 · 6580 — accessory compatibility is consistent across all variants unless noted. Note: XPR 6100 does not support Enhanced Operations Critical Wireless.',
-  xpr3000: '3000 Series: Covers XPR 3000 · 3000e · DP 3000e — accessory compatibility is consistent across all variants unless noted.',
-  sl: 'SL Series: Covers SL 7000 · 7000e · 3500e · 3500Max — accessory compatibility is consistent across all variants unless noted.',
+  dpatex: 'DP ATEX Series: Covers DP 4400e Â· 4600e Â· 4800e â accessory compatibility is consistent across all variants unless noted.',
+  xpr7000: '7000 Series: Covers XPR 7350 Â· 7550 Â· 7580 Â· 7580e Â· 7550IS â accessory compatibility is consistent across all variants unless noted. Note: XPR 7550IS requires CSA/IS-rated accessories.',
+  xpr6000: '6000 Series: Covers XPR 6100 Â· 6350 Â· 6550 Â· 6580 â accessory compatibility is consistent across all variants unless noted. Note: XPR 6100 does not support Enhanced Operations Critical Wireless.',
+  xpr3000: '3000 Series: Covers XPR 3000 Â· 3000e Â· DP 3000e â accessory compatibility is consistent across all variants unless noted.',
+  sl: 'SL Series: Covers SL 7000 Â· 7000e Â· 3500e Â· 3500Max â accessory compatibility is consistent across all variants unless noted.',
 };
 const PORTABLE_CATS = ['All','Batteries','Battery Fleet Management','Chargers','RSM/Audio','Surveillance/Earpieces','Headsets','Carry','Antennas','Cables','Screen Protectors','Bluetooth'];
 const LABEL_TO_KEY = {
@@ -211,7 +211,7 @@ const LABEL_TO_KEY = {
 };
 const COL_KEY = LABEL_TO_KEY;
 const COLS_BY_SECTION = {
-  'Batteries':       [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'op_temp',label:'Op Temp'}],
+  'Batteries':       [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'dims_mm',label:'Dims (mm)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'op_temp',label:'Op Temp'}],
   'Chargers':        [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'pwr_src',label:'Power'},{key:'pockets',label:'Pockets'}],
   'RSM/Audio':       [{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ai_noise',label:'AI Noise'},{key:'windporting',label:'Windporting'},{key:'noise_cancel',label:'Noise Cancel'},{key:'full_duplex',label:'Full Duplex'},{key:'vol_ctrl',label:'Vol Ctrl'},{key:'prog_btn',label:'Prog Btn'},{key:'audio_jack',label:'Audio Jack'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'dims_mm',label:'Dims (mm)'}],
   'Surveillance/Earpieces':[{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic Type'},{key:'hazloc',label:'HazLoc'}],
@@ -408,15 +408,15 @@ function renderGlobalSearch(search, area) {
     totalItems += radioItems;
     matchedRadios++;
     html += '<div class="sec-head" style="background:#f0f4fa;padding:8px 10px;border-radius:4px;margin-top:16px;color:#0C2D5A;font-size:12px;font-weight:600;text-transform:none;letter-spacing:0">';
-    html += r.label + ' <span class="sec-count">— ' + radioItems + ' item' + (radioItems!==1?'s':'') + '</span></div>';
+    html += r.label + ' <span class="sec-count">â ' + radioItems + ' item' + (radioItems!==1?'s':'') + '</span></div>';
     html += radioHtml;
   });
   var bc = document.getElementById('breadcrumb');
   if (totalItems === 0) {
-    bc.innerHTML = 'Search: <b>"' + search + '"</b> › No results';
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> âº No results';
     area.innerHTML = '<div class="no-items">No accessories found matching "' + search + '".</div>';
   } else {
-    bc.innerHTML = 'Search: <b>"' + search + '"</b> › ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> âº ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
     area.innerHTML = html;
   }
 }
@@ -425,7 +425,7 @@ function buildSectionsHTML(sections) {
   var html = '';
   sections.forEach(function(sec) {
     var specKeys = (sec.cols||[]).filter(function(c){return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());});
-    html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">— ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
+    html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">â ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
     var noSpec = specKeys.length === 0;
     html += '<table class="acc-table">' + (noSpec ? '<colgroup><col style="width:42px"><col style="width:55%"><col style="width:180px"><col style="width:36px"></colgroup>' : '') + '<thead><tr>';
     html += '<th style="width:42px"></th>';
@@ -452,10 +452,10 @@ html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;heig
         var k = c.key||c;
         var dataKey = LABEL_TO_KEY[k]||k;
         var v = item[dataKey];
-        if (v===true) html += '<td class="chk-yes" style="text-align:center">✓</td>';
-        else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">—</td>';
+        if (v===true) html += '<td class="chk-yes" style="text-align:center">â</td>';
+        else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">â</td>';
         else if (dataKey==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
-        else if (k==='hazloc') html += '<td style="text-align:center">' + (v==='UL'?'<span class="spec-tag tag-ul">UL</span>':v==='ATEX'?'<span class="spec-tag tag-atex">ATEX</span>':v==='CSA'?'<span class="spec-tag tag-csa">CSA</span>':v?'<span class="spec-tag tag-hz">'+v+'</span>':'<span class="chk-no">—</span>') + '</td>';
+        else if (k==='hazloc') html += '<td style="text-align:center">' + (v==='UL'?'<span class="spec-tag tag-ul">UL</span>':v==='ATEX'?'<span class="spec-tag tag-atex">ATEX</span>':v==='CSA'?'<span class="spec-tag tag-csa">CSA</span>':v?'<span class="spec-tag tag-hz">'+v+'</span>':'<span class="chk-no">â</span>') + '</td>';
         else html += '<td style="text-align:center">' + v + '</td>';
       });
       html += '<td><input type="checkbox" class="row-cb"' + (inList?' checked':'') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
