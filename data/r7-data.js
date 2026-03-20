@@ -145,6 +145,14 @@ const r7Categories = [
         dims_mm: '77 x 58 x 25'
       },
       {
+        desc: 'Replacement Cigarette Lighter Adapter for PMPN4607',
+        part: 'PS000514A01'
+      },
+      {
+        desc: 'Replacement Strap for PMPN4607',
+        part: 'HW003289A01'
+      },
+      {
         desc: 'RM760 IMPRES Windporting Remote Speaker Microphone, Large Basic, Work-When-Wet, IP68',
         part: 'PMMN4140',
         impres: true,
@@ -208,6 +216,16 @@ const r7Categories = [
         hazloc: 'UL',
         dims_mm: '94 x 68 x 45'
       },
+      {
+        desc: 'NS750 IMPRES Omni-Directional Remote Speaker Microphone with Large Front PTT and Side PTT, Black (Long Cable)',
+        part: 'PMMN4150_BLK',
+        impres: true, intel_audio: true, ai_noise: 'Windporting with noise suppression', smart_switching: true, work_when_wet: true, prog_btn: '1 programmable + 1 emergency', audio_jack: true, ip: 'IP68', hazloc: 'UL', dims_mm: '94x68x45'
+      },
+      {
+        desc: 'NS750 IMPRES Omni-Directional Remote Speaker Microphone with Large Front PTT and Side PTT, Black (Short Cable)',
+        part: 'PMMN4151_BLK',
+        impres: true, intel_audio: true, ai_noise: 'Windporting with noise suppression', smart_switching: true, work_when_wet: true, prog_btn: '1 programmable + 1 emergency', audio_jack: true, ip: 'IP68', hazloc: 'UL', dims_mm: '94x68x45'
+      },
       { desc: "NS750 Color ID Label - Green (10-pack)", part: "PMLN8464", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
       { desc: "NS750 Color ID Label - Blue (10-pack)", part: "PMLN8465", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
       { desc: "NS750 Color ID Label - Red (10-pack)", part: "PMLN8466", impres: false, intel_audio: false, ai_noise: false, windporting: false, noise_cancel: false, full_duplex: false, vol_ctrl: "", prog_btn: "", audio_jack: false, ip: "", hazloc: "", dims_mm: "" },
@@ -270,6 +288,16 @@ const r7Categories = [
         hazloc: 'UL'
       },
       {
+        desc: 'Receive-Only Earpiece with Translucent Tube, Loud Audio (for RM780, RM760, RM730)',
+        part: 'PMLN8120',
+        ear_type: 'Clear rubber eartip', hazloc: 'UL'
+      },
+      {
+        desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip (for WM500)',
+        part: 'PMLN7560',
+        ear_type: 'Clear rubber eartip'
+      },
+      {
         desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone, IP54',
         part: 'PMLN8086',
         impres: true,
@@ -309,6 +337,19 @@ const r7Categories = [
         nrr_db: 24,
         mic_type: 'Boom',
         hazloc: ''
+      },
+      {
+        desc: 'Earpiece with Translucent Tube and Eartip (for NS750)',
+        part: 'PMLN7188',
+        ear_type: 'Clear rubber eartip', hazloc: 'UL'
+      },
+      {
+        desc: 'Savox HC-1 Helmet Communications Headset with Bone Mic and Single Speaker (for NS750)',
+        part: 'GMMN4585'
+      },
+      {
+        desc: 'Savox HC-2 Helmet Communications Headset with Bone Mic and Dual Speaker (for NS750)',
+        part: 'GMMN4584'
       },
       { desc: "PTT Nexus Adapter for 3M Peltor CH-3 Series Headsets", part: "PMLN8297", impres: false, headset_type: "Adapter", ear_style: "N/A", nrr_db: null, mic_type: "N/A", hazloc: "" }
     ]
@@ -603,6 +644,54 @@ const r7Categories = [
         talk_time_hr: null,
         charge_time_hr: null,
         weight_g: null
+      },
+      {
+        desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)',
+        part: 'NNTN8457'
+      },
+      {
+        desc: 'Replacement Phonak Inductive Neckloop for PMLN7696',
+        part: 'RLN4920'
+      },
+      {
+        desc: 'Replacement Phonak Nano Ear Receiver, Brown (for PMLN7696)',
+        part: 'GMLN5262'
+      },
+      {
+        desc: 'Replacement Phonak Nano Ear Receiver, Beige (for PMLN7696)',
+        part: 'GMLN5261'
+      },
+      {
+        desc: 'Replacement 1.4V Battery for PMLN7696 (pack of 6)',
+        part: 'RNN4005'
+      },
+      {
+        desc: 'Replacement Universal 5V Power Supply for XBT Headsets',
+        part: 'RLN6498'
+      },
+      {
+        desc: 'Replacement Hygiene Kit for XBT Headsets',
+        part: 'RLN6497'
+      },
+      {
+        desc: 'Replacement Cooling Pads for XBT Headsets',
+        part: 'RLN6496'
+      },
+      {
+        desc: 'Replacement Boom Microphone for XBT Headsets',
+        part: 'RLN6495'
+      },
+      {
+        desc: 'Replacement Behind-the-Neck Band for XBT Headsets',
+        part: 'RLN6493'
+      },
+      {
+        desc: 'Replacement Headband Style Band for XBT Headsets',
+        part: 'RLN6492'
+      },
+      {
+        desc: 'Replacement Swivel Earpiece with Inline Microphone (3-pack) for RLN6500',
+        part: 'PRLN6550'
       }
     ]
   }
