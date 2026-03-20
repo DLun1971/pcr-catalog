@@ -169,10 +169,7 @@ const XPR3000_CATEGORIES = [
       { desc: "Radio Pack Radio Utility Case", part: "RLN4815", material: "Nylon", belt_sz: "", swivel: false, display: false, d_rings: false, radios: ["xpr3000","dp3000e"] },
       { desc: "Radio Pack Extension Belt for Waists Larger than 40 Inches", part: "4280384F89", material: "Nylon", belt_sz: "", swivel: false, display: false, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "1.75 Inch Wide Leather Belt", part: "4200865599", material: "Leather", belt_sz: "1.75", swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch", part: "RLN4570", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Replacement Strap for HLN6602 and RLN4570", part: "1505596Z02", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Radio Pack Radio Utility Case", part: "RLN4815", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Radio Pack Extension Belt for Waists Larger than 40 Inches", part: "4280384F89", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
+    { desc: "Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch",
                           ] },
   { id: 7, name: "Antennas", cols: ["Description","Part Number","Band","Frequency (MHz)","Length (cm)","Type"], items: [
     { desc: "UHF/GPS Combination Wideband Slim Whip Antenna (400-527 MHz)", part: "PMAE4079", band: "UHF", freq_mhz: "403-527", len_cm: 15, ant_type: "Whip", radios: ["xpr3000","dp3000e"] },
