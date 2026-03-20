@@ -1766,7 +1766,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 30,
         charge_time_hr: null,
         weight_g: null,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP57'
       },
       {
         desc: 'Operations Critical Wireless RSM with Battery and Belt Clip',
@@ -1777,7 +1778,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 28,
         charge_time_hr: 3,
         weight_g: 158,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset',
@@ -1788,7 +1790,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 22,
         charge_time_hr: 7,
         weight_g: 429,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'XBT Operations Critical Wireless Headband Style Headset',
@@ -1799,7 +1802,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 22,
         charge_time_hr: 7,
         weight_g: 422,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Operations Critical Wireless Earpiece with 12-Inch Cable (with US/JP Charger)',
@@ -1810,7 +1814,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Operations Critical Wireless Earpiece with 12-Inch Cable (without Charger)',
@@ -1821,7 +1826,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Operations Critical Wireless Push-to-Talk Pod (with US Charger)',
@@ -1832,7 +1838,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Operations Critical Wireless Push-to-Talk Pod (without Charger)',
@@ -1843,7 +1850,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US Plug)',
@@ -1909,7 +1917,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 35,
         charge_time_hr: null,
         weight_g: null,
-        variants: ['7580','7580e']
+        variants: ['7580','7580e'],
+        ip: 'IP57'
       },
       {
         desc: 'Enhanced Operations Critical Wireless Earpiece with 12-Inch Cable and PTT Pod',
@@ -1920,7 +1929,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7580','7580e']
+        variants: ['7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Enhanced Operations Critical Wireless Push-to-Talk Pod',
@@ -1931,7 +1941,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 10,
         charge_time_hr: 3,
         weight_g: 43,
-        variants: ['7580','7580e']
+        variants: ['7580','7580e'],
+        ip: 'IP54'
       },
       // OC Wireless replacement parts
       { desc: 'Replacement Wireless Earpiece 12 inch Cable (for NNTN8125)', part: 'NTN2572', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
@@ -2003,7 +2014,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 28,
         charge_time_hr: 3,
         weight_g: 158,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       },
       {
         desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (AU/NZ Plug)',
@@ -2014,7 +2026,8 @@ const XPR7000_CATEGORIES = [
         talk_time_hr: 28,
         charge_time_hr: 3,
         weight_g: 158,
-        variants: ['7350','7550','7580','7580e']
+        variants: ['7350','7550','7580','7580e'],
+        ip: 'IP54'
       }
     ]
   }
