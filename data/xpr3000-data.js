@@ -213,10 +213,18 @@ const XPR3000_CATEGORIES = [
     { desc: "IMPRES Battery Fleet Management License Key, Asia", part: "HKVN4039", radios: ["xpr3000","dp3000e"] }
   ] },
   { id: 11, name: "Bluetooth", cols: ["Description","Part Number","Ear Type","Mic Type","PTT","Talk Time (hr)","Charge Time (hr)","Weight (g)"], items: [
-    { desc: "Operations Critical Wireless Earpiece with 12 inch Cable (with US/JP Charger)", part: "NNTN8125", ear_type: "Over-the-ear (CommPort)", mic_type: "Directional", ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000"] },
-    { desc: "Operations Critical Wireless Earpiece with 12 inch Cable (without Charger)", part: "NNTN8189", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000"] },
-    { desc: "Operations Critical Wireless Push-to-Talk Pod (with US Charger)", part: "NNTN8127", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000","dp3000e"] },
-    { desc: "Operations Critical Wireless Push-to-Talk Pod (without Charger)", part: "NNTN8191", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000","dp3000e"] },
+    { desc: "Operations Critical Wireless Earpiece with 12 inch Cable (with US/JP Charger)", part: "NNTN8125", ear_type: "Over-the-ear (CommPort)", mic_type: "Directional", ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000"],
+        ip: 'IP54'
+      },
+    { desc: "Operations Critical Wireless Earpiece with 12 inch Cable (without Charger)", part: "NNTN8189", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000"],
+        ip: 'IP54'
+      },
+    { desc: "Operations Critical Wireless Push-to-Talk Pod (with US Charger)", part: "NNTN8127", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000","dp3000e"],
+        ip: 'IP54'
+      },
+    { desc: "Operations Critical Wireless Push-to-Talk Pod (without Charger)", part: "NNTN8191", ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43, radios: ["xpr3000","dp3000e"],
+        ip: 'IP54'
+      },
     { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle (US Plug)", part: "RLN6500", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: false, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, radios: ["xpr3000","dp3000e"] },
     { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle (ARG Plug)", part: "RLN6502", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null, radios: ["xpr3000"] },
     { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle (EURO Plug)", part: "RLN6503", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null, radios: ["xpr3000"] },
