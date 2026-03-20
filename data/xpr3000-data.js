@@ -206,7 +206,7 @@ const XPR3000_CATEGORIES = [
     { desc: "Accessory Connector Dust Cover", part: "1571477L01", radios: ["xpr3000"] },
     { desc: "Accessory Connector Dust Cover", part: "PMLN6066", radios: ["xpr3000"] }
   ] },
-  { id: 10, name: "IMPRES Tools", cols: ["Description","Part Number"], items: [
+  { id: 10, name: "Battery Fleet Management", cols: ["Description","Part Number"], items: [
     { desc: "IMPRES Battery Fleet Management License Key, NA/CAN", part: "HKVN4036", radios: ["xpr3000","dp3000e"] },
     { desc: "IMPRES Battery Fleet Management License Key, EMEA", part: "HKVN4037", radios: ["xpr3000","dp3000e"] },
     { desc: "IMPRES Battery Fleet Management License Key, LA", part: "HKVN4038", radios: ["xpr3000","dp3000e"] },
