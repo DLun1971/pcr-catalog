@@ -602,6 +602,8 @@ const XPR7000_CATEGORIES = [
         dims_mm: '60 x 78 x 28',
         variants: ['7350','7550','7580','7580e']
       },
+      { desc: 'IMPRES ATEX Active Noise-Canceling RSM with Large Front PTT and Side PTT (IP67)', part: 'PMMN4094', impres: true, intel_audio: true, ai_noise: 'Noise-Canceling', windporting: false, vol_ctrl: true, prog_btn: 'Nexus and 3.5mm locking', audio_jack: true, ip: 'IP67', hazloc: 'ATEX', dims_mm: '68x94x29', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'IMPRES ATEX Omni RSM with Large Front PTT and Side PTT (IP67)', part: 'PMMN4110', impres: true, intel_audio: true, ai_noise: 'Windporting', windporting: true, vol_ctrl: true, prog_btn: 'Nexus and 3.5mm locking', audio_jack: true, ip: 'IP67', hazloc: 'ATEX', dims_mm: '68x94x29', variants: ['7350','7550','7580','7580e'] },
       {
         desc: 'IMPRES Active Noise-Canceling RSM with Large Front PTT and Side PTT (IP67)',
         part: 'PMMN4102',
@@ -668,6 +670,12 @@ const XPR7000_CATEGORIES = [
       { desc: 'Translucent Tube (RX only) for PMMN4094, PMMN4110, PMMN4102, PMMN4113', part: 'PMLN7188', variants: ['7350','7550','7580','7580e'] },
       { desc: 'One-Wire Flexible Ear Receiver, Black (for NNTN8383 only)', part: 'BDN6719', variants: ['7350','7550','7580','7580e'] },
       { desc: 'One-Wire Earpiece, Black (for NNTN8383 only)', part: 'BDN6726', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Receive-Only Covered Earbud with Coiled Cord', part: 'AARLN4885', ear_type: 'Foam covered earbud', hazloc: 'UL', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip', part: 'RLN4941', ear_type: 'Clear rubber eartip', hazloc: 'UL', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip', part: 'PMLN7560', ear_type: 'Clear rubber eartip', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Receive-Only Flexible Earpiece', part: 'WADN4190', ear_type: 'Over-the-ear', hazloc: 'UL', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Receive-Only D-Shell Earpiece', part: 'PMLN4620', ear_type: 'Over-the-ear', hazloc: 'UL', variants: ['7350','7550','7580','7580e'] },
+      { desc: 'D-Shell Adjustable Earpiece', part: 'PMLN7396', ear_type: 'Over-the-ear', variants: ['7350','7550','7580','7580e'] },
       // Surveillance accessory replacement kits
       { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', variants: ['7350','7550','7580','7580e'] },
       { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', variants: ['7350','7550','7580','7580e'] },
@@ -1957,6 +1965,16 @@ const XPR7000_CATEGORIES = [
       { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Replacement Swivel Earpiece with Inline Microphone (pack of 3) for RLN6500', part: 'PRLN6550', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (ARG Plug)', part: 'RLN6502', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (EURO Plug)', part: 'RLN6503', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (BZL Plug)', part: 'RLN6504', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'OC Wireless Bluetooth Earpiece with PTT (limited availability)', part: 'PMLN7851', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: true, talk_time_hr: 8, charge_time_hr: 3, weight_g: 23, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip', part: 'PMLN6462', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip', part: 'PMLN6463', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US Plug)', part: 'RLN6556', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Wireless Covert Kit (2 sets two-wire earbud, single-wire black earbud, 3.5mm adapter)', part: 'NNTN8296', ear_type: 'Earbud', mic_type: 'In-line', ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Swivel Earpiece with In-Line Microphone Multi-Pack (3-pack) for MOTOTRBO Bluetooth Accessory Kit', part: 'RLN6550', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
+      { desc: 'Flexible Fit Swivel Earpiece with Boom Microphone Multi-Pack (3-pack) for MOTOTRBO Bluetooth Accessory Kit', part: 'PMLN7203', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, variants: ['7350','7550','7580','7580e'] },
       // OC Wireless RSM with charger variants
       {
         desc: 'Operations Critical Wireless RSM with Battery, Belt Clip and Dual Unit Charger (US Plug)',
