@@ -475,7 +475,7 @@ const r7Categories = [
       { desc: "WP300 Replacement Eartip, Large (5-pack)", part: "PMLN8070", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: "WP300 Replacement Translucent Tube", part: "PMLN8092", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       {
-        desc: 'OC Wireless Earpiece - Standard Eartip',
+        desc: 'Replacement Wireless Earpiece 12in Cable for NNTN8125',
         part: 'NTN2572',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -485,7 +485,7 @@ const r7Categories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Eartip Kit (S/M/L)',
+        desc: 'Wireless Earpiece Maintenance Kit (10 silicone ear tubes, 10 mic seal strips, 2 foam windscreens)',
         part: 'NTN8821',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -495,7 +495,7 @@ const r7Categories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Behind-the-Head Adapter',
+        desc: 'Ear Strap for Comfort Earpiece (pack of 10)',
         part: 'NTN8988',
         ear_type: 'Behind-the-head',
         mic_type: 'N/A',
@@ -505,7 +505,7 @@ const r7Categories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Charger Clip',
+        desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 small, 20 medium, 20 large, 10 clips)',
         part: 'NNTN8361',
         ear_type: 'N/A',
         mic_type: 'N/A',
@@ -515,7 +515,7 @@ const r7Categories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Pod Charger Cable',
+        desc: 'Swivel Clip for OC Wireless and Enhanced OC Wireless Pods',
         part: 'PMLN6246',
         ear_type: 'N/A',
         mic_type: 'N/A',
