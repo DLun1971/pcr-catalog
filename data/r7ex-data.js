@@ -190,11 +190,12 @@ const r7exCategories = [
   },
 
   // ── CAT 8: CABLES ─────────────────────────────────────────────────────────
-  // No R7Ex-specific cable listed in this PDF — stub pending verification
   {
     id: 8,
     name: 'Cables',
-    items: []
+    items: [
+      { desc: 'Mini GCAI Interface Cable (USB)', part: 'PMKN4265' }
+    ]
   },
 
   // ── CAT 9: SCREEN PROTECTORS ──────────────────────────────────────────────
