@@ -231,9 +231,10 @@ const COLS_BY_SECTION = {
 };
 const MOBILE_CATS   = ['All','Microphones','Mic Accessories','External PTT','Wireless Kits','Control Station','Installation','Speakers','Cables','Antennas'];
 
-const PART_IMAGES = {
-  'PMNN4807': 'https://www.motorolasolutions.com/content/dam/msi/images/accessories/mototrbo-r7-accessories/PMNN4807A/pmnn4807a_slim_01_1290.png',
-};
+const PART_IMAGES = {};
+fetch('https://dlun1971.github.io/catalog-files/part-images.json')
+  .then(r => r.json())
+  .then(data => { Object.assign(PART_IMAGES, data); });
 
 const RADIO_IMAGES = {
   r7:    'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/r7-series/mototrbo_r7_fkp_redner_front.png',
