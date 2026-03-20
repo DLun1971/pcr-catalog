@@ -430,7 +430,7 @@ function buildSectionsHTML(sections) {
     html += '<th style="width:42px"></th>';
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
-    specKeys.forEach(function(c){html += '<th>' + (c.label||c) + '</th>';});
+    specKeys.forEach(function(c){html += '<th style="text-align:center">' + (c.label||c) + '</th>';});
     html += '<th style="width:36px"></th>';
     html += '</tr></thead><tbody>';
     var lastGroup = null;
