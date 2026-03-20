@@ -276,7 +276,8 @@ const r7Categories = [
         ear_style: 'Dual-muff',
         nrr_db: 24,
         mic_type: 'Boom',
-        hazloc: 'UL'
+        hazloc: 'UL',
+        ip: 'IP54'
       },
       {
         desc: 'Receive-Only Earpiece with Translucent Tube, Loud Audio (for RM780, RM760, RM730)',
@@ -296,7 +297,8 @@ const r7Categories = [
         ear_style: 'Dual-muff',
         nrr_db: 24,
         mic_type: 'Boom',
-        hazloc: 'UL'
+        hazloc: 'UL',
+        ip: 'IP54'
       },
       // 3M Peltor CH-3 Series
       {
@@ -460,7 +462,8 @@ const r7Categories = [
         ptt: true,
         talk_time_hr: 18,
         charge_time_hr: 2,
-        weight_g: 128
+        weight_g: 128,
+        ip: 'IP67'
       },
       {
         desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT',
@@ -480,7 +483,8 @@ const r7Categories = [
         ptt: true,
         talk_time_hr: 18,
         charge_time_hr: null,
-        weight_g: null
+        weight_g: null,
+        ip: 'IP67'
       },
       {
         desc: 'WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece',
@@ -490,7 +494,8 @@ const r7Categories = [
         ptt: true,
         talk_time_hr: 18,
         charge_time_hr: null,
-        weight_g: null
+        weight_g: null,
+        ip: 'IP67'
       },
       { desc: "WP300 Surveillance Earpiece with Translucent Tube", part: "PMLN8190", ear_type: "Clear rubber eartip", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: "WP300 Swivel Earpiece with Eartip, Short Cord", part: "PMLN8125", ear_type: "Over the ear", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
