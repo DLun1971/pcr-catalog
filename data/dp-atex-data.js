@@ -24,14 +24,14 @@ const DPATEX_CATEGORIES = [
         variants: ['4400e','4600e','4800e']
       },
       {
-        desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery',
+        desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery (CSA157)',
         part: 'NNTN8386',
         impres: true,
         chem: 'Li-Ion',
         capacity_mah: 2075,
         dims_mm: '135 x 57 x 23',
         weight_g: 220,
-        hazloc: 'CSA157',
+        hazloc: 'CSA',
         ip: 'IP67',
         op_temp: '-10\u00b0C to +50\u00b0C',
         variants: ['4400e','4600e','4800e']
