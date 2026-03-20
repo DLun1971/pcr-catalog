@@ -423,7 +423,8 @@ function buildSectionsHTML(sections) {
   sections.forEach(function(sec) {
     var specKeys = (sec.cols||[]).filter(function(c){return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());});
     html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">— ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
-    html += '<table class="acc-table"><thead><tr>';
+    var noSpec = specKeys.length === 0;
+    html += '<table class="acc-table">' + (noSpec ? '<colgroup><col style="width:42px"><col style="width:55%"><col style="width:180px"><col style="width:36px"></colgroup>' : '') + '<thead><tr>';
     html += '<th style="width:42px"></th>';
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
