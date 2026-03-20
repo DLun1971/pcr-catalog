@@ -332,7 +332,7 @@ const XPR6000_CATEGORIES = [
   },
   {
     id: 11,
-    name: 'IMPRES Tools',
+    name: 'Battery Fleet Management',
     items: [
       { desc: 'IMPRES Battery Fleet Management License Key, NA/CAN', part: 'HKVN4036', variants: ['6350','6550','6580'] },
       { desc: 'IMPRES Battery Fleet Management License Key, EMEA', part: 'HKVN4037', variants: ['6350','6550','6580'] },
