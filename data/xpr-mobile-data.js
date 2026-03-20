@@ -620,7 +620,9 @@ const xpr2500Categories = [
       { desc: 'Power Cable to Battery, 10-Foot, 15 Amp, 14 AWG', part: 'HKN4137' },
       { desc: 'Power Cable to Battery, 10-Foot, 20 Amp, 12 AWG', part: 'HKN4191' },
       { desc: 'Power Cable to Battery, 20-Foot, 20 Amp, 10 AWG', part: 'HKN4192' },
-      { desc: 'Ignition Sense Cable',                             part: 'RKN4136' }
+      { desc: 'Ignition Sense Cable',                             part: 'RKN4136' },
+      { desc: '16-Pin Accessory Connector Kit', part: 'HLN9457' },
+      { desc: 'Hardware Connection Kit (pins and removal tool), APAC only', part: 'HLN9491' }
     ]
   },
   {
