@@ -152,8 +152,6 @@ const XPR3000_CATEGORIES = [
     { desc: "Carry Holster with Belt Clip", part: "PMLN7559", material: "Plastic", belt_sz: null, swivel: false, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Spring Action 2 inch Belt Clip", part: "PMLN4651", material: "Plastic", belt_sz: 2, swivel: false, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Spring Action 2.5 inch Belt Clip", part: "PMLN7008", material: "Plastic", belt_sz: 2.5, swivel: false, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
-    { desc: "Replacement 2.5 inch Swivel Belt Loop",
-    { desc: "Replacement 3 inch Leather Swivel Belt Loop",
     { desc: "Nylon Wrist Strap", part: "PMLN6074", material: "Nylon", belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Waterproof Bag with Large Strap", part: "HLN9985", material: null, belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
     { desc: "Adjustable Nylon Carrying Strap", part: "NTN5243", material: "Nylon", belt_sz: null, swivel: null, display: null, d_rings: false, radios: ["xpr3000","dp3000e"] },
