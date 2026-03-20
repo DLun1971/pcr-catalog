@@ -234,7 +234,7 @@ const MOBILE_CATS   = ['All','Microphones','Mic Accessories','External PTT','Wir
 const PART_IMAGES = {};
 fetch('https://dlun1971.github.io/catalog-files/part-images.json')
   .then(r => r.json())
-  .then(data => { Object.assign(PART_IMAGES, data); });
+  .then(data => { Object.assign(PART_IMAGES, data); render(); });
 
 const RADIO_IMAGES = {
   r7:    'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/r7-series/mototrbo_r7_fkp_redner_front.png',
