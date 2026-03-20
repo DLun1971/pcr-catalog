@@ -383,27 +383,15 @@ const DPATEX_CATEGORIES = [
     columns: ['Description','Part Number','IMPRES','Intelligent Audio','AI Noise Suppress','Ear Type','Mic Type','Full Duplex','HazLoc'],
     items: [
       {
-        desc: 'One-Wire Flexible Ear Receiver, Black (compatible with NNTN8383 only)',
-        part: 'BDN6719',
+        desc: 'Translucent Tube Receive-Only Earpiece (for PMMN4094/PMMN4110)',
+        part: 'PMLN7188',
         impres: false,
         intel_audio: false,
         ai_noise: false,
-        ear_type: 'Over-the-Ear',
+        ear_type: 'Clear rubber eartip',
         mic_type: '',
         full_duplex: false,
-        hazloc: 'UL',
-        variants: ['4400e','4600e','4800e']
-      },
-      {
-        desc: 'One-Wire Earpiece, Black (compatible with NNTN8383 only)',
-        part: 'BDN6726',
-        impres: false,
-        intel_audio: false,
-        ai_noise: false,
-        ear_type: 'Over-the-Ear',
-        mic_type: '',
-        full_duplex: false,
-        hazloc: 'UL',
+        hazloc: 'ATEX',
         variants: ['4400e','4600e','4800e']
       }
     ]
