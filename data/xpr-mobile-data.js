@@ -93,34 +93,7 @@ const xpr5000Categories = [
   {
     id: 5,
     name: 'Bluetooth',
-    items: [
-      { desc: 'XBT Operations Critical Wireless Behind-the-Neck Headset',  part: 'RLN6490', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 429 },
-      { desc: 'XBT Operations Critical Wireless Headband Style Headset',    part: 'RLN6491', ear_type: 'Dual-muff', mic_type: 'Boom', ptt: true, talk_time_hr: 22, charge_time_hr: 7, weight_g: 422 },
-      { desc: 'Operations Critical Wireless Earpiece with 12-Inch Cable',   part: 'NNTN8125', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
-      { desc: 'Operations Critical Wireless Push-to-Talk Pod (with US charger)', part: 'NNTN8127', ear_type: 'N/A', mic_type: 'N/A', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
-      { desc: 'Operations Critical Wireless Push-to-Talk Pod (without charger)', part: 'NNTN8191', ear_type: 'N/A', mic_type: 'N/A', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
-      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US)', part: 'RLN6500', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null },
-      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle',                        part: 'PMLN7181', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null },
-      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US)', part: 'RLN6556', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: null },
-      { desc: 'Operations Critical Wireless 1-Wire Surveillance Kit with Translucent Tube', part: 'PMLN7052', ear_type: 'Clear rubber eartip', mic_type: 'In-line', ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Operations Critical Wireless Earbud with 11.5-Inch Cable',   part: 'NNTN8294', ear_type: 'Earbud', mic_type: 'In-line', ptt: false, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
-      { desc: 'Operations Critical Wireless Earbud with 45-Inch Cable',     part: 'NNTN8295', ear_type: 'Earbud', mic_type: 'In-line', ptt: false, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
-      { desc: 'Swivel Earpiece with In-Line Microphone Multi-Pack (3-pack)', part: 'RLN6550', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Flexible Fit Swivel Earpiece with Boom Microphone Multi-Pack (3-pack)', part: 'PMLN7203', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Wireless Earpiece 12-Inch Cable (for NNTN8125)', part: 'NTN2572', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Wireless Earpiece Maintenance Kit (10 silicone ear tubes, 10 mic seal strips, 2 foam windscreens)', part: 'NTN8821', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Ear Strap for Comfort Earpiece (pack of 10)',               part: 'NTN8988', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Eartube for Comfort Earpiece (pack of 10)',                 part: 'RLN5037', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 small, 20 medium, 20 large, 10 clips)', part: 'NNTN8361', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Swivel Clip for Ops Critical Wireless Pods',                part: 'PMLN6246', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, US',        part: 'PMPN4027', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, AU/NZ',     part: 'PMPN4007', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, EU/UK',     part: 'PMPN4006', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, PRC',       part: 'PMPN4008', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, ARG',       part: 'PMPN4016', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, BZL',       part: 'PMPN4023', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Charger for Wireless Pod, EU',        part: 'PMPN4028', ear_type: null, mic_type: null, ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null }
-    ]
+    items: []
   },
   {
     id: 6,
