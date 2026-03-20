@@ -220,7 +220,9 @@ const R5_CATEGORIES = [
       { desc: 'Receive-Only D-Shell Earpiece', part: 'PMLN4620', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Over-the-Ear', mic_type: null, full_duplex: false, hazloc: 'UL' },
       { desc: 'D-Shell Adjustable Earpiece', part: 'PMLN7396', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Over-the-Ear', mic_type: null, full_duplex: false, hazloc: null },
       // WP300
-      { desc: 'WP300 Wireless Bluetooth PTT POD', part: 'PMLN8298', impres: false, intel_audio: false, ai_noise: false, ear_type: null, mic_type: null, full_duplex: false, hazloc: null }
+      { desc: 'WP300 Wireless Bluetooth PTT POD', part: 'PMLN8298', impres: false, intel_audio: false, ai_noise: false, ear_type: null, mic_type: null, full_duplex: false, hazloc: null,
+        ip: 'IP67'
+      }
     ]
   },
 
@@ -350,13 +352,15 @@ const R5_CATEGORIES = [
         desc: 'WM500 Wireless Remote Speaker Microphone',
         part: 'PMMN4127',
         ear_type: null, mic_type: 'Omni directional, Windporting',
-        ptt: true, talk_time_hr: 18, charge_time_hr: 2, weight_g: 128
+        ptt: true, talk_time_hr: 18, charge_time_hr: 2, weight_g: 128,
+        ip: 'IP67'
       },
       {
         desc: 'WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece',
         part: 'PMLN8401',
         ear_type: 'Clear rubber eartip', mic_type: null,
-        ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null
+        ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null,
+        ip: 'IP67'
       },
       { desc: 'WP300 Surveillance Earpiece with Translucent Tube', part: 'PMLN8190', ear_type: 'Clear rubber eartip', mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'WP300 Swivel Earpiece with Eartip, Short Cord', part: 'PMLN8125', ear_type: 'Over-the-ear', mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
