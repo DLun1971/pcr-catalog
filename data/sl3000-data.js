@@ -23,16 +23,8 @@ const SL3000_CATEGORIES = [
       { desc: 'Single-Unit Rapid Rate Desk Charger, JAP Plug', part: 'PMLN7115', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '52x70x70', pockets: 1 },
       { desc: 'Single-Unit Rapid Rate Desk Charger, KOR Plug', part: 'PMLN7113', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '52x70x70', pockets: 1 },
       { desc: 'Single-Unit Rapid Rate Desk Charger, CHN Plug', part: 'PMLN7108', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '52x70x70', pockets: 1 },
-      { desc: 'Standard Micro-USB Single-Unit Rapid Rate Plug-In Charger, US/CAN Plug', part: 'PMPN4009', impres: false, chem: 'Li-Ion', pwr_src: '120 VAC', dims_mm: null, pockets: 1 },
-      { desc: 'Micro-USB Rapid Rate Plug-In Charger', part: '25009298001', impres: false, chem: 'Li-Ion', pwr_src: '120 VAC', dims_mm: '44x34x70', pockets: 1 },
       { desc: 'Compact Multi-Unit Charger, US/CAN Plug', part: 'PMLN8569', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, UK Plug', part: 'PMLN7162', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, EU Plug', part: 'PMLN7102', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, AU/NZ Plug', part: 'PMLN7103', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, ARG Plug', part: 'PMLN7104', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, KOR Plug', part: 'PMLN7105', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, BRL Plug', part: 'PMLN7106', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 },
-      { desc: 'Compact Multi-Unit Charger, JAP Plug', part: 'PMLN7107', impres: false, chem: 'Li-Ion', pwr_src: '100-240 VAC', dims_mm: '66x450x92', pockets: 6 }
+      { desc: 'Micro-USB Rapid Rate Plug-In Charger', part: 'PS000242A11', impres: false, chem: 'Li-Ion', pwr_src: '120 VAC', dims_mm: '44x34x70', pockets: 1 }
     ]
   },
   {
@@ -83,6 +75,7 @@ const SL3000_CATEGORIES = [
       { desc: 'Heavy-Duty Belt Clip', part: 'PMLN7128', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false },
       { desc: 'Swivel Carry Holster', part: 'PMLN7190', material: 'Plastic', belt_sz: null, swivel: 'Swivel', display: 'Display', d_rings: false },
       { desc: 'Carry Holster with Belt Clip', part: 'PMLN7559', material: 'Plastic', belt_sz: null, swivel: 'Fixed', display: null, d_rings: false },
+      { desc: 'Flexible Hand Strap', part: 'PMLN7076', material: 'Nylon', belt_sz: null, swivel: null, display: null, d_rings: false },
       { desc: 'Nylon Wrist Strap', part: 'PMLN6074', material: 'Nylon', belt_sz: null, swivel: null, display: null, d_rings: false },
       { desc: 'Replacement 2.5 Inch Swivel Belt Loop', part: 'PMLN5610', material: 'Hard leather', belt_sz: '2.5', swivel: 'Swivel', display: 'Display/Non-display', d_rings: false },
       { desc: 'Spring Action 2 Inch Belt Clip', part: 'PMLN4651', material: 'Plastic', belt_sz: '2', swivel: 'Fixed', display: 'Display/Non-display', d_rings: false },
@@ -99,7 +92,7 @@ const SL3000_CATEGORIES = [
     name: 'Cables',
     items: [
       { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R' },
-      { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: '30012055001' }
+      { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: 'CB000262A01' }
     ]
   },
   {
@@ -110,12 +103,7 @@ const SL3000_CATEGORIES = [
   {
     id: 10,
     name: 'Battery Fleet Management',
-    items: [
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA', part: 'HKVN4037' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA', part: 'HKVN4038' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia', part: 'HKVN4039' }
-    ]
+    items: []
   },
   {
     id: 11,
@@ -123,9 +111,15 @@ const SL3000_CATEGORIES = [
     items: [
       { desc: 'Completely Discreet Earpiece Kit (includes RLN4920 inductive neckloop and RLN4921 phonito)', part: 'PMLN7696', ear_type: 'Completely discreet', mic_type: null, ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Wireless Neckloop Y-Adapter and Retention Hook', part: 'NNTN8385', ear_type: null, mic_type: null, ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Operations Critical Wireless PTT Pod (with US Charger)', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
       { desc: 'Operations Critical Wireless 1-Wire Surveillance Kit with Translucent Tube', part: 'PMLN7052', ear_type: 'Clear rubber eartip', mic_type: 'In-line', ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Operations Critical Wireless Earbud with 11.5 Inch Cable', part: 'NNTN8294', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
-      { desc: 'Operations Critical Wireless Earbud with 45 Inch Cable', part: 'NNTN8295', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: 10, charge_time_hr: null, weight_g: null }
+      { desc: 'Operations Critical Wireless Earbud with 45 Inch Cable', part: 'NNTN8295', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696, Pack of 10', part: 'NNTN8457', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Brown, for PMLN7696', part: 'GMLN5262', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Beige, for PMLN7696', part: 'GMLN5261', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement 1.4 Volt Battery for PMLN7696, Pack of 6', part: 'RNN4005', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null }
     ]
   }
 ];
