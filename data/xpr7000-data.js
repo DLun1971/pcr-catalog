@@ -266,6 +266,7 @@ const XPR7000_CATEGORIES = [
         variants: ['7350','7550','7580','7580e']
       },
       // Non-IMPRES single-unit chargers
+      { desc: 'Single-Unit Rapid Rate Charger, ARG Plug', part: 'NNTN8225', impres: false, chem: 'Li-Ion, NiMH', pwr_src: null, dims_mm: '61 x 97 x 163', pockets: 1, variants: ['7350','7550','7580','7580e'] },
       {
         desc: 'Single-Unit Rapid Rate Charger, CHN Plug',
         part: 'NNTN8224',
