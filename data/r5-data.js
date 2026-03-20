@@ -337,10 +337,6 @@ const R5_CATEGORIES = [
     name: 'IMPRES Tools',
     cols: ['Description','Part Number'],
     items: [
-      { desc: 'IMPRES Battery Fleet Management License Key, NA/CAN', part: 'HKVN4036' },
-      { desc: 'IMPRES Battery Fleet Management License Key, EMEA', part: 'HKVN4037' },
-      { desc: 'IMPRES Battery Fleet Management License Key, LA', part: 'HKVN4038' },
-      { desc: 'IMPRES Battery Fleet Management License Key, Asia', part: 'HKVN4039' }
     ]
   },
 
