@@ -178,6 +178,8 @@ const ionCategories = [
       { desc: 'Low Profile Swivel Clip for PMMN4128, PMMN4131, PMMN4140', part: 'PMLN8121', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Dust Cover, 10-pack, for PMMN4128, PMMN4140', part: 'PMLN8122', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Dust Cover, 10-pack, for PMMN4131', part: 'PMLN8253', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
+      { desc: 'Receive-Only Earpiece with Translucent Tube, Loud Audio (for RM780, RM760, RM730)', part: 'PMLN8120', ear_type: 'Clear rubber eartip', hazloc: 'UL' },
+      { desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip (for WM500)', part: 'PMLN7560', ear_type: 'Clear rubber eartip' },
       // Surveillance replacement kits
       { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip', part: 'PMLN8092', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Rubber Eartip, Small (5 per pack)', part: 'PMLN8068', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
@@ -257,6 +259,9 @@ const ionCategories = [
         mic_type: 'Boom',
         hazloc: ''
       },
+      { desc: 'Earpiece with Translucent Tube and Eartip (for NS750)', part: 'PMLN7188', ear_type: 'Clear rubber eartip', hazloc: 'UL' },
+      { desc: 'Savox HC-1 Helmet Communications Headset with Bone Mic and Single Speaker (for NS750)', part: 'GMMN4585' },
+      { desc: 'Savox HC-2 Helmet Communications Headset with Bone Mic and Dual Speaker (for NS750)', part: 'GMMN4584' },
       { desc: "PTT Nexus Adapter for 3M Peltor CH-3 Series Headsets", part: "PMLN8297", impres: false, headset_type: "Adapter", ear_style: "N/A", nrr_db: null, mic_type: "N/A", hazloc: "" }
     ]
   },
@@ -376,7 +381,7 @@ const ionCategories = [
       { desc: "WP300 Replacement Eartip, Large (5-pack)", part: "PMLN8070", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: "WP300 Replacement Translucent Tube", part: "PMLN8092", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       {
-        desc: 'OC Wireless Earpiece - Standard Eartip',
+        desc: 'Replacement Wireless Earpiece 12in Cable for NNTN8125',
         part: 'NTN2572',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -386,7 +391,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Eartip Kit (S/M/L)',
+        desc: 'Wireless Earpiece Maintenance Kit (10 silicone ear tubes, 10 mic seal strips, 2 foam windscreens)',
         part: 'NTN8821',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -396,7 +401,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Behind-the-Head Adapter',
+        desc: 'Ear Strap for Comfort Earpiece (pack of 10)',
         part: 'NTN8988',
         ear_type: 'Behind-the-head',
         mic_type: 'N/A',
@@ -406,7 +411,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Charger Clip',
+        desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 small, 20 medium, 20 large, 10 clips)',
         part: 'NNTN8361',
         ear_type: 'N/A',
         mic_type: 'N/A',
@@ -416,7 +421,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Pod Charger Cable',
+        desc: 'Swivel Clip for OC Wireless and Enhanced OC Wireless Pods',
         part: 'PMLN6246',
         ear_type: 'N/A',
         mic_type: 'N/A',
@@ -426,7 +431,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Medium Eartip',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (US Plug)',
         part: 'PMPN4027',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -436,7 +441,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Small Eartip',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (AU/NZ Plug)',
         part: 'PMPN4007',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -446,7 +451,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Large Eartip',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU/UK Plug)',
         part: 'PMPN4006',
         ear_type: 'In-ear',
         mic_type: 'N/A',
@@ -456,7 +461,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Swivel Adapter',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (PRC Plug)',
         part: 'PMPN4008',
         ear_type: 'Over-the-ear',
         mic_type: 'N/A',
@@ -466,7 +471,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Earhook (Standard)',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (KOR Plug)',
         part: 'PMPN4015',
         ear_type: 'Over-the-ear',
         mic_type: 'N/A',
@@ -476,7 +481,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Earhook (Large)',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (ARG Plug)',
         part: 'PMPN4016',
         ear_type: 'Over-the-ear',
         mic_type: 'N/A',
@@ -486,7 +491,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Earpiece - Earhook (Small)',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (BRZL Plug)',
         part: 'PMPN4023',
         ear_type: 'Over-the-ear',
         mic_type: 'N/A',
@@ -496,7 +501,7 @@ const ionCategories = [
         weight_g: null
       },
       {
-        desc: 'OC Wireless Pod Carrying Case',
+        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU Plug)',
         part: 'PMPN4028',
         ear_type: 'N/A',
         mic_type: 'N/A',
