@@ -93,8 +93,12 @@ const SL7000_CATEGORIES = [
       { desc: 'Flexible Hand Strap', part: 'PMLN7076', material: 'Nylon', belt_sz: null, swivel: null, display: null, d_rings: false },
       { desc: 'Nylon Wrist Strap', part: 'PMLN6074', material: 'Nylon', belt_sz: null, swivel: null, display: null, d_rings: false },
       { desc: 'Replacement 2.5 Inch Swivel Belt Loop', part: 'PMLN5610', material: 'Hard leather', belt_sz: '2.5', swivel: 'Swivel', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Replacement 3 Inch Leather Swivel Belt Loop', part: 'PMLN5611', material: 'Hard leather', belt_sz: '3', swivel: 'Swivel', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Replacement 2.5 Inch Leather Swivel Belt Loop', part: 'PMLN5022', material: 'Hard leather', belt_sz: '2.5', swivel: 'Swivel', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Replacement 3 Inch Leather Swivel Belt Loop', part: 'PMLN5023', material: 'Hard leather', belt_sz: '3', swivel: 'Swivel', display: 'Display/Non-display', d_rings: false },
       { desc: 'Spring Action 2 Inch Belt Clip', part: 'PMLN4651', material: 'Plastic', belt_sz: '2', swivel: 'Fixed', display: 'Display/Non-display', d_rings: false },
-      { desc: 'Spring Action 2.5 Inch Belt Clip', part: 'PMLN7008', material: 'Plastic', belt_sz: '2.5', swivel: 'Fixed', display: 'Display/Non-display', d_rings: false }
+      { desc: 'Spring Action 2.5 Inch Belt Clip', part: 'PMLN7008', material: 'Plastic', belt_sz: '2.5', swivel: 'Fixed', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Spring Action 2.5 Inch Belt Clip', part: 'PMLN4652', material: 'Plastic', belt_sz: '2.5', swivel: 'Fixed', display: 'Display/Non-display', d_rings: false }
     ]
   },
   {
@@ -108,10 +112,10 @@ const SL7000_CATEGORIES = [
       { desc: 'UHF Antenna Kit for 403-425 MHz Range', part: 'PMAE4078', band: 'UHF', freq_mhz: '403-425', len_cm: 1.9, ant_type: 'Stubby' },
       { desc: 'UHF Antenna Kit for 420-445 MHz Range', part: 'PMAE4076', band: 'UHF', freq_mhz: '420-445', len_cm: 1.9, ant_type: 'Stubby' },
       { desc: 'UHF Antenna Kit for 438-470 MHz Range', part: 'PMAE4077', band: 'UHF', freq_mhz: '438-470', len_cm: 1.9, ant_type: 'Stubby' },
-      { desc: 'UHF Stubby Antenna Kit for 450-490 MHz Range', part: 'PMAE4091', band: 'UHF', freq_mhz: '450-490', len_cm: 1.9, ant_type: 'Stubby' },
-      { desc: 'UHF Stubby Antenna Kit for 480-527 MHz Range', part: 'PMAE4092', band: 'UHF', freq_mhz: '480-527', len_cm: 1.9, ant_type: 'Stubby' },
-      { desc: 'Antenna Kit for 800 MHz Range', part: 'PMAF4017', band: '800/900 MHz', freq_mhz: '806-870', len_cm: 1.1, ant_type: 'Stubby' },
-      { desc: 'Antenna Kit for 900 MHz Range', part: 'PMAF4018', band: '800/900 MHz', freq_mhz: '896-941', len_cm: 0.5, ant_type: 'Stubby' }
+      { desc: 'UHF Stubby Antenna Kit for 450-490 MHz Range', part: 'PMAE4091', band: 'UHF', freq_mhz: '450-490', len_cm: 3.2, ant_type: 'Stubby' },
+      { desc: 'UHF Stubby Antenna Kit for 480-527 MHz Range', part: 'PMAE4092', band: 'UHF', freq_mhz: '480-527', len_cm: 3.2, ant_type: 'Stubby' },
+      { desc: 'Antenna Kit for 800 MHz Range', part: 'PMAF4017', band: '800/900 MHz', freq_mhz: '806-870', len_cm: 2.5, ant_type: 'Stubby' },
+      { desc: 'Antenna Kit for 900 MHz Range', part: 'PMAF4018', band: '800/900 MHz', freq_mhz: '896-941', len_cm: 1.9, ant_type: 'Stubby' }
     ]
   },
   {
@@ -119,7 +123,7 @@ const SL7000_CATEGORIES = [
     name: 'Cables',
     items: [
       { desc: 'Portable Programming Cable, Micro USB, for SL Series', part: '25-124330-01R' },
-      { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: '30012055001' }
+      { desc: 'Programming Cable, Micro USB, with Tuning Connector', part: 'CB000262A01' }
     ]
   },
   {
@@ -133,12 +137,7 @@ const SL7000_CATEGORIES = [
   {
     id: 10,
     name: 'Battery Fleet Management',
-    items: [
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA', part: 'HKVN4037' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA', part: 'HKVN4038' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia', part: 'HKVN4039' }
-    ]
+    items: []
   },
   {
     id: 11,
@@ -154,17 +153,36 @@ const SL7000_CATEGORIES = [
       { desc: 'Operations Critical Wireless PTT Pod (with US Charger)', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
       { desc: 'Operations Critical Wireless PTT Pod (without Charger)', part: 'NNTN8191', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
       { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (US Plug)', part: 'RLN6500', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (ARG Plug)', part: 'RLN6502', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (EURO Plug)', part: 'RLN6503', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
+      { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (BZL Plug)', part: 'RLN6504', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
       { desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT (limited availability)', part: 'PMLN7851', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: true, talk_time_hr: 8, charge_time_hr: 3, weight_g: 23 },
       { desc: 'Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip', part: 'PMLN6462', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
       { desc: 'Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip', part: 'PMLN6463', ear_type: 'Over-the-ear (swivel)', mic_type: 'In-line', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
       { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle', part: 'PMLN7181', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
       { desc: 'Bluetooth Accessory Kit with Flexible Earpiece, BT Pod and Charging Cradle (US Plug)', part: 'RLN6556', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: 8, charge_time_hr: null, weight_g: 18 },
+      { desc: 'Enhanced Operations Critical Wireless Adapter with Touch Pairing', part: 'PMLN5993', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 35, charge_time_hr: null, weight_g: null },
+      { desc: 'Enhanced Operations Critical Wireless Earpiece with 12 Inch Cable and PTT Pod', part: 'NTN2570', ear_type: 'Over-the-ear (CommPort)', mic_type: 'Directional', ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
+      { desc: 'Enhanced Operations Critical Wireless PTT Pod', part: 'NTN2571', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
+      { desc: 'Operations Critical Wireless 1-Wire Surveillance Kit with Translucent Tube', part: 'PMLN7052', ear_type: 'Clear rubber eartip', mic_type: 'In-line', ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Operations Critical Wireless Earbud with 11.5 Inch Cable', part: 'NNTN8294', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
+      { desc: 'Operations Critical Wireless Earbud with 45 Inch Cable', part: 'NNTN8295', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: 10, charge_time_hr: null, weight_g: null },
+      { desc: 'Wireless Covert Kit (includes 2 sets two-wire earbud, single-wire black earbud, 3.5mm adapter)', part: 'NNTN8296', ear_type: 'Earbud', mic_type: 'In-line', ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Swivel Earpiece with In-Line Microphone Multi-Pack (3 pack) for MOTOTRBO BT Accessory Kit', part: 'RLN6550', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Flexible Fit Swivel Earpiece with Boom Microphone Multi-Pack (3 pack) for MOTOTRBO BT Accessory Kit', part: 'PMLN7203', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Replacement Wireless Earpiece 12 Inch Cable (for NNTN8125)', part: 'NTN2572', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Wireless Earpiece Maintenance Kit', part: 'NTN8821', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Ear Strap for Comfort Earpiece, Pack of 10', part: 'NTN8988', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 sm/20 med/20 lg/10 clips)', part: 'NNTN8361', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Swivel Clip for OC Wireless Pods', part: 'PMLN6246', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, US Plug', part: 'PMPN4027', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Universal 5V Power Supply for XBT Headsets', part: 'RLN6498', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Hygiene Kit for XBT Headsets', part: 'RLN6497', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Cooling Pads for XBT Headsets', part: 'RLN6496', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Boom Microphone for XBT Headsets', part: 'RLN6495', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Swivel Earpiece with Inline Microphone, Pack of 3, for RLN6500', part: 'PRLN6550', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, US Plug', part: 'PS000228A01', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, AU/NZ Plug', part: 'PMPN4007', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, EU/UK Plug', part: 'PMPN4006', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod, PRC Plug', part: 'PMPN4008', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
