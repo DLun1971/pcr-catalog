@@ -338,6 +338,11 @@ const r7Categories = [
       { desc: 'Leather Radio Strap',                 part: 'RLN6486',  material: 'Leather', belt_sz: '',    swivel: false, display: false, d_rings: false },
       { desc: 'Leather Radio Strap \u2013 XL',       part: 'RLN6487',  material: 'Leather', belt_sz: '',    swivel: false, display: false, d_rings: false },
       { desc: 'Anti-Sway Strap for Leather Radio Straps', part: 'RLN6488', material: 'Leather', belt_sz: '', swivel: false, display: false, d_rings: false },
+      { desc: '1.75 Inch Wide Leather Belt', part: '4200865599', material: 'Leather', belt_sz: '1.75', swivel: '', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch', part: 'RLN4570', material: '', belt_sz: '', swivel: '', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Replacement Strap for HLN6602 and RLN4570', part: '1505596Z02', material: '', belt_sz: '', swivel: '', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Radio Pack Radio Utility Case', part: 'RLN4815', material: '', belt_sz: '', swivel: '', display: 'Display/Non-display', d_rings: false },
+      { desc: 'Radio Pack Extension Belt for Waists Larger than 40 Inches', part: '4280384F89', material: '', belt_sz: '', swivel: '', display: 'Display/Non-display', d_rings: false },
       { desc: 'Nylon Wrist Strap',                   part: 'PMLN6074', material: 'Nylon',   belt_sz: '',    swivel: false, display: false, d_rings: false },
       { desc: 'Mini GCAI Dust Cover',                part: 'PMHN4429', material: 'Plastic', belt_sz: '',    swivel: false, display: false, d_rings: false }
     ]
@@ -429,51 +434,6 @@ const r7Categories = [
         talk_time_hr: 18,
         charge_time_hr: 2,
         weight_g: 128
-      },
-      {
-        desc: '1.75 Inch Wide Leather Belt',
-        part: '4200865599',
-        material: 'Leather',
-        belt_sz: '1.75',
-        swivel: '',
-        display: 'Display/Non-display',
-        d_rings: false
-      },
-      {
-        desc: 'Break-Away Chest Pack with Radio Holder, Pen Holder and Velcro Secured Pouch',
-        part: 'RLN4570',
-        material: '',
-        belt_sz: '',
-        swivel: '',
-        display: 'Display/Non-display',
-        d_rings: false
-      },
-      {
-        desc: 'Replacement Strap for HLN6602 and RLN4570',
-        part: '1505596Z02',
-        material: '',
-        belt_sz: '',
-        swivel: '',
-        display: 'Display/Non-display',
-        d_rings: false
-      },
-      {
-        desc: 'Radio Pack Radio Utility Case',
-        part: 'RLN4815',
-        material: '',
-        belt_sz: '',
-        swivel: '',
-        display: 'Display/Non-display',
-        d_rings: false
-      },
-      {
-        desc: 'Radio Pack Extension Belt for Waists Larger than 40 Inches',
-        part: '4280384F89',
-        material: '',
-        belt_sz: '',
-        swivel: '',
-        display: 'Display/Non-display',
-        d_rings: false
       },
       {
         desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT',
