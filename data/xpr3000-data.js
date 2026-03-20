@@ -230,7 +230,14 @@ const XPR3000_CATEGORIES = [
     { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, KOR Plug", part: "PMPN4015", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
     { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, ARG Plug", part: "PMPN4016", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
     { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, BZL Plug", part: "PMPN4023", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
-    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug", part: "PMPN4028", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] }
+    { desc: "Replacement Micro-USB Plug-In Charger for Wireless Pod, EU Plug", part: "PMPN4028", ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Wireless Covert Kit (2 sets two-wire earbud, single-wire black earbud, 3.5mm adapter)", part: "NNTN8296", ear_type: "Earbud", mic_type: "In-line", ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Swivel Earpiece with In-Line Microphone Multi-Pack (3-pack) for MOTOTRBO Bluetooth Accessory Kit", part: "RLN6550", ear_type: "Over-the-ear (swivel)", mic_type: "Boom", ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Flexible Fit Swivel Earpiece with Boom Microphone Multi-Pack (3-pack) for MOTOTRBO Bluetooth Accessory Kit", part: "PMLN7203", ear_type: "Over-the-ear (swivel)", mic_type: "Boom", ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip", part: "PMLN6462", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Bluetooth Accessory Kit with Swivel Earpiece and Battery Clip", part: "PMLN6463", ear_type: "Over-the-ear (swivel)", mic_type: "In-line", ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle", part: "PMLN7181", ear_type: "Over-the-ear (swivel)", mic_type: "Boom", ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, radios: ["xpr3000","dp3000e"] },
+    { desc: "Bluetooth Accessory Kit with Flexible Earpiece, Pod and Charging Cradle with Power Supply (US Plug)", part: "RLN6556", ear_type: "Over-the-ear (swivel)", mic_type: "Boom", ptt: null, talk_time_hr: 8, charge_time_hr: 18, weight_g: null, radios: ["xpr3000","dp3000e"] }
   ] }
 ];
 
