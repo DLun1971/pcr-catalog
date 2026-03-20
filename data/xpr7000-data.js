@@ -154,6 +154,19 @@ const XPR7000_CATEGORIES = [
         ip: 'IP57',
         op_temp: '-20\u00b0C to +60\u00b0C',
         variants: ['7350','7550','7580','7580e']
+      },
+      {
+        desc: 'IMPRES Li-Ion 2075mAh IP67 CSA157 Battery',
+        part: 'NNTN8386',
+        impres: true,
+        chem: 'Li-Ion',
+        capacity_mah: 2075,
+        dims_mm: '135 x 57 x 23',
+        weight_g: 220,
+        hazloc: 'CSA',
+        ip: 'IP67',
+        op_temp: '-10°C to +50°C',
+        variants: ['7550']
       }
     ]
   },
