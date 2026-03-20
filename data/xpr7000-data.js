@@ -1725,7 +1725,7 @@ const XPR7000_CATEGORIES = [
   // ── CATEGORY 11: IMPRES BATTERY MGMT TOOLS ───────────────────────────────
   {
     id: 'impres_tools',
-    label: 'IMPRES Tools',
+    label: 'Battery Fleet Management',
     columns: ['Description','Part Number'],
     items: [
       {
