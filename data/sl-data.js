@@ -248,8 +248,10 @@ const SL_CATEGORIES = [
     id: 11,
     name: 'IMPRES Tools',
     items: [
-      // PDF lists HKVN4036-4039 for XPR 6000/7000/3000 Series. SL not explicitly listed.
-      // Flagging as PENDING — do not display for SL until confirmed.
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA',     part: 'HKVN4038' },
+      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia',   part: 'HKVN4039' }
     ]
   },
   {
