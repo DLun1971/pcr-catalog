@@ -503,13 +503,25 @@ const ionCategories = [
       {
         desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU Plug)',
         part: 'PMPN4028',
-        ear_type: 'N/A',
-        mic_type: 'N/A',
-        ptt: false,
+        ear_type: null,
+        mic_type: null,
+        ptt: null,
         talk_time_hr: null,
         charge_time_hr: null,
         weight_g: null
-      }
+      },
+      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)', part: 'NNTN8457' },
+      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920' },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Brown (for PMLN7696)', part: 'GMLN5262' },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Beige (for PMLN7696)', part: 'GMLN5261' },
+      { desc: 'Replacement 1.4V Battery for PMLN7696 (pack of 6)', part: 'RNN4005' },
+      { desc: 'Replacement Universal 5V Power Supply for XBT Headsets', part: 'RLN6498' },
+      { desc: 'Replacement Hygiene Kit for XBT Headsets', part: 'RLN6497' },
+      { desc: 'Replacement Cooling Pads for XBT Headsets', part: 'RLN6496' },
+      { desc: 'Replacement Boom Microphone for XBT Headsets', part: 'RLN6495' },
+      { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493' },
+      { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492' },
+      { desc: 'Replacement Swivel Earpiece with Inline Microphone (3-pack) for RLN6500', part: 'PRLN6550' }
     ]
   }
 
