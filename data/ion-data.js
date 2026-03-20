@@ -181,10 +181,6 @@ const ionCategories = [
       { desc: 'Receive-Only Earpiece with Translucent Tube, Loud Audio (for RM780, RM760, RM730)', part: 'PMLN8120', ear_type: 'Clear rubber eartip', hazloc: 'UL' },
       { desc: 'Receive-Only Earpiece with Translucent Tube and Rubber Eartip (for WM500)', part: 'PMLN7560', ear_type: 'Clear rubber eartip' },
       // Surveillance replacement kits
-      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip', part: 'PMLN8092', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
-      { desc: 'Replacement Rubber Eartip, Small (5 per pack)', part: 'PMLN8068', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
-      { desc: 'Replacement Rubber Eartip, Medium (5 per pack)', part: 'PMLN8069', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
-      { desc: 'Replacement Rubber Eartip, Large (5 per pack)', part: 'PMLN8070', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Rubber Sleeve, Small (25 per pack)', part: 'PMLN8363', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Rubber Sleeve, Medium (25 per pack)', part: 'PMLN8364', material: null, belt_sz: null, swivel: null, display: null, d_rings: null },
       { desc: 'Replacement Rubber Sleeve, Large (25 per pack)', part: 'PMLN8365', material: null, belt_sz: null, swivel: null, display: null, d_rings: null }
@@ -259,9 +255,6 @@ const ionCategories = [
         mic_type: 'Boom',
         hazloc: ''
       },
-      { desc: 'Earpiece with Translucent Tube and Eartip (for NS750)', part: 'PMLN7188', ear_type: 'Clear rubber eartip', hazloc: 'UL' },
-      { desc: 'Savox HC-1 Helmet Communications Headset with Bone Mic and Single Speaker (for NS750)', part: 'GMMN4585' },
-      { desc: 'Savox HC-2 Helmet Communications Headset with Bone Mic and Dual Speaker (for NS750)', part: 'GMMN4584' },
       { desc: "PTT Nexus Adapter for 3M Peltor CH-3 Series Headsets", part: "PMLN8297", impres: false, headset_type: "Adapter", ear_style: "N/A", nrr_db: null, mic_type: "N/A", hazloc: "" }
     ]
   },
@@ -324,9 +317,6 @@ const ionCategories = [
     id: 9,
     name: 'Screen Protectors',
     items: [
-      { desc: "Screen Protector, Clear (single pack, Qty 1)", part: "AY000808A01" },
-      { desc: "Screen Protector, Clear (bulk pack, Qty 10)", part: "AY000808A02" },
-      { desc: "Screen Protector, Clear (bulk pack, Qty 50)", part: "AY000808A03" }
     ]
   },
 
@@ -337,10 +327,6 @@ const ionCategories = [
     id: 11,
     name: 'IMPRES Tools',
     items: [
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), NA/CAN', part: 'HKVN4036' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), EMEA',   part: 'HKVN4037' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), LA',     part: 'HKVN4038' },
-      { desc: 'IMPRES Battery Fleet Management Entitlement ID (EID), Asia',   part: 'HKVN4039' }
     ]
   },
 
@@ -369,159 +355,6 @@ const ionCategories = [
         charge_time_hr: 3,
         weight_g: 23
       },
-      { desc: "WP300 Wireless Bluetooth PTT POD", part: "PMLN8298", ear_type: "N/A", mic_type: "N/A", ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece", part: "PMLN8401", ear_type: "Clear rubber eartip", mic_type: "N/A", ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Surveillance Earpiece with Translucent Tube", part: "PMLN8190", ear_type: "Clear rubber eartip", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Swivel Earpiece with Eartip, Short Cord", part: "PMLN8125", ear_type: "Over the ear", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Swivel Earpiece with Eartip, Long Cord", part: "PMLN8077", ear_type: "Over the ear", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Vehicle Mount Option", part: "PMLN8332", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Swivel Clip", part: "PMLN6246", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Replacement Eartip, Small (5-pack)", part: "PMLN8068", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Replacement Eartip, Medium (5-pack)", part: "PMLN8069", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Replacement Eartip, Large (5-pack)", part: "PMLN8070", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: "WP300 Replacement Translucent Tube", part: "PMLN8092", ear_type: "N/A", mic_type: "N/A", ptt: false, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      {
-        desc: 'Replacement Wireless Earpiece 12in Cable for NNTN8125',
-        part: 'NTN2572',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Wireless Earpiece Maintenance Kit (10 silicone ear tubes, 10 mic seal strips, 2 foam windscreens)',
-        part: 'NTN8821',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Ear Strap for Comfort Earpiece (pack of 10)',
-        part: 'NTN8988',
-        ear_type: 'Behind-the-head',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Ear Tips Kit for Wireless Earbuds (20 small, 20 medium, 20 large, 10 clips)',
-        part: 'NNTN8361',
-        ear_type: 'N/A',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Swivel Clip for OC Wireless and Enhanced OC Wireless Pods',
-        part: 'PMLN6246',
-        ear_type: 'N/A',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (US Plug)',
-        part: 'PMPN4027',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (AU/NZ Plug)',
-        part: 'PMPN4007',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU/UK Plug)',
-        part: 'PMPN4006',
-        ear_type: 'In-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (PRC Plug)',
-        part: 'PMPN4008',
-        ear_type: 'Over-the-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (KOR Plug)',
-        part: 'PMPN4015',
-        ear_type: 'Over-the-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (ARG Plug)',
-        part: 'PMPN4016',
-        ear_type: 'Over-the-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (BRZL Plug)',
-        part: 'PMPN4023',
-        ear_type: 'Over-the-ear',
-        mic_type: 'N/A',
-        ptt: false,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      {
-        desc: 'Replacement Micro-USB Plug-In Charger for Wireless Pod (EU Plug)',
-        part: 'PMPN4028',
-        ear_type: null,
-        mic_type: null,
-        ptt: null,
-        talk_time_hr: null,
-        charge_time_hr: null,
-        weight_g: null
-      },
-      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696 (pack of 10)', part: 'NNTN8457' },
-      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920' },
-      { desc: 'Replacement Phonak Nano Ear Receiver, Brown (for PMLN7696)', part: 'GMLN5262' },
-      { desc: 'Replacement Phonak Nano Ear Receiver, Beige (for PMLN7696)', part: 'GMLN5261' },
-      { desc: 'Replacement 1.4V Battery for PMLN7696 (pack of 6)', part: 'RNN4005' },
-      { desc: 'Replacement Universal 5V Power Supply for XBT Headsets', part: 'RLN6498' },
-      { desc: 'Replacement Hygiene Kit for XBT Headsets', part: 'RLN6497' },
-      { desc: 'Replacement Cooling Pads for XBT Headsets', part: 'RLN6496' },
-      { desc: 'Replacement Boom Microphone for XBT Headsets', part: 'RLN6495' },
-      { desc: 'Replacement Behind-the-Neck Band for XBT Headsets', part: 'RLN6493' },
-      { desc: 'Replacement Headband Style Band for XBT Headsets', part: 'RLN6492' },
-      { desc: 'Replacement Swivel Earpiece with Inline Microphone (3-pack) for RLN6500', part: 'PRLN6550' }
     ]
   }
 
