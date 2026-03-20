@@ -147,46 +147,6 @@ const DPATEX_CATEGORIES = [
         variants: ['4400e','4600e','4800e']
       },
       // Non-IMPRES single-unit chargers
-      {
-        desc: 'Single-Unit Rapid Rate Charger, CHN Plug',
-        part: 'NNTN8224',
-        impres: false,
-        chem: 'Li-Ion, NiMH',
-        pwr_src: '240 VAC',
-        dims_mm: '61 x 97 x 163',
-        pockets: 1,
-        variants: ['4400e','4600e','4800e']
-      },
-      {
-        desc: 'Single-Unit Rapid Rate Charger, Switch-Mode 21W, BZL Plug',
-        part: 'NNTN8280',
-        impres: false,
-        chem: 'Li-Ion, NiMH',
-        pwr_src: '100-240 VAC',
-        dims_mm: '61 x 97 x 163',
-        pockets: 1,
-        variants: ['4400e','4600e','4800e']
-      },
-      {
-        desc: 'Single-Unit Rapid Rate Charger, EURO Plug',
-        part: 'NNTN8292',
-        impres: false,
-        chem: 'Li-Ion, NiMH',
-        pwr_src: '240 VAC',
-        dims_mm: '61 x 97 x 163',
-        pockets: 1,
-        variants: ['4400e','4600e','4800e']
-      },
-      {
-        desc: 'Single-Unit Rapid Rate Charger, UK Plug',
-        part: 'NNTN8293',
-        impres: false,
-        chem: 'Li-Ion, NiMH',
-        pwr_src: '240 VAC',
-        dims_mm: '61 x 97 x 163',
-        pockets: 1,
-        variants: ['4400e','4600e','4800e']
-      },
       // Multi-unit chargers
       {
         desc: 'IMPRES 2 Multi-Unit Fast Charger with 1 Display, US/CAN Plug',
@@ -382,7 +342,6 @@ const DPATEX_CATEGORIES = [
       { desc: 'Low Noise Kit with Translucent Tube and 1 Clear Rubber Eartip', part: 'RLN6242', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: false, hazloc: '', variants: ['4400e','4600e','4800e'] },
       { desc: 'Replacement Standard Clear Rubber Eartip, Pack of 50', part: 'RLN6282', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: false, hazloc: '', variants: ['4400e','4600e','4800e'] },
       { desc: 'Replacement Foam Plugs for RLN6242, NR 24dB, Pack of 50 pairs', part: '5080384F72', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Foam eartip', mic_type: '', full_duplex: false, hazloc: '', variants: ['4400e','4600e','4800e'] },
-      { desc: 'Replacement Quick Disconnect Translucent Tube with Clear Rubber Eartip (for PMLN5724/5726)', part: 'HKLN4608', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: '', full_duplex: false, hazloc: '', variants: ['4400e','4600e','4800e'] }
     ]
   },
 
