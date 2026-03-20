@@ -220,8 +220,7 @@ const R5_CATEGORIES = [
       { desc: 'Receive-Only D-Shell Earpiece', part: 'PMLN4620', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Over-the-Ear', mic_type: null, full_duplex: false, hazloc: 'UL' },
       { desc: 'D-Shell Adjustable Earpiece', part: 'PMLN7396', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Over-the-Ear', mic_type: null, full_duplex: false, hazloc: null },
       // WP300
-      { desc: 'WP300 Wireless Bluetooth PTT POD', part: 'PMLN8298', impres: false, intel_audio: false, ai_noise: false, ear_type: null, mic_type: null, full_duplex: false, hazloc: null },
-      { desc: 'WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece', part: 'PMLN8401', impres: false, intel_audio: false, ai_noise: false, ear_type: 'Clear rubber eartip', mic_type: null, full_duplex: false, hazloc: null }
+      { desc: 'WP300 Wireless Bluetooth PTT POD', part: 'PMLN8298', impres: false, intel_audio: false, ai_noise: false, ear_type: null, mic_type: null, full_duplex: false, hazloc: null }
     ]
   },
 
@@ -358,17 +357,20 @@ const R5_CATEGORIES = [
         ptt: true, talk_time_hr: 18, charge_time_hr: 2, weight_g: 128
       },
       {
-        desc: 'WP300 Wireless Bluetooth PTT POD',
-        part: 'PMLN8298',
-        ear_type: null, mic_type: null,
-        ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null
-      },
-      {
         desc: 'WP300 Wireless Bluetooth PTT POD with Surveillance Earpiece',
         part: 'PMLN8401',
         ear_type: 'Clear rubber eartip', mic_type: null,
         ptt: true, talk_time_hr: 18, charge_time_hr: null, weight_g: null
-      }
+      },
+      { desc: 'WP300 Surveillance Earpiece with Translucent Tube', part: 'PMLN8190', ear_type: 'Clear rubber eartip', mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Swivel Earpiece with Eartip, Short Cord', part: 'PMLN8125', ear_type: 'Over-the-ear', mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Swivel Earpiece with Eartip, Long Cord', part: 'PMLN8077', ear_type: 'Over-the-ear', mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Vehicle Mount Option', part: 'PMLN8332', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Swivel Clip', part: 'PMLN6246', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Replacement Eartip, Small (5-pack)', part: 'PMLN8068', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Replacement Eartip, Medium (5-pack)', part: 'PMLN8069', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Replacement Eartip, Large (5-pack)', part: 'PMLN8070', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'WP300 Replacement Translucent Tube', part: 'PMLN8092', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null }
     ]
   }
 
