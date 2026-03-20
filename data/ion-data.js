@@ -212,7 +212,8 @@ const ionCategories = [
         ear_style: 'Dual-muff',
         nrr_db: 24,
         mic_type: 'Boom',
-        hazloc: 'UL'
+        hazloc: 'UL',
+        ip: 'IP54'
       },
       {
         desc: 'Heavy Duty Over-the-Head Headset with Noise-Canceling Boom Microphone, IP54',
@@ -222,7 +223,8 @@ const ionCategories = [
         ear_style: 'Dual-muff',
         nrr_db: 24,
         mic_type: 'Boom',
-        hazloc: 'UL'
+        hazloc: 'UL',
+        ip: 'IP54'
       },
       // 3M Peltor CH-3 Series (Ion compatible per PDF)
       {
@@ -343,7 +345,8 @@ const ionCategories = [
         ptt: true,
         talk_time_hr: 18,
         charge_time_hr: 2,
-        weight_g: 128
+        weight_g: 128,
+        ip: 'IP67'
       },
       {
         desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT',
