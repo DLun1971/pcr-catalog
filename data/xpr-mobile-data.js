@@ -169,7 +169,9 @@ const xpr5000Categories = [
       { desc: 'Connector Extender (20 pieces)',                               part: 'PMLN5620' },
       { desc: 'Gasket, Cover, Accessory Connector',                          part: '3202607Y01' },
       { desc: 'Mobile Crimping Tool',                                         part: '6680388A26' },
-      { desc: 'Generic Option Board (APAC, EMEA, LACR)',                      part: 'PMLN6544' }
+      { desc: 'Generic Option Board (APAC, EMEA, LACR)',                      part: 'PMLN6544' },
+      { desc: '16-Pin Accessory Connector Kit', part: 'HLN9457' },
+      { desc: 'Hardware Connection Kit (pins and removal tool), APAC only', part: 'HLN9491' }
     ]
   },
   {
