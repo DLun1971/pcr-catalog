@@ -322,7 +322,20 @@ const xpr4000Categories = [
       { desc: 'Vehicular Charger with Coil Cord Cigarette Lighter Plug', part: 'PMLN6716' },
       { desc: 'Hang-Up Clip for Vehicular Charger (requires installation)', part: 'HLN5391' },
       { desc: 'Swivel Clip',                                           part: 'PMLN6743' },
-      { desc: 'D-Ring Swivel Clip',                                    part: '4200931201' }
+      { desc: 'D-Ring Swivel Clip',                                    part: '4200931201' },
+      { desc: 'Receive-Only Earpiece with Comfort Eartube', part: 'PMLN7560' },
+      { desc: 'Receive-Only Earbud', part: 'AARLN4885' },
+      { desc: 'Clear EP7 Hearing Protectors Small (Sonic Defenders), NR=28dB', part: 'RLN6511' },
+      { desc: 'Clear EP7 Hearing Protectors Medium (Sonic Defenders), NR=28dB', part: 'RLN6512' },
+      { desc: 'Clear EP7 Hearing Protectors Large (Sonic Defenders), NR=28dB', part: 'RLN6513' },
+      { desc: 'Power Supply for Dual Unit Charger, US/Japan/Taiwan', part: '25012022001' },
+      { desc: 'Power Supply for Dual Unit Charger, EU', part: '25012022002' },
+      { desc: 'Power Supply for Dual Unit Charger, UK', part: '25012022003' },
+      { desc: 'Power Supply for Dual Unit Charger, PRC', part: '25012022004' },
+      { desc: 'Power Supply for Dual Unit Charger, AU/NZ', part: '25012022006' },
+      { desc: 'Power Supply for Dual Unit Charger, BZL', part: '25012022007' },
+      { desc: 'Power Supply for Dual Unit Charger, ARG', part: '25012022008' },
+      { desc: 'Power Supply for Dual Unit Charger, KOR', part: '25012022009' }
     ]
   },
   {
