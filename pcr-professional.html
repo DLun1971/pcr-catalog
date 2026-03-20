@@ -452,7 +452,7 @@ html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;heig
         var k = c.key||c;
         var dataKey = LABEL_TO_KEY[k]||k;
         var v = item[dataKey];
-        if (v===true) html += '<td class="chk-yes" style="text-align:center">â</td>';
+        if (v===true) html += '<td class="chk-yes" style="text-align:center">&#10003;</td>';
         else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">â</td>';
         else if (dataKey==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
         else if (k==='hazloc') html += '<td style="text-align:center">' + (v==='UL'?'<span class="spec-tag tag-ul">UL</span>':v==='ATEX'?'<span class="spec-tag tag-atex">ATEX</span>':v==='CSA'?'<span class="spec-tag tag-csa">CSA</span>':v?'<span class="spec-tag tag-hz">'+v+'</span>':'<span class="chk-no">â</span>') + '</td>';
