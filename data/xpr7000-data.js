@@ -1439,10 +1439,6 @@ const XPR7000_CATEGORIES = [
       { desc: 'Accessory Connector Dust Cover', part: '15012157001', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Accessory Connector Dust Cover', part: '1571477L01', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
       { desc: 'Accessory Connector Dust Cover', part: 'PMLN6066', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
-      { desc: 'Silent Alert Belt Clip (for use with IMPRES battery PMNN4488)', part: 'PMLN7296', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
-      { desc: 'Accessory Connector Dust Cover', part: '15012157001', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
-      { desc: 'Accessory Connector Dust Cover', part: '1571477L01', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
-      { desc: 'Accessory Connector Dust Cover', part: 'PMLN6066', material: 'Plastic', belt_sz: null, swivel: null, display: null, d_rings: false, variants: ['7350','7550','7580','7580e'] },
 
   // ── CATEGORY 7: ANTENNAS ──────────────────────────────────────────────────
   {
