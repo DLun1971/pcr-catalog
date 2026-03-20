@@ -619,7 +619,8 @@ const DPATEX_CATEGORIES = [
         display: '',
         d_rings: false,
         variants: ['4400e','4600e','4800e']
-      }
+      },
+      { desc: "Accessory Connector Dust Cover", part: "15012157001", material: "Plastic", belt_sz: "", swivel: false, display: false, d_rings: false, variants: ["4400e","4600e","4800e"] }
     ]
   },
 
