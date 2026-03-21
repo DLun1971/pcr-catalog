@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCR Commercial Tier Accessory Catalog</title>
+<link rel="stylesheet" href="https://dlun1971.github.io/pcr-catalog/styles.css">
+<script src="https://dlun1971.github.io/pcr-catalog/data/r2-data.js"></script>
+<script src="https://dlun1971.github.io/pcr-catalog/data/cp200d-data.js"></script>
+<script src="https://dlun1971.github.io/pcr-catalog/data/cp100d-data.js"></script>
+<script src="https://dlun1971.github.io/pcr-catalog/data/sl-comm-data.js"></script>
+<script src="https://dlun1971.github.io/pcr-catalog/data/cm-series-data.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overflow-y:auto}
+
+/* TOPBAR */
+#topbar{background:#0C2D5A;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
+#topbar-left{display:flex;align-items:center;gap:12px}
+#moto-icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#brand{color:#fff;font-size:15px;font-weight:500;letter-spacing:0.01em}
+#mylist-pill{display:flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:5px 16px;cursor:pointer;color:#fff;font-size:12px;user-select:none}
+#mylist-pill:hover{background:rgba(255,255,255,0.1)}#whatsnew-pill:hover{background:rgba(255,255,255,0.1)}#search-pill:hover{background:rgba(255,255,255,0.05)}
+#mylist-count{background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;font-size:11px;color:#fff}
+
+/* RADIO PANEL */
+#radio-panel{background:#112240;padding:14px 20px 14px}
+.panel-label{font-size:10px;font-weight:500;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.rpill{padding:6px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;user-select:none;transition:background 0.15s,border-color 0.15s}
+.rpill:hover{background:rgba(255,255,255,0.1)}
+.rpill.active{background:#185FA5;border-color:#185FA5;font-weight:500}
+.rpill.mobile{border-color:rgba(93,202,165,0.5)}
+.rpill.mobile:hover{background:rgba(29,158,117,0.2)}
+.rpill.mobile.active{background:#0F6E56;border-color:#0F6E56}
+
+/* variant pills removed */
+
+/* FILTER STRIP */
+#filter-strip{display:flex;align-items:center;gap:8px;padding:10px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:10px}
+#filter-label{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap}
+.ftoggle{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;font-size:11px;cursor:pointer;user-select:none;transition:all 0.15s}
+.ftoggle:hover{border-color:rgba(255,255,255,0.45)}
+.ftoggle.active.f-blue{background:rgba(56,138,221,0.25);border-color:#378ADD}
+.ftoggle.active.f-green{background:rgba(29,158,117,0.25);border-color:#1D9E75}
+.ftoggle.active.f-amber{background:rgba(186,117,23,0.25);border-color:#BA7517}
+.fdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:rgba(255,255,255,0.3)}
+.ftoggle.active.f-blue .fdot{background:#378ADD}
+.ftoggle.active.f-green .fdot{background:#1D9E75}
+.ftoggle.active.f-amber .fdot{background:#EF9F27}
+
+/* CONTENT AREA */
+#content-area{background:#fff;border-top:3px solid #185FA5}
+#cat-bar{padding:10px 20px;display:flex;flex-wrap:wrap;gap:5px;border-bottom:0.5px solid #e0e0e0}
+.cpill{padding:4px 13px;border-radius:14px;font-size:12px;cursor:pointer;border:0.5px solid #ccc;color:#555;background:transparent;user-select:none;transition:all 0.15s}
+.cpill:hover{background:#f0f0f0}
+.cpill.active{background:#0C2D5A;border-color:#0C2D5A;color:#fff}
+
+#toolbar{padding:8px 20px;display:flex;align-items:center;gap:8px;border-bottom:0.5px solid #e0e0e0}
+#breadcrumb{font-size:12px;color:#777}
+#breadcrumb b{color:#222;font-weight:500}
+
+
+#table-area{padding:0 20px 40px}
+.sec-head{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.05em;padding:16px 0 6px;display:flex;align-items:center;gap:8px}
+.sec-count{font-weight:400;color:#bbb;text-transform:none;letter-spacing:0;font-size:11px}
+.no-items{font-size:13px;color:#aaa;padding:12px 0}
+
+table.acc-table{width:100%;border-collapse:collapse;font-size:12px}
+table.acc-table th{text-align:left;padding:7px 10px;border-bottom:1px solid #ddd;font-size:11px;font-weight:500;color:#888;white-space:nowrap;background:#fafafa}
+table.acc-table td{padding:8px 10px;border-bottom:0.5px solid #f0f0f0;color:#222;vertical-align:middle}
+table.acc-table tr:last-child td{border-bottom:none}
+table.acc-table tr:hover td{background:#f9f9f9}
+.img-box{width:34px;height:34px;background:#f0f0f0;border-radius:4px;border:0.5px solid #e0e0e0;flex-shrink:0}
+.pn{font-family:monospace;font-size:11px;color:#888}
+.chk-yes{color:#1D9E75;text-align:center;font-size:13px}.acc-table td{text-align:center}.acc-table td:nth-child(2){text-align:left}.acc-table td:nth-child(3){text-align:left}
+.chk-no{color:#ccc;text-align:center;font-size:13px}
+.row-cb{cursor:pointer;width:14px;height:14px}
+.spec-tag{display:inline-block;font-size:10px;padding:2px 5px;border-radius:6px;margin-left:3px;vertical-align:middle}
+.tag-ip{background:#E6F1FB;color:#0C447C}
+.tag-hz{background:#EAF3DE;color:#3B6D11}.tag-ul{background:#EAF3DE;color:#3B6D11}.tag-atex{background:#E6F1FB;color:#0C447C}.tag-csa{background:#FFF3E0;color:#E65100}
+#page-wrap{display:flex;align-items:stretch}
+#main-col{flex:1;min-width:0}
+#radio-sidebar{width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;padding:24px 16px;position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden}
+#sidebar-img{width:180px;height:180px;object-fit:contain;display:block}
+#sidebar-img.hidden{display:none}
+#sidebar-placeholder{width:180px;height:180px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
+#sidebar-name{margin-top:16px;font-size:14px;font-weight:600;color:#0C2D5A;text-align:center}
+#sidebar-type{font-size:11px;color:#888;margin-top:4px;text-align:center}
+#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);z-index:999;align-items:center;justify-content:center;cursor:pointer}
+#lightbox.open{display:flex}
+#lightbox img{max-width:50vw;max-height:50vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="lightbox" onclick="this.classList.remove('open')"><img id="lightbox-img" src="" alt=""></div>
+<div id="topbar">
+  <div id="topbar-left">
+    <div id="moto-icon"><img src="https://dlun1971.github.io/pcr-catalog/assets/images/motorola-solutions-logo.png" style="width:28px;height:28px;object-fit:contain"></div>
+    <span id="brand">MOTOTRBO Commercial Catalog</span>
+  </div>
+  
+  <div style="position:relative;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:0 16px;gap:7px;margin-right:8px;cursor:text;height:30px;box-sizing:border-box"><input id="search-input" placeholder="Search..." oninput="onSearchInput()" style="background:transparent;border:none;outline:none;color:#fff;font-size:12px;width:160px"><span id="search-clear" onclick="clearSearch()" style="display:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:16px;line-height:1;user-select:none">×</span></div><div id="whatsnew-pill" onclick="toggleWhatsNewPanel()" style="display:flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:5px 16px;cursor:pointer;color:#fff;font-size:12px;user-select:none;margin-right:8px">New Products <span id="whatsnew-count" style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;font-size:11px;color:#fff">0</span></div><div id="mylist-pill" onclick="toggleMyListPanel()">
+    My List <span id="mylist-count">0</span>
+  </div>
+</div>
+
+<!-- RADIO PANEL -->
+<div id="radio-panel">
+  <div class="panel-label">Portable</div>
+  <div class="pill-row" id="portable-pills"></div>
+
+  <div id="variant-info" style="display:none;padding:8px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:6px;font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5"></div>
+
+  <div style="margin-top:12px">
+    <div class="panel-label">Mobile</div>
+    <div class="pill-row" id="mobile-pills"></div>
+  </div>
+
+  <div id="panel-radio-img" style="margin-top:14px;width:100%;display:flex;justify-content:center;opacity:0.18;pointer-events:none"><img id="panel-hero-img" src="" style="width:140px;height:140px;object-fit:contain;display:block"></div>
+
+  </div>
+
+
+<!-- CONTENT AREA -->
+<div id="page-wrap">
+<div id="radio-sidebar">
+  <img id="sidebar-img" class="hidden" src="" alt="">
+  <div id="sidebar-placeholder">No image</div>
+  <div id="sidebar-name"></div>
+  <div id="sidebar-type"></div>
+  <div id="sidebar-acc" style="display:none;margin-top:16px;text-align:center">
+    <img id="sidebar-acc-img" src="" style="width:160px;height:160px;object-fit:contain;cursor:zoom-in" onclick="openLightbox(this.src)" alt="">
+    <div id="sidebar-acc-desc" style="font-size:11px;color:#444;margin-top:8px;padding:0 8px;line-height:1.4"></div>
+    <div id="sidebar-acc-pn" style="font-size:11px;font-family:monospace;color:#888;margin-top:4px"></div>
+    <div id="sidebar-acc-back" onclick="restoreRadioSidebar()" style="margin-top:10px;font-size:11px;color:#185FA5;cursor:pointer">&#8592; Back to radio</div>
+  </div>
+</div>
+<div id="main-col">
+<div id="content-area">
+  <div id="cat-bar"></div>
+  <div id="toolbar">
+    <span id="breadcrumb"><b>Select a radio</b></span>
+  </div>
+  <div id="table-area"></div>
+</div>
+</div>
+</div>
+
+
+<!-- WHATS NEW PANEL --><div id="whatsnew-overlay" onclick="closeWhatsNewPanel()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:200"></div><div id="whatsnew-panel" style="display:none;position:fixed;top:0;right:0;width:400px;height:100%;background:#fff;z-index:201;box-shadow:-4px 0 20px rgba(0,0,0,0.15);flex-direction:column"><div style="background:#0C2D5A;padding:16px 20px;display:flex;align-items:center;justify-content:space-between"><span style="color:#fff;font-size:15px;font-weight:500">New Products</span><span onclick="closeWhatsNewPanel()" style="color:rgba(255,255,255,0.7);cursor:pointer;font-size:20px;line-height:1">&times;</span></div><div id="whatsnew-items" style="flex:1;overflow-y:auto;padding:12px 16px"></div></div><!-- MY LIST PANEL -->
+<div id="mylist-overlay" onclick="closeMyListPanel()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:200"></div>
+<div id="mylist-panel" style="display:none;position:fixed;top:0;right:0;width:360px;height:100%;background:#fff;z-index:201;box-shadow:-4px 0 20px rgba(0,0,0,0.15);flex-direction:column">
+  <div style="background:#0C2D5A;padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
+    <span style="color:#fff;font-size:15px;font-weight:500">My List</span>
+    <span onclick="closeMyListPanel()" style="color:rgba(255,255,255,0.7);cursor:pointer;font-size:20px;line-height:1">&times;</span>
+  </div>
+  <div id="mylist-items" style="flex:1;overflow-y:auto;padding:12px 16px"></div>
+  <div style="padding:12px 16px;border-top:1px solid #e0e0e0;display:flex;gap:8px">
+    <button onclick="clearMyList()" style="flex:1;padding:8px;border:1px solid #ccc;border-radius:4px;background:#fff;color:#555;font-size:12px;cursor:pointer">Clear All</button>
+    <button onclick="generateReport()" style="flex:2;padding:8px;border:none;border-radius:4px;background:#0C2D5A;color:#fff;font-size:12px;font-weight:500;cursor:pointer">Generate Report</button>
+  </div>
+</div>
+
+
+<script>
+// ---- DATA MAP ----
+
+const PORTABLE_RADIOS = [
+  {label:'R2',           key:'r2'},
+  {label:'CP200d Series',key:'cp200d'},
+  {label:'CP100d Series',key:'cp100d'},
+  {label:'SL Series',    key:'slcomm'},
+];
+
+const MOBILE_RADIOS = [
+  {label:'CM Series', key:'cmseries'},
+];
+
+const VARIANT_MAP = {};
+
+const VARIANT_INFO = {
+  cp200d: 'CP200d Series: Covers CP200d · DEP450 · DP1400 · XiR P3688 — regional variants of the same platform. Accessory compatibility is consistent across all variants unless noted.',
+  cp100d: 'CP100d Series: Covers CP100d · DEP250 · DP540 · DP560 · DP580 · CP261 · XiR C1200 · XiR C2620 · XiR C2660 — regional variants of the same platform.',
+  slcomm: 'SL Series: Covers SL300 · SL500 · SL1600 · SL1M — slim form factor portables. Accessory compatibility is consistent across all variants unless noted.',
+  cmseries: 'CM Series: Covers CM200d · CM300d · DEM300 · DEM400 · DM1400 · DM1600 · XiR M3188 · XiR M3688 — regional variants of the same mobile platform.',
+};
+const PORTABLE_CATS = ['All','RSM/Audio','Surveillance/Earpieces','Headsets','Batteries','Chargers','Carry','Cables','Antennas'];
+const LABEL_TO_KEY = {
+  'Description':'desc','Part Number':'part','Part #':'part','IMPRES':'impres',
+  'Chemistry':'chem','Typical Capacity (mAh)':'capacity_mah','Capacity (mAh)':'capacity_mah',
+  'Dimensions (mm)':'dims_mm','Weight':'weight_g','Weight (g)':'weight_g',
+  'HazLoc':'hazloc','IP':'ip','IP Rating':'ip','Op Temp':'op_temp','Pockets':'pockets',
+  'Power':'pwr_src','Intel Audio':'intel_audio','Noise Cancel':'noise_cancel',
+  'Ear Type':'ear_type','Mic Type':'mic_type','Full Duplex':'full_duplex',
+  'Type':'headset_type','Ear Style':'ear_style','NRR (dB)':'nrr_db',
+  'Material':'material','Belt Size':'belt_sz','Swivel':'swivel','Display':'display','D-Rings':'d_rings',
+  'Band':'band','Freq (MHz)':'freq_mhz','Length (cm)':'len_cm',
+  'PTT':'ptt','Talk Time (hr)':'talk_time_hr','Charge Time (hr)':'charge_time_hr',
+};
+const COL_KEY = LABEL_TO_KEY;
+const COLS_BY_SECTION = {
+  'Batteries':       [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'dims_mm',label:'Dims (mm)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'op_temp',label:'Op Temp'}],
+  'Chargers':        [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'pwr_src',label:'Power'},{key:'pockets',label:'Pockets'}],
+  'RSM/Audio':       [{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ai_noise',label:'AI Noise'},{key:'windporting',label:'Windporting'},{key:'noise_cancel',label:'Noise Cancel'},{key:'full_duplex',label:'Full Duplex'},{key:'vol_ctrl',label:'Vol Ctrl'},{key:'prog_btn',label:'Prog Btn'},{key:'audio_jack',label:'Audio Jack'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'dims_mm',label:'Dims (mm)'}],
+  'Surveillance/Earpieces':[{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic Type'},{key:'hazloc',label:'HazLoc'}],
+  'Headsets':        [{key:'impres',label:'IMPRES'},{key:'headset_type',label:'Type'},{key:'ear_style',label:'Ear Style'},{key:'nrr_db',label:'NRR (dB)'},{key:'hazloc',label:'HazLoc'}],
+  'Carry':           [{key:'material',label:'Material'},{key:'belt_sz',label:'Belt Size'},{key:'swivel',label:'Swivel'},{key:'display',label:'Display'},{key:'d_rings',label:'D-Rings'}],
+  'Antennas':        [{key:'band',label:'Band'},{key:'freq_mhz',label:'Freq (MHz)'},{key:'len_cm',label:'Length (cm)'},{key:'ant_type',label:'Type'}],
+  'Cables':          [],
+  'Screen Protectors':[],
+  'Battery Fleet Management':    [],
+  'Bluetooth':       [{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic'},{key:'ptt',label:'PTT'},{key:'talk_time_hr',label:'Talk Time (hr)'},{key:'weight_g',label:'Weight (g)'}],
+  'Microphones':     [{key:'impres',label:'IMPRES'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'}],
+  'Mic Accessories': [],
+  'External PTT':    [],
+  'Wireless Kits':   [{key:'ear_type',label:'Ear Type'},{key:'ptt',label:'PTT'},{key:'talk_time_hr',label:'Talk Time (hr)'}],
+  'Control Station': [],
+  'Installation':    [],
+  'Speakers':        [{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'}],
+};
+const MOBILE_CATS   = ['All','Microphones','Mic Accessories','Vehicle PTT','Installation','Speakers','Cables','Antennas'];
+
+const PART_IMAGES = {};
+fetch('https://dlun1971.github.io/catalog-files/part-images.json')
+  .then(r => r.json())
+  .then(data => { Object.assign(PART_IMAGES, data); render(); });
+
+const RADIO_IMAGES = {
+  r2:       'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/r2/mototrbo_r2_front_1290x1290.png',
+  cp200d:   'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/cp200d/cp200d_front_1290x1290.png',
+  cp100d:   'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/cp100d/cp100d_front_1290x1290.png',
+  slcomm:   'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/portable-radios/sl3500e/sl_series_lkp_front_uhf_aerial_on.jpg',
+  cmseries: 'https://www.motorolasolutions.com/content/dam/msi/images/business/products/two-way_radios/mobile_radios/wide_area_large_business_mobile_radios/xpr5550/_images/_staticfiles/xpr5550_lg5.jpg',
+};
+
+function updateSidebar() {
+  var img = document.getElementById('sidebar-img');
+  var placeholder = document.getElementById('sidebar-placeholder');
+  var name = document.getElementById('sidebar-name');
+  var type = document.getElementById('sidebar-type');
+  var url = RADIO_IMAGES[currentRadioKey];
+  name.textContent = currentRadio || '';
+  type.textContent = isMobile ? 'Mobile Radio' : 'Portable Radio';
+  if (url) {
+    img.src = url;
+    img.classList.remove('hidden');
+    placeholder.style.display = 'none';
+  } else {
+    img.classList.add('hidden');
+    placeholder.style.display = 'flex';
+  }
+  var hero = document.getElementById('panel-hero-img');
+  if (hero) hero.src = url || '';
+}
+
+// ---- STATE ----
+let currentRadio   = null;
+let currentRadioKey = null;
+let currentVariant = null;
+let currentCat     = 'All';
+let currentFilters = {impres:false, hazloc:false, ip:false};
+let myList         = [];
+let isMobile       = false;
+
+// ---- INIT ----
+const RADIOS_DATA = {
+  r2:       R2_DATA,
+  cp200d:   CP200D_DATA,
+  cp100d:   CP100D_DATA,
+  slcomm:   SL_COMM_DATA,
+  cmseries: CM_SERIES_DATA,
+};
+
+function init() {
+  buildPortablePills();
+  buildMobilePills();
+  selectRadio('R2', 'r2', false);
+}
+
+function buildPortablePills() {
+  const row = document.getElementById('portable-pills');
+  row.innerHTML = '';
+  PORTABLE_RADIOS.forEach(r => {
+    const d = document.createElement('div');
+    d.className = 'rpill' + (r.label === currentRadio ? ' active' : '');
+    d.textContent = r.label;
+    d.onclick = () => selectRadio(r.label, r.key, false);
+    row.appendChild(d);
+  });
+}
+
+function buildMobilePills() {
+  const row = document.getElementById('mobile-pills');
+  row.innerHTML = '';
+  MOBILE_RADIOS.forEach(r => {
+    const d = document.createElement('div');
+    d.className = 'rpill mobile' + (r.label === currentRadio ? ' active' : '');
+    d.textContent = r.label;
+    d.onclick = () => selectRadio(r.label, r.key, true);
+    row.appendChild(d);
+  });
+}
+
+function selectRadio(label, key, mobile) {
+  currentRadio    = label;
+  currentRadioKey = key;
+  isMobile        = mobile;
+  currentCat      = 'All';
+  currentVariant  = null;
+  buildPortablePills();
+  buildMobilePills();
+  buildVariantStrip(key);
+  buildCatBar();
+  render();
+  updateSidebar();
+}
+
+function buildVariantStrip(key) {
+  var info = document.getElementById('variant-info');
+  var text = VARIANT_INFO[key];
+  if (text) {
+    info.textContent = text;
+    info.style.display = 'block';
+  } else {
+    info.textContent = '';
+    info.style.display = 'none';
+  }
+}
+
+function buildCatBar() {
+  const bar = document.getElementById('cat-bar');
+  bar.innerHTML = '';
+  const cats = isMobile ? MOBILE_CATS : PORTABLE_CATS;
+  cats.forEach(c => {
+    const d = document.createElement('div');
+    d.className = 'cpill' + (c === currentCat ? ' active' : '');
+    d.textContent = c;
+    d.onclick = () => {
+      currentCat = c;
+      buildCatBar();
+      render();
+    };
+    bar.appendChild(d);
+  });
+}
+
+
+
+function updateBreadcrumb() {
+  const bc = document.getElementById('breadcrumb');
+  bc.innerHTML = (currentRadio || '') + ' &rsaquo; <b>' + currentCat + '</b>';
+}
+
+// ---- RENDER ----
+function render() {
+  var area   = document.getElementById('table-area');
+  var search = document.getElementById('search-input').value.toLowerCase().trim();
+  if (search.length > 0) { renderGlobalSearch(search, area); return; }
+  updateBreadcrumb();
+  var rd = RADIOS_DATA[currentRadioKey.toLowerCase()];
+  if (!rd || !rd.length) { area.innerHTML = '<div class="no-items">No data available for this radio.</div>'; return; }
+  var sections = [];
+  if (currentCat === 'All') {
+    sections = rd.map(function(s) { return {name: s.name||s.label, items: s.items||[], cols: (s.cols||s.columns||COLS_BY_SECTION[s.name||s.label]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;})}; });
+  } else {
+    var found = rd.find(function(s){return (s.name||s.label||'').toLowerCase()===currentCat.toLowerCase();});
+    if (found) sections = [{name:found.name||found.label, items:found.items||[], cols:(found.cols||found.columns||COLS_BY_SECTION[found.name||found.label]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;})}];
+  }
+  if (currentFilters.impres) sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.impres===true;})};});
+  if (currentFilters.hazloc) sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.hazloc&&i.hazloc!=='';})};});
+  if (currentFilters.ip)     sections = sections.map(function(s){return {name:s.name,cols:s.cols,items:s.items.filter(function(i){return i.ip&&i.ip!=='';})};});
+  sections = sections.filter(function(s){return s.items.length>0;});
+  if (!sections.length) { area.innerHTML = '<div class="no-items">No accessories match the current filters.</div>'; return; }
+  area.innerHTML = buildSectionsHTML(sections);
+}
+
+function renderGlobalSearch(search, area) {
+  var allRadios = PORTABLE_RADIOS.concat(MOBILE_RADIOS);
+  var totalItems = 0;
+  var matchedRadios = 0;
+  var html = '';
+  allRadios.forEach(function(r) {
+    var rd = RADIOS_DATA[r.key.toLowerCase()];
+    if (!rd || !rd.length) return;
+    var radioHtml = '';
+    var radioItems = 0;
+    rd.forEach(function(s) {
+      var sname = s.name||s.label||'';
+      var cols = (s.cols||s.columns||COLS_BY_SECTION[sname]||[]).map(function(c){return typeof c==='string'?{key:LABEL_TO_KEY[c]||c.toLowerCase().replace(/ /g,'_'),label:c}:c;});
+      var items = (s.items||[]).filter(function(i){return (i.pn||i.part||'').toLowerCase().includes(search)||(i.desc||'').toLowerCase().includes(search);});
+      if (currentFilters.impres) items = items.filter(function(i){return i.impres===true;});
+      if (currentFilters.hazloc) items = items.filter(function(i){return i.hazloc&&i.hazloc!=='';});
+      if (currentFilters.ip)     items = items.filter(function(i){return i.ip&&i.ip!=='';});
+      if (!items.length) return;
+      radioItems += items.length;
+      radioHtml += buildSectionsHTML([{name:sname, items:items, cols:cols}]);
+    });
+    if (!radioItems) return;
+    totalItems += radioItems;
+    matchedRadios++;
+    html += '<div class="sec-head" style="background:#f0f4fa;padding:8px 10px;border-radius:4px;margin-top:16px;color:#0C2D5A;font-size:12px;font-weight:600;text-transform:none;letter-spacing:0">';
+    html += r.label + ' <span class="sec-count">— ' + radioItems + ' item' + (radioItems!==1?'s':'') + '</span></div>';
+    html += radioHtml;
+  });
+  var bc = document.getElementById('breadcrumb');
+  if (totalItems === 0) {
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> › No results';
+    area.innerHTML = '<div class="no-items">No accessories found matching "' + search + '".</div>';
+  } else {
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> › ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
+    area.innerHTML = html;
+  }
+}
+
+function buildSectionsHTML(sections) {
+  var html = '';
+  sections.forEach(function(sec) {
+    var specKeys = (sec.cols||[]).filter(function(c){return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());});
+    html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">— ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
+    var noSpec = specKeys.length === 0;
+    html += '<table class="acc-table">' + (noSpec ? '<colgroup><col style="width:42px"><col style="width:55%"><col style="width:180px"><col style="width:36px"></colgroup>' : '') + '<thead><tr>';
+    html += '<th style="width:42px"></th>';
+    html += '<th>Description</th>';
+    html += '<th>Part #</th>';
+    specKeys.forEach(function(c){html += '<th style="text-align:center">' + (c.label||c) + '</th>';});
+    html += '<th style="width:36px"></th>';
+    html += '</tr></thead><tbody>';
+    var lastGroup = null;
+    sec.items.forEach(function(item) {
+      if (item.group && item.group !== lastGroup) {
+        lastGroup = item.group;
+        html += '<tr class="antenna-group-row"><td colspan="100" class="acc-subsection-title" style="padding:8px 10px 4px 10px;background:var(--surface);border-bottom:1px solid var(--border)">' + item.group + '</td></tr>';
+      }
+      var pn   = item.pn||item.part||'';
+      var desc = item.desc||item.description||'';
+      var inList = myList.includes(pn);
+      var thumbUrl = PART_IMAGES[pn];
+      if (!thumbUrl) {
+        var _base = pn.replace(/[A-D]$/, '').replace(/0[1-4]$/, '');
+        if (_base !== pn) thumbUrl = PART_IMAGES[_base];
+      }
+      if (!thumbUrl) { var _sfx = ['A','B','C','D','01','02','03','04']; for (var _i=0;_i<_sfx.length;_i++) { if (PART_IMAGES[pn+_sfx[_i]]) { thumbUrl = PART_IMAGES[pn+_sfx[_i]]; break; } } }
+      html += '<tr style="cursor:pointer" onclick="showAccSidebar(\'' + pn + '\',\'' + desc.replace(/'/g,' ') + '\')">';
+html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:pointer">' : '<div class="img-box"></div>') + '</td>';
+      html += '<td>' + desc + '</td>';
+      html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
+      specKeys.forEach(function(c) {
+        var k = c.key||c;
+        var dataKey = LABEL_TO_KEY[k]||k;
+        var v = item[dataKey];
+        if (v===true) html += '<td class="chk-yes" style="text-align:center">&#10003;</td>';
+        else if (v===false||v===null||v===undefined||v==='') html += '<td class="chk-no" style="text-align:center">—</td>';
+        else if (dataKey==='ip') html += '<td style="text-align:center"><span class="spec-tag tag-ip">' + v + '</span></td>';
+        else if (k==='hazloc') html += '<td style="text-align:center">' + (v==='UL'?'<span class="spec-tag tag-ul">UL</span>':v==='ATEX'?'<span class="spec-tag tag-atex">ATEX</span>':v==='CSA'?'<span class="spec-tag tag-csa">CSA</span>':v?'<span class="spec-tag tag-hz">'+v+'</span>':'<span class="chk-no">—</span>') + '</td>';
+        else html += '<td style="text-align:center">' + v + '</td>';
+      });
+      html += '<td><input type="checkbox" class="row-cb"' + (inList?' checked':'') + ' onchange="toggleItem(\'' + pn + '\',this.checked)"></td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  });
+  return html;
+}
+
+// ---- MY LIST ----
+function onSearchInput() {var q = document.getElementById("search-input").value;document.getElementById("search-clear").style.display = q ? "inline" : "none";render();}function clearSearch() {document.getElementById("search-input").value = "";document.getElementById("search-clear").style.display = "none";render();}function toggleItem(pn, checked) {
+  if (checked && !myList.includes(pn)) myList.push(pn);
+  else if (!checked) myList = myList.filter(p => p !== pn);
+  document.getElementById('mylist-count').textContent = myList.length;
+}
+
+function copyPN(el, pn) {
+  navigator.clipboard.writeText(pn);
+  var orig = el.textContent;
+  el.textContent = 'Copied!';
+  el.style.color = '#1D9E75';
+  setTimeout(function() { el.textContent = orig; el.style.color = ''; }, 1200);
+}
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function showAccSidebar(pn, desc) {
+  var url = PART_IMAGES[pn];
+  var radio = document.getElementById('sidebar-img');
+  var placeholder = document.getElementById('sidebar-placeholder');
+  var name = document.getElementById('sidebar-name');
+  var type = document.getElementById('sidebar-type');
+  var acc = document.getElementById('sidebar-acc');
+  var accImg = document.getElementById('sidebar-acc-img');
+  var accDesc = document.getElementById('sidebar-acc-desc');
+  var accPN = document.getElementById('sidebar-acc-pn');
+  radio.classList.add('hidden');
+  placeholder.style.display = 'none';
+  name.textContent = '';
+  type.textContent = '';
+  acc.style.display = 'block';
+  accImg.src = url || '';
+  accImg.style.display = url ? 'block' : 'none';
+  accDesc.textContent = desc || '';
+  accPN.textContent = pn || '';
+}
+
+function restoreRadioSidebar() {
+  document.getElementById('sidebar-acc').style.display = 'none';
+  updateSidebar();
+}
+
+function toggleMyListPanel() {
+  var panel = document.getElementById('mylist-panel');
+  var overlay = document.getElementById('mylist-overlay');
+  if (panel.style.display === 'flex') { closeMyListPanel(); return; }
+  renderMyListPanel();
+  panel.style.display = 'flex';
+  overlay.style.display = 'block';
+}
+
+function closeMyListPanel() {
+  document.getElementById('mylist-panel').style.display = 'none';
+  document.getElementById('mylist-overlay').style.display = 'none';
+}
+
+function renderMyListPanel() {
+  var container = document.getElementById('mylist-items');
+  if (!myList.length) {
+    container.innerHTML = '<div style="color:#aaa;font-size:13px;text-align:center;padding:40px 0">No items selected</div>';
+    return;
+  }
+  var html = '';
+  myList.forEach(function(pn) {
+    var item = findItemByPN(pn);
+    var desc = item ? (item.desc || item.description || '') : '';
+    var thumb = PART_IMAGES[pn] || '';
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:0.5px solid #f0f0f0">';
+    if (thumb) html += '<img src="' + thumb + '" style="width:40px;height:40px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;flex-shrink:0">';
+    else html += '<div style="width:40px;height:40px;background:#f5f5f5;border-radius:4px;flex-shrink:0"></div>';
+    html += '<div style="flex:1;min-width:0">';
+    html += '<div style="font-family:monospace;font-size:11px;color:#888">' + pn + '</div>';
+    html += '<div style="font-size:12px;color:#222;margin-top:2px;line-height:1.3">' + desc + '</div>';
+    html += '</div>';
+    html += '<span onclick="removeFromList(\'' + pn + '\')" style="color:#ccc;cursor:pointer;font-size:18px;flex-shrink:0">&times;</span>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function findItemByPN(pn) {
+  var radios = Object.values(RADIOS_DATA);
+  for (var i=0;i<radios.length;i++) {
+    var cats = radios[i];
+    for (var j=0;j<cats.length;j++) {
+      var items = cats[j].items || [];
+      for (var k=0;k<items.length;k++) {
+        if ((items[k].part||items[k].pn) === pn) return items[k];
+      }
+    }
+  }
+  return null;
+}
+
+function removeFromList(pn) {
+  myList = myList.filter(function(p) { return p !== pn; });
+  document.getElementById('mylist-count').textContent = myList.length;
+  renderMyListPanel();
+  render();
+}
+
+function clearMyList() {
+  myList = [];
+  document.getElementById('mylist-count').textContent = 0;
+  renderMyListPanel();
+  render();
+}
+
+function generateReport() {
+  if (!myList.length) return;
+  var rows = myList.map(function(pn) {
+    var item = findItemByPN(pn) || {};
+    return { pn: pn, desc: item.desc || item.description || '', item: item };
+  });
+  var win = window.open('', '_blank');
+  win.document.write(buildReportHTML(rows));
+  win.document.close();
+}
+
+function buildReportHTML(rows) {
+  var date = new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+  var h = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Accessory Report</title>';
+  h += '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:12px;color:#222;padding:24px}h1{font-size:18px;color:#0C2D5A}table{width:100%;border-collapse:collapse;margin-top:16px}th{background:#0C2D5A;color:#fff;padding:8px 10px;text-align:left;font-size:11px}td{padding:8px 10px;border-bottom:0.5px solid #e0e0e0;vertical-align:middle}.pn{font-family:monospace;font-size:11px;color:#555}.header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #185FA5;padding-bottom:12px;margin-bottom:20px}.meta{font-size:11px;color:#888}img.thumb{width:36px;height:36px;object-fit:contain}@media print{body{padding:12px}}</style>';
+  h += '</head><body>';
+  h += '<div class="header"><img src="https://dlun1971.github.io/pcr-catalog/assets/images/motorola-solutions-logo.png" style="height:36px;object-fit:contain"><h1 style="margin-left:12px">MOTOTRBO Accessory Report</h1><div class="meta">Generated: ' + date + '<br>' + rows.length + ' item' + (rows.length!==1?'s':'') + ' selected</div></div>';
+  h += '<table><thead><tr><th></th><th>Part #</th><th>Description</th><th>IP</th><th>HazLoc</th><th>IMPRES</th></tr></thead><tbody>';
+  rows.forEach(function(r) {
+    var thumb = PART_IMAGES[r.pn] ? '<img class=\'thumb\' src=\'' + PART_IMAGES[r.pn] + '\'>' : '';
+    h += '<tr>';
+    h += '<td>' + thumb + '</td>';
+    h += '<td class=\'pn\'>' + r.pn + '</td>';
+    h += '<td>' + r.desc + '</td>';
+    h += '<td>' + (r.item.ip||'') + '</td>';
+    h += '<td>' + (r.item.hazloc||'') + '</td>';
+    h += '<td>' + (r.item.impres?'Yes':'') + '</td>';
+    h += '</tr>';
+  });
+  h += '</tbody></table></body></html>';
+  return h;
+}
+
+const WHATS_NEW = [];fetch('https://dlun1971.github.io/catalog-files/whats-new.json')  .then(function(r){return r.json();})  .then(function(data){    WHATS_NEW.push.apply(WHATS_NEW, data);    document.getElementById('whatsnew-count').textContent = data.length;  });function toggleWhatsNewPanel() {  var panel = document.getElementById('whatsnew-panel');  var overlay = document.getElementById('whatsnew-overlay');  if (panel.style.display === 'flex') { closeWhatsNewPanel(); return; }  renderWhatsNewPanel();  panel.style.display = 'flex';  overlay.style.display = 'block';}function closeWhatsNewPanel() {  document.getElementById('whatsnew-panel').style.display = 'none';  document.getElementById('whatsnew-overlay').style.display = 'none';}function renderWhatsNewPanel() {  var container = document.getElementById('whatsnew-items');  if (!WHATS_NEW.length) {    container.innerHTML = '<div style="color:#aaa;font-size:13px;text-align:center;padding:40px 0">No new accessories</div>';    return;  }  var html = '';  WHATS_NEW.forEach(function(item) {    var thumb = item.img || PART_IMAGES[item.pn] || '';    html += '<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:0.5px solid #f0f0f0">';    if (thumb) html += '<img src="' + thumb + '" style="width:44px;height:44px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;flex-shrink:0">';    else html += '<div style="width:44px;height:44px;background:#f5f5f5;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:10px">No img</div>';    html += '<div style="flex:1;min-width:0">';    html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">';    html += '<span style="font-family:monospace;font-size:11px;color:#888">' + item.pn + '</span>';    if (item.radio) html += '<span style="font-size:10px;background:#e8f0fb;color:#0C2D5A;border-radius:4px;padding:1px 6px">' + item.radio + '</span>';    if (item.added) html += '<span style="font-size:10px;color:#bbb;margin-left:auto">' + item.added + '</span>';    html += '</div>';    html += '<div style="font-size:12px;color:#222;line-height:1.3">' + (item.desc||'') + '</div>';    html += '</div></div>';  });  container.innerHTML = html;}window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
