@@ -624,7 +624,7 @@ function buildReportHTML(rows) {
   var h = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Accessory Report</title>';
   h += '<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:12px;color:#222;padding:24px}h1{font-size:18px;color:#0C2D5A}table{width:100%;border-collapse:collapse;margin-top:16px}th{background:#0C2D5A;color:#fff;padding:8px 10px;text-align:left;font-size:11px}td{padding:8px 10px;border-bottom:0.5px solid #e0e0e0;vertical-align:middle}.pn{font-family:monospace;font-size:11px;color:#555}.header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #185FA5;padding-bottom:12px;margin-bottom:20px}.meta{font-size:11px;color:#888}img.thumb{width:36px;height:36px;object-fit:contain}@media print{body{padding:12px}}</style>';
   h += '</head><body>';
-  h += '<div class="header"><h1>MOTOTRBO Accessory Report</h1><div class="meta">Generated: ' + date + '<br>' + rows.length + ' item' + (rows.length!==1?'s':'') + ' selected</div></div>';
+  h += '<div class="header"><img src="https://dlun1971.github.io/pcr-catalog/assets/images/motorola-solutions-logo.png" style="height:36px;object-fit:contain"><h1 style="margin-left:12px">MOTOTRBO Accessory Report</h1><div class="meta">Generated: ' + date + '<br>' + rows.length + ' item' + (rows.length!==1?'s':'') + ' selected</div></div>';
   h += '<table><thead><tr><th></th><th>Part #</th><th>Description</th><th>IP</th><th>HazLoc</th><th>IMPRES</th></tr></thead><tbody>';
   rows.forEach(function(r) {
     var thumb = PART_IMAGES[r.pn] ? '<img class=\'thumb\' src=\'' + PART_IMAGES[r.pn] + '\'>' : '';
