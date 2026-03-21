@@ -3,74 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PCR Catalog Home</title>
+<title>MOTOTRBO PCR Accessory Catalog</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,sans-serif;background:#0C2D5A;min-height:100vh}
-#topbar{background:#0C2D5A;padding:0 32px;display:flex;align-items:center;height:52px;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:10}
-#topbar img{width:28px;height:28px;object-fit:contain;margin-right:12px}
-#topbar span{color:#fff;font-size:15px;font-weight:500}
-#hero{position:relative;height:440px;overflow:hidden}
+body{font-family:system-ui,sans-serif;background:#0D1F35;min-height:100vh}
+#topbar{padding:0 40px;display:flex;align-items:center;height:56px;border-bottom:1px solid rgba(255,255,255,0.1);position:sticky;top:0;z-index:10;background:#0D1F35}
+#topbar img{width:32px;height:32px;object-fit:contain;margin-right:14px}
+#topbar-brand{color:#fff;font-size:13px;font-weight:500;letter-spacing:0.02em}
+#topbar-div{color:rgba(255,255,255,0.2);margin:0 12px}
+#topbar-sub{color:rgba(255,255,255,0.55);font-size:13px}
+#hero{position:relative;height:400px;overflow:hidden}
 #hero-img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
-#hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,45,90,0.55) 0%,rgba(12,45,90,0.75) 60%,#0C2D5A 100%)}
-#hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 32px}
-#hero-badge{display:inline-block;background:rgba(24,95,165,0.4);border:1px solid rgba(24,95,165,0.6);border-radius:20px;padding:4px 16px;font-size:11px;color:#7AB8F5;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
-#hero-title{color:#fff;font-size:36px;font-weight:600;line-height:1.15;letter-spacing:-0.01em;margin-bottom:12px}
-#hero-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:480px;line-height:1.6}
-#cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1100px;margin:-44px auto 0;padding:0 48px 64px;position:relative;z-index:2}
-.cat-card{background:#112240;border:1px solid rgba(255,255,255,0.12);border-radius:16px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;transition:border-color 0.2s}
-.cat-card:hover{border-color:rgba(255,255,255,0.28)}
-
-.card-body{padding:22px}
-.card-badge{display:inline-block;border-radius:10px;padding:2px 10px;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px}
-.badge-pro{background:rgba(24,95,165,0.3);border:1px solid rgba(24,95,165,0.5);color:#7AB8F5}
-.badge-com{background:rgba(12,68,124,0.3);border:1px solid rgba(56,138,221,0.5);color:#85B7EB}
-.card-title{color:#fff;font-size:20px;font-weight:600;margin:0 0 8px}
-.card-desc{color:rgba(255,255,255,0.4);font-size:12px;line-height:1.6;margin:0 0 18px}
-.card-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500}
-.card-link-pro{color:#7AB8F5}
-.card-link-com{color:#85B7EB}
-#footer{border-top:1px solid rgba(255,255,255,0.08);padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
-#footer span{color:rgba(255,255,255,0.25);font-size:11px}
+#hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,31,53,0.92) 40%,rgba(13,31,53,0.3) 100%)}
+#hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 40px}
+#hero-eyebrow{font-size:11px;color:#5DCAA5;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;font-weight:500}
+#hero-title{color:#fff;font-size:42px;font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;max-width:560px}
+#hero-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:420px;line-height:1.6}
+#cards{padding:48px 40px 64px;display:grid;grid-template-columns:1fr 1fr;gap:3px;max-width:1200px}
+.cat-card{background:#112240;padding:40px;cursor:pointer;text-decoration:none;display:block;transition:background 0.2s}
+.cat-card:hover{background:#152b52}
+.cat-card.pro{border-bottom:3px solid #185FA5}
+.cat-card.com{border-bottom:3px solid #378ADD}
+.card-eyebrow{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;font-weight:500}
+.eyebrow-pro{color:#7AB8F5}
+.eyebrow-com{color:#85B7EB}
+.card-title{color:#fff;font-size:26px;font-weight:600;margin:0 0 12px;letter-spacing:-0.01em}
+.card-desc{color:rgba(255,255,255,0.45);font-size:13px;line-height:1.7;margin:0 0 28px}
+.card-cta{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
+.cta-pro{color:#7AB8F5}
+.cta-com{color:#85B7EB}
+#footer{border-top:1px solid rgba(255,255,255,0.08);padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+#footer span{color:rgba(255,255,255,0.2);font-size:11px}
 </style>
 </head>
 <body>
 
 <div id="topbar">
   <img src="https://dlun1971.github.io/pcr-catalog/assets/images/motorola-solutions-logo.png" alt="Motorola Solutions">
-  <span>MOTOTRBO PCR Accessories</span>
+  <span id="topbar-brand">Motorola Solutions</span>
+  <span id="topbar-div">|</span>
+  <span id="topbar-sub">MOTOTRBO PCR Accessories</span>
 </div>
 
 <div id="hero">
   <img id="hero-img" src="https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/two-way-accessories/RSM-guard-use-2way-radio.jpg" alt="">
   <div id="hero-overlay"></div>
   <div id="hero-content">
-    <div id="hero-badge">PCR Accessory Catalog</div>
-    <h1 id="hero-title">MOTOTRBO Professional and Commercial<br>Radio Accessories</h1>
-    <p id="hero-sub">The complete accessory portfolio for MOTOTRBO PCR radios. Select your catalog below.</p>
+    <div id="hero-eyebrow">PCR Accessory Catalog</div>
+    <h1 id="hero-title">MOTOTRBO Professional and Commercial Radio Accessories</h1>
+    <p id="hero-sub">Select a catalog below to browse the complete accessory portfolio.</p>
   </div>
 </div>
 
 <div id="cards">
-
-  <a class="cat-card" href="pcr-professional.html">
-    <div class="card-body">
-      <div class="card-badge badge-pro">Professional Tier</div>
-      <h2 class="card-title">PCR Professional</h2>
-      <p class="card-desc">R7 &middot; Ion &middot; R5 &middot; R7Ex &middot; XPR 7000 &middot; XPR 6000 &middot; XPR 3000 &middot; DP ATEX &middot; SL Series &middot; XPR Mobile</p>
-      <div class="card-link card-link-pro">Open catalog →</div>
-    </div>
+  <a class="cat-card pro" href="pcr-professional.html">
+    <div class="card-eyebrow eyebrow-pro">Professional Tier</div>
+    <h2 class="card-title">PCR Professional</h2>
+    <p class="card-desc">R7 &middot; Ion &middot; R5 &middot; R7Ex &middot; XPR 7000 &middot; XPR 6000 &middot; XPR 3000 &middot; DP ATEX &middot; SL Series &middot; XPR Mobile</p>
+    <div class="card-cta cta-pro">Explore catalog <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#7AB8F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   </a>
-
-  <a class="cat-card" href="pcr-commercial.html">
-    <div class="card-body">
-      <div class="card-badge badge-com">Commercial Tier</div>
-      <h2 class="card-title">PCR Commercial</h2>
-      <p class="card-desc">R2 &middot; CP200d Series &middot; CP100d Series &middot; SL Series &middot; CM Series Mobile</p>
-      <div class="card-link card-link-com">Open catalog →</div>
-    </div>
+  <a class="cat-card com" href="pcr-commercial.html">
+    <div class="card-eyebrow eyebrow-com">Commercial Tier</div>
+    <h2 class="card-title">PCR Commercial</h2>
+    <p class="card-desc">R2 &middot; CP200d Series &middot; CP100d Series &middot; SL Series &middot; CM Series Mobile</p>
+    <div class="card-cta cta-com">Explore catalog <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#85B7EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   </a>
-
 </div>
 
 <div id="footer">
