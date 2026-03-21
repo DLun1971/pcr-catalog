@@ -125,6 +125,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
     <div class="pill-row" id="mobile-pills"></div>
   </div>
 
+  <div id="panel-radio-img" style="margin-top:14px;width:100%;display:flex;justify-content:center;opacity:0.18;pointer-events:none"><img id="panel-hero-img" src="" style="width:140px;height:140px;object-fit:contain;display:block"></div>
 
   </div>
 
@@ -278,6 +279,8 @@ function updateSidebar() {
     img.classList.add('hidden');
     placeholder.style.display = 'flex';
   }
+  var hero = document.getElementById('panel-hero-img');
+  if (hero) hero.src = url || '';
 }
 
 // ---- STATE ----
