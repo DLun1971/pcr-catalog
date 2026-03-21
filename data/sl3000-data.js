@@ -83,7 +83,7 @@ const SL3000_CATEGORIES = [
   },
   {
     id: 11,
-    name: 'BT/Ops Critical Wireless',
+    name: 'Bluetooth',
     items: [
       { desc: 'Wireless Neckloop Y-Adapter and Retention Hook', part: 'NNTN8385', ear_type: null, mic_type: null, ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
       { desc: 'Wireless Push-to-Talk Pod', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 }
