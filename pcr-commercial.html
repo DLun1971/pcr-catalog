@@ -200,24 +200,20 @@ const LABEL_TO_KEY = {
 };
 const COL_KEY = LABEL_TO_KEY;
 const COLS_BY_SECTION = {
-  'Batteries':       [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'dims_mm',label:'Dims (mm)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'op_temp',label:'Op Temp'}],
-  'Chargers':        [{key:'impres',label:'IMPRES'},{key:'chem',label:'Chemistry'},{key:'pwr_src',label:'Power'},{key:'pockets',label:'Pockets'}],
-  'RSM/Audio':       [{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ai_noise',label:'AI Noise'},{key:'windporting',label:'Windporting'},{key:'noise_cancel',label:'Noise Cancel'},{key:'full_duplex',label:'Full Duplex'},{key:'vol_ctrl',label:'Vol Ctrl'},{key:'prog_btn',label:'Prog Btn'},{key:'audio_jack',label:'Audio Jack'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'},{key:'dims_mm',label:'Dims (mm)'}],
-  'Surveillance/Earpieces':[{key:'impres',label:'IMPRES'},{key:'intel_audio',label:'Intel Audio'},{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic Type'},{key:'hazloc',label:'HazLoc'}],
-  'Headsets':        [{key:'impres',label:'IMPRES'},{key:'headset_type',label:'Type'},{key:'ear_style',label:'Ear Style'},{key:'nrr_db',label:'NRR (dB)'},{key:'hazloc',label:'HazLoc'}],
-  'Carry':           [{key:'material',label:'Material'},{key:'belt_sz',label:'Belt Size'},{key:'swivel',label:'Swivel'},{key:'display',label:'Display'},{key:'d_rings',label:'D-Rings'}],
-  'Antennas':        [{key:'band',label:'Band'},{key:'freq_mhz',label:'Freq (MHz)'},{key:'len_cm',label:'Length (cm)'},{key:'ant_type',label:'Type'}],
-  'Cables':          [],
-  'Screen Protectors':[],
-  'Battery Fleet Management':    [],
-  'Bluetooth':       [{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic'},{key:'ptt',label:'PTT'},{key:'talk_time_hr',label:'Talk Time (hr)'},{key:'weight_g',label:'Weight (g)'}],
-  'Microphones':     [{key:'impres',label:'IMPRES'},{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'}],
-  'Mic Accessories': [],
-  'External PTT':    [],
-  'Wireless Kits':   [{key:'ear_type',label:'Ear Type'},{key:'ptt',label:'PTT'},{key:'talk_time_hr',label:'Talk Time (hr)'}],
-  'Control Station': [],
-  'Installation':    [],
-  'Speakers':        [{key:'ip',label:'IP'},{key:'hazloc',label:'HazLoc'}],
+  'RSM/Audio':              [{key:'windporting',label:'Windporting'},{key:'audio_jack',label:'Audio Jack'},{key:'ip',label:'IP'},{key:'dims_mm',label:'Dims (mm)'}],
+  'Surveillance/Earpieces': [{key:'ear_type',label:'Ear Type'},{key:'mic_type',label:'Mic Type'},{key:'ptt',label:'PTT'}],
+  'Headsets':               [{key:'headset_type',label:'Type'},{key:'ear_style',label:'Ear Style'},{key:'nrr_db',label:'NRR (dB)'}],
+  'Batteries':              [{key:'chem',label:'Chemistry'},{key:'capacity_mah',label:'Capacity (mAh)'},{key:'dims_mm',label:'Dims (mm)'},{key:'weight_g',label:'Weight (g)'},{key:'ip',label:'IP'},{key:'op_temp',label:'Op Temp'}],
+  'Chargers':               [{key:'chem',label:'Chemistry'},{key:'pwr_src',label:'Power'},{key:'dims_mm',label:'Dims (mm)'},{key:'pockets',label:'Pockets'}],
+  'Carry':                  [{key:'material',label:'Material'},{key:'belt_sz',label:'Belt Size'},{key:'swivel',label:'Swivel'},{key:'display',label:'Display'}],
+  'Cables':                 [],
+  'Antennas':               [{key:'band',label:'Band'},{key:'freq_mhz',label:'Freq (MHz)'},{key:'len_cm',label:'Length (cm)'},{key:'ant_type',label:'Type'}],
+  'Microphones':            [{key:'mic_style',label:'Style'}],
+  'Mic Accessories':        [],
+  'Vehicle PTT':            [],
+  'Installation':           [],
+  'Speakers':               [],
+  'Antennas':               [{key:'band',label:'Band'},{key:'freq_mhz',label:'Freq (MHz)'},{key:'ant_type',label:'Mount Style'}],
 };
 const MOBILE_CATS   = ['All','Microphones','Mic Accessories','Vehicle PTT','Installation','Speakers','Cables','Antennas'];
 
