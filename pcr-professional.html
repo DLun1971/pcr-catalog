@@ -445,6 +445,7 @@ function buildSectionsHTML(sections) {
       var desc = item.desc||item.description||'';
       var inList = myList.includes(pn);
       var thumbUrl = PART_IMAGES[pn];
+      if (!thumbUrl) { var _sfx = ['A','B','C','D','01','02','03','04']; for (var _i=0;_i<_sfx.length;_i++) { if (PART_IMAGES[pn+_sfx[_i]]) { thumbUrl = PART_IMAGES[pn+_sfx[_i]]; break; } } }
       html += '<tr style="cursor:pointer" onclick="showAccSidebar(\'' + pn + '\',\'' + desc.replace(/'/g,' ') + '\')">';
 html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:pointer">' : '<div class="img-box"></div>') + '</td>';
       html += '<td>' + desc + '</td>';
