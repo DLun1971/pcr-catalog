@@ -86,7 +86,13 @@ const SL3000_CATEGORIES = [
     name: 'Bluetooth',
     items: [
       { desc: 'Wireless Neckloop Y-Adapter and Retention Hook', part: 'NNTN8385', ear_type: null, mic_type: null, ptt: true, talk_time_hr: null, charge_time_hr: null, weight_g: null },
-      { desc: 'Wireless Push-to-Talk Pod', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 }
+      { desc: 'Wireless Push-to-Talk Pod', part: 'NNTN8127', ear_type: null, mic_type: null, ptt: true, talk_time_hr: 10, charge_time_hr: 3, weight_g: 43 },
+      { desc: 'Operations Critical Wireless Bluetooth Earpiece with PTT (limited availability)', part: 'PMLN7851', ear_type: 'Over-the-ear (swivel)', mic_type: 'Boom', ptt: true, talk_time_hr: 8, charge_time_hr: 3, weight_g: 23 },
+      { desc: 'Replacement Retention Hooks for NNTN8385 and PMLN7696, Pack of 10', part: 'NNTN8457', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Inductive Neckloop for PMLN7696', part: 'RLN4920', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Brown, for PMLN7696', part: 'GMLN5262', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement Phonak Nano Ear Receiver, Beige, for PMLN7696', part: 'GMLN5261', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null },
+      { desc: 'Replacement 1.4 Volt Battery for PMLN7696, Pack of 6', part: 'RNN4005', ear_type: null, mic_type: null, ptt: null, talk_time_hr: null, charge_time_hr: null, weight_g: null }
     ]
   }
 ];
