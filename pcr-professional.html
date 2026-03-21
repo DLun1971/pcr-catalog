@@ -482,7 +482,7 @@ html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;heig
 }
 
 // ---- MY LIST ----
-function toggleItem(pn, checked) {
+function onSearchInput() {var q = document.getElementById("search-input").value;document.getElementById("search-clear").style.display = q ? "inline" : "none";render();}function clearSearch() {document.getElementById("search-input").value = "";document.getElementById("search-clear").style.display = "none";render();}function toggleItem(pn, checked) {
   if (checked && !myList.includes(pn)) myList.push(pn);
   else if (!checked) myList = myList.filter(p => p !== pn);
   document.getElementById('mylist-count').textContent = myList.length;
