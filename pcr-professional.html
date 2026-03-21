@@ -110,7 +110,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
     <span id="brand">MOTOTRBO Professional Catalog</span>
   </div>
   
-  <div id="mylist-pill" onclick="toggleMyListPanel()">
+  <div style="position:relative;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:5px 16px;gap:7px;margin-right:8px"><input id="search-input" placeholder="Search..." oninput="onSearchInput()" style="background:transparent;border:none;outline:none;color:#fff;font-size:12px;width:160px"><span id="search-clear" onclick="clearSearch()" style="display:none;cursor:pointer;color:rgba(255,255,255,0.6);font-size:16px;line-height:1;user-select:none">×</span></div><div id="mylist-pill" onclick="toggleMyListPanel()">
     My List <span id="mylist-count">0</span>
   </div>
 </div>
@@ -149,7 +149,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 <div id="content-area">
   <div id="cat-bar"></div>
   <div id="toolbar">
-    <span id="breadcrumb"><b>Select a radio</b></span><div style="position:relative;display:flex;align-items:center"><input id="search-input" placeholder="Search part # or description..." oninput="onSearchInput()" style="border:0.5px solid #ccc;border-radius:6px;padding:5px 28px 5px 12px;font-size:12px;width:260px;color:#222;background:#fff;outline:none"><span id="search-clear" onclick="clearSearch()" style="display:none;position:absolute;right:8px;cursor:pointer;color:#aaa;font-size:16px;line-height:1;user-select:none">×</span></div>
+    <span id="breadcrumb"><b>Select a radio</b></span>
   </div>
   <div id="table-area"></div>
 </div>
