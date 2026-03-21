@@ -423,10 +423,10 @@ function renderGlobalSearch(search, area) {
   });
   var bc = document.getElementById('breadcrumb');
   if (totalItems === 0) {
-    bc.innerHTML = 'Search: <b>"' + search + '"</b> âº No results';
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> &rsaquo; No results';
     area.innerHTML = '<div class="no-items">No accessories found matching "' + search + '".</div>';
   } else {
-    bc.innerHTML = 'Search: <b>"' + search + '"</b> âº ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
+    bc.innerHTML = 'Search: <b>"' + search + '"</b> &rsaquo; ' + totalItems + ' result' + (totalItems!==1?'s':'') + ' across ' + matchedRadios + ' radio' + (matchedRadios!==1?'s':'');
     area.innerHTML = html;
   }
 }
