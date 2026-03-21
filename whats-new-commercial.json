@@ -1,14 +1,14 @@
 [
   {
-    "pn": "PMNN4807A",
-    "desc": "IMPRES 2 Li-Ion 2850 mAh Battery",
-    "radio": "R2",
+    "pn": "HLN9985",
+    "desc": "Waterproof Bag with Large Strap",
+    "radio": "CP200d",
     "added": "Mar 2026"
   },
   {
-    "pn": "PMMN4050A",
-    "desc": "Remote Speaker Microphone with 3.5mm Audio Jack",
-    "radio": "CP200d",
+    "pn": "PMMN4125",
+    "desc": "RM250 Wired Remote Speaker Microphone (IP67)",
+    "radio": "CM Series",
     "added": "Mar 2026"
   }
 ]
