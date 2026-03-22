@@ -10,5 +10,17 @@
     "desc": "RM250 Wired Remote Speaker Microphone (IP67)",
     "radio": "CM Series",
     "added": "Mar 2026"
+  },
+  {
+    "pn": "PMMN4148",
+    "desc": "RM110 Remote Speaker Microphone with 3.5mm Audio Jack (IP55)",
+    "radio": "R2",
+    "added": "Mar 2026"
+  },
+  {
+    "pn": "PMMN4149",
+    "desc": "RM110 Remote Speaker Microphone without 3.5mm Audio Jack (IP55)",
+    "radio": "R2",
+    "added": "Mar 2026"
   }
 ]
