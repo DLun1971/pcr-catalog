@@ -3,24 +3,32 @@
     "pn": "HLN9985",
     "desc": "Waterproof Bag with Large Strap",
     "radio": "CP200d",
+    "key": "cp200d",
+    "cat": "Carry",
     "added": "Mar 2026"
   },
   {
     "pn": "PMMN4125",
     "desc": "RM250 Wired Remote Speaker Microphone (IP67)",
     "radio": "CM Series",
+    "key": "cmseries",
+    "cat": "Microphones",
     "added": "Mar 2026"
   },
   {
     "pn": "PMMN4148",
     "desc": "RM110 Remote Speaker Microphone with 3.5mm Audio Jack (IP55)",
     "radio": "R2",
+    "key": "r2",
+    "cat": "RSM/Audio",
     "added": "Mar 2026"
   },
   {
     "pn": "PMMN4149",
     "desc": "RM110 Remote Speaker Microphone without 3.5mm Audio Jack (IP55)",
     "radio": "R2",
+    "key": "r2",
+    "cat": "RSM/Audio",
     "added": "Mar 2026"
   }
 ]
