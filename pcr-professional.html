@@ -107,12 +107,13 @@ table.acc-table tr:hover td{background:#f9f9f9}
 .tag-hz{background:#EAF3DE;color:#3B6D11}.tag-ul{background:#EAF3DE;color:#3B6D11}.tag-atex{background:#E6F1FB;color:#0C447C}.tag-csa{background:#FFF3E0;color:#E65100}
 #page-wrap{display:flex;align-items:stretch}
 #main-col{flex:1;min-width:0}
-#radio-sidebar{width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;padding:24px 16px;position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden}
-#sidebar-img{width:180px;height:180px;object-fit:contain;display:block}
-#sidebar-img.hidden{display:none}
-#sidebar-placeholder{width:180px;height:180px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
-#sidebar-name{margin-top:16px;font-size:14px;font-weight:600;color:#0C2D5A;text-align:center}
-#sidebar-type{font-size:11px;color:#888;margin-top:4px;text-align:center}
+#radio-banner{background:#0D1A2E;padding:10px 16px 12px;display:flex;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,0.08)}
+#radio-banner-img{width:80px;height:60px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;flex-shrink:0}
+#radio-banner-name{color:#fff;font-size:14px;font-weight:500;margin:0 0 4px}
+#radio-banner-specs{display:flex;gap:10px;flex-wrap:wrap}
+.rspec{font-size:11px;color:rgba(255,255,255,0.45)}
+.rspec-val{color:rgba(255,255,255,0.8);font-weight:500}
+#radio-banner-variants{font-size:11px;color:rgba(255,255,255,0.45);margin-top:5px;line-height:1.4}
 #lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);z-index:999;align-items:center;justify-content:center;cursor:pointer}
 #lightbox.open{display:flex}
 #lightbox img{max-width:50vw;max-height:50vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
@@ -154,24 +155,20 @@ table.acc-table tr:hover td{background:#f9f9f9}
   <div id="variant-info" style="display:none;padding:8px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:6px;font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5"></div>
 
   <div id="mobile-pills" style="display:none"></div>
-
   </div>
+
+<div id="radio-banner">
+  <img id="radio-banner-img" src="" alt="">
+  <div style="flex:1;min-width:0">
+    <div id="radio-banner-name"></div>
+    <div id="radio-banner-specs"></div>
+    <div id="radio-banner-variants"></div>
+  </div>
+</div>
 
 
 <!-- CONTENT AREA -->
 <div id="page-wrap">
-<div id="radio-sidebar">
-  <img id="sidebar-img" class="hidden" src="" alt="">
-  <div id="sidebar-placeholder">No image</div>
-  <div id="sidebar-name"></div>
-  <div id="sidebar-type"></div>
-  <div id="sidebar-acc" style="display:none;margin-top:16px;text-align:center">
-    <img id="sidebar-acc-img" src="" style="width:160px;height:160px;object-fit:contain;cursor:zoom-in" onclick="openLightbox(this.src)" alt="">
-    <div id="sidebar-acc-desc" style="font-size:11px;color:#444;margin-top:8px;padding:0 8px;line-height:1.4"></div>
-    <div id="sidebar-acc-pn" style="font-size:11px;font-family:monospace;color:#888;margin-top:4px"></div>
-    <div id="sidebar-acc-back" onclick="restoreRadioSidebar()" style="margin-top:10px;font-size:11px;color:#185FA5;cursor:pointer">&#8592; Back to radio</div>
-  </div>
-</div>
 <div id="main-col">
 <div id="content-area">
   <div id="cat-bar"></div>
@@ -357,22 +354,22 @@ const RADIO_IMAGES = {
   xpr2500: 'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/mobile-radios/xpr2500/tahitiplus_xpr2500_front_324x324.jpg',
 };
 
-function updateSidebar() {
-  var img = document.getElementById('sidebar-img');
-  var placeholder = document.getElementById('sidebar-placeholder');
-  var name = document.getElementById('sidebar-name');
-  var type = document.getElementById('sidebar-type');
-  var url = RADIO_IMAGES[currentRadioKey];
+function updateBanner() {
+  var url = RADIO_IMAGES[currentRadioKey] || '';
+  var img = document.getElementById('radio-banner-img');
+  var name = document.getElementById('radio-banner-name');
+  var specs = document.getElementById('radio-banner-specs');
+  var variants = document.getElementById('radio-banner-variants');
+  img.src = url;
+  img.style.display = url ? 'block' : 'none';
   name.textContent = currentRadio || '';
-  type.textContent = isMobile ? 'Mobile Radio' : 'Portable Radio';
-  if (url) {
-    img.src = url;
-    img.classList.remove('hidden');
-    placeholder.style.display = 'none';
-  } else {
-    img.classList.add('hidden');
-    placeholder.style.display = 'flex';
-  }
+  var type = isMobile ? 'Mobile Radio' : 'Portable Radio';
+  specs.innerHTML = '<span class="rspec">Type <span class="rspec-val">' + type + '</span></span>';
+  var reg = REGIONS[currentRegion] || REGIONS.NA;
+  var all = reg.portable.concat(reg.mobile);
+  var match = all.find(function(x){return x.key===currentRadioKey;});
+  variants.textContent = (match && match.variants) ? match.variants : '';
+  variants.style.display = (match && match.variants) ? 'block' : 'none';
 }
 // ── STATE ──
 let currentRadio   = null;
@@ -396,7 +393,7 @@ function selectRegion(r) {
     else { info.textContent = ''; info.style.display = 'none'; }
     buildPortablePills();
     buildMobilePills();
-    updateSidebar();
+    updateBanner();
     updateBreadcrumb();
   } else {
     var first = reg.portable[0];
@@ -465,7 +462,7 @@ function selectRadio(label, key, mobile) {
   buildVariantStrip(key);
   buildCatBar();
   render();
-  updateSidebar();
+  updateBanner();
 }
 
 function buildVariantStrip(key) {
@@ -594,8 +591,8 @@ function buildSectionsHTML(sections) {
         if (_base !== pn) thumbUrl = PART_IMAGES[_base];
       }
       if (!thumbUrl) { var _sfx = ['A','B','C','D','01','02','03','04']; for (var _i=0;_i<_sfx.length;_i++) { if (PART_IMAGES[pn+_sfx[_i]]) { thumbUrl = PART_IMAGES[pn+_sfx[_i]]; break; } } }
-      html += '<tr style="cursor:pointer" onclick="showAccSidebar(\'' + pn + '\',\'' + desc.replace(/'/g,' ') + '\')">';
-html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:pointer">' : '<div class="img-box"></div>') + '</td>';
+      html += '<tr>';
+html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:zoom-in" onclick="openLightbox(\'' + thumbUrl + '\')">' : '<div class="img-box"></div>') + '</td>';
       html += '<td>' + desc + '</td>';
       html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
       specKeys.forEach(function(c) {
@@ -636,31 +633,6 @@ function openLightbox(src) {
   document.getElementById('lightbox').classList.add('open');
 }
 
-function showAccSidebar(pn, desc) {
-  var url = PART_IMAGES[pn];
-  var radio = document.getElementById('sidebar-img');
-  var placeholder = document.getElementById('sidebar-placeholder');
-  var name = document.getElementById('sidebar-name');
-  var type = document.getElementById('sidebar-type');
-  var acc = document.getElementById('sidebar-acc');
-  var accImg = document.getElementById('sidebar-acc-img');
-  var accDesc = document.getElementById('sidebar-acc-desc');
-  var accPN = document.getElementById('sidebar-acc-pn');
-  radio.classList.add('hidden');
-  placeholder.style.display = 'none';
-  name.textContent = '';
-  type.textContent = '';
-  acc.style.display = 'block';
-  accImg.src = url || '';
-  accImg.style.display = url ? 'block' : 'none';
-  accDesc.textContent = desc || '';
-  accPN.textContent = pn || '';
-}
-
-function restoreRadioSidebar() {
-  document.getElementById('sidebar-acc').style.display = 'none';
-  updateSidebar();
-}
 
 function toggleMyListPanel() {
   var panel = document.getElementById('mylist-panel');
