@@ -41,8 +41,8 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overfl
 .pill-tab-row{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:4px;}
 .radio-tile-row{display:flex;gap:2px;flex-wrap:wrap;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:0;}
 .rtile{padding:5px 11px 6px;border-radius:4px;cursor:pointer;border-bottom:2px solid transparent;background:transparent;text-align:center;margin-bottom:-1px;}
-.rtile-name{font-size:12px;font-weight:500;color:rgba(255,255,255,0.45);white-space:nowrap;}
-.rtile-sub{font-size:9px;color:rgba(255,255,255,0.22);margin-top:2px;white-space:nowrap;}
+.rtile-name{font-size:24px;font-weight:500;color:rgba(255,255,255,0.45);white-space:nowrap;}
+.rtile-sub{font-size:18px;color:rgba(255,255,255,0.22);margin-top:2px;white-space:nowrap;}
 .rtile.active .rtile-name{color:#fff;}
 .rtile.active{border-bottom-color:#378ADD;}
 .rtile.active .rtile-sub{color:rgba(255,255,255,0.45);}
@@ -419,7 +419,7 @@ function selectRegion(r) {
 
 
 function buildPortablePills() {
-  var vc = {"r7":"4 variants","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants","xpr5000":"4 variants","xpr4000":"NA only","xpr2500":"NA only"};
+  var vc = {"r7":"global","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants","xpr5000":"4 variants","xpr4000":"NA only","xpr2500":"NA only"};
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
   row.className = 'radio-tile-row';
