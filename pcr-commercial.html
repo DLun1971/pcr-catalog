@@ -331,9 +331,6 @@ function selectRegion(r) {
   var match = all.find(function(x){return x.key===currentRadioKey;});
   if (match) {
     currentRadio = match.label;
-    var info = null;
-    
-    else { info.textContent = ''; info.style.display = 'none'; }
     buildPortablePills();
     buildMobilePills();
     updateBanner();
