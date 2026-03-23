@@ -135,8 +135,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 
 <!-- RADIO PANEL -->
 <div id="radio-panel">
-  <div style="display:flex;align-items:center;justify-content:space-between;">
-    <div class="panel-label">Radios</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
     <div id="region-seg-row" class="region-seg">
       <div class="rseg active" onclick="selectRegion('NA')">NA</div>
       <div class="rseg" onclick="selectRegion('LACR')">LACR</div>
@@ -144,7 +143,10 @@ table.acc-table tr:hover td{background:#f9f9f9}
       <div class="rseg" onclick="selectRegion('APAC')">APAC</div>
     </div>
   </div>
-  <div class="pill-row" id="portable-pills"></div>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div class="panel-label" style="margin-bottom:0;white-space:nowrap;">Radios</div>
+    <div class="pill-row" id="portable-pills" style="flex:1"></div>
+  </div>
 
   <div id="variant-info" style="display:none;padding:8px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:6px;font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5"></div>
 
