@@ -331,8 +331,8 @@ function selectRegion(r) {
   var match = all.find(function(x){return x.key===currentRadioKey;});
   if (match) {
     currentRadio = match.label;
-    var info = document.getElementById('variant-info');
-    if (match.variants) { info.textContent = match.variants; info.style.display = 'block'; }
+    var info = null;
+    
     else { info.textContent = ''; info.style.display = 'none'; }
     buildPortablePills();
     buildMobilePills();
@@ -343,8 +343,8 @@ function selectRegion(r) {
     buildPortablePills();
     buildMobilePills();
     selectRadio(first.label, first.key, false);
-    var info = document.getElementById('variant-info');
-    if (first.variants) { info.textContent = first.variants; info.style.display = 'block'; }
+    var info = null;
+    
     else { info.textContent = ''; info.style.display = 'none'; }
   }
 }
@@ -359,8 +359,6 @@ const RADIOS_DATA = {
 
 function init() {
   currentRegion = 'NA';
-  var info = document.getElementById('variant-info');
-  if (info) { info.textContent = ''; info.style.display = 'none'; }
   buildPortablePills();
   buildMobilePills();
   var first = REGIONS.NA.portable[0];
@@ -380,8 +378,8 @@ function buildPortablePills() {
     d.innerHTML = '<div class="rtile-name">' + r.label + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, false);
-      var info = document.getElementById('variant-info');
-      if (r.variants) { info.textContent = r.variants; info.style.display = 'block'; }
+      var info = null;
+      
       else { info.textContent = ''; info.style.display = 'none'; }
     };
     row.appendChild(d);
@@ -396,8 +394,8 @@ function buildPortablePills() {
     d.innerHTML = '<div class="rtile-name">' + r.label + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, true);
-      var info = document.getElementById('variant-info');
-      if (r.variants) { info.textContent = r.variants; info.style.display = 'block'; }
+      var info = null;
+      
       else { info.textContent = ''; info.style.display = 'none'; }
     };
     row.appendChild(d);
@@ -424,13 +422,7 @@ function selectRadio(label, key, mobile) {
   updateBanner();
 }
 
-function buildVariantStrip(key) {
-  var info = document.getElementById('variant-info');
-  var text = VARIANT_INFO[key];
-  if (text) {
-    info.textContent = text;
-    info.style.display = 'block';
-  } else {
+function buildVariantStrip(key) {} else {
     info.textContent = '';
     info.style.display = 'none';
   }
