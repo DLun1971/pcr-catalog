@@ -572,7 +572,7 @@ function buildSectionsHTML(sections) {
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
     specKeys.forEach(function(c){html += '<th style="text-align:center">' + (c.label||c) + '</th>';});
-    html += '<th style="width:36px"></th>';
+    html += '<th style="width:36px;text-align:center;font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:.06em\">My List</th>';
     html += '</tr></thead><tbody>';
     var lastGroup = null;
     sec.items.forEach(function(item) {
