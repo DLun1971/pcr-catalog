@@ -419,7 +419,7 @@ function selectRegion(r) {
 
 
 function buildPortablePills() {
-  var vc = {"r7":"4 variants","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants","xpr5000":"4 variants","xpr4000":"","xpr2500":""};
+  var vc = {"r7":"4 variants","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants","xpr5000":"4 variants","xpr4000":"NA only","xpr2500":"NA only"};
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
   row.className = 'radio-tile-row';
@@ -428,7 +428,7 @@ function buildPortablePills() {
     const d = document.createElement('div');
     d.className = 'rtile' + (r.key === currentRadioKey && !isMobile ? ' active' : '');
     var sub = vc[r.key] || '';
-    d.innerHTML = '<div class="rtile-name">' + r.label + '</div>' + (sub ? '<div class="rtile-sub">' + sub + '</div>' : '');
+    d.innerHTML = '<div class="rtile-name">' + r.label + '</div><div class="rtile-sub">' + (sub || '') + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, false);
       var info = document.getElementById('variant-info');
