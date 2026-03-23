@@ -45,10 +45,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overfl
 .rpill.mobile{color:rgba(255,255,255,0.35);font-size:11px;}
 .rpill.mobile.active{color:rgba(255,255,255,0.9);border-bottom-color:#378ADD;}
 .rpill.mobile:hover:not(.active){color:rgba(255,255,255,0.65);}
-.region-seg{display:inline-flex;gap:0;padding-top:4px;}
-.rseg{padding:3px 10px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.4);background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;margin-bottom:-1px;}
-.rseg.active{color:#fff;border-bottom-color:#378ADD;}
-.rseg:hover:not(.active){color:rgba(255,255,255,0.7);}
+.region-seg{display:inline-flex;border:1px solid rgba(255,255,255,0.25);border-radius:6px;overflow:hidden;}
+.rseg{padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.45);background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.2);cursor:pointer;text-transform:uppercase;letter-spacing:.05em;}
+.rseg:last-child{border-right:none;}
+.rseg.active{background:#185FA5;color:#fff;}
+.rseg:hover:not(.active){background:rgba(255,255,255,0.1);color:#fff;}
 
 /* variant pills removed */
 
@@ -131,7 +132,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 <div id="radio-panel">
   <div style="display:flex;align-items:center;justify-content:space-between;">
     <div class="panel-label">Portable</div>
-    <div id="region-seg-row" style="display:flex;gap:0;">
+    <div id="region-seg-row" class="region-seg">
       <div class="rseg active" onclick="selectRegion('NA')">NA</div>
       <div class="rseg" onclick="selectRegion('LACR')">LACR</div>
       <div class="rseg" onclick="selectRegion('EMEA')">EMEA</div>
