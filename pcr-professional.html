@@ -97,7 +97,7 @@ table.acc-table th{text-align:left;padding:7px 10px;border-bottom:1px solid #ddd
 table.acc-table td{padding:8px 10px;border-bottom:0.5px solid #f0f0f0;color:#222;vertical-align:middle}
 table.acc-table tr:last-child td{border-bottom:none}
 table.acc-table tr:hover td{background:#f9f9f9}
-.img-box{width:34px;height:34px;background:#f0f0f0;border-radius:4px;border:0.5px solid #e0e0e0;flex-shrink:0}
+.img-box{width:52px;height:52px;background:#f0f0f0;border-radius:6px;border:0.5px solid #e0e0e0;flex-shrink:0}
 .pn{font-family:monospace;font-size:11px;color:#888}
 .chk-yes{color:#1D9E75;text-align:center;font-size:13px}.acc-table td{text-align:center}.acc-table td:nth-child(2){text-align:left}.acc-table td:nth-child(3){text-align:left}
 .chk-no{color:#ccc;text-align:center;font-size:13px}
@@ -108,7 +108,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 #page-wrap{display:flex;align-items:stretch}
 #main-col{flex:1;min-width:0}
 #radio-banner{background:#0D1A2E;padding:10px 16px 12px;display:flex;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,0.08)}
-#radio-banner-img{width:88px;height:64px;object-fit:contain;background:#fff;border-radius:16px;padding:8px;flex-shrink:0;display:block}
+#radio-banner-img{width:120px;height:90px;object-fit:contain;background:#fff;border-radius:16px;padding:8px;flex-shrink:0;display:block;cursor:zoom-in}
 #radio-banner-name{color:#fff;font-size:14px;font-weight:500;margin:0 0 4px}
 #radio-banner-specs{display:flex;gap:10px;flex-wrap:wrap}
 .rspec{font-size:11px;color:rgba(255,255,255,0.45)}
@@ -158,7 +158,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
   </div>
 
 <div id="radio-banner">
-  <img id="radio-banner-img" src="" alt="">
+  <img id="radio-banner-img" src="" alt="" onclick="if(this.src)openLightbox(this.src)">
   <div style="flex:1;min-width:0">
     <div id="radio-banner-name"></div>
     <div id="radio-banner-specs"></div>
@@ -569,7 +569,7 @@ function buildSectionsHTML(sections) {
     var specKeys = (sec.cols||[]).filter(function(c){return !['desc','pn','part','description'].includes((c.key||c).toLowerCase());});
     html += '<div class="sec-head">' + sec.name + ' <span class="sec-count">— ' + sec.items.length + ' item' + (sec.items.length!==1?'s':'') + '</span></div>';
     var noSpec = specKeys.length === 0;
-    html += '<table class="acc-table">' + (noSpec ? '<colgroup><col style="width:42px"><col style="width:55%"><col style="width:180px"><col style="width:36px"></colgroup>' : '') + '<thead><tr>';
+    html += '<table class="acc-table">' + (noSpec ? '<colgroup><col style="width:60px"><col style="width:55%"><col style="width:180px"><col style="width:36px"></colgroup>' : '') + '<thead><tr>';
     html += '<th style="width:42px"></th>';
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
@@ -592,7 +592,7 @@ function buildSectionsHTML(sections) {
       }
       if (!thumbUrl) { var _sfx = ['A','B','C','D','01','02','03','04']; for (var _i=0;_i<_sfx.length;_i++) { if (PART_IMAGES[pn+_sfx[_i]]) { thumbUrl = PART_IMAGES[pn+_sfx[_i]]; break; } } }
       html += '<tr>';
-html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" data-lb="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:zoom-in">' : '<div class="img-box"></div>') + '</td>';
+html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" data-lb="' + thumbUrl + '" style="width:52px;height:52px;object-fit:contain;border-radius:6px;border:0.5px solid #e0e0e0;cursor:zoom-in">' : '<div class="img-box" style="width:52px;height:52px"></div>') + '</td>';
       html += '<td>' + desc + '</td>';
       html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
       specKeys.forEach(function(c) {
