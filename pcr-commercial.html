@@ -35,6 +35,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overfl
 .rpill.mobile.active{background:#0F6E56;border-color:#0F6E56}
 
 /* variant pills removed */
+.region-seg{display:inline-flex;border:1px solid rgba(255,255,255,0.25);border-radius:6px;overflow:hidden;}
+.rseg{padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.45);background:transparent;border:none;border-right:1px solid rgba(255,255,255,0.2);cursor:pointer;text-transform:uppercase;letter-spacing:.05em;}
+.rseg:last-child{border-right:none;}
+.rseg.active{background:#185FA5;color:#fff;}
+.rseg:hover:not(.active){background:rgba(255,255,255,0.1);color:#fff;}
 
 /* FILTER STRIP */
 #filter-strip{display:flex;align-items:center;gap:8px;padding:10px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:10px}
@@ -113,7 +118,15 @@ table.acc-table tr:hover td{background:#f9f9f9}
 
 <!-- RADIO PANEL -->
 <div id="radio-panel">
-  <div class="panel-label">Portable</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <div class="panel-label">Portable</div>
+    <div id="region-seg-row" class="region-seg">
+      <div class="rseg active" onclick="selectRegion('NA')">NA</div>
+      <div class="rseg" onclick="selectRegion('LACR')">LACR</div>
+      <div class="rseg" onclick="selectRegion('EMEA')">EMEA</div>
+      <div class="rseg" onclick="selectRegion('APAC')">APAC</div>
+    </div>
+  </div>
   <div class="pill-row" id="portable-pills"></div>
 
   <div id="variant-info" style="display:none;padding:8px 0 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:6px;font-size:11px;color:rgba(255,255,255,0.65);line-height:1.5"></div>
@@ -169,6 +182,53 @@ table.acc-table tr:hover td{background:#f9f9f9}
 
 <script>
 // ---- DATA MAP ----
+
+const REGIONS = {
+  NA: {
+    portable: [
+      {label:'R2',key:'r2',variants:null},
+      {label:'CP200d',key:'cp200d',variants:'CP200d · DEP450 · DP1400 · XiR P3688'},
+      {label:'CP100d',key:'cp100d',variants:'CP100d · DEP250 · DP540 · DP560 · DP580 · CP261'},
+      {label:'SL Series',key:'slcomm',variants:'SL300 · SL500 · SL1600 · SL1M'},
+    ],
+    mobile: [
+      {label:'CM Series',key:'cmseries',variants:'CM200d · CM300d · DEM300 · DEM400 · DM1400 · DM1600'},
+    ]
+  },
+  LACR: {
+    portable: [
+      {label:'R2',key:'r2',variants:null},
+      {label:'DEP450',key:'cp200d',variants:'DEP450 · CP200d'},
+      {label:'DEP250',key:'cp100d',variants:'DEP250 · DP540 · DP560 · DP580'},
+      {label:'SL500',key:'slcomm',variants:'SL500 · SL300'},
+    ],
+    mobile: [
+      {label:'DEM Series',key:'cmseries',variants:'DEM300 · DEM400'},
+    ]
+  },
+  EMEA: {
+    portable: [
+      {label:'R2',key:'r2',variants:null},
+      {label:'DP1400',key:'cp200d',variants:'DP1400 · DEP450'},
+      {label:'DP540 Series',key:'cp100d',variants:'DP540 · DP560 · DP580 · CP261'},
+      {label:'SL1600',key:'slcomm',variants:'SL1600 · SL1M'},
+    ],
+    mobile: [
+      {label:'DM Series',key:'cmseries',variants:'DM1400 · DM1600'},
+    ]
+  },
+  APAC: {
+    portable: [
+      {label:'R2',key:'r2',variants:null},
+      {label:'XiR P3688',key:'cp200d',variants:'XiR P3688 · DEP450'},
+      {label:'XiR C Series',key:'cp100d',variants:'XiR C1200 · XiR C2620 · XiR C2660'},
+      {label:'SL1M',key:'slcomm',variants:'SL1M · SL1600'},
+    ],
+    mobile: [
+      {label:'XiR M Series',key:'cmseries',variants:'XiR M3188 · XiR M3688'},
+    ]
+  }
+};
 
 const PORTABLE_RADIOS = [
   {label:'R2',           key:'r2'},
@@ -262,7 +322,33 @@ let currentCat     = 'All';
 let currentFilters = {impres:false, hazloc:false, ip:false};
 let myList         = [];
 let isMobile       = false;
+let currentRegion  = 'NA';
 
+
+function selectRegion(r) {
+  currentRegion = r;
+  var reg = REGIONS[r] || REGIONS.NA;
+  var all = reg.portable.concat(reg.mobile);
+  var match = all.find(function(x){return x.key===currentRadioKey;});
+  if (match) {
+    currentRadio = match.label;
+    var info = document.getElementById('variant-info');
+    if (match.variants) { info.textContent = match.variants; info.style.display = 'block'; }
+    else { info.textContent = ''; info.style.display = 'none'; }
+    buildPortablePills();
+    buildMobilePills();
+    updateSidebar();
+    updateBreadcrumb();
+  } else {
+    var first = reg.portable[0];
+    buildPortablePills();
+    buildMobilePills();
+    selectRadio(first.label, first.key, false);
+    var info = document.getElementById('variant-info');
+    if (first.variants) { info.textContent = first.variants; info.style.display = 'block'; }
+    else { info.textContent = ''; info.style.display = 'none'; }
+  }
+}
 // ---- INIT ----
 const RADIOS_DATA = {
   r2:       R2_DATA,
@@ -273,31 +359,49 @@ const RADIOS_DATA = {
 };
 
 function init() {
+  currentRegion = 'NA';
   buildPortablePills();
   buildMobilePills();
-  selectRadio('R2', 'r2', false);
+  var first = REGIONS.NA.portable[0];
+  selectRadio(first.label, first.key, false);
 }
 
 function buildPortablePills() {
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
-  PORTABLE_RADIOS.forEach(r => {
+  const radios = (REGIONS[currentRegion] || REGIONS.NA).portable;
+  radios.forEach(r => {
     const d = document.createElement('div');
-    d.className = 'rpill' + (r.label === currentRadio ? ' active' : '');
+    d.className = 'rpill' + (r.key === currentRadioKey ? ' active' : '');
     d.textContent = r.label;
-    d.onclick = () => selectRadio(r.label, r.key, false);
+    d.onclick = () => {
+      selectRadio(r.label, r.key, false);
+      var info = document.getElementById('variant-info');
+      if (r.variants) { info.textContent = r.variants; info.style.display = 'block'; }
+      else { info.textContent = ''; info.style.display = 'none'; }
+    };
     row.appendChild(d);
   });
+  const regionRow = document.getElementById('region-seg-row');
+  if (regionRow) {
+    regionRow.querySelectorAll('.rseg').forEach(b => b.classList.toggle('active', b.textContent.trim()===currentRegion));
+  }
 }
 
 function buildMobilePills() {
   const row = document.getElementById('mobile-pills');
   row.innerHTML = '';
-  MOBILE_RADIOS.forEach(r => {
+  const radios = (REGIONS[currentRegion] || REGIONS.NA).mobile;
+  radios.forEach(r => {
     const d = document.createElement('div');
-    d.className = 'rpill mobile' + (r.label === currentRadio ? ' active' : '');
+    d.className = 'rpill mobile' + (r.key === currentRadioKey && isMobile ? ' active' : '');
     d.textContent = r.label;
-    d.onclick = () => selectRadio(r.label, r.key, true);
+    d.onclick = () => {
+      selectRadio(r.label, r.key, true);
+      var info = document.getElementById('variant-info');
+      if (r.variants) { info.textContent = r.variants; info.style.display = 'block'; }
+      else { info.textContent = ''; info.style.display = 'none'; }
+    };
     row.appendChild(d);
   });
 }
@@ -424,7 +528,7 @@ function buildSectionsHTML(sections) {
     html += '<th>Description</th>';
     html += '<th>Part #</th>';
     specKeys.forEach(function(c){html += '<th style="text-align:center">' + (c.label||c) + '</th>';});
-    html += '<th style="width:36px"></th>';
+    html += '<th style="width:36px;text-align:center;color:#888\">My List</th>';
     html += '</tr></thead><tbody>';
     var lastGroup = null;
     sec.items.forEach(function(item) {
