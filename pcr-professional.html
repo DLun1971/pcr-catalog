@@ -289,7 +289,8 @@ function updateSidebar() {
 
 }
 
-// ---- STATE ----
+}
+// ── STATE ──
 let currentRadio   = null;
 let currentRadioKey = null;
 let currentVariant = null;
@@ -297,12 +298,11 @@ let currentCat     = 'All';
 let currentFilters = {impres:false, hazloc:false, ip:false};
 let myList         = [];
 let isMobile       = false;
+let currentRegion  = 'All';
 
-// ---- INIT ----
-function init() {
-  buildPortablePills();
-  buildMobilePills();
-  selectRadio('R7', 'r7', false);
+function selectRegion(r) {
+  currentRegion = r;
+  document.querySelectorAll('.rseg').forEach(b => b.classList.toggle('active', b.textContent.trim()===r));
 }
 
 function buildRadioPills() {
