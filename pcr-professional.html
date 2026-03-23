@@ -388,33 +388,6 @@ function selectRegion(r) {
   var match = all.find(function(x){return x.key===currentRadioKey;});
   if (match) {
     currentRadio = match.label;
-    var info = null;
-    if (match.variants) { info.textContent = match.variants; info.style.display = 'block'; }
-    
-    buildPortablePills();
-    buildMobilePills();
-    updateBanner();
-    updateBreadcrumb();
-  } else {
-    var first = reg.portable[0];
-    buildPortablePills();
-    buildMobilePills();
-    selectRadio(first.label, first.key, false);
-    var info = null;
-    
-    
-  }
-}
-
-
-
-function selectRegion(r) {
-  currentRegion = r;
-  var reg = REGIONS[r] || REGIONS.NA;
-  var all = reg.portable.concat(reg.mobile);
-  var match = all.find(function(x){return x.key===currentRadioKey;});
-  if (match) {
-    currentRadio = match.label;
     buildPortablePills();
     buildMobilePills();
     updateBanner();
