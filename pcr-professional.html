@@ -194,6 +194,76 @@ table.acc-table tr:hover td{background:#f9f9f9}
 <script>
 // ---- DATA MAP ----
 
+const REGIONS = {
+  NA: {
+    portable: [
+      {label:'R7',key:'r7',variants:null},
+      {label:'Ion',key:'ion',variants:null},
+      {label:'R5',key:'r5',variants:null},
+      {label:'XPR 7000',key:'xpr7000',variants:'XPR 7550IS · 7580e · 7550e · 7380e · 7350e'},
+      {label:'XPR 6000',key:'xpr6000',variants:'XPR 6580 · 6550 · 6350'},
+      {label:'XPR 3000',key:'xpr3000',variants:'XPR 3500e · 3300e · 3380e'},
+      {label:'SL 7000',key:'sl7000',variants:'SL 7550e · 7580e · 7590e'},
+      {label:'SL 3000',key:'sl3000',variants:'SL 3500e · 3500Max'},
+    ],
+    mobile: [
+      {label:'XPR 5000',key:'xpr5000',variants:'XPR 5550e · 5350e · 5380e · 5580e'},
+      {label:'XPR 4000',key:'xpr4000',variants:null},
+      {label:'XPR 2500',key:'xpr2500',variants:null},
+    ]
+  },
+  LACR: {
+    portable: [
+      {label:'R7',key:'r7',variants:null},
+      {label:'Ion',key:'ion',variants:null},
+      {label:'R5',key:'r5',variants:null},
+      {label:'R7Ex',key:'r7ex',variants:null},
+      {label:'DGP 8550E',key:'xpr7000',variants:'DGP 8550E · 8050E · 8050e Elite'},
+      {label:'DP ATEX',key:'dpatex',variants:'DP 4800e · 4600e · 4400e'},
+      {label:'DGP 5000',key:'xpr6000',variants:'DGP 5550e · 5050e'},
+      {label:'DEP 500',key:'xpr3000',variants:'DEP 570e · 550e'},
+      {label:'SL 8550e',key:'sl7000',variants:null},
+    ],
+    mobile: [
+      {label:'DGM 8000e',key:'xpr5000',variants:null},
+      {label:'DGM 5000e',key:'xpr4000',variants:null},
+      {label:'XPR 2500',key:'xpr2500',variants:null},
+    ]
+  },
+  EMEA: {
+    portable: [
+      {label:'R7',key:'r7',variants:null},
+      {label:'Ion',key:'ion',variants:null},
+      {label:'R5',key:'r5',variants:null},
+      {label:'R7Ex',key:'r7ex',variants:null},
+      {label:'DP 4000',key:'xpr7000',variants:'DP 4801e · 4601e · 4401e · 4800e · 4600e · 4400e'},
+      {label:'DP ATEX',key:'dpatex',variants:'DP 4801Ex · 4401Ex · 4801Ex Ma · 4401Ex Ma'},
+      {label:'DP 3000',key:'xpr3000',variants:'DP 3661e · 3441e · DM 4601e · 4401e'},
+      {label:'SL 4000',key:'sl7000',variants:'SL 4010e · SL 4000e'},
+    ],
+    mobile: [
+      {label:'DM 4600',key:'xpr5000',variants:'DM 4601e · 4401e · 4400e'},
+      {label:'DM 4000',key:'xpr4000',variants:'DM 4600e'},
+    ]
+  },
+  APAC: {
+    portable: [
+      {label:'R7',key:'r7',variants:null},
+      {label:'Ion',key:'ion',variants:null},
+      {label:'R5',key:'r5',variants:null},
+      {label:'R7Ex',key:'r7ex',variants:null},
+      {label:'XiR P8668i',key:'xpr7000',variants:'XiR P8668i · P8628i · P8608i · P8660i · P8620i'},
+      {label:'XiR P8668Ex',key:'dpatex',variants:'XiR P8668Ex · P8608Ex · E8628i · E8608i'},
+      {label:'XiR P8600i',key:'xpr6000',variants:'XiR P8600i · E8600i'},
+      {label:'SL2K',key:'sl7000',variants:'SL2K · XiR M8668i · M8628i · M8660i'},
+    ],
+    mobile: [
+      {label:'XiR M8668i',key:'xpr5000',variants:'XiR M8668i · M8628i · M8660i'},
+      {label:'XiR M8628i',key:'xpr4000',variants:null},
+    ]
+  }
+};
+
 const PORTABLE_RADIOS = [
   {label:'R7',       key:'r7'},
   {label:'Ion',      key:'ion'},
