@@ -484,13 +484,7 @@ function selectRadio(label, key, mobile) {
   updateBanner();
 }
 
-function buildVariantStrip(key) {
-  var info = null;
-  var text = VARIANT_INFO[key];
-  if (text) {
-    info.textContent = text;
-    info.style.display = 'block';
-  } else {
+function buildVariantStrip(key) {} else {
     info.textContent = '';
     info.style.display = 'none';
   }
