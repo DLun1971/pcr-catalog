@@ -287,7 +287,7 @@ function updateSidebar() {
     placeholder.style.display = 'flex';
   }
 
-}
+
 
 }
 // ── STATE ──
@@ -305,27 +305,6 @@ function selectRegion(r) {
   document.querySelectorAll('.rseg').forEach(b => b.classList.toggle('active', b.textContent.trim()===r));
 }
 
-function buildRadioPills() {
-  const portableHTML = '<div class="radio-section">'
-    + '<span class="radio-section-label">Portable</span>'
-    + '<div class="region-seg">'
-    + ['All','NA','LACR','EMEA','APAC'].map(r =>
-        '<div class="rseg' + (currentRegion===r?' active':'') + '" onclick="selectRegion(\'' + r + '\')">' + r + '</div>'
-      ).join('')
-    + '</div></div>'
-    + '<div class="pill-tab-row">'
-    + PCR_RADIOS.map(r =>
-        '<div class="rpill' + (r===currentRadio&&currentView==='radio'?' active':'') + '" onclick="selectRadio(\'' + r + '\')">' + r + '</div>'
-      ).join('')
-    + '</div>';
-  const mobileHTML = '<div class="radio-section-label" style="padding:4px 0 0;">Mobile</div>'
-    + '<div class="pill-tab-row">'
-    + ['XPR 5550e','XPR 4000','XPR 2500'].map(label =>
-        '<div class="rpill mobile' + (currentRadio==='xpr-mobile'&&currentView==='radio'?' active':'') + '" onclick="selectRadio(\'xpr-mobile\')">' + label + '</div>'
-      ).join('')
-    + '</div>';
-  document.getElementById('radio-row').innerHTML = portableHTML + mobileHTML;
-}
 
 
 function buildMobilePills() {
