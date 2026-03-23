@@ -85,7 +85,7 @@ table.acc-table th{text-align:left;padding:7px 10px;border-bottom:1px solid #ddd
 table.acc-table td{padding:8px 10px;border-bottom:0.5px solid #f0f0f0;color:#222;vertical-align:middle}
 table.acc-table tr:last-child td{border-bottom:none}
 table.acc-table tr:hover td{background:#f9f9f9}
-.img-box{width:34px;height:34px;background:#f0f0f0;border-radius:4px;border:0.5px solid #e0e0e0;flex-shrink:0}
+.img-box{width:52px;height:52px;background:#f0f0f0;border-radius:6px;border:0.5px solid #e0e0e0;flex-shrink:0}
 .pn{font-family:monospace;font-size:11px;color:#888}
 .chk-yes{color:#1D9E75;text-align:center;font-size:13px}.acc-table td{text-align:center}.acc-table td:nth-child(2){text-align:left}.acc-table td:nth-child(3){text-align:left}
 .chk-no{color:#ccc;text-align:center;font-size:13px}
@@ -95,12 +95,7 @@ table.acc-table tr:hover td{background:#f9f9f9}
 .tag-hz{background:#EAF3DE;color:#3B6D11}.tag-ul{background:#EAF3DE;color:#3B6D11}.tag-atex{background:#E6F1FB;color:#0C447C}.tag-csa{background:#FFF3E0;color:#E65100}
 #page-wrap{display:flex;align-items:stretch}
 #main-col{flex:1;min-width:0}
-#radio-sidebar{width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e0e0e0;display:flex;flex-direction:column;align-items:center;padding:24px 16px;position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden}
-#sidebar-img{width:180px;height:180px;object-fit:contain;display:block}
-#sidebar-img.hidden{display:none}
-#sidebar-placeholder{width:180px;height:180px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
-#sidebar-name{margin-top:16px;font-size:14px;font-weight:600;color:#0C2D5A;text-align:center}
-#sidebar-type{font-size:11px;color:#888;margin-top:4px;text-align:center}
+
 #radio-banner{background:#0D1A2E;padding:10px 16px 12px;display:flex;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,0.08)}
 #radio-banner-img{width:120px;height:90px;object-fit:contain;background:#fff;border-radius:16px;padding:8px;flex-shrink:0;display:block;cursor:zoom-in}
 #radio-banner-name{color:#fff;font-size:14px;font-weight:500;margin:0 0 4px}
@@ -157,18 +152,6 @@ table.acc-table tr:hover td{background:#f9f9f9}
 
 <!-- CONTENT AREA -->
 <div id="page-wrap">
-<div id="radio-sidebar">
-  <img id="sidebar-img" class="hidden" src="" alt="">
-  <div id="sidebar-placeholder">No image</div>
-  <div id="sidebar-name"></div>
-  <div id="sidebar-type"></div>
-  <div id="sidebar-acc" style="display:none;margin-top:16px;text-align:center">
-    <img id="sidebar-acc-img" src="" style="width:160px;height:160px;object-fit:contain;cursor:zoom-in" onclick="openLightbox(this.src)" alt="">
-    <div id="sidebar-acc-desc" style="font-size:11px;color:#444;margin-top:8px;padding:0 8px;line-height:1.4"></div>
-    <div id="sidebar-acc-pn" style="font-size:11px;font-family:monospace;color:#888;margin-top:4px"></div>
-    <div id="sidebar-acc-back" onclick="restoreRadioSidebar()" style="margin-top:10px;font-size:11px;color:#185FA5;cursor:pointer">&#8592; Back to radio</div>
-  </div>
-</div>
 <div id="main-col">
 <div id="content-area">
   <div id="cat-bar"></div>
@@ -305,24 +288,22 @@ const RADIO_IMAGES = {
   cmseries: 'https://www.motorolasolutions.com/content/dam/msi/images/products/two-way-radios/mototrbo/mobile-radios/cm300d/CM300d_Front_324x324.jpg',
 };
 
-function updateSidebar() {
-  var img = document.getElementById('sidebar-img');
-  var placeholder = document.getElementById('sidebar-placeholder');
-  var name = document.getElementById('sidebar-name');
-  var type = document.getElementById('sidebar-type');
-  var url = RADIO_IMAGES[currentRadioKey];
+function updateBanner() {
+  var url = RADIO_IMAGES[currentRadioKey] || '';
+  var img = document.getElementById('radio-banner-img');
+  var name = document.getElementById('radio-banner-name');
+  var specs = document.getElementById('radio-banner-specs');
+  var variants = document.getElementById('radio-banner-variants');
+  img.src = url;
+  img.style.display = url ? 'block' : 'none';
   name.textContent = currentRadio || '';
-  type.textContent = isMobile ? 'Mobile Radio' : 'Portable Radio';
-  if (url) {
-    img.src = url;
-    img.classList.remove('hidden');
-    placeholder.style.display = 'none';
-  } else {
-    img.classList.add('hidden');
-    placeholder.style.display = 'flex';
-  }
-  var hero = document.getElementById('panel-hero-img');
-  if (hero) hero.src = url || '';
+  var type = isMobile ? 'Mobile Radio' : 'Portable Radio';
+  specs.innerHTML = '<span class="rspec">Type <span class="rspec-val">' + type + '</span></span>';
+  var reg = REGIONS[currentRegion] || REGIONS.NA;
+  var all = reg.portable.concat(reg.mobile);
+  var match = all.find(function(x){return x.key===currentRadioKey;});
+  variants.textContent = (match && match.variants) ? match.variants : '';
+  variants.style.display = (match && match.variants) ? 'block' : 'none';
 }
 
 // ---- STATE ----
@@ -348,7 +329,7 @@ function selectRegion(r) {
     else { info.textContent = ''; info.style.display = 'none'; }
     buildPortablePills();
     buildMobilePills();
-    updateSidebar();
+    updateBanner();
     updateBreadcrumb();
   } else {
     var first = reg.portable[0];
@@ -433,7 +414,7 @@ function selectRadio(label, key, mobile) {
   buildVariantStrip(key);
   buildCatBar();
   render();
-  updateSidebar();
+  updateBanner();
 }
 
 function buildVariantStrip(key) {
@@ -561,8 +542,8 @@ function buildSectionsHTML(sections) {
         if (_base !== pn) thumbUrl = PART_IMAGES[_base];
       }
       if (!thumbUrl) { var _sfx = ['A','B','C','D','01','02','03','04']; for (var _i=0;_i<_sfx.length;_i++) { if (PART_IMAGES[pn+_sfx[_i]]) { thumbUrl = PART_IMAGES[pn+_sfx[_i]]; break; } } }
-      html += '<tr style="cursor:pointer" onclick="showAccSidebar(\'' + pn + '\',\'' + desc.replace(/'/g,' ') + '\')">';
-html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" style="width:34px;height:34px;object-fit:contain;border-radius:4px;border:0.5px solid #e0e0e0;cursor:pointer">' : '<div class="img-box"></div>') + '</td>';
+      html += '<tr>';
+html += '<td>' + (thumbUrl ? '<img src="' + thumbUrl + '" data-lb="' + thumbUrl + '" style="width:52px;height:52px;object-fit:contain;border-radius:6px;border:0.5px solid #e0e0e0;cursor:zoom-in">' : '<div class="img-box" style="width:52px;height:52px"></div>') + '</td>';
       html += '<td>' + desc + '</td>';
       html += '<td class="pn" title="Click to copy" style="cursor:pointer" onclick="copyPN(this,\'' + pn + '\')">' + pn + '</td>';
       specKeys.forEach(function(c) {
@@ -598,36 +579,13 @@ function copyPN(el, pn) {
   setTimeout(function() { el.textContent = orig; el.style.color = ''; }, 1200);
 }
 
+document.getElementById('table-area').addEventListener('click', function(e) { var img = e.target.closest('img[data-lb]'); if (img) openLightbox(img.getAttribute('data-lb')); });
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
 }
 
-function showAccSidebar(pn, desc) {
-  var url = PART_IMAGES[pn];
-  var radio = document.getElementById('sidebar-img');
-  var placeholder = document.getElementById('sidebar-placeholder');
-  var name = document.getElementById('sidebar-name');
-  var type = document.getElementById('sidebar-type');
-  var acc = document.getElementById('sidebar-acc');
-  var accImg = document.getElementById('sidebar-acc-img');
-  var accDesc = document.getElementById('sidebar-acc-desc');
-  var accPN = document.getElementById('sidebar-acc-pn');
-  radio.classList.add('hidden');
-  placeholder.style.display = 'none';
-  name.textContent = '';
-  type.textContent = '';
-  acc.style.display = 'block';
-  accImg.src = url || '';
-  accImg.style.display = url ? 'block' : 'none';
-  accDesc.textContent = desc || '';
-  accPN.textContent = pn || '';
-}
 
-function restoreRadioSidebar() {
-  document.getElementById('sidebar-acc').style.display = 'none';
-  updateSidebar();
-}
 
 function toggleMyListPanel() {
   var panel = document.getElementById('mylist-panel');
