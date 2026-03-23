@@ -208,6 +208,20 @@ const PORTABLE_RADIOS = [
   {label:'SL 3000',key:'sl3000'},
 ];
 
+
+const REGION_RADIO_MAP = {
+  'All':  ['R7','Ion','R5','R7Ex','7000 Series','DP 4000 Series','6000 Series','3000 Series','SL 7000','SL 3000'],
+  'NA':   ['R7','Ion','R5','7000 Series','6000 Series','3000 Series','SL 7000','SL 3000'],
+  'LACR': ['R7','Ion','R5','R7Ex','7000 Series','DP 4000 Series','6000 Series','3000 Series','SL 7000'],
+  'EMEA': ['R7','Ion','R5','R7Ex','7000 Series','DP 4000 Series','3000 Series','SL 7000'],
+  'APAC': ['R7','Ion','R5','R7Ex','7000 Series','DP 4000 Series','SL 7000'],
+};
+const REGION_VARIANT_LABELS = {
+  'NA':   {'7000 Series':'XPR 7550IS · 7580e · 7550e · 7380e · 7350e','6000 Series':'XPR 6580 · 6550 · 6350','3000 Series':'XPR 3500e · 3300e · 3380e','SL 7000':'SL 7550e · 7580e · 7590e','SL 3000':'SL 3500e · 3500Max'},
+  'LACR': {'7000 Series':'DGP 8550E · 8050E · 8050e Elite · 5550e · 5050e','DP 4000 Series':'DP 4800e · 4600e · 4400e','6000 Series':'DGP 5050e · 5550e','3000 Series':'DEP 570e · 550e','SL 7000':'SL 8550e','R7Ex':'R7Ex'},
+  'EMEA': {'7000 Series':'DP 4801e · 4601e · 4401e · 4800e · 4600e · 4400e','DP 4000 Series':'DP 4801Ex · 4401Ex · 4801Ex Ma · 4401Ex Ma','3000 Series':'DP 3661e · 3441e · DM 4601e · 4401e','SL 7000':'SL 4010e · SL 4000e','R7Ex':'R7Ex'},
+  'APAC': {'7000 Series':'XiR P8668i · P8628i · P8608i · P8660i','DP 4000 Series':'XiR P8668Ex · P8608Ex · E8628i · E8608i','SL 7000':'SL2K · XiR M8668i · M8628i','R7Ex':'R7Ex'},
+};
 const MOBILE_RADIOS = [
   {label:'XPR 5000', key:'xpr5000'},
   {label:'XPR 4000', key:'xpr4000'},
@@ -314,6 +328,11 @@ let currentRegion  = 'All';
 function selectRegion(r) {
   currentRegion = r;
   document.querySelectorAll('.rseg').forEach(b => b.classList.toggle('active', b.textContent.trim()===r));
+  buildPortablePills();
+  var allowed = REGION_RADIO_MAP[r] || REGION_RADIO_MAP['All'];
+  if (currentRadio && allowed.indexOf(currentRadio) === -1) {
+    selectRadio(allowed[0], PORTABLE_RADIOS.find(function(x){return x.label===allowed[0];}).key, false);
+  }
 }
 
 
@@ -321,11 +340,21 @@ function selectRegion(r) {
 function buildPortablePills() {
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
+  var allowed = REGION_RADIO_MAP[currentRegion] || REGION_RADIO_MAP['All'];
   PORTABLE_RADIOS.forEach(r => {
+    if (allowed.indexOf(r.label) === -1) return;
     const d = document.createElement('div');
     d.className = 'rpill' + (r.label === currentRadio ? ' active' : '');
     d.textContent = r.label;
-    d.onclick = () => selectRadio(r.label, r.key, false);
+    d.onclick = () => {
+      selectRadio(r.label, r.key, false);
+      var rvl = REGION_VARIANT_LABELS[currentRegion];
+      var info = document.getElementById('variant-info');
+      if (rvl && rvl[r.label]) {
+        info.textContent = rvl[r.label];
+        info.style.display = 'block';
+      }
+    };
     row.appendChild(d);
   });
   const regionRow = document.getElementById('region-seg-row');
