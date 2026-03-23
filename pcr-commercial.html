@@ -29,13 +29,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overfl
 .pill-row{display:flex;flex-wrap:wrap;gap:4px;}
 .radio-tile-row{display:flex;gap:2px;flex-wrap:wrap;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:0;}
 .rtile{padding:5px 11px 6px;border-radius:4px;cursor:pointer;border-bottom:2px solid transparent;background:transparent;text-align:center;margin-bottom:-1px;}
-.rtile-name{font-size:12px;font-weight:500;color:rgba(255,255,255,0.45);white-space:nowrap;}
+.rtile-name{font-size:13px;font-weight:500;color:rgba(255,255,255,0.45);white-space:nowrap;}
 .rtile-sub{font-size:9px;color:rgba(255,255,255,0.22);margin-top:2px;white-space:nowrap;}
 .rtile.active .rtile-name{color:#fff;}
 .rtile.active{border-bottom-color:#378ADD;}
 .rtile.active .rtile-sub{color:rgba(255,255,255,0.45);}
 .rtile:hover:not(.active) .rtile-name{color:rgba(255,255,255,0.75);}
-.rtile.mob .rtile-name{font-size:11px;color:rgba(255,255,255,0.3);}
+.rtile.mob .rtile-name{font-size:13px;color:rgba(255,255,255,0.3);}
 .rtile.mob.active .rtile-name{color:rgba(255,255,255,0.85);}
 .rtile.mob.active{border-bottom-color:#1D9E75;}
 .rtile.mob:hover:not(.active) .rtile-name{color:rgba(255,255,255,0.6);}
@@ -101,6 +101,13 @@ table.acc-table tr:hover td{background:#f9f9f9}
 #sidebar-placeholder{width:180px;height:180px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
 #sidebar-name{margin-top:16px;font-size:14px;font-weight:600;color:#0C2D5A;text-align:center}
 #sidebar-type{font-size:11px;color:#888;margin-top:4px;text-align:center}
+#radio-banner{background:#0D1A2E;padding:10px 16px 12px;display:flex;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,0.08)}
+#radio-banner-img{width:120px;height:90px;object-fit:contain;background:#fff;border-radius:16px;padding:8px;flex-shrink:0;display:block;cursor:zoom-in}
+#radio-banner-name{color:#fff;font-size:14px;font-weight:500;margin:0 0 4px}
+#radio-banner-specs{display:flex;gap:10px;flex-wrap:wrap}
+.rspec{font-size:11px;color:rgba(255,255,255,0.45)}
+.rspec-val{color:rgba(255,255,255,0.8);font-weight:500}
+#radio-banner-variants{font-size:11px;color:rgba(255,255,255,0.45);margin-top:5px;line-height:1.4}
 #lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);z-index:999;align-items:center;justify-content:center;cursor:pointer}
 #lightbox.open{display:flex}
 #lightbox img{max-width:50vw;max-height:50vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5)}
@@ -380,7 +387,7 @@ function buildPortablePills() {
     const d = document.createElement('div');
     d.className = 'rtile' + (r.key === currentRadioKey && !isMobile ? ' active' : '');
     var sub = vc[r.key] || '';
-    d.innerHTML = '<div class="rtile-name">' + r.label + '</div><div class="rtile-sub">' + (sub || '') + '</div>';
+    d.innerHTML = '<div class="rtile-name">' + r.label + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, false);
       var info = document.getElementById('variant-info');
@@ -396,7 +403,7 @@ function buildPortablePills() {
     const d = document.createElement('div');
     d.className = 'rtile mob' + (r.key === currentRadioKey && isMobile ? ' active' : '');
     var sub = vc[r.key] || '';
-    d.innerHTML = '<div class="rtile-name">' + r.label + '</div>' + (sub ? '<div class="rtile-sub">' + sub + '</div>' : '');
+    d.innerHTML = '<div class="rtile-name">' + r.label + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, true);
       var info = document.getElementById('variant-info');
