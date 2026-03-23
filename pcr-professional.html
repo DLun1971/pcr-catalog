@@ -30,15 +30,20 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;min-height:100vh;overfl
 #mylist-count{background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;font-size:11px;color:#fff}@keyframes badge-pulse{0%,100%{transform:scale(1);background:rgba(255,255,255,0.2)}50%{transform:scale(1.25);background:#5DCAA5}}#whatsnew-count.pulsing{animation:badge-pulse 1.6s ease-in-out infinite;display:inline-block}
 
 /* RADIO PANEL */
-#radio-panel{background:#112240;padding:14px 20px 14px}
-.panel-label{font-size:10px;font-weight:500;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
-.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.rpill{padding:6px 16px;border-radius:20px;font-size:13px;cursor:pointer;border:1px solid rgba(255,255,255,0.3);background:transparent;color:#fff;user-select:none;transition:background 0.15s,border-color 0.15s}
-.rpill:hover{background:rgba(255,255,255,0.1)}
-.rpill.active{background:#185FA5;border-color:#185FA5;font-weight:500}
-.rpill.mobile{border-color:rgba(93,202,165,0.5)}
-.rpill.mobile:hover{background:rgba(29,158,117,0.2)}
-.rpill.mobile.active{background:#0F6E56;border-color:#0F6E56}
+#radio-row{display:flex;flex-direction:column;gap:0;margin-bottom:0;}
+.radio-section{display:flex;align-items:center;justify-content:space-between;}
+.radio-section-label{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.06em;padding:6px 0 0;}
+.pill-tab-row{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:4px;}
+.rpill{padding:5px 13px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;color:rgba(255,255,255,0.45);transition:all .15s;white-space:nowrap;}
+.rpill.active{color:#fff;border-bottom-color:#378ADD;}
+.rpill:hover:not(.active){color:rgba(255,255,255,0.75);}
+.rpill.mobile{color:rgba(255,255,255,0.35);font-size:11px;}
+.rpill.mobile.active{color:rgba(255,255,255,0.9);border-bottom-color:#378ADD;}
+.rpill.mobile:hover:not(.active){color:rgba(255,255,255,0.65);}
+.region-seg{display:inline-flex;gap:0;padding-top:4px;}
+.rseg{padding:3px 10px;font-size:11px;font-weight:500;color:rgba(255,255,255,0.4);background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;margin-bottom:-1px;}
+.rseg.active{color:#fff;border-bottom-color:#378ADD;}
+.rseg:hover:not(.active){color:rgba(255,255,255,0.7);}
 
 /* variant pills removed */
 
