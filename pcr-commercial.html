@@ -376,7 +376,7 @@ function init() {
 }
 
 function buildPortablePills() {
-  var vc = {"r2":"","cp200d":"4 variants","cp100d":"7 variants","slcomm":"4 variants","cmseries":"6 variants"};
+  var vc = {"r2":"global","cp200d":"4 variants","cp100d":"7 variants","slcomm":"4 variants","cmseries":"6 variants"};
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
   row.className = 'radio-tile-row';
@@ -385,7 +385,7 @@ function buildPortablePills() {
     const d = document.createElement('div');
     d.className = 'rtile' + (r.key === currentRadioKey && !isMobile ? ' active' : '');
     var sub = vc[r.key] || '';
-    d.innerHTML = '<div class="rtile-name">' + r.label + '</div>' + (sub ? '<div class="rtile-sub">' + sub + '</div>' : '');
+    d.innerHTML = '<div class="rtile-name">' + r.label + '</div><div class="rtile-sub">' + (sub || '') + '</div>';
     d.onclick = () => {
       selectRadio(r.label, r.key, false);
       var info = document.getElementById('variant-info');
