@@ -401,7 +401,9 @@ function selectRegion(r) {
 }
 
 function buildPortablePills() {
-  var vc = {"r7":"global","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants","xpr5000":"4 variants","xpr4000":"NA only","xpr2500":"NA only"};
+  var vc = {"r7":"global","ion":"global","r5":"global","r7ex":"global","xpr7000":"5 variants","dpatex":"4 variants","xpr6000":"3 variants","xpr3000":"3 variants","sl7000":"3 variants","sl3000":"2 variants"};
+  var reg = REGIONS[currentRegion] || REGIONS.NA;
+  reg.mobile.forEach(function(m){ vc[m.key] = m.variants || ""; });
   const row = document.getElementById('portable-pills');
   row.innerHTML = '';
   row.className = 'radio-tile-row';
