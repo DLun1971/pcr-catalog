@@ -384,11 +384,21 @@ let currentRegion  = 'All';
 function selectRegion(r) {
   currentRegion = r;
   var reg = REGIONS[r] || REGIONS.NA;
-  buildPortablePills();
-  buildMobilePills();
-  var inRegion = reg.portable.concat(reg.mobile).find(function(x){return x.key===currentRadioKey;});
-  if (!inRegion) {
+  var all = reg.portable.concat(reg.mobile);
+  var match = all.find(function(x){return x.key===currentRadioKey;});
+  if (match) {
+    currentRadio = match.label;
+    var info = document.getElementById('variant-info');
+    if (match.variants) { info.textContent = match.variants; info.style.display = 'block'; }
+    else { info.textContent = ''; info.style.display = 'none'; }
+    buildPortablePills();
+    buildMobilePills();
+    updateSidebar();
+    updateBreadcrumb();
+  } else {
     var first = reg.portable[0];
+    buildPortablePills();
+    buildMobilePills();
     selectRadio(first.label, first.key, false);
     var info = document.getElementById('variant-info');
     if (first.variants) { info.textContent = first.variants; info.style.display = 'block'; }
