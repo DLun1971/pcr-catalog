@@ -369,6 +369,8 @@ const RADIOS_DATA = {
 
 function init() {
   currentRegion = 'NA';
+  var info = document.getElementById('variant-info');
+  if (info) { info.textContent = ''; info.style.display = 'none'; }
   buildPortablePills();
   buildMobilePills();
   var first = REGIONS.NA.portable[0];
